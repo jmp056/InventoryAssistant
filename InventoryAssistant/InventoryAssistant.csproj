@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

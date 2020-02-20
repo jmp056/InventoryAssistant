@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UsuarioIdlabel = new System.Windows.Forms.Label();
             this.ApellidosLabel = new System.Windows.Forms.Label();
             this.NombresLabel = new System.Windows.Forms.Label();
@@ -49,12 +50,14 @@
             this.Contrasena2textBox = new System.Windows.Forms.TextBox();
             this.ContrasenatextBox = new System.Windows.Forms.TextBox();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.LimpiarButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UsuaruiIdNumericUpDown)).BeginInit();
             this.DatosDelUsuarioGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // UsuarioIdlabel
@@ -242,6 +245,7 @@
             this.Contrasena2textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contrasena2textBox.Location = new System.Drawing.Point(15, 215);
             this.Contrasena2textBox.Name = "Contrasena2textBox";
+            this.Contrasena2textBox.PasswordChar = '*';
             this.Contrasena2textBox.Size = new System.Drawing.Size(156, 22);
             this.Contrasena2textBox.TabIndex = 29;
             // 
@@ -250,6 +254,7 @@
             this.ContrasenatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContrasenatextBox.Location = new System.Drawing.Point(15, 160);
             this.ContrasenatextBox.Name = "ContrasenatextBox";
+            this.ContrasenatextBox.PasswordChar = '*';
             this.ContrasenatextBox.Size = new System.Drawing.Size(159, 22);
             this.ContrasenatextBox.TabIndex = 28;
             // 
@@ -261,16 +266,17 @@
             this.UsuariotextBox.Size = new System.Drawing.Size(159, 22);
             this.UsuariotextBox.TabIndex = 27;
             // 
-            // button7
+            // Buscarbutton
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(292, 21);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 35);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "Buscar";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Buscarbutton.Location = new System.Drawing.Point(292, 21);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(100, 35);
+            this.Buscarbutton.TabIndex = 26;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // EliminarButton
             // 
@@ -282,6 +288,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -293,6 +300,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // LimpiarButton
             // 
@@ -304,6 +312,11 @@
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rUsuarios
             // 
@@ -313,7 +326,7 @@
             this.Controls.Add(this.LimpiarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.Controls.Add(this.CelularMaskedTextBox);
             this.Controls.Add(this.ApellidosTextBox);
@@ -332,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UsuaruiIdNumericUpDown)).EndInit();
             this.DatosDelUsuarioGroupBox.ResumeLayout(false);
             this.DatosDelUsuarioGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,12 +371,13 @@
         private System.Windows.Forms.TextBox ApellidosTextBox;
         private System.Windows.Forms.MaskedTextBox CelularMaskedTextBox;
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.TextBox Contrasena2textBox;
         private System.Windows.Forms.TextBox ContrasenatextBox;
         private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button LimpiarButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

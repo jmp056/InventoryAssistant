@@ -167,6 +167,28 @@ namespace InventoryAssistant.BLL
 
         }
 
+
+        public virtual bool Duplicado(Expression<Func<T, bool>> descripcion)
+        {
+            bool paso = false;
+
+            try
+            {
+                paso = contexto.Set<T>().Any(descripcion);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
+        }
+
         public void Dispose()
         {
 

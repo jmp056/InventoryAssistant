@@ -36,5 +36,23 @@ namespace InventoryAssistant
             ConsultasUsuarios cU = new ConsultasUsuarios();
             cU.ShowDialog();
         }
+
+        private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCategoria rc = new rCategoria();
+            rc.ShowDialog();
+        }
+
+        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProductos rp = new rProductos();
+            rp.ShowDialog();
+        }
+
+        private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEntradaProductos rep = new rEntradaProductos();
+            rep.ShowDialog();
+        }
     }
 }

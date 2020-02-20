@@ -1,4 +1,5 @@
 ﻿using InventoryAssistant.DAL;
+using InventoryAssistant.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,162 +12,98 @@ namespace InventoryAssistant.BLL
 {
     public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
     {
-        internal Contexto contexto;
+
+        internal Contexto _contexto;
 
         public RepositorioBase()
         {
-
-            contexto = new Contexto();
+            _contexto = new Contexto();
         }
 
         public virtual bool Guardar(T entity)
         {
-
             bool paso = false;
 
             try
             {
-
-                if (contexto.Set<T>().Add(entity) != null)
-                    paso = contexto.SaveChanges() > 0;
+                if (_contexto.Set<T>().Add(entity) != null)
+                    paso = _contexto.SaveChanges() > 0;
             }
-
             catch (Exception)
             {
-
                 throw;
             }
-
-            finally
-            {
-
-                Dispose();
-            }
-
             return paso;
-
         }
-
 
         public virtual bool Modificar(T entity)
         {
-
             bool paso = false;
 
             try
             {
-
-                contexto.Entry(entity).State = EntityState.Modified;
-                paso = contexto.SaveChanges() > 0;
-
+                _contexto.Entry(entity).State = EntityState.Modified;
+                paso = (_contexto.SaveChanges() > 0);
             }
             catch (Exception)
             {
-
                 throw;
-
             }
-
-            finally
-            {
-
-                Dispose();
-
-            }
-
             return paso;
         }
-
 
         public virtual bool Eliminar(int id)
         {
-
             bool paso = false;
 
             try
             {
+                T entity = _contexto.Set<T>().Find(id);
+                _contexto.Set<T>().Remove(entity);
 
-                T entity = contexto.Set<T>().Find(id);
-                contexto.Set<T>().Remove(entity);
-                paso = contexto.SaveChanges() > 0;
-
+                paso = _contexto.SaveChanges() > 0;
             }
-
             catch (Exception)
             {
-
                 throw;
-
             }
-
-            finally
-            {
-
-                Dispose();
-
-            }
-
             return paso;
         }
 
-
         public virtual T Buscar(int id)
         {
-
             T entity;
 
             try
             {
-
-                entity = contexto.Set<T>().Find(id);
-
+                entity = _contexto.Set<T>().Find(id);
             }
-
             catch (Exception)
             {
-
                 throw;
-
             }
-            finally
-            {
-
-                Dispose();
-
-            }
-
             return entity;
         }
 
-
-        public virtual List<T> GetList(Expression<Func<T, bool>> expression)
+        public List<T> GetList(Expression<Func<T, bool>> expression)
         {
-
             List<T> Lista = new List<T>();
 
             try
             {
-
-                Lista = contexto.Set<T>().Where(expression).ToList();
-
+                Lista = _contexto.Set<T>().Where(expression).ToList();
             }
             catch (Exception)
             {
-
                 throw;
-
             }
-            finally
-            {
-
-                Dispose();
-
-            }
-
             return Lista;
-
         }
 
+        public void Dispose()
+        {
+            _contexto.Dispose();
+        }
 
         public virtual bool Duplicado(Expression<Func<T, bool>> descripcion)
         {
@@ -174,7 +111,7 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                paso = contexto.Set<T>().Any(descripcion);
+                paso = _contexto.Set<T>().Any(descripcion);
 
             }
             catch (Exception)
@@ -183,18 +120,25 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                contexto.Dispose();
+                _contexto.Dispose();
             }
 
             return paso;
         }
 
-        public void Dispose()
-        {
 
-            contexto.Dispose();
+    /*
+        private static Usuarios usuario = new Usuarios();
+
+        public virtual void NombreLogin(string Usuario, string tipodeusuario)
+        {
+            usuario.Usuario = Usuario;
+            usuario.NivelUsuario = tipodeusuario;
 
         }
-
+        public virtual Usuarios ReturnUsuario()
+        {
+            return usuario;
+        }*/
     }
 }

@@ -1,4 +1,5 @@
-﻿using InventoryAssistant.UI.Registros;
+﻿using InventoryAssistant.UI.Consultas;
+using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,18 @@ namespace InventoryAssistant
         {
             rUsuarios rU = new rUsuarios();
             rU.ShowDialog();
+        }
+
+        private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rUsuarios rU = new rUsuarios();
+            rU.ShowDialog();
+        }
+
+        private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultasUsuarios cU = new ConsultasUsuarios();
+            cU.ShowDialog();
         }
     }
 }

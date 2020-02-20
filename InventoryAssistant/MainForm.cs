@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryAssistant.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace InventoryAssistant
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rUsuarios rU = new rUsuarios();
+            rU.ShowDialog();
         }
     }
 }

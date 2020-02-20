@@ -1,0 +1,103 @@
+﻿@page "/"
+@using Rep.Controllers;
+@using Rep.Models;
+
+<div class="container">
+    <EditForm Model="Cliente" OnValidSubmit="Guardar">
+        <DataAnnotationsValidator />
+        <h1>Registro de clientes</h1>
+
+        <div class="form-group">
+            <div class="form-inline">
+                <label for="ClienteId">Codigo del cliente</label>
+                <InputNumber @bind-Value="Cliente.ClienteId" class="form-control" />
+                <button type="button" class="btn btn-outline-dark" @onclick="Buscar">Buscar</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-inline">
+                <label for="Nombres">Nombres</label>
+                <InputText @bind-Value="Cliente.Nombres" class="form-control" />
+                <ValidationMessage For="@(() => Cliente.Nombres)" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-inline">
+                <label for="Deuda">Deuda</label>
+                <InputNumber @bind-Value="Cliente.Deuda" class="form-control" />
+                <ValidationMessage For="@(() => Cliente.Deuda)" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-inline">
+                <label for="Fecha">Fecha</label>
+                <InputDate @bind-Value="Cliente.Fecha" class="form-control" />
+            </div>
+        </div>
+
+        <h3>@Mensaje</h3>
+
+        <button type="button" class="btn btn-outline-primary" @onclick="Limpiar">Limpiar</button>
+        <button type="submit" class="btn btn-outline-success">Guardar</button>
+        <button type="button" class="btn btn-outline-danger" @onclick="Eliminar">Eliminar</button>
+        <ValidationSummary />
+    </EditForm>
+</div>
+
+@code{
+    Clientes Cliente = new Clientes();
+    string Mensaje = string.Empty;
+
+    private void Guardar()
+    {
+        ClientesControllers clientesControllers = new ClientesControllers();
+        if (clientesControllers.Guardar(Cliente))
+        {
+            Mensaje = "Cliente guardado";
+            this.Cliente = new Clientes();
+        }
+        else
+        {
+            Mensaje = "Cliente no guardado";
+        }
+    }
+
+    private void Eliminar()
+    {
+        ClientesControllers clientesControllers = new ClientesControllers();
+        if (clientesControllers.Eliminar(Cliente.ClienteId))
+        {
+            Mensaje = "Cliente eliminado";
+            this.Cliente = new Clientes();
+        }
+        else
+        {
+            Mensaje = "Cliente no eliminado";
+        }
+    }
+
+    private void Buscar()
+    {
+        ClientesControllers clientesControllers = new ClientesControllers();
+        Clientes ClienteTemporal = clientesControllers.Buscar(Cliente.ClienteId);
+        if (ClienteTemporal != null)
+        {
+            this.Cliente = ClienteTemporal;
+            Mensaje = "Cliente encontrado";
+        }
+        else
+        {
+            Mensaje = "Cliente no encontrado";
+        }
+
+    }
+
+    private void Limpiar()
+    {
+        Mensaje = string.Empty;
+        this.Cliente = new Clientes();
+    }
+}

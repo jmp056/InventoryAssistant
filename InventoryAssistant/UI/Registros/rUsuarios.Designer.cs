@@ -40,15 +40,15 @@
             this.UsuaruiIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombresTextBox = new System.Windows.Forms.TextBox();
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.NivelUsercomboBox = new System.Windows.Forms.ComboBox();
             this.FechaDeRegistroLabel = new System.Windows.Forms.Label();
             this.FechaDeRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ApellidosTextBox = new System.Windows.Forms.TextBox();
             this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Contrasena2textBox = new System.Windows.Forms.TextBox();
+            this.ContrasenatextBox = new System.Windows.Forms.TextBox();
+            this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
@@ -172,15 +172,15 @@
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(115, 22);
             this.CedulaMaskedTextBox.TabIndex = 12;
             // 
-            // comboBox1
+            // NivelUsercomboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 105);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 24);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.Text = "Administrador";
+            this.NivelUsercomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NivelUsercomboBox.FormattingEnabled = true;
+            this.NivelUsercomboBox.Location = new System.Drawing.Point(15, 105);
+            this.NivelUsercomboBox.Name = "NivelUsercomboBox";
+            this.NivelUsercomboBox.Size = new System.Drawing.Size(159, 24);
+            this.NivelUsercomboBox.TabIndex = 13;
+            this.NivelUsercomboBox.Text = "Administrador";
             // 
             // FechaDeRegistroLabel
             // 
@@ -221,14 +221,14 @@
             // 
             // DatosDelUsuarioGroupBox
             // 
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.textBox5);
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.textBox4);
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.textBox3);
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.Contrasena2textBox);
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.ContrasenatextBox);
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.UsuariotextBox);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.UsuarioLabel);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.ConfirmarContrasenaLabel);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.NivelDeUsuarioLabel);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.ContrasenaLabel);
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.comboBox1);
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.NivelUsercomboBox);
             this.DatosDelUsuarioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDelUsuarioGroupBox.Location = new System.Drawing.Point(410, 12);
             this.DatosDelUsuarioGroupBox.Name = "DatosDelUsuarioGroupBox";
@@ -237,29 +237,29 @@
             this.DatosDelUsuarioGroupBox.TabStop = false;
             this.DatosDelUsuarioGroupBox.Text = "Datos del usuario";
             // 
-            // textBox5
+            // Contrasena2textBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(15, 215);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 22);
-            this.textBox5.TabIndex = 29;
+            this.Contrasena2textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Contrasena2textBox.Location = new System.Drawing.Point(15, 215);
+            this.Contrasena2textBox.Name = "Contrasena2textBox";
+            this.Contrasena2textBox.Size = new System.Drawing.Size(156, 22);
+            this.Contrasena2textBox.TabIndex = 29;
             // 
-            // textBox4
+            // ContrasenatextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(15, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 22);
-            this.textBox4.TabIndex = 28;
+            this.ContrasenatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContrasenatextBox.Location = new System.Drawing.Point(15, 160);
+            this.ContrasenatextBox.Name = "ContrasenatextBox";
+            this.ContrasenatextBox.Size = new System.Drawing.Size(159, 22);
+            this.ContrasenatextBox.TabIndex = 28;
             // 
-            // textBox3
+            // UsuariotextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(15, 50);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 22);
-            this.textBox3.TabIndex = 27;
+            this.UsuariotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuariotextBox.Location = new System.Drawing.Point(15, 50);
+            this.UsuariotextBox.Name = "UsuariotextBox";
+            this.UsuariotextBox.Size = new System.Drawing.Size(159, 22);
+            this.UsuariotextBox.TabIndex = 27;
             // 
             // button7
             // 
@@ -351,16 +351,16 @@
         private System.Windows.Forms.NumericUpDown UsuaruiIdNumericUpDown;
         private System.Windows.Forms.TextBox NombresTextBox;
         private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox NivelUsercomboBox;
         private System.Windows.Forms.Label FechaDeRegistroLabel;
         private System.Windows.Forms.DateTimePicker FechaDeRegistroDateTimePicker;
         private System.Windows.Forms.TextBox ApellidosTextBox;
         private System.Windows.Forms.MaskedTextBox CelularMaskedTextBox;
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Contrasena2textBox;
+        private System.Windows.Forms.TextBox ContrasenatextBox;
+        private System.Windows.Forms.TextBox UsuariotextBox;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button LimpiarButton;

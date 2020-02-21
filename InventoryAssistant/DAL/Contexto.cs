@@ -11,6 +11,10 @@ namespace InventoryAssistant.DAL
     class Contexto : DbContext
     {
         public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Categorias> Categoria { get; set; }
+        public DbSet<Productos> Producto { get; set; }
+        public DbSet<EntradaProductos> Entrada { get; set; }
+
 
         public Contexto() : base("ConStr")
         {   }

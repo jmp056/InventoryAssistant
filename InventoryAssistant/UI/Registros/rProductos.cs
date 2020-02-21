@@ -50,7 +50,6 @@ namespace InventoryAssistant.UI.Registros
             // producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
             producto.Precio = Convert.ToInt32(PreciotextBox.Text);
 
-
             return producto;
         }
 

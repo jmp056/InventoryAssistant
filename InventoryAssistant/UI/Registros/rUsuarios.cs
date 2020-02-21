@@ -157,12 +157,25 @@ namespace InventoryAssistant.UI.Registros
                     MessageBox.Show("No se puede modificar un Usuario que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (repositorio.Duplicado(p => p.Usuario == UsuariotextBox.Text))
+
+                var result = MessageBox.Show("Desea Modificar este Usuario?","Modificar",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MyErrorProvider.SetError(UsuariotextBox, "Este Usuario Ya Esta Registrado!!!");
-                    return;
+                    paso = repositorio.Modificar(usuario);
                 }
-                paso = repositorio.Modificar(usuario);
+                else
+                {
+                    if (repositorio.Duplicado(p => p.Usuario == UsuariotextBox.Text))
+                    {
+                        MyErrorProvider.SetError(UsuariotextBox, "Este Usuario Ya Esta Registrado!!!");
+                        return;
+                    }
+                    else
+                    {
+                        paso = repositorio.Modificar(usuario);
+                    }
+                }
             }
             if (paso)
             {

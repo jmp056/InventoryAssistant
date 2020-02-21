@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RealizarBusquedaButton = new System.Windows.Forms.Button();
             this.CristerioTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
@@ -39,6 +39,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cUsuariosdataGridView = new System.Windows.Forms.DataGridView();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DatosDelUsuarioButton = new System.Windows.Forms.Button();
+            this.EditarUsuarioButton = new System.Windows.Forms.Button();
+            this.EliminarUsuarioButton = new System.Windows.Forms.Button();
             this.DatosDelUsuarioGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -48,6 +51,9 @@
             // 
             // DatosDelUsuarioGroupBox
             // 
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.EliminarUsuarioButton);
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.EditarUsuarioButton);
+            this.DatosDelUsuarioGroupBox.Controls.Add(this.DatosDelUsuarioButton);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.groupBox1);
             this.DatosDelUsuarioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDelUsuarioGroupBox.Location = new System.Drawing.Point(0, 2);
@@ -59,7 +65,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.RealizarBusquedaButton);
             this.groupBox1.Controls.Add(this.CristerioTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.FiltroComboBox);
@@ -72,15 +78,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
             // 
-            // button1
+            // RealizarBusquedaButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Realizar Busqueda";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.RealizarBusquedaButton.Location = new System.Drawing.Point(12, 169);
+            this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
+            this.RealizarBusquedaButton.Size = new System.Drawing.Size(153, 23);
+            this.RealizarBusquedaButton.TabIndex = 4;
+            this.RealizarBusquedaButton.Text = "Realizar Busqueda";
+            this.RealizarBusquedaButton.UseVisualStyleBackColor = true;
+            this.RealizarBusquedaButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // CristerioTextBox
             // 
@@ -141,6 +147,33 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // DatosDelUsuarioButton
+            // 
+            this.DatosDelUsuarioButton.Location = new System.Drawing.Point(13, 29);
+            this.DatosDelUsuarioButton.Name = "DatosDelUsuarioButton";
+            this.DatosDelUsuarioButton.Size = new System.Drawing.Size(152, 50);
+            this.DatosDelUsuarioButton.TabIndex = 24;
+            this.DatosDelUsuarioButton.Text = "Datos del usuario";
+            this.DatosDelUsuarioButton.UseVisualStyleBackColor = true;
+            // 
+            // EditarUsuarioButton
+            // 
+            this.EditarUsuarioButton.Location = new System.Drawing.Point(13, 94);
+            this.EditarUsuarioButton.Name = "EditarUsuarioButton";
+            this.EditarUsuarioButton.Size = new System.Drawing.Size(152, 50);
+            this.EditarUsuarioButton.TabIndex = 25;
+            this.EditarUsuarioButton.Text = "Editar Usuario";
+            this.EditarUsuarioButton.UseVisualStyleBackColor = true;
+            // 
+            // EliminarUsuarioButton
+            // 
+            this.EliminarUsuarioButton.Location = new System.Drawing.Point(13, 163);
+            this.EliminarUsuarioButton.Name = "EliminarUsuarioButton";
+            this.EliminarUsuarioButton.Size = new System.Drawing.Size(152, 50);
+            this.EliminarUsuarioButton.TabIndex = 26;
+            this.EliminarUsuarioButton.Text = "Eliminar usuario";
+            this.EliminarUsuarioButton.UseVisualStyleBackColor = true;
+            // 
             // ConsultasUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +197,7 @@
         #endregion
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RealizarBusquedaButton;
         private System.Windows.Forms.TextBox CristerioTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FiltroComboBox;
@@ -172,5 +205,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView cUsuariosdataGridView;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button DatosDelUsuarioButton;
+        private System.Windows.Forms.Button EliminarUsuarioButton;
+        private System.Windows.Forms.Button EditarUsuarioButton;
     }
 }

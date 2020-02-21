@@ -244,6 +244,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(156, 22);
             this.textBox5.TabIndex = 29;
+            this.textBox5.UseSystemPasswordChar = true;
             // 
             // textBox4
             // 
@@ -252,6 +253,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(159, 22);
             this.textBox4.TabIndex = 28;
+            this.textBox4.UseSystemPasswordChar = true;
             // 
             // textBox3
             // 

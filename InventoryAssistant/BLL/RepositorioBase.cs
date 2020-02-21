@@ -13,11 +13,11 @@ namespace InventoryAssistant.BLL
     public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
     {
 
-        internal Contexto _contexto;
+        internal Contexto contexto;
 
         public RepositorioBase()
         {
-            _contexto = new Contexto();
+            contexto = new Contexto();
         }
 
         public virtual bool Guardar(T entity)
@@ -26,12 +26,16 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                if (_contexto.Set<T>().Add(entity) != null)
-                    paso = _contexto.SaveChanges() > 0;
+                if (contexto.Set<T>().Add(entity) != null)
+                    paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                Dispose();
             }
             return paso;
         }
@@ -42,12 +46,16 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                _contexto.Entry(entity).State = EntityState.Modified;
-                paso = (_contexto.SaveChanges() > 0);
+                contexto.Entry(entity).State = EntityState.Modified;
+                paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                Dispose();
             }
             return paso;
         }
@@ -58,14 +66,18 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                T entity = _contexto.Set<T>().Find(id);
-                _contexto.Set<T>().Remove(entity);
+                T entity = contexto.Set<T>().Find(id);
+                contexto.Set<T>().Remove(entity);
 
-                paso = _contexto.SaveChanges() > 0;
+                paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                Dispose();
             }
             return paso;
         }
@@ -76,11 +88,15 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                entity = _contexto.Set<T>().Find(id);
+                entity = contexto.Set<T>().Find(id);
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                Dispose();
             }
             return entity;
         }
@@ -91,18 +107,17 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                Lista = _contexto.Set<T>().Where(expression).ToList();
+                Lista = contexto.Set<T>().Where(expression).ToList();
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            {
+                Dispose();
+            }
             return Lista;
-        }
-
-        public void Dispose()
-        {
-            _contexto.Dispose();
         }
 
         public virtual bool Duplicado(Expression<Func<T, bool>> descripcion)
@@ -111,7 +126,7 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                paso = _contexto.Set<T>().Any(descripcion);
+                paso = contexto.Set<T>().Any(descripcion);
 
             }
             catch (Exception)
@@ -120,11 +135,18 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                _contexto.Dispose();
+                contexto.Dispose();
             }
 
             return paso;
         }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
+        }
+
+
 
 
     /*

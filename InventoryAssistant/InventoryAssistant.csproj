@@ -96,9 +96,7 @@
     <Compile Include="UI\Registros\rProductos.Designer.cs">
       <DependentUpon>rProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="UI\Registros\rUsuarios.cs" />
     <Compile Include="UI\Registros\rUsuarios.Designer.cs">
       <DependentUpon>rUsuarios.cs</DependentUpon>
     </Compile>

@@ -142,6 +142,7 @@ namespace InventoryAssistant.UI.Registros
                 }
             }
 
+
             if(CelularMaskedTextBox.Text != "   -   -" && CelularMaskedTextBox.Text.Length < 12) //Validar que el numero de celular este vacio o completo
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox, "Debe ingresar un numero de celular valido!");
@@ -185,9 +186,9 @@ namespace InventoryAssistant.UI.Registros
             {
                 if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que el nombre usuario no exista, en caso de registrar un usuario nuevo
                 {
-                    if (UsuariosBLL.ExisteCedula(CedulaMaskedTextBox.Text) == true)
+                    if (UsuariosBLL.ExisteUsuario(CedulaMaskedTextBox.Text,UsuarioTextBox.Text) == true)
                     {
-                        MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
+                        MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
                         CedulaMaskedTextBox.Focus();
                         paso = false;
                     }

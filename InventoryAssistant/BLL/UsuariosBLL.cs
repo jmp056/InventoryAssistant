@@ -17,7 +17,37 @@ namespace InventoryAssistant.BLL
             try
             {
                 if (contexto.Usuarios.Any(p => p.Cedula.Equals(cedula)))
+                {
+                        paso = true;           
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
+
+        public static bool ExisteUsuario(string cedula, string usuario)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+            try
+            {
+                if (contexto.Usuarios.Any(p => p.Cedula.Equals(cedula)))
+                {
                     paso = true;
+                }
+                else
+                if (contexto.Usuarios.Any(x => x.Usuario.Equals(usuario)))
+                {
+                    paso = true;
+                }
+
             }
             catch (Exception)
             {

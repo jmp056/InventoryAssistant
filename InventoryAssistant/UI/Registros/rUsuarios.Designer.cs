@@ -63,10 +63,10 @@
             // LimpiarButton
             // 
             this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LimpiarButton.Location = new System.Drawing.Point(56, 238);
+            this.LimpiarButton.Location = new System.Drawing.Point(46, 290);
             this.LimpiarButton.Name = "LimpiarButton";
-            this.LimpiarButton.Size = new System.Drawing.Size(75, 23);
-            this.LimpiarButton.TabIndex = 0;
+            this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
+            this.LimpiarButton.TabIndex = 29;
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
@@ -76,20 +76,20 @@
             // 
             this.UsuarioIdLabel.AutoSize = true;
             this.UsuarioIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioIdLabel.Location = new System.Drawing.Point(37, 35);
-            this.UsuarioIdLabel.Name = "UsuarioIdLabel";
-            this.UsuarioIdLabel.Size = new System.Drawing.Size(143, 16);
-            this.UsuarioIdLabel.TabIndex = 1;
-            this.UsuarioIdLabel.Text = "Codigo del usuario:";
+            this.UsuarioIdLabel.Location = new System.Drawing.Point(35, 30);
+            this.UsuarioIdLabel.Name = "UsuarioIdlabel";
+            this.UsuarioIdLabel.Size = new System.Drawing.Size(146, 16);
+            this.UsuarioIdLabel.TabIndex = 0;
+            this.UsuarioIdLabel.Text = "Codigo del Usuario:";
             // 
             // CedulaMaskedTextBox
             // 
             this.CedulaMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(186, 121);
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(190, 146);
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
-            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 22);
-            this.CedulaMaskedTextBox.TabIndex = 2;
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(115, 22);
+            this.CedulaMaskedTextBox.TabIndex = 12;
             // 
             // MyErrorProvider
             // 
@@ -98,18 +98,18 @@
             // NombresTextBox
             // 
             this.NombresTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresTextBox.Location = new System.Drawing.Point(186, 63);
+            this.NombresTextBox.Location = new System.Drawing.Point(190, 67);
             this.NombresTextBox.Name = "NombresTextBox";
-            this.NombresTextBox.Size = new System.Drawing.Size(135, 22);
-            this.NombresTextBox.TabIndex = 3;
+            this.NombresTextBox.Size = new System.Drawing.Size(200, 22);
+            this.NombresTextBox.TabIndex = 11;
             // 
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Location = new System.Drawing.Point(292, 238);
+            this.EliminarButton.Location = new System.Drawing.Point(481, 290);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(75, 23);
-            this.EliminarButton.TabIndex = 5;
+            this.EliminarButton.Size = new System.Drawing.Size(100, 35);
+            this.EliminarButton.TabIndex = 27;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Location = new System.Drawing.Point(184, 238);
+            this.GuardarButton.Location = new System.Drawing.Point(254, 290);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(75, 23);
-            this.GuardarButton.TabIndex = 6;
+            this.GuardarButton.Size = new System.Drawing.Size(100, 35);
+            this.GuardarButton.TabIndex = 28;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -130,10 +130,10 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.Location = new System.Drawing.Point(292, 32);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(75, 23);
-            this.BuscarButton.TabIndex = 7;
+            this.BuscarButton.Location = new System.Drawing.Point(292, 21);
+            this.BuscarButton.Name = "Buscarbutton";
+            this.BuscarButton.Size = new System.Drawing.Size(100, 35);
+            this.BuscarButton.TabIndex = 26;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
@@ -142,30 +142,30 @@
             // UsuarioIdNumericUpDown
             // 
             this.UsuarioIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(186, 33);
+            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(190, 28);
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
-            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
-            this.UsuarioIdNumericUpDown.TabIndex = 8;
+            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(85, 22);
+            this.UsuarioIdNumericUpDown.TabIndex = 10;
             // 
             // NombresLabel
             // 
             this.NombresLabel.AutoSize = true;
             this.NombresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresLabel.Location = new System.Drawing.Point(37, 69);
+            this.NombresLabel.Location = new System.Drawing.Point(35, 70);
             this.NombresLabel.Name = "NombresLabel";
             this.NombresLabel.Size = new System.Drawing.Size(75, 16);
-            this.NombresLabel.TabIndex = 9;
+            this.NombresLabel.TabIndex = 2;
             this.NombresLabel.Text = "Nombres:";
             // 
             // ApellidosLabel
             // 
             this.ApellidosLabel.AutoSize = true;
             this.ApellidosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApellidosLabel.Location = new System.Drawing.Point(37, 98);
+            this.ApellidosLabel.Location = new System.Drawing.Point(35, 110);
             this.ApellidosLabel.Name = "ApellidosLabel";
-            this.ApellidosLabel.Size = new System.Drawing.Size(82, 16);
-            this.ApellidosLabel.TabIndex = 10;
-            this.ApellidosLabel.Text = "Apellidos: ";
+            this.ApellidosLabel.Size = new System.Drawing.Size(78, 16);
+            this.ApellidosLabel.TabIndex = 1;
+            this.ApellidosLabel.Text = "Apellidos:";
             // 
             // TelefonoLabel
             // 

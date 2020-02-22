@@ -85,7 +85,7 @@
             // CedulaMaskedTextBox
             // 
             this.CedulaMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(129, 119);
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(186, 121);
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -98,15 +98,15 @@
             // NombresTextBox
             // 
             this.NombresTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresTextBox.Location = new System.Drawing.Point(129, 63);
+            this.NombresTextBox.Location = new System.Drawing.Point(186, 63);
             this.NombresTextBox.Name = "NombresTextBox";
-            this.NombresTextBox.Size = new System.Drawing.Size(100, 22);
+            this.NombresTextBox.Size = new System.Drawing.Size(135, 22);
             this.NombresTextBox.TabIndex = 3;
             // 
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Location = new System.Drawing.Point(337, 256);
+            this.EliminarButton.Location = new System.Drawing.Point(292, 238);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 23);
             this.EliminarButton.TabIndex = 5;
@@ -130,7 +130,7 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.Location = new System.Drawing.Point(363, 27);
+            this.BuscarButton.Location = new System.Drawing.Point(292, 32);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(75, 23);
             this.BuscarButton.TabIndex = 7;
@@ -142,16 +142,16 @@
             // UsuarioIdNumericUpDown
             // 
             this.UsuarioIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(129, 30);
+            this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(186, 33);
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
-            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(100, 22);
             this.UsuarioIdNumericUpDown.TabIndex = 8;
             // 
             // NombresLabel
             // 
             this.NombresLabel.AutoSize = true;
             this.NombresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresLabel.Location = new System.Drawing.Point(53, 69);
+            this.NombresLabel.Location = new System.Drawing.Point(37, 69);
             this.NombresLabel.Name = "NombresLabel";
             this.NombresLabel.Size = new System.Drawing.Size(75, 16);
             this.NombresLabel.TabIndex = 9;
@@ -161,7 +161,7 @@
             // 
             this.ApellidosLabel.AutoSize = true;
             this.ApellidosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApellidosLabel.Location = new System.Drawing.Point(46, 97);
+            this.ApellidosLabel.Location = new System.Drawing.Point(37, 98);
             this.ApellidosLabel.Name = "ApellidosLabel";
             this.ApellidosLabel.Size = new System.Drawing.Size(82, 16);
             this.ApellidosLabel.TabIndex = 10;
@@ -171,7 +171,7 @@
             // 
             this.TelefonoLabel.AutoSize = true;
             this.TelefonoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonoLabel.Location = new System.Drawing.Point(63, 143);
+            this.TelefonoLabel.Location = new System.Drawing.Point(37, 155);
             this.TelefonoLabel.Name = "TelefonoLabel";
             this.TelefonoLabel.Size = new System.Drawing.Size(74, 16);
             this.TelefonoLabel.TabIndex = 11;
@@ -181,7 +181,7 @@
             // 
             this.FechaDeRegistroLabel.AutoSize = true;
             this.FechaDeRegistroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDeRegistroLabel.Location = new System.Drawing.Point(37, 174);
+            this.FechaDeRegistroLabel.Location = new System.Drawing.Point(37, 193);
             this.FechaDeRegistroLabel.Name = "FechaDeRegistroLabel";
             this.FechaDeRegistroLabel.Size = new System.Drawing.Size(134, 16);
             this.FechaDeRegistroLabel.TabIndex = 12;
@@ -192,17 +192,17 @@
             this.FechaDeRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDeRegistroDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDeRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDeRegistroDateTimePicker.Location = new System.Drawing.Point(129, 168);
+            this.FechaDeRegistroDateTimePicker.Location = new System.Drawing.Point(186, 188);
             this.FechaDeRegistroDateTimePicker.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
             this.FechaDeRegistroDateTimePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.FechaDeRegistroDateTimePicker.Name = "FechaDeRegistroDateTimePicker";
-            this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(100, 22);
             this.FechaDeRegistroDateTimePicker.TabIndex = 13;
             // 
             // UsuarioTextBox
             // 
             this.UsuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioTextBox.Location = new System.Drawing.Point(6, 33);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(10, 48);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(100, 22);
             this.UsuarioTextBox.TabIndex = 14;
@@ -210,7 +210,7 @@
             // ContrasenaTextBox
             // 
             this.ContrasenaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContrasenaTextBox.Location = new System.Drawing.Point(10, 123);
+            this.ContrasenaTextBox.Location = new System.Drawing.Point(10, 146);
             this.ContrasenaTextBox.Name = "ContrasenaTextBox";
             this.ContrasenaTextBox.Size = new System.Drawing.Size(100, 22);
             this.ContrasenaTextBox.TabIndex = 15;
@@ -219,7 +219,7 @@
             // ConfirmarContrasenaTextBox
             // 
             this.ConfirmarContrasenaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmarContrasenaTextBox.Location = new System.Drawing.Point(25, 172);
+            this.ConfirmarContrasenaTextBox.Location = new System.Drawing.Point(10, 191);
             this.ConfirmarContrasenaTextBox.Name = "ConfirmarContrasenaTextBox";
             this.ConfirmarContrasenaTextBox.Size = new System.Drawing.Size(100, 22);
             this.ConfirmarContrasenaTextBox.TabIndex = 16;
@@ -233,7 +233,7 @@
             this.NivelDeUsuarioComboBox.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.NivelDeUsuarioComboBox.Location = new System.Drawing.Point(6, 78);
+            this.NivelDeUsuarioComboBox.Location = new System.Drawing.Point(10, 95);
             this.NivelDeUsuarioComboBox.Name = "NivelDeUsuarioComboBox";
             this.NivelDeUsuarioComboBox.Size = new System.Drawing.Size(121, 24);
             this.NivelDeUsuarioComboBox.Sorted = true;
@@ -242,16 +242,16 @@
             // ApellidosTextBox
             // 
             this.ApellidosTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApellidosTextBox.Location = new System.Drawing.Point(129, 91);
+            this.ApellidosTextBox.Location = new System.Drawing.Point(186, 92);
             this.ApellidosTextBox.Name = "ApellidosTextBox";
-            this.ApellidosTextBox.Size = new System.Drawing.Size(100, 22);
+            this.ApellidosTextBox.Size = new System.Drawing.Size(135, 22);
             this.ApellidosTextBox.TabIndex = 18;
             // 
             // CedulaLabel
             // 
             this.CedulaLabel.AutoSize = true;
             this.CedulaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaLabel.Location = new System.Drawing.Point(63, 113);
+            this.CedulaLabel.Location = new System.Drawing.Point(37, 127);
             this.CedulaLabel.Name = "CedulaLabel";
             this.CedulaLabel.Size = new System.Drawing.Size(61, 16);
             this.CedulaLabel.TabIndex = 19;
@@ -260,7 +260,7 @@
             // CelularMaskedTextBox
             // 
             this.CelularMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CelularMaskedTextBox.Location = new System.Drawing.Point(139, 140);
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(186, 149);
             this.CelularMaskedTextBox.Mask = "999-999-9999";
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -270,7 +270,7 @@
             // 
             this.UsuarioLabel.AutoSize = true;
             this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioLabel.Location = new System.Drawing.Point(-3, 18);
+            this.UsuarioLabel.Location = new System.Drawing.Point(7, 23);
             this.UsuarioLabel.Name = "UsuarioLabel";
             this.UsuarioLabel.Size = new System.Drawing.Size(66, 16);
             this.UsuarioLabel.TabIndex = 21;
@@ -280,7 +280,7 @@
             // 
             this.NivelDeUsuarioLabel.AutoSize = true;
             this.NivelDeUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NivelDeUsuarioLabel.Location = new System.Drawing.Point(22, 64);
+            this.NivelDeUsuarioLabel.Location = new System.Drawing.Point(7, 76);
             this.NivelDeUsuarioLabel.Name = "NivelDeUsuarioLabel";
             this.NivelDeUsuarioLabel.Size = new System.Drawing.Size(121, 16);
             this.NivelDeUsuarioLabel.TabIndex = 22;
@@ -290,7 +290,7 @@
             // 
             this.ContrasenaLabel.AutoSize = true;
             this.ContrasenaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContrasenaLabel.Location = new System.Drawing.Point(3, 105);
+            this.ContrasenaLabel.Location = new System.Drawing.Point(7, 127);
             this.ContrasenaLabel.Name = "ContrasenaLabel";
             this.ContrasenaLabel.Size = new System.Drawing.Size(91, 16);
             this.ContrasenaLabel.TabIndex = 23;
@@ -300,7 +300,7 @@
             // 
             this.ConfirmarContrasenaLabel.AutoSize = true;
             this.ConfirmarContrasenaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmarContrasenaLabel.Location = new System.Drawing.Point(22, 144);
+            this.ConfirmarContrasenaLabel.Location = new System.Drawing.Point(7, 172);
             this.ConfirmarContrasenaLabel.Name = "ConfirmarContrasenaLabel";
             this.ConfirmarContrasenaLabel.Size = new System.Drawing.Size(159, 16);
             this.ConfirmarContrasenaLabel.TabIndex = 24;
@@ -317,9 +317,9 @@
             this.DatosDelUsuarioGroupBox.Controls.Add(this.NivelDeUsuarioLabel);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.ContrasenaTextBox);
             this.DatosDelUsuarioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatosDelUsuarioGroupBox.Location = new System.Drawing.Point(487, 12);
+            this.DatosDelUsuarioGroupBox.Location = new System.Drawing.Point(419, 33);
             this.DatosDelUsuarioGroupBox.Name = "DatosDelUsuarioGroupBox";
-            this.DatosDelUsuarioGroupBox.Size = new System.Drawing.Size(200, 249);
+            this.DatosDelUsuarioGroupBox.Size = new System.Drawing.Size(181, 228);
             this.DatosDelUsuarioGroupBox.TabIndex = 25;
             this.DatosDelUsuarioGroupBox.TabStop = false;
             this.DatosDelUsuarioGroupBox.Text = "Datos del usuario";
@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(695, 354);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.Controls.Add(this.CelularMaskedTextBox);
             this.Controls.Add(this.CedulaLabel);
@@ -346,7 +346,9 @@
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.UsuarioIdLabel);
             this.Controls.Add(this.LimpiarButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "rUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "rUsuarios";
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();

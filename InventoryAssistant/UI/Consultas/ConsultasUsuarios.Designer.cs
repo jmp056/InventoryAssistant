@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
+            this.EliminarUsuarioButton = new System.Windows.Forms.Button();
+            this.EditarUsuarioButton = new System.Windows.Forms.Button();
+            this.DatosDelUsuarioButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.RealizarBusquedaButton = new System.Windows.Forms.Button();
             this.CristerioTextBox = new System.Windows.Forms.TextBox();
@@ -39,9 +42,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cUsuariosdataGridView = new System.Windows.Forms.DataGridView();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DatosDelUsuarioButton = new System.Windows.Forms.Button();
-            this.EditarUsuarioButton = new System.Windows.Forms.Button();
-            this.EliminarUsuarioButton = new System.Windows.Forms.Button();
             this.DatosDelUsuarioGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,6 +62,33 @@
             this.DatosDelUsuarioGroupBox.TabIndex = 22;
             this.DatosDelUsuarioGroupBox.TabStop = false;
             this.DatosDelUsuarioGroupBox.Text = "Datos del usuario";
+            // 
+            // EliminarUsuarioButton
+            // 
+            this.EliminarUsuarioButton.Location = new System.Drawing.Point(13, 163);
+            this.EliminarUsuarioButton.Name = "EliminarUsuarioButton";
+            this.EliminarUsuarioButton.Size = new System.Drawing.Size(152, 50);
+            this.EliminarUsuarioButton.TabIndex = 26;
+            this.EliminarUsuarioButton.Text = "Eliminar usuario";
+            this.EliminarUsuarioButton.UseVisualStyleBackColor = true;
+            // 
+            // EditarUsuarioButton
+            // 
+            this.EditarUsuarioButton.Location = new System.Drawing.Point(13, 94);
+            this.EditarUsuarioButton.Name = "EditarUsuarioButton";
+            this.EditarUsuarioButton.Size = new System.Drawing.Size(152, 50);
+            this.EditarUsuarioButton.TabIndex = 25;
+            this.EditarUsuarioButton.Text = "Editar Usuario";
+            this.EditarUsuarioButton.UseVisualStyleBackColor = true;
+            // 
+            // DatosDelUsuarioButton
+            // 
+            this.DatosDelUsuarioButton.Location = new System.Drawing.Point(13, 29);
+            this.DatosDelUsuarioButton.Name = "DatosDelUsuarioButton";
+            this.DatosDelUsuarioButton.Size = new System.Drawing.Size(152, 50);
+            this.DatosDelUsuarioButton.TabIndex = 24;
+            this.DatosDelUsuarioButton.Text = "Datos del usuario";
+            this.DatosDelUsuarioButton.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -106,6 +133,7 @@
             // 
             // FiltroComboBox
             // 
+            this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
@@ -146,33 +174,6 @@
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
-            // 
-            // DatosDelUsuarioButton
-            // 
-            this.DatosDelUsuarioButton.Location = new System.Drawing.Point(13, 29);
-            this.DatosDelUsuarioButton.Name = "DatosDelUsuarioButton";
-            this.DatosDelUsuarioButton.Size = new System.Drawing.Size(152, 50);
-            this.DatosDelUsuarioButton.TabIndex = 24;
-            this.DatosDelUsuarioButton.Text = "Datos del usuario";
-            this.DatosDelUsuarioButton.UseVisualStyleBackColor = true;
-            // 
-            // EditarUsuarioButton
-            // 
-            this.EditarUsuarioButton.Location = new System.Drawing.Point(13, 94);
-            this.EditarUsuarioButton.Name = "EditarUsuarioButton";
-            this.EditarUsuarioButton.Size = new System.Drawing.Size(152, 50);
-            this.EditarUsuarioButton.TabIndex = 25;
-            this.EditarUsuarioButton.Text = "Editar Usuario";
-            this.EditarUsuarioButton.UseVisualStyleBackColor = true;
-            // 
-            // EliminarUsuarioButton
-            // 
-            this.EliminarUsuarioButton.Location = new System.Drawing.Point(13, 163);
-            this.EliminarUsuarioButton.Name = "EliminarUsuarioButton";
-            this.EliminarUsuarioButton.Size = new System.Drawing.Size(152, 50);
-            this.EliminarUsuarioButton.TabIndex = 26;
-            this.EliminarUsuarioButton.Text = "Eliminar usuario";
-            this.EliminarUsuarioButton.UseVisualStyleBackColor = true;
             // 
             // ConsultasUsuarios
             // 

@@ -251,7 +251,7 @@ namespace InventoryAssistant.UI.Registros
                 ContrasenaTextBox.Focus();
                 paso = false;
             }
-            if (Equals(ContrasenaTextBox.Text, ConfirmarContrasenaTextBox.Text)) // Confirma la contraseña del usuario
+            if (ContrasenaTextBox.Text !=ConfirmarContrasenaTextBox.Text) // Confirma la contraseña del usuario
             {
                 MyErrorProvider.SetError(ConfirmarContrasenaTextBox, "Las contraseña no coinciden!");
                 ContrasenaTextBox.Focus();

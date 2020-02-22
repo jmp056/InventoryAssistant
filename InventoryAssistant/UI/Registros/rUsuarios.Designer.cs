@@ -70,7 +70,7 @@
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
-            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click_1);
             // 
             // UsuarioIdLabel
             // 
@@ -125,7 +125,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click_1);
             // 
             // BuscarButton
             // 
@@ -137,7 +137,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click_1);
             // 
             // UsuarioIdNumericUpDown
             // 

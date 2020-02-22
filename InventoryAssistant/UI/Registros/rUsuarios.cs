@@ -133,7 +133,7 @@ namespace InventoryAssistant.UI.Registros
                             paso = false;
                         }
                     }
-                    else
+                    else if (Listado.Count > 1)
                     {
                         MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este numero de cedula está registrada con otro usuario, debe ingresar una diferente!");
                         CedulaMaskedTextBox.Focus();
@@ -143,19 +143,19 @@ namespace InventoryAssistant.UI.Registros
             }
 
 
-            if(CelularMaskedTextBox.Text != "   -   -" && CelularMaskedTextBox.Text.Length < 12) //Validar que el numero de celular este vacio o completo
+            if (CelularMaskedTextBox.Text != "   -   -" && CelularMaskedTextBox.Text.Length < 12) //Validar que el numero de celular este vacio o completo
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox, "Debe ingresar un numero de celular valido!");
                 CelularMaskedTextBox.Focus();
                 paso = false;
             }
-            else if(CelularMaskedTextBox.Text.Contains(" ")) // Valida que el numero de telefono no tenga espacios en blanco
+            else if (CelularMaskedTextBox.Text != "   -   -" && CelularMaskedTextBox.Text.Contains(" ")) // Valida que el numero de telefono no tenga espacios en blanco
             {
                 MyErrorProvider.SetError(CelularMaskedTextBox, "El numero de celular no puede contener espacios en blanco!");
                 CelularMaskedTextBox.Focus();
                 paso = false;
             }
-            
+
 
             if (FechaDeRegistroDateTimePicker.Value > DateTime.Now)  // Valida que la fecha de ingreso no sea mayor a la actual
             {
@@ -186,7 +186,7 @@ namespace InventoryAssistant.UI.Registros
             {
                 if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que el nombre usuario no exista, en caso de registrar un usuario nuevo
                 {
-                    if (UsuariosBLL.ExisteUsuario(CedulaMaskedTextBox.Text,UsuarioTextBox.Text) == true)
+                    if (UsuariosBLL.ExisteUsuario(UsuarioTextBox.Text) == true)
                     {
                         MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
                         CedulaMaskedTextBox.Focus();
@@ -198,29 +198,29 @@ namespace InventoryAssistant.UI.Registros
                     RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
                     var Listado = new List<Usuarios>();
 
-                    Listado = Repositorio.GetList(p => p.Cedula.Contains(CedulaMaskedTextBox.Text));
+                    Listado = Repositorio.GetList(p => p.Usuario.Contains(UsuarioTextBox.Text));
 
-                    if (Listado.Count == 1) // Confirma que solo exista un usuario con ese nombre de usuario
+                    if (Listado.Count == 1) // Confirma que solo exista un usuario con ese numero de cedula
                     {
                         Usuarios UsuarioTemporal = new Usuarios();
                         UsuarioTemporal = Listado[0];
-                        if (UsuarioTemporal.UsuarioId != UsuarioIdNumericUpDown.Value) // Verifica si el usuario que tiene ese nombre de usuario en la base de datos es diferente al que se esta modificando!
+                        if (UsuarioTemporal.UsuarioId != UsuarioIdNumericUpDown.Value) // Verifica si el usuario que tiene ese nombre de usuario en la base de datos no es al que se esta modificando!
                         {
-                            MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
-                            CedulaMaskedTextBox.Focus();
+                            MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario está registrado, debe ingresar una diferente!");
+                            UsuarioTextBox.Focus();
                             paso = false;
                         }
                     }
-                    else
+                    else if (Listado.Count > 1)
                     {
-                        MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
-                        CedulaMaskedTextBox.Focus();
+                        MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario está registrado, debe ingresar una diferente!");
+                        UsuarioTextBox.Focus();
                         paso = false;
                     }
                 }
             }
 
-            if(NivelDeUsuarioComboBox.Text != "Administrador" && NivelDeUsuarioComboBox.Text != "Usuario") // Valida el nivel de usuario
+            if (NivelDeUsuarioComboBox.Text != "Administrador" && NivelDeUsuarioComboBox.Text != "Usuario") // Valida el nivel de usuario
             {
                 MyErrorProvider.SetError(NivelDeUsuarioComboBox, "Debe elegir un nuvel de usuario!");
                 NivelDeUsuarioComboBox.Focus();
@@ -251,7 +251,7 @@ namespace InventoryAssistant.UI.Registros
                 ContrasenaTextBox.Focus();
                 paso = false;
             }
-            if (ContrasenaTextBox.Text !=ConfirmarContrasenaTextBox.Text) // Confirma la contraseña del usuario
+            if (ContrasenaTextBox.Text != ConfirmarContrasenaTextBox.Text) // Confirma la contraseña del usuario
             {
                 MyErrorProvider.SetError(ConfirmarContrasenaTextBox, "Las contraseña no coinciden!");
                 ContrasenaTextBox.Focus();
@@ -268,7 +268,7 @@ namespace InventoryAssistant.UI.Registros
             return (usuario != null);
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void BuscarButton_Click_1(object sender, EventArgs e)
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuario = new Usuarios();
@@ -286,12 +286,7 @@ namespace InventoryAssistant.UI.Registros
                 MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Usuario no Encontrado");
         }
 
-        private void LimpiarButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click_1(object sender, EventArgs e)
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
@@ -362,6 +357,10 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-
+        private void LimpiarButton_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }
+

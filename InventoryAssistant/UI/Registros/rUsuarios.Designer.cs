@@ -219,7 +219,7 @@
             // ConfirmarContrasenaTextBox
             // 
             this.ConfirmarContrasenaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmarContrasenaTextBox.Location = new System.Drawing.Point(25, 163);
+            this.ConfirmarContrasenaTextBox.Location = new System.Drawing.Point(25, 172);
             this.ConfirmarContrasenaTextBox.Name = "ConfirmarContrasenaTextBox";
             this.ConfirmarContrasenaTextBox.Size = new System.Drawing.Size(100, 22);
             this.ConfirmarContrasenaTextBox.TabIndex = 16;

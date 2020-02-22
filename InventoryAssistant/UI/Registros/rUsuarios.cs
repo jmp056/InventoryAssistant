@@ -71,7 +71,6 @@ namespace InventoryAssistant.UI.Registros
                 NivelDeUsuarioComboBox.Text = "Usuario";
             ContrasenaTextBox.Enabled = false;
             ContrasenaTextBox.Text = usuario.Contrasena;
-
         }
 
         private bool Validar() //Funcion que valida todo el registro

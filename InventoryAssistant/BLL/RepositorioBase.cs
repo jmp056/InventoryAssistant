@@ -12,16 +12,9 @@ namespace InventoryAssistant.BLL
 {
     public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
     {
-
-        internal Contexto contexto;
-
-        public RepositorioBase()
-        {
-            contexto = new Contexto();
-        }
-
         public virtual bool Guardar(T entity)
         {
+            Contexto contexto = new Contexto();
             bool paso = false;
 
             try
@@ -35,13 +28,14 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
 
         public virtual bool Modificar(T entity)
         {
+            Contexto contexto = new Contexto();
             bool paso = false;
 
             try
@@ -55,13 +49,14 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
 
         public virtual bool Eliminar(int id)
         {
+            Contexto contexto = new Contexto();
             bool paso = false;
 
             try
@@ -77,13 +72,14 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                Dispose();
+                contexto.Dispose();
             }
             return paso;
         }
 
         public virtual T Buscar(int id)
         {
+            Contexto contexto = new Contexto();
             T entity;
 
             try
@@ -96,13 +92,14 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                Dispose();
+                contexto.Dispose();
             }
             return entity;
         }
 
         public List<T> GetList(Expression<Func<T, bool>> expression)
         {
+            Contexto contexto = new Contexto();
             List<T> Lista = new List<T>();
 
             try
@@ -115,13 +112,14 @@ namespace InventoryAssistant.BLL
             }
             finally
             {
-                Dispose();
+                contexto.Dispose();
             }
             return Lista;
         }
 
         public virtual bool Duplicado(Expression<Func<T, bool>> descripcion)
         {
+            Contexto contexto = new Contexto();
             bool paso = false;
 
             try
@@ -143,24 +141,21 @@ namespace InventoryAssistant.BLL
 
         public void Dispose()
         {
-            contexto.Dispose();
+            throw new NotImplementedException();
         }
 
+        /*
+            private static Usuarios usuario = new Usuarios();
 
+            public virtual void NombreLogin(string Usuario, string tipodeusuario)
+            {
+                usuario.Usuario = Usuario;
+                usuario.NivelUsuario = tipodeusuario;
 
-
-    /*
-        private static Usuarios usuario = new Usuarios();
-
-        public virtual void NombreLogin(string Usuario, string tipodeusuario)
-        {
-            usuario.Usuario = Usuario;
-            usuario.NivelUsuario = tipodeusuario;
-
-        }
-        public virtual Usuarios ReturnUsuario()
-        {
-            return usuario;
-        }*/
+            }
+            public virtual Usuarios ReturnUsuario()
+            {
+                return usuario;
+            }*/
     }
 }

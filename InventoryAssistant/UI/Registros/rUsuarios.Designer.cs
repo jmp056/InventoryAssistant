@@ -77,7 +77,7 @@
             this.UsuarioIdLabel.AutoSize = true;
             this.UsuarioIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioIdLabel.Location = new System.Drawing.Point(35, 30);
-            this.UsuarioIdLabel.Name = "UsuarioIdlabel";
+            this.UsuarioIdLabel.Name = "UsuarioIdLabel";
             this.UsuarioIdLabel.Size = new System.Drawing.Size(146, 16);
             this.UsuarioIdLabel.TabIndex = 0;
             this.UsuarioIdLabel.Text = "Codigo del Usuario:";
@@ -131,7 +131,7 @@
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Location = new System.Drawing.Point(292, 21);
-            this.BuscarButton.Name = "Buscarbutton";
+            this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
             this.BuscarButton.TabIndex = 26;
             this.BuscarButton.Text = "Buscar";
@@ -260,7 +260,7 @@
             // CelularMaskedTextBox
             // 
             this.CelularMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CelularMaskedTextBox.Location = new System.Drawing.Point(186, 149);
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(190, 120);
             this.CelularMaskedTextBox.Mask = "999-999-9999";
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);

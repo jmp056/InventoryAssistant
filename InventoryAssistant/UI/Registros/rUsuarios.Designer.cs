@@ -63,7 +63,7 @@
             // LimpiarButton
             // 
             this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LimpiarButton.Location = new System.Drawing.Point(46, 290);
+            this.LimpiarButton.Location = new System.Drawing.Point(45, 290);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
             this.LimpiarButton.TabIndex = 29;
@@ -132,7 +132,7 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.Location = new System.Drawing.Point(292, 21);
+            this.BuscarButton.Location = new System.Drawing.Point(292, 20);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
             this.BuscarButton.TabIndex = 26;

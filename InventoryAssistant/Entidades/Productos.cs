@@ -14,9 +14,10 @@ namespace InventoryAssistant.Entidades
         public string Descripcion { get; set; }
         public int Categoria { get; set; }
         public bool ControlAlmacen { get; set; }
+        public int Inventario { get; set; }
         public int Precio { get; set; }
         public DateTime FechaDeRegistro { get; set; }
-        public int Inventario { get; set; }
+
 
 
 

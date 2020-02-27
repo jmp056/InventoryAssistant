@@ -267,13 +267,12 @@
             // 
             // TelefonoMaskedTextBox
             // 
-            this.TelefonoMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(190, 190);
-            this.TelefonoMaskedTextBox.Mask = "999-999-9999";
-            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
-            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(115, 22);
-            this.TelefonoMaskedTextBox.TabIndex = 19;
-            this.TelefonoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoMaskedTextBox_KeyPress);
+            this.CelularMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(186, 149);
+            this.CelularMaskedTextBox.Mask = "999-999-9999";
+            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
+            this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CelularMaskedTextBox.TabIndex = 20;
             // 
             // UsuarioLabel
             // 

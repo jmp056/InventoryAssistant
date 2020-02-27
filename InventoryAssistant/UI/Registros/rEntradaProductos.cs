@@ -14,6 +14,7 @@ namespace InventoryAssistant.UI.Registros
 {
     public partial class rEntradaProductos : Form
     {
+
         public rEntradaProductos()
         {
             InitializeComponent();

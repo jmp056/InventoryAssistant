@@ -17,19 +17,20 @@ namespace InventoryAssistant.UI.Registros
         public rProductos()
         {
             InitializeComponent();
-            LlenarCategoria();
         }
 
-        private void Limpiar()
+        private void Limpiar()// Funcion encargada de limpiar todos los campos del registro
         {
             IdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
-            CategoriaComboBox.SelectedItem = null;
+            CategoriaComboBox.SelectedIndex = -1;
             ControlAlmacenCheckBox.Checked = false;
-            CantidadNumericUpDown.Text = string.Empty;
-            PreciotextBox.Text = string.Empty;
+            CantidadNumericUpDown.Value = 0;
+            PrecioNumericUpDown.Value = 0;
+            FechaDeRegistroDateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
+        //************
         private void LlenarCategoria()
         {
             RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
@@ -39,30 +40,62 @@ namespace InventoryAssistant.UI.Registros
             CategoriaComboBox.DisplayMember = "Nombre";
         }
 
-        private Productos LlenaClase()
+        private Productos LlenaClase()// Funcion encargada de llenar el objeto
         {
-            Productos producto = new Productos();
+            Productos Producto = new Productos();
 
-            producto.ProductoId = (int)IdNumericUpDown.Value;
-            producto.Descripcion = DescripcionTextBox.Text;
-            producto.Categoria = Convert.ToInt32(CategoriaComboBox.SelectedValue);
-            producto.ControlAlmacen = ControlAlmacenCheckBox.Checked;
-            // producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
-            producto.Precio = Convert.ToInt32(PreciotextBox.Text);
+            Producto.ProductoId = (int)IdNumericUpDown.Value;
+            Producto.Descripcion = DescripcionTextBox.Text;
+            Producto.Categoria = Convert.ToInt32(CategoriaComboBox.SelectedIndex);
+            Producto.ControlAlmacen = ControlAlmacenCheckBox.Checked;
+            Producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
+            Producto.Precio = Convert.ToInt32(PrecioNumericUpDown.Value);
+            Producto.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
 
-            return producto;
+            return Producto;
         }
 
-        private void LlenaCampo(Productos producto)
+        private void LlenaCampo(Productos Producto)// Funcion encargada de llenar los campos del registro con los datos de un objeto
         {
-            IdNumericUpDown.Value = producto.ProductoId;
-            DescripcionTextBox.Text = producto.Descripcion;
-            CategoriaComboBox.SelectedValue = producto.Categoria;
-            ControlAlmacenCheckBox.Checked = producto.ControlAlmacen;
-            CantidadNumericUpDown.Text = producto.Inventario.ToString();
-            PreciotextBox.Text = producto.Precio.ToString();
+            IdNumericUpDown.Value = Producto.ProductoId;
+            DescripcionTextBox.Text = Producto.Descripcion;
+            CategoriaComboBox.SelectedIndex= Producto.Categoria;
+            ControlAlmacenCheckBox.Checked = Producto.ControlAlmacen;
+            CantidadNumericUpDown.Value= Producto.Cantidad;
+            PrecioNumericUpDown.Value = Producto.Precio;
+            FechaDeRegistroDateTimePicker.Value = Producto.FechaDeRegistro;
         }
 
+
+        private bool Validar()//Funcion que valida todo el registro
+        {
+            bool Paso = true;
+            MyErrorProvider.Clear();
+
+            if (DescripcionTextBox.Text == string.Empty) // Condicion encargada de validar que el campo descripcion no este vacio
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "El descripcion no puede estar vacío!");
+                DescripcionTextBox.Focus();
+                Paso = false;
+            }
+
+            if (CategoriaComboBox.SelectedIndex < 0) // Condicion encargada de validar que el campo categoria este seleccionado
+            {
+                MyErrorProvider.SetError(CategoriaComboBox, "Debe seleccionar una categoría!");
+                CategoriaComboBox.Focus();
+                Paso = false;
+            }
+
+            if (PrecioNumericUpDown.Value == 0) // Condicion encargada de validar que el campo categoria este seleccionado
+            {
+                MyErrorProvider.SetError(PrecioNumericUpDown, "Debe seleccionar una categoría!");
+                PrecioNumericUpDown.Focus();
+                Paso = false;
+            }
+            return Paso;
+
+
+        }
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();

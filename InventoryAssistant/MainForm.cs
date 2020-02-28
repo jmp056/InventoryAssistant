@@ -21,8 +21,8 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            rUsuarios rU = new rUsuarios();
-            rU.ShowDialog();
+            rCategorias r = new rCategorias();
+            r.ShowDialog();
         }
 
         private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace InventoryAssistant
 
         private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCategoria rc = new rCategoria();
+            rCategorias rc = new rCategorias();
             rc.ShowDialog();
         }
 

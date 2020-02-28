@@ -47,10 +47,12 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.FechaDeRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FechaDeRegistroLabel = new System.Windows.Forms.Label();
-            this.CantidadNumericUpDown = new System.Windows.Forms.TextBox();
-            this.PreciotextBox = new System.Windows.Forms.TextBox();
+            this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // RDLabel
@@ -213,6 +215,10 @@
             // 
             this.CategoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoriaComboBox.FormattingEnabled = true;
+            this.CategoriaComboBox.Items.AddRange(new object[] {
+            "Accesorios",
+            "Calzados",
+            "Pacas"});
             this.CategoriaComboBox.Location = new System.Drawing.Point(210, 108);
             this.CategoriaComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CategoriaComboBox.Name = "CategoriaComboBox";
@@ -248,32 +254,31 @@
             // CantidadNumericUpDown
             // 
             this.CantidadNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadNumericUpDown.Location = new System.Drawing.Point(210, 188);
+            this.CantidadNumericUpDown.Location = new System.Drawing.Point(209, 188);
             this.CantidadNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
-            this.CantidadNumericUpDown.ReadOnly = true;
-            this.CantidadNumericUpDown.Size = new System.Drawing.Size(112, 22);
-            this.CantidadNumericUpDown.TabIndex = 40;
+            this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
+            this.CantidadNumericUpDown.TabIndex = 66;
             // 
-            // PreciotextBox
+            // PrecioNumericUpDown
             // 
-            this.PreciotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreciotextBox.Location = new System.Drawing.Point(210, 228);
-            this.PreciotextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PreciotextBox.Name = "PreciotextBox";
-            this.PreciotextBox.Size = new System.Drawing.Size(112, 22);
-            this.PreciotextBox.TabIndex = 65;
+            this.PrecioNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioNumericUpDown.Location = new System.Drawing.Point(210, 228);
+            this.PrecioNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
+            this.PrecioNumericUpDown.Size = new System.Drawing.Size(113, 22);
+            this.PrecioNumericUpDown.TabIndex = 67;
             // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 391);
+            this.Controls.Add(this.PrecioNumericUpDown);
+            this.Controls.Add(this.CantidadNumericUpDown);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.LimpiarButton);
-            this.Controls.Add(this.PreciotextBox);
-            this.Controls.Add(this.CantidadNumericUpDown);
             this.Controls.Add(this.FechaDeRegistroDateTimePicker);
             this.Controls.Add(this.FechaDeRegistroLabel);
             this.Controls.Add(this.CategoriaComboBox);
@@ -294,6 +299,8 @@
             this.Text = "Registro de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,7 +325,7 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.DateTimePicker FechaDeRegistroDateTimePicker;
         private System.Windows.Forms.Label FechaDeRegistroLabel;
-        private System.Windows.Forms.TextBox CantidadNumericUpDown;
-        private System.Windows.Forms.TextBox PreciotextBox;
+        private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
+        private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
     }
 }

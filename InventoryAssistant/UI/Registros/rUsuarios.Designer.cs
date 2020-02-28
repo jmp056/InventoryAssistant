@@ -201,6 +201,7 @@
             this.FechaDeRegistroDateTimePicker.TabIndex = 17;
             this.FechaDeRegistroDateTimePicker.CloseUp += new System.EventHandler(this.FechaDeRegistroDateTimePicker_CloseUp);
             this.FechaDeRegistroDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDeRegistroDateTimePicker_ValueChanged);
+            this.FechaDeRegistroDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechaDeRegistroDateTimePicker_KeyPress);
             // 
             // UsuarioTextBox
             // 

@@ -11,6 +11,7 @@ namespace InventoryAssistant.UI.Registros
         public rUsuarios()
         {
             InitializeComponent();
+            Limpiar();
         }
 
         public void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -270,7 +271,7 @@ namespace InventoryAssistant.UI.Registros
                 LlenaCampo(usuario); 
             }
             else
-                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Usuario no encontrado");
+                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "No existe un usuario con este codigo!");
             NombresTextBox.Focus();
         }
 
@@ -349,7 +350,7 @@ namespace InventoryAssistant.UI.Registros
 
             if (!ExisteEnLaBaseDeDatos())
             {
-                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Usuario no existe!");
+                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Este usuario no existe!");
                 return;
             }
             else
@@ -420,6 +421,13 @@ namespace InventoryAssistant.UI.Registros
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 FechaDeRegistroDateTimePicker.Focus();
+            }
+        }
+        private void FechaDeRegistroDateTimePicker_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del DateTimePicker de la fecha de registro al TextBox del Usuario
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                UsuarioTextBox.Focus();
             }
         }
 

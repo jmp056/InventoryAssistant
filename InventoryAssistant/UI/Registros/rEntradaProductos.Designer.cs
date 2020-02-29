@@ -88,6 +88,7 @@
             this.Eliminarbutton.TabIndex = 40;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // BuscarButton
             // 
@@ -97,6 +98,7 @@
             this.BuscarButton.TabIndex = 74;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // CantidadtextBox
             // 

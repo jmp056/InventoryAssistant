@@ -34,7 +34,7 @@
             this.CategoriaLabel = new System.Windows.Forms.Label();
             this.DescripcionLabel = new System.Windows.Forms.Label();
             this.ProductoIdLabel = new System.Windows.Forms.Label();
-            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.ProductoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ControlAlmacenCheckBox = new System.Windows.Forms.CheckBox();
@@ -111,18 +111,18 @@
             this.ProductoIdLabel.TabIndex = 7;
             this.ProductoIdLabel.Text = "Código del Producto:";
             // 
-            // Buscarbutton
+            // BuscarButton
             // 
-            this.Buscarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscarbutton.Location = new System.Drawing.Point(343, 21);
-            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(100, 35);
-            this.Buscarbutton.TabIndex = 29;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Location = new System.Drawing.Point(343, 21);
+            this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(100, 35);
+            this.BuscarButton.TabIndex = 29;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // DescripcionTextBox
             // 
@@ -132,6 +132,7 @@
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(233, 22);
             this.DescripcionTextBox.TabIndex = 28;
+            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
             // 
             // ProductoIdNumericUpDown
             // 
@@ -141,6 +142,7 @@
             this.ProductoIdNumericUpDown.Name = "ProductoIdNumericUpDown";
             this.ProductoIdNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.ProductoIdNumericUpDown.TabIndex = 27;
+            this.ProductoIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductoIdNumericUpDown_KeyPress);
             // 
             // ControlAlmacenCheckBox
             // 
@@ -222,6 +224,7 @@
             this.CategoriaComboBox.Name = "CategoriaComboBox";
             this.CategoriaComboBox.Size = new System.Drawing.Size(173, 24);
             this.CategoriaComboBox.TabIndex = 37;
+            this.CategoriaComboBox.DropDownClosed += new System.EventHandler(this.CategoriaComboBox_DropDownClosed);
             // 
             // MyErrorProvider
             // 
@@ -237,6 +240,8 @@
             this.FechaDeRegistroDateTimePicker.Name = "FechaDeRegistroDateTimePicker";
             this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(113, 22);
             this.FechaDeRegistroDateTimePicker.TabIndex = 39;
+            this.FechaDeRegistroDateTimePicker.CloseUp += new System.EventHandler(this.FechaDeRegistroDateTimePicker_CloseUp);
+            this.FechaDeRegistroDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDeRegistroDateTimePicker_ValueChanged);
             // 
             // FechaDeRegistroLabel
             // 
@@ -257,6 +262,7 @@
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.CantidadNumericUpDown.TabIndex = 66;
+            this.CantidadNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadNumericUpDown_KeyPress);
             // 
             // PrecioNumericUpDown
             // 
@@ -266,6 +272,7 @@
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.PrecioNumericUpDown.TabIndex = 67;
+            this.PrecioNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioNumericUpDown_KeyPress);
             // 
             // AnadirCategoriasButton
             // 
@@ -296,7 +303,7 @@
             this.Controls.Add(this.ControlAlmacenLabel);
             this.Controls.Add(this.InventarioLabel);
             this.Controls.Add(this.ControlAlmacenCheckBox);
-            this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.ProductoIdNumericUpDown);
             this.Controls.Add(this.RDLabel);
@@ -309,6 +316,7 @@
             this.Name = "rProductos";
             this.Text = "Registro de Productos";
             this.Activated += new System.EventHandler(this.rProductos_Activated);
+            this.Load += new System.EventHandler(this.rProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
@@ -324,7 +332,7 @@
         private System.Windows.Forms.Label CategoriaLabel;
         private System.Windows.Forms.Label DescripcionLabel;
         private System.Windows.Forms.Label ProductoIdLabel;
-        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.TextBox DescripcionTextBox;
         private System.Windows.Forms.NumericUpDown ProductoIdNumericUpDown;
         private System.Windows.Forms.CheckBox ControlAlmacenCheckBox;

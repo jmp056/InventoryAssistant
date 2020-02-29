@@ -21,7 +21,7 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            rCategorias r = new rCategorias();
+            rProductos r = new rProductos();
             r.ShowDialog();
         }
 

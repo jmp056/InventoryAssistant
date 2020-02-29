@@ -248,7 +248,7 @@ namespace InventoryAssistant.UI.Registros
             return paso;
         }
 
-        private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario exist en una base de datos!
+        private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario existe en una base de datos!
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuario = repositorio.Buscar((int)UsuarioIdNumericUpDown.Value);
@@ -334,7 +334,7 @@ namespace InventoryAssistant.UI.Registros
             }
             else
             { 
-                MessageBox.Show("No se pudo Guardar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NombresTextBox.Focus();
             }
                

@@ -20,7 +20,7 @@ namespace InventoryAssistant.BLL
             {
                 if (contexto.Entrada.Add(entrada) != null)
                 {
-                    contexto.Producto.Find(entrada.ProductoId).Cantidad += entrada.Cantidad;
+                    contexto.Productos.Find(entrada.ProductoId).Cantidad += entrada.Cantidad;
 
                     contexto.SaveChanges();
                     paso = true;
@@ -49,7 +49,7 @@ namespace InventoryAssistant.BLL
                 int diferencia;
                 diferencia = entrada.Cantidad - EntradaAnterior.Cantidad;
 
-                var Producto = contexto.Producto.Find(EntradaAnterior.ProductoId);
+                var Producto = contexto.Productos.Find(EntradaAnterior.ProductoId);
 
                 Producto.Cantidad += diferencia;
 
@@ -80,7 +80,7 @@ namespace InventoryAssistant.BLL
 
                 if (entradaProducto != null)
                 {
-                    var Producto = contexto.Producto.Find(entradaProducto.ProductoId);
+                    var Producto = contexto.Productos.Find(entradaProducto.ProductoId);
                     //Reduce la cantidad
                     Producto.Cantidad -= entradaProducto.Cantidad;
 

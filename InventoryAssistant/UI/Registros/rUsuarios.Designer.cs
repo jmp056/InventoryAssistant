@@ -88,7 +88,7 @@
             this.CedulaMaskedTextBox.Location = new System.Drawing.Point(190, 146);
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
-            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(115, 22);
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.CedulaMaskedTextBox.TabIndex = 12;
             this.CedulaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulaMaskedTextBox_KeyPress);
             // 
@@ -268,12 +268,12 @@
             // 
             // TelefonoMaskedTextBox
             // 
-            this.CelularMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CelularMaskedTextBox.Location = new System.Drawing.Point(186, 149);
-            this.CelularMaskedTextBox.Mask = "999-999-9999";
-            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
-            this.CelularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
-            this.CelularMaskedTextBox.TabIndex = 20;
+            this.TelefonoMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(190, 188);
+            this.TelefonoMaskedTextBox.Mask = "999-999-9999";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.TelefonoMaskedTextBox.TabIndex = 20;
             // 
             // UsuarioLabel
             // 

@@ -36,7 +36,7 @@
             this.ProductoIdLabel = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ProductoIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ControlAlmacenCheckBox = new System.Windows.Forms.CheckBox();
             this.InventarioLabel = new System.Windows.Forms.Label();
             this.LimpiarButton = new System.Windows.Forms.Button();
@@ -49,7 +49,8 @@
             this.FechaDeRegistroLabel = new System.Windows.Forms.Label();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            this.AnadirCategoriasButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
@@ -132,14 +133,14 @@
             this.DescripcionTextBox.Size = new System.Drawing.Size(233, 22);
             this.DescripcionTextBox.TabIndex = 28;
             // 
-            // IdNumericUpDown
+            // ProductoIdNumericUpDown
             // 
-            this.IdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdNumericUpDown.Location = new System.Drawing.Point(210, 28);
-            this.IdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
-            this.IdNumericUpDown.Name = "IdNumericUpDown";
-            this.IdNumericUpDown.Size = new System.Drawing.Size(113, 22);
-            this.IdNumericUpDown.TabIndex = 27;
+            this.ProductoIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoIdNumericUpDown.Location = new System.Drawing.Point(210, 28);
+            this.ProductoIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.ProductoIdNumericUpDown.Name = "ProductoIdNumericUpDown";
+            this.ProductoIdNumericUpDown.Size = new System.Drawing.Size(113, 22);
+            this.ProductoIdNumericUpDown.TabIndex = 27;
             // 
             // ControlAlmacenCheckBox
             // 
@@ -199,6 +200,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // ControlAlmacenLabel
             // 
@@ -215,10 +217,6 @@
             // 
             this.CategoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoriaComboBox.FormattingEnabled = true;
-            this.CategoriaComboBox.Items.AddRange(new object[] {
-            "Accesorios",
-            "Calzados",
-            "Pacas"});
             this.CategoriaComboBox.Location = new System.Drawing.Point(210, 108);
             this.CategoriaComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CategoriaComboBox.Name = "CategoriaComboBox";
@@ -269,11 +267,24 @@
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.PrecioNumericUpDown.TabIndex = 67;
             // 
+            // AnadirCategoriasButton
+            // 
+            this.AnadirCategoriasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnadirCategoriasButton.Location = new System.Drawing.Point(404, 104);
+            this.AnadirCategoriasButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AnadirCategoriasButton.Name = "AnadirCategoriasButton";
+            this.AnadirCategoriasButton.Size = new System.Drawing.Size(30, 30);
+            this.AnadirCategoriasButton.TabIndex = 68;
+            this.AnadirCategoriasButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AnadirCategoriasButton.UseVisualStyleBackColor = true;
+            this.AnadirCategoriasButton.Click += new System.EventHandler(this.AnadirCategoriasButton_Click);
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 391);
+            this.Controls.Add(this.AnadirCategoriasButton);
             this.Controls.Add(this.PrecioNumericUpDown);
             this.Controls.Add(this.CantidadNumericUpDown);
             this.Controls.Add(this.EliminarButton);
@@ -287,7 +298,7 @@
             this.Controls.Add(this.ControlAlmacenCheckBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.DescripcionTextBox);
-            this.Controls.Add(this.IdNumericUpDown);
+            this.Controls.Add(this.ProductoIdNumericUpDown);
             this.Controls.Add(this.RDLabel);
             this.Controls.Add(this.PrecioLabel);
             this.Controls.Add(this.CategoriaLabel);
@@ -297,7 +308,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "rProductos";
             this.Text = "Registro de Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
+            this.Activated += new System.EventHandler(this.rProductos_Activated);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
@@ -314,7 +326,7 @@
         private System.Windows.Forms.Label ProductoIdLabel;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.NumericUpDown IdNumericUpDown;
+        private System.Windows.Forms.NumericUpDown ProductoIdNumericUpDown;
         private System.Windows.Forms.CheckBox ControlAlmacenCheckBox;
         private System.Windows.Forms.Label InventarioLabel;
         private System.Windows.Forms.Button LimpiarButton;
@@ -327,5 +339,6 @@
         private System.Windows.Forms.Label FechaDeRegistroLabel;
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
+        private System.Windows.Forms.Button AnadirCategoriasButton;
     }
 }

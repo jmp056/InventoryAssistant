@@ -20,6 +20,16 @@ namespace InventoryAssistant.UI.Registros
             Limpiar();
         }
 
+        private void rProductos_Activated(object sender, EventArgs e)//Llena el ComboBox de las categorias cuando la ventana gana el foco
+        {
+            LlenaComboBoxCategorias();
+
+        }
+        private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
+        {
+            //DescripcionTextBox.Focus();
+        }
+
         private void Limpiar()// Funcion encargada de limpiar todos los campos del registro
         {
             ProductoIdNumericUpDown.Value = 0;
@@ -31,15 +41,6 @@ namespace InventoryAssistant.UI.Registros
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
-        /*
-        private void LlenarCategoria()
-        {
-            RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
-
-            CategoriaComboBox.DataSource = repositorio.GetList(p => true);
-            CategoriaComboBox.ValueMember = "CategoriaId";
-            CategoriaComboBox.DisplayMember = "Nombre";
-        }*/
 
         private Productos LlenaClase()// Funcion encargada de llenar el objeto
         {
@@ -281,11 +282,7 @@ namespace InventoryAssistant.UI.Registros
             DescripcionTextBox.Focus();
         }
 
-        private void rProductos_Activated(object sender, EventArgs e)
-        {
-            LlenaComboBoxCategorias();
-            Limpiar();
-        }
+
 
         private void AnadirCategoriasButton_Click(object sender, EventArgs e)
         {
@@ -293,5 +290,57 @@ namespace InventoryAssistant.UI.Registros
             rcategorias.ShowDialog();
 
         }
+        //---------------------------------------------------------------------------------------------------------
+
+        //Moviendo el foco entre los campos del registro ----------------------------------------------------------
+
+        private void ProductoIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e) // Al precionar enter mueve el culsor del NumericUpDown del codigo del producto al Boton buscar
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                BuscarButton.Focus();
+            }
+        }
+
+        private void CategoriaComboBox_DropDownClosed(object sender, EventArgs e)//De la categoria a la cantidad
+        {
+            CantidadNumericUpDown.Focus();
+        }
+        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del descripcion al al ComboBox de categoria        {
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                CategoriaComboBox.DroppedDown = true;
+                CategoriaComboBox.Focus();
+            }
+        }
+
+        private void CantidadNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//De la canidad al precio
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                PrecioNumericUpDown.Focus();
+            }
+        }
+
+        private void PrecioNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del precio a la fecha de registro
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                FechaDeRegistroDateTimePicker.Focus();
+            }
+        }
+
+        private void FechaDeRegistroDateTimePicker_ValueChanged(object sender, EventArgs e)// De la fecha de registro al boton guardar(Cuando el valor cambia)
+        {
+            GuardarButton.Focus();
+        }
+
+        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e)//De la fecha de registro al boton guardar(Cuando el seleccionador sube)
+        {
+            GuardarButton.Focus();
+        }
+
+
     }
 }

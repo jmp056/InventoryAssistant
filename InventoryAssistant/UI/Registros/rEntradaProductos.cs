@@ -24,7 +24,6 @@ namespace InventoryAssistant.UI.Registros
         {
             IdNumericUpDown.Value = 0;
             ProductoComboBox.SelectedItem = null;
-            CantidadtextBox.ForeColor = Color.Silver;
             FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
@@ -90,6 +89,7 @@ namespace InventoryAssistant.UI.Registros
                     MessageBox.Show("No se puede modificar una Entrada de Producto que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 else
                 paso = db.Modificar(entrada);
             }
@@ -100,6 +100,45 @@ namespace InventoryAssistant.UI.Registros
             }
             else
                 MessageBox.Show("No Se Pudo Guardar!!", "Fallo!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+
+            RepositorioBase<EntradaProductos> repositorio = new RepositorioBase<EntradaProductos>();
+            EntradaProductos entrada = new EntradaProductos();
+
+            int.TryParse(IdNumericUpDown.Text, out int id);
+
+            entrada = repositorio.Buscar(id);
+
+            if (entrada != null)
+            {
+                MyErrorProvider.Clear();
+                Eliminarbutton.Enabled = true;
+                LlenaCampo(entrada);
+            }
+            else
+                MyErrorProvider.SetError(IdNumericUpDown, "Entrada de Producto no Encontrado");
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            RepositorioEntrada db = new RepositorioEntrada();
+
+                MyErrorProvider.Clear();
+                int.TryParse(IdNumericUpDown.Text, out int id);
+
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MyErrorProvider.SetError(IdNumericUpDown, "Entrada de Producto No Existe!!!");
+                    return;
+                }
+                if (db.Eliminar(id))
+                {
+                    Limpiar();
+                    MessageBox.Show("Entrada de Producto Eliminado!!", "Exito!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }       
         }
     }
 }

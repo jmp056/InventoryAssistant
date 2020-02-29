@@ -35,6 +35,7 @@ namespace InventoryAssistant.UI.Consultas
             {
                 MyErrorProvider.SetError(CristerioTextBox, "El campo Criterio esta vacio");
                 CristerioTextBox.Focus();
+                paso = false;
             }
 
             return paso;
@@ -54,6 +55,7 @@ namespace InventoryAssistant.UI.Consultas
                 {
                     case 0://Todo: todo
                         listado = repositorioE.GetList(p => true);
+                        MyErrorProvider.Clear();
                         break;
                     case 1: //Todo: ID
                         if (CristerioTextBox.Text.Any(x => !char.IsNumber(x)) || CristerioTextBox.Text == string.Empty)

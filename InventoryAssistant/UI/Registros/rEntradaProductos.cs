@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace InventoryAssistant.UI.Registros
 {
     public partial class rEntradaProductos : Form
-    {
+    {/*
 
         public rEntradaProductos()
         {
@@ -23,7 +23,8 @@ namespace InventoryAssistant.UI.Registros
         private void Limpiar()
         {
             IdNumericUpDown.Value = 0;
-            ProductoComboBox.SelectedItem = null;
+            ProductoComboBox.SelectedIndex = -1;
+            CantidadtextBox
             FechadateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
         }
@@ -67,7 +68,7 @@ namespace InventoryAssistant.UI.Registros
         {
             bool paso = false;
 
-            RepositorioEntrada db = new RepositorioEntrada();
+            RepositorioEntradaProductos db = new RepositorioEntradaProductos();
 
             RepositorioBase<EntradaProductos> repositorio = new RepositorioBase<EntradaProductos>();
             //if (!Validar())
@@ -115,7 +116,7 @@ namespace InventoryAssistant.UI.Registros
             if (entrada != null)
             {
                 MyErrorProvider.Clear();
-                Eliminarbutton.Enabled = true;
+                //Eliminarbutton.Enabled = true;
                 LlenaCampo(entrada);
             }
             else
@@ -124,7 +125,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioEntrada db = new RepositorioEntrada();
+            RepositorioEntradaProductos db = new RepositorioEntradaProductos();
 
                 MyErrorProvider.Clear();
                 int.TryParse(IdNumericUpDown.Text, out int id);
@@ -140,5 +141,5 @@ namespace InventoryAssistant.UI.Registros
                     MessageBox.Show("Entrada de Producto Eliminado!!", "Exito!!!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }       
         }
-    }
+    */}
 }

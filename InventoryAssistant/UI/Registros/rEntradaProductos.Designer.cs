@@ -29,197 +29,199 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.BuscarButton = new System.Windows.Forms.Button();
-            this.CantidadtextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.ProductoComboBox = new System.Windows.Forms.ComboBox();
-            this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            this.BuscarButton = new System.Windows.Forms.Button();
+            this.EntradaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.EntradaIdLabel = new System.Windows.Forms.Label();
+            this.FechaLabel = new System.Windows.Forms.Label();
+            this.CantidadLabel = new System.Windows.Forms.Label();
+            this.ProductoLabel = new System.Windows.Forms.Label();
+            this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.FechaDeRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.LimpiarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.Nuevobutton);
-            this.groupBox1.Controls.Add(this.Guardarbutton);
-            this.groupBox1.Controls.Add(this.Eliminarbutton);
-            this.groupBox1.Location = new System.Drawing.Point(19, 216);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 80);
-            this.groupBox1.TabIndex = 75;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Botones";
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Location = new System.Drawing.Point(6, 19);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 50);
-            this.Nuevobutton.TabIndex = 38;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Location = new System.Drawing.Point(108, 19);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 50);
-            this.Guardarbutton.TabIndex = 39;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Enabled = false;
-            this.Eliminarbutton.Location = new System.Drawing.Point(198, 19);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 50);
-            this.Eliminarbutton.TabIndex = 40;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
-            // 
-            // BuscarButton
-            // 
-            this.BuscarButton.Location = new System.Drawing.Point(195, 27);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(51, 35);
-            this.BuscarButton.TabIndex = 74;
-            this.BuscarButton.Text = "Buscar";
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
-            // 
-            // CantidadtextBox
-            // 
-            this.CantidadtextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.CantidadtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CantidadtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantidadtextBox.ForeColor = System.Drawing.Color.Silver;
-            this.CantidadtextBox.Location = new System.Drawing.Point(127, 117);
-            this.CantidadtextBox.Name = "CantidadtextBox";
-            this.CantidadtextBox.Size = new System.Drawing.Size(107, 26);
-            this.CantidadtextBox.TabIndex = 73;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(58, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
-            this.label4.TabIndex = 72;
-            this.label4.Text = "Fecha";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "Cantidad";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "Producto";
-            // 
-            // FechadateTimePicker
-            // 
-            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(127, 168);
-            this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(107, 20);
-            this.FechadateTimePicker.TabIndex = 69;
-            // 
-            // ProductoComboBox
-            // 
-            this.ProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductoComboBox.FormattingEnabled = true;
-            this.ProductoComboBox.Location = new System.Drawing.Point(127, 76);
-            this.ProductoComboBox.Name = "ProductoComboBox";
-            this.ProductoComboBox.Size = new System.Drawing.Size(107, 21);
-            this.ProductoComboBox.TabIndex = 68;
-            // 
-            // IdNumericUpDown
-            // 
-            this.IdNumericUpDown.Location = new System.Drawing.Point(127, 36);
-            this.IdNumericUpDown.Name = "IdNumericUpDown";
-            this.IdNumericUpDown.Size = new System.Drawing.Size(45, 20);
-            this.IdNumericUpDown.TabIndex = 67;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 15);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "ID";
             // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // BuscarButton
+            // 
+            this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Location = new System.Drawing.Point(342, 21);
+            this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(100, 35);
+            this.BuscarButton.TabIndex = 32;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            // 
+            // EntradaIdNumericUpDown
+            // 
+            this.EntradaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EntradaIdNumericUpDown.Location = new System.Drawing.Point(200, 28);
+            this.EntradaIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.EntradaIdNumericUpDown.Name = "EntradaIdNumericUpDown";
+            this.EntradaIdNumericUpDown.Size = new System.Drawing.Size(113, 22);
+            this.EntradaIdNumericUpDown.TabIndex = 31;
+            // 
+            // EntradaIdLabel
+            // 
+            this.EntradaIdLabel.AutoSize = true;
+            this.EntradaIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EntradaIdLabel.Location = new System.Drawing.Point(35, 30);
+            this.EntradaIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EntradaIdLabel.Name = "EntradaIdLabel";
+            this.EntradaIdLabel.Size = new System.Drawing.Size(158, 16);
+            this.EntradaIdLabel.TabIndex = 30;
+            this.EntradaIdLabel.Text = "Código de la entrada:";
+            // 
+            // FechaLabel
+            // 
+            this.FechaLabel.AutoSize = true;
+            this.FechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaLabel.Location = new System.Drawing.Point(35, 155);
+            this.FechaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FechaLabel.Name = "FechaLabel";
+            this.FechaLabel.Size = new System.Drawing.Size(55, 16);
+            this.FechaLabel.TabIndex = 33;
+            this.FechaLabel.Text = "Fecha:";
+            // 
+            // CantidadLabel
+            // 
+            this.CantidadLabel.AutoSize = true;
+            this.CantidadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CantidadLabel.Location = new System.Drawing.Point(35, 115);
+            this.CantidadLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CantidadLabel.Name = "CantidadLabel";
+            this.CantidadLabel.Size = new System.Drawing.Size(74, 16);
+            this.CantidadLabel.TabIndex = 34;
+            this.CantidadLabel.Text = "Cantidad:";
+            // 
+            // ProductoLabel
+            // 
+            this.ProductoLabel.AutoSize = true;
+            this.ProductoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoLabel.Location = new System.Drawing.Point(35, 75);
+            this.ProductoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ProductoLabel.Name = "ProductoLabel";
+            this.ProductoLabel.Size = new System.Drawing.Size(74, 16);
+            this.ProductoLabel.TabIndex = 35;
+            this.ProductoLabel.Text = "Producto:";
+            // 
+            // CategoriaComboBox
+            // 
+            this.CategoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoriaComboBox.FormattingEnabled = true;
+            this.CategoriaComboBox.Location = new System.Drawing.Point(200, 73);
+            this.CategoriaComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CategoriaComboBox.Name = "CategoriaComboBox";
+            this.CategoriaComboBox.Size = new System.Drawing.Size(206, 21);
+            this.CategoriaComboBox.TabIndex = 38;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(200, 113);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(113, 22);
+            this.numericUpDown1.TabIndex = 39;
+            // 
+            // FechaDeRegistroDateTimePicker
+            // 
+            this.FechaDeRegistroDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaDeRegistroDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaDeRegistroDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDeRegistroDateTimePicker.Location = new System.Drawing.Point(200, 153);
+            this.FechaDeRegistroDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.FechaDeRegistroDateTimePicker.Name = "FechaDeRegistroDateTimePicker";
+            this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(113, 22);
+            this.FechaDeRegistroDateTimePicker.TabIndex = 40;
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Location = new System.Drawing.Point(342, 215);
+            this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(100, 35);
+            this.EliminarButton.TabIndex = 41;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Location = new System.Drawing.Point(191, 215);
+            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(100, 35);
+            this.GuardarButton.TabIndex = 42;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            // 
+            // LimpiarButton
+            // 
+            this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LimpiarButton.Location = new System.Drawing.Point(38, 215);
+            this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.LimpiarButton.Name = "LimpiarButton";
+            this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
+            this.LimpiarButton.TabIndex = 43;
+            this.LimpiarButton.Text = "Limpiar";
+            this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LimpiarButton.UseVisualStyleBackColor = true;
+            // 
             // rEntradaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 316);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(466, 273);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.GuardarButton);
+            this.Controls.Add(this.LimpiarButton);
+            this.Controls.Add(this.FechaDeRegistroDateTimePicker);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.CategoriaComboBox);
+            this.Controls.Add(this.ProductoLabel);
+            this.Controls.Add(this.CantidadLabel);
+            this.Controls.Add(this.FechaLabel);
             this.Controls.Add(this.BuscarButton);
-            this.Controls.Add(this.CantidadtextBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.FechadateTimePicker);
-            this.Controls.Add(this.ProductoComboBox);
-            this.Controls.Add(this.IdNumericUpDown);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EntradaIdNumericUpDown);
+            this.Controls.Add(this.EntradaIdLabel);
             this.Name = "rEntradaProductos";
             this.Text = "Entrada de Productos";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Eliminarbutton;
-        private System.Windows.Forms.Button BuscarButton;
-        private System.Windows.Forms.TextBox CantidadtextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
-        private System.Windows.Forms.ComboBox ProductoComboBox;
-        private System.Windows.Forms.NumericUpDown IdNumericUpDown;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.NumericUpDown EntradaIdNumericUpDown;
+        private System.Windows.Forms.Label EntradaIdLabel;
+        private System.Windows.Forms.Label ProductoLabel;
+        private System.Windows.Forms.Label CantidadLabel;
+        private System.Windows.Forms.Label FechaLabel;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox CategoriaComboBox;
+        private System.Windows.Forms.DateTimePicker FechaDeRegistroDateTimePicker;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button LimpiarButton;
     }
 }

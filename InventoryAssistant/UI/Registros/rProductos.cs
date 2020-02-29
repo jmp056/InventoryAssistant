@@ -23,7 +23,7 @@ namespace InventoryAssistant.UI.Registros
         private void rProductos_Activated(object sender, EventArgs e)//Llena el ComboBox de las categorias cuando la ventana gana el foco
         {
             LlenaComboBoxCategorias();
-
+            CategoriaComboBox.SelectedIndex = -1;
         }
         private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
         {

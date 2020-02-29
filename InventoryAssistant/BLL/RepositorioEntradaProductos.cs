@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace InventoryAssistant.BLL
 {
-   public  class RepositorioEntrada : RepositorioBase<EntradaProductos>
+   public  class RepositorioEntradaProductos : RepositorioBase<EntradaProductos>
     {
         public override bool Guardar(EntradaProductos entrada)
         {

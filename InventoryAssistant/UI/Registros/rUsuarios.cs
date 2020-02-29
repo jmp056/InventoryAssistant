@@ -2,6 +2,7 @@
 using InventoryAssistant.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
@@ -60,6 +61,76 @@ namespace InventoryAssistant.UI.Registros
             ContrasenaTextBox.Text = usuario.Contrasena;
         }
 
+        //* Método o función para validar una cédula dominicana*
+           public bool ValidaCedula(string cedula)
+           {
+             cedula = cedula.Replace("-", "");
+            //Declaración de variables a nivel de método o función.
+            int verificador = 0;
+               int digito = 0;
+             int digitoVerificador = 0;
+               int digitoImpar = 0;
+               int sumaPar = 0;
+               int sumaImpar = 0;
+               int longitud = Convert.ToInt32(cedula.Length);
+               /*Control de errores en el código*/
+               try
+               {
+                   //verificamos que la longitud del parametro sea igual a 11
+                   if (longitud == 11)
+                   {
+                    digitoVerificador = Convert.ToInt32(cedula.Substring(10, 1));
+                      //recorremos en un ciclo for cada dígito de la cédula
+                      for (int i = 9; i >= 0; i--)
+                      {
+                          //si el digito no es par multiplicamos por 2
+                          digito = Convert.ToInt32(cedula.Substring(i, 1));
+                          if ((i % 2) != 0)
+                          {
+                              digitoImpar = digito* 2;
+                              //si el digito obtenido es mayor a 10, restamos 9
+                              if (digitoImpar >= 10)
+                              {
+                                  digitoImpar = digitoImpar - 9;
+                              }
+                              sumaImpar = sumaImpar + digitoImpar;
+                          }
+                          /*En los demás casos sumamos el dígito y lo aculamos 
+                           en la variable */
+                           else
+                           {
+                               sumaPar = sumaPar + digito;
+                           }
+                       }
+                      /*Obtenemos el verificador restandole a 10 el modulo 10 
+                      de la suma total de los dígitos*/
+                      verificador = 10 - ((sumaPar + sumaImpar) % 10);
+                    /*si el verificador es igual a 10 y el dígito verificador
+                      es igual a cero o el verificador y el dígito verificador 
+                      son iguales retorna verdadero*/
+                 if (((verificador == 10) && (digitoVerificador == 0))
+                      || (verificador == digitoVerificador))
+                      {
+                           return true;
+                      }
+                  }
+                  else
+                 {
+                    MyErrorProvider.SetError(CedulaMaskedTextBox, "La cédula debe contener once(11) digitos!");
+                    CedulaMaskedTextBox.Focus();
+                    Console.WriteLine("La cédula debe contener once(11) digitos");
+                 }
+              }
+             catch
+              {
+                MessageBox.Show("No se pudo validar la cédula", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Console.WriteLine("No se pudo validar la cédula");
+             }
+              return false;
+         }
+
+
         private bool Validar() //Funcion que valida todo el registro
         {
             bool paso = true;
@@ -85,12 +156,12 @@ namespace InventoryAssistant.UI.Registros
                 CedulaMaskedTextBox.Focus();
                 paso = false;
             }
-            else if (CedulaMaskedTextBox.Text.Contains(" ") == true || CedulaMaskedTextBox.Text.Length < 13) // Condicion encargada de validar que el campo cedula este completo
-            {
-                MyErrorProvider.SetError(CedulaMaskedTextBox, "La cedula no esta completa");
-                CedulaMaskedTextBox.Focus();
-                paso = false;
-            }
+            //else if (CedulaMaskedTextBox.Text.Contains(" ") == true || CedulaMaskedTextBox.Text.Length < 13) // Condicion encargada de validar que el campo cedula este completo
+            //{
+            //    MyErrorProvider.SetError(CedulaMaskedTextBox, "La cedula no esta completa");
+            //    CedulaMaskedTextBox.Focus();
+            //    paso = false;
+            //}
             else // Validando que la cedula no este duplicada
             {
                 if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que la cedula no exista, en caso de registrar un usuario nuevo
@@ -245,6 +316,7 @@ namespace InventoryAssistant.UI.Registros
                 paso = false;
             }
 
+
             return paso;
         }
 
@@ -291,7 +363,11 @@ namespace InventoryAssistant.UI.Registros
 
             if (!Validar())
                 return;
-
+            if (!ValidaCedula(CedulaMaskedTextBox.Text))
+            {
+                MyErrorProvider.SetError(CedulaMaskedTextBox, "Error, Cedula Incorrecta");
+                return;
+            }
             usuario = LlenaClase();
 
             if (UsuarioIdNumericUpDown.Value == 0)

@@ -11,6 +11,7 @@ namespace InventoryAssistant.UI.Registros
         public rUsuarios()
         {
             InitializeComponent();
+            Limpiar();
         }
 
         public void Limpiar() // Funcion encargada de limpiar todos los campos del registro
@@ -247,7 +248,7 @@ namespace InventoryAssistant.UI.Registros
             return paso;
         }
 
-        private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario exist en una base de datos!
+        private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario existe en una base de datos!
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuario = repositorio.Buscar((int)UsuarioIdNumericUpDown.Value);
@@ -270,7 +271,7 @@ namespace InventoryAssistant.UI.Registros
                 LlenaCampo(usuario); 
             }
             else
-                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Usuario no encontrado");
+                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "No existe un usuario con este codigo!");
             NombresTextBox.Focus();
         }
 
@@ -333,7 +334,7 @@ namespace InventoryAssistant.UI.Registros
             }
             else
             { 
-                MessageBox.Show("No se pudo Guardar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NombresTextBox.Focus();
             }
                
@@ -349,7 +350,7 @@ namespace InventoryAssistant.UI.Registros
 
             if (!ExisteEnLaBaseDeDatos())
             {
-                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Usuario no existe!");
+                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Este usuario no existe!");
                 return;
             }
             else
@@ -420,6 +421,13 @@ namespace InventoryAssistant.UI.Registros
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 FechaDeRegistroDateTimePicker.Focus();
+            }
+        }
+        private void FechaDeRegistroDateTimePicker_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del DateTimePicker de la fecha de registro al TextBox del Usuario
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                UsuarioTextBox.Focus();
             }
         }
 

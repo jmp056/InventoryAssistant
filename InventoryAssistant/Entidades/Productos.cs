@@ -14,7 +14,7 @@ namespace InventoryAssistant.Entidades
         public string Descripcion { get; set; }
         public int Categoria { get; set; }
         public bool ControlAlmacen { get; set; }
-        public int Inventario { get; set; }
+        public int Cantidad { get; set; }
         public int Precio { get; set; }
         public DateTime FechaDeRegistro { get; set; }
 
@@ -27,7 +27,7 @@ namespace InventoryAssistant.Entidades
             Descripcion = string.Empty;
             Precio = 0;
             Categoria = 0;
-            Inventario = 0;
+            Cantidad = 0;
             FechaDeRegistro = DateTime.Now;
         }
     }

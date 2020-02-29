@@ -10,13 +10,13 @@ namespace InventoryAssistant.BLL
 {
     public class UsuariosBLL
     {
-        public static bool ExisteCedula(string cedula)
+        public static bool ExisteCedula(string Cedula)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Usuarios.Any(p => p.Cedula.Equals(cedula)))
+                if (contexto.Usuarios.Any(p => p.Cedula.Equals(Cedula)))
                 {
                         paso = true;           
                 }

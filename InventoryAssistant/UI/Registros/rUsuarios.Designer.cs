@@ -49,12 +49,12 @@
             this.NivelDeUsuarioComboBox = new System.Windows.Forms.ComboBox();
             this.ApellidosTextBox = new System.Windows.Forms.TextBox();
             this.CedulaLabel = new System.Windows.Forms.Label();
-            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.UsuarioLabel = new System.Windows.Forms.Label();
             this.NivelDeUsuarioLabel = new System.Windows.Forms.Label();
             this.ContrasenaLabel = new System.Windows.Forms.Label();
             this.ConfirmarContrasenaLabel = new System.Windows.Forms.Label();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
+            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             this.DatosDelUsuarioGroupBox.SuspendLayout();
@@ -266,13 +266,6 @@
             this.CedulaLabel.TabIndex = 8;
             this.CedulaLabel.Text = "Cedula:";
             // 
-            // TelefonoMaskedTextBox
-            // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(190, 190);
-            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
-            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TelefonoMaskedTextBox.TabIndex = 21;
-            // 
             // UsuarioLabel
             // 
             this.UsuarioLabel.AutoSize = true;
@@ -330,13 +323,22 @@
             this.DatosDelUsuarioGroupBox.TabIndex = 20;
             this.DatosDelUsuarioGroupBox.TabStop = false;
             // 
+            // TelefonoMaskedTextBox
+            // 
+            this.TelefonoMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(190, 183);
+            this.TelefonoMaskedTextBox.Mask = "999-999-9999";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.TelefonoMaskedTextBox.TabIndex = 30;
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 351);
-            this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.Controls.Add(this.TelefonoMaskedTextBox);
+            this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.Controls.Add(this.CedulaLabel);
             this.Controls.Add(this.ApellidosTextBox);
             this.Controls.Add(this.FechaDeRegistroDateTimePicker);
@@ -388,12 +390,12 @@
         private System.Windows.Forms.Label NombresLabel;
         private System.Windows.Forms.TextBox ApellidosTextBox;
         private System.Windows.Forms.Label CedulaLabel;
-        private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
         private System.Windows.Forms.Label ConfirmarContrasenaLabel;
         private System.Windows.Forms.Label ContrasenaLabel;
         private System.Windows.Forms.Label NivelDeUsuarioLabel;
         private System.Windows.Forms.Label UsuarioLabel;
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
         private System.Windows.Forms.ComboBox NivelDeUsuarioComboBox;
+        private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
     }
 }

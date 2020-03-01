@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace InventoryAssistant.BLL
 {
-   public  class RepositorioEntradaProductos : RepositorioBase<EntradaProductos>
+   public  class EntradaProductosBLL
     {
-        public override bool Guardar(EntradaProductos entrada)
+        public static bool Guardar(EntradaProductos entradaProducto)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Entrada.Add(entrada) != null)
+                if (contexto.EntradaProductos.Add(entradaProducto) != null)
                 {
-                    contexto.Productos.Find(entrada.ProductoId).Cantidad += entrada.Cantidad;
+                    contexto.Productos.Find(entradaProducto.ProductoId).Cantidad += entradaProducto.Cantidad;
 
                     contexto.SaveChanges();
                     paso = true;
@@ -34,26 +34,26 @@ namespace InventoryAssistant.BLL
             return paso;
         }
 
-        public override bool Modificar(EntradaProductos entrada)
+        public static bool Modificar(EntradaProductos entradaProductos)
         {
             bool paso = false;
 
             Contexto contexto = new Contexto();
 
-            RepositorioBase<EntradaProductos> repositorio = new RepositorioBase<EntradaProductos>();
+            RepositorioBase<Entidades.EntradaProductos> repositorio = new RepositorioBase<Entidades.EntradaProductos>();
 
             try
             {
-                EntradaProductos EntradaAnterior = repositorio.Buscar(entrada.EntradaId);
+                Entidades.EntradaProductos entradaProductosAnterior = repositorio.Buscar(entradaProductos.EntradaProductoId);
 
                 int diferencia;
-                diferencia = entrada.Cantidad - EntradaAnterior.Cantidad;
+                diferencia = entradaProductos.Cantidad - entradaProductosAnterior.Cantidad;
 
-                var Producto = contexto.Productos.Find(EntradaAnterior.ProductoId);
+                var Producto = contexto.Productos.Find(entradaProductosAnterior.ProductoId);
 
                 Producto.Cantidad += diferencia;
 
-                contexto.Entry(entrada).State = EntityState.Modified;
+                contexto.Entry(entradaProductos).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -68,7 +68,7 @@ namespace InventoryAssistant.BLL
             return paso;
         }
 
-        public override bool Eliminar(int id)
+        public static bool Eliminar(int id)
         {
 
             bool paso = false;
@@ -76,7 +76,7 @@ namespace InventoryAssistant.BLL
 
             try
             {
-                EntradaProductos entradaProducto = contexto.Entrada.Find(id);
+                Entidades.EntradaProductos entradaProducto = contexto.EntradaProductos.Find(id);
 
                 if (entradaProducto != null)
                 {

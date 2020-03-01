@@ -59,7 +59,7 @@
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
-    <Compile Include="BLL\RepositorioEntradaProductos.cs" />
+    <Compile Include="BLL\EntradaProductosBLL.cs" />
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
@@ -80,17 +80,17 @@
     <Compile Include="UI\Consultas\ConsultasUsuarios.Designer.cs">
       <DependentUpon>ConsultasUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rCategorias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registros\rCategorias.Designer.cs">
-      <DependentUpon>rCategorias.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Registros\rEntradaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rEntradaProductos.Designer.cs">
       <DependentUpon>rEntradaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCategorias.Designer.cs">
+      <DependentUpon>rCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rProductos.cs">
       <SubType>Form</SubType>
@@ -119,11 +119,11 @@
     <EmbeddedResource Include="UI\Consultas\ConsultasUsuarios.resx">
       <DependentUpon>ConsultasUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rCategorias.resx">
-      <DependentUpon>rCategorias.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rEntradaProductos.resx">
       <DependentUpon>rEntradaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCategorias.resx">
+      <DependentUpon>rCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rProductos.resx">
       <DependentUpon>rProductos.cs</DependentUpon>

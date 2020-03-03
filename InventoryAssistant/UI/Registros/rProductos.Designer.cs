@@ -259,6 +259,11 @@
             this.CantidadNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadNumericUpDown.Location = new System.Drawing.Point(209, 188);
             this.CantidadNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.CantidadNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.CantidadNumericUpDown.TabIndex = 66;

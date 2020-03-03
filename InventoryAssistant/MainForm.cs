@@ -54,5 +54,11 @@ namespace InventoryAssistant
             rEntradaProductos rep = new rEntradaProductos();
             rep.ShowDialog();
         }
+
+        private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaProductos cp = new ConsultaProductos();
+            cp.ShowDialog();
+        }
     }
 }

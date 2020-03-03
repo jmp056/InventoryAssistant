@@ -18,9 +18,6 @@ namespace InventoryAssistant.Entidades
         public int Precio { get; set; }
         public DateTime FechaDeRegistro { get; set; }
 
-
-
-
         public Productos()
         {
             ProductoId = 0;

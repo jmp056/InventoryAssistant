@@ -98,6 +98,12 @@
     <Compile Include="UI\Registros\rCategorias.Designer.cs">
       <DependentUpon>rCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rFacturas.Designer.cs">
+      <DependentUpon>rFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCategorias.resx">
       <DependentUpon>rCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rFacturas.resx">
+      <DependentUpon>rFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rProductos.resx">
       <DependentUpon>rProductos.cs</DependentUpon>

@@ -36,6 +36,9 @@
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.Addbutton = new System.Windows.Forms.Button();
@@ -49,9 +52,6 @@
             this.BuscarProductbutton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.IdProductnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TotaltextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -134,6 +134,32 @@
             this.groupBox2.Size = new System.Drawing.Size(549, 293);
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 253);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.TabIndex = 105;
+            this.button1.Text = "Eliminar producto";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(349, 256);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.TabIndex = 104;
+            this.label9.Text = "Total RD$:";
+            // 
+            // TotaltextBox
+            // 
+            this.TotaltextBox.Location = new System.Drawing.Point(414, 253);
+            this.TotaltextBox.Name = "TotaltextBox";
+            this.TotaltextBox.ReadOnly = true;
+            this.TotaltextBox.Size = new System.Drawing.Size(75, 20);
+            this.TotaltextBox.TabIndex = 103;
             // 
             // CantidadtextBox
             // 
@@ -245,32 +271,6 @@
             this.IdProductnumericUpDown.Name = "IdProductnumericUpDown";
             this.IdProductnumericUpDown.Size = new System.Drawing.Size(58, 20);
             this.IdProductnumericUpDown.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(349, 256);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
-            this.label9.TabIndex = 104;
-            this.label9.Text = "Total RD$:";
-            // 
-            // TotaltextBox
-            // 
-            this.TotaltextBox.Location = new System.Drawing.Point(414, 253);
-            this.TotaltextBox.Name = "TotaltextBox";
-            this.TotaltextBox.ReadOnly = true;
-            this.TotaltextBox.Size = new System.Drawing.Size(75, 20);
-            this.TotaltextBox.TabIndex = 103;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 105;
-            this.button1.Text = "Eliminar producto";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label10
             // 

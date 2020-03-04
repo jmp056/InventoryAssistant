@@ -25,6 +25,8 @@ namespace InventoryAssistant
             r.ShowDialog();
         }
 
+
+
         private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rUsuarios rU = new rUsuarios();

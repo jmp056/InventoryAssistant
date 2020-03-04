@@ -183,7 +183,7 @@
             this.Addbutton.Image = ((System.Drawing.Image)(resources.GetObject("Addbutton.Image")));
             this.Addbutton.Location = new System.Drawing.Point(472, 40);
             this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(29, 24);
+            this.Addbutton.Size = new System.Drawing.Size(29, 22);
             this.Addbutton.TabIndex = 17;
             this.Addbutton.UseVisualStyleBackColor = true;
             // 

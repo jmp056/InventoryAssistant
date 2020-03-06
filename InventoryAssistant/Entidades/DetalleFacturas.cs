@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace InventoryAssistant.Entidades
 {
-    public class DetalleFactura
+    public class DetalleFacturas
     {
         [Key]
-        public int DetalleFactiraId { get; set; }
+        public int DetalleFacturaId { get; set; }
         public int FacturaId { get; set; }
         public int CodigoProducto { get; set; }
         public int Cantidad{ get; set; }
@@ -18,9 +18,9 @@ namespace InventoryAssistant.Entidades
         public float Precio { get; set; }
         public float SubTotal { get; set; }
 
-        public DetalleFactura()
+        public DetalleFacturas()
         {
-            DetalleFactiraId = 0;
+            DetalleFacturaId = 0;
             FacturaId = 0;
             CodigoProducto = 0;
             Cantidad = 0;
@@ -29,9 +29,9 @@ namespace InventoryAssistant.Entidades
             SubTotal = 0;
         }
 
-        public DetalleFactura(int detalleFactiraId, int facturaId, int codigoProducto, int cantidad, string nombreProducto, float precio, float subTotal)
+        public DetalleFacturas(int detalleFacturaId, int facturaId, int codigoProducto, int cantidad, string nombreProducto, float precio, float subTotal)
         {
-            DetalleFactiraId = detalleFactiraId;
+            DetalleFacturaId = detalleFacturaId;
             FacturaId = facturaId;
             CodigoProducto = codigoProducto;
             Cantidad = cantidad;

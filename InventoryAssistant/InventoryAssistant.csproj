@@ -63,8 +63,9 @@
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
-    <Compile Include="Entidades\DetalleFactura.cs" />
+    <Compile Include="Entidades\DetalleFacturas.cs" />
     <Compile Include="Entidades\EntradaProductos.cs" />
+    <Compile Include="Entidades\Facturas.cs" />
     <Compile Include="Entidades\Productos.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="MainForm.cs">

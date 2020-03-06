@@ -199,6 +199,7 @@
             this.FechaDeRegistroDateTimePicker.Name = "FechaDeRegistroDateTimePicker";
             this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(115, 22);
             this.FechaDeRegistroDateTimePicker.TabIndex = 17;
+            this.FechaDeRegistroDateTimePicker.Value = new System.DateTime(2020, 3, 6, 0, 0, 0, 0);
             this.FechaDeRegistroDateTimePicker.CloseUp += new System.EventHandler(this.FechaDeRegistroDateTimePicker_CloseUp);
             this.FechaDeRegistroDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDeRegistroDateTimePicker_ValueChanged);
             this.FechaDeRegistroDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FechaDeRegistroDateTimePicker_KeyPress);

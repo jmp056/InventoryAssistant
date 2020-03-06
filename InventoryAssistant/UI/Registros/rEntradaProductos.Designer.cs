@@ -96,6 +96,7 @@
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(113, 22);
             this.FechaDateTimePicker.TabIndex = 52;
+            this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 6, 0, 0, 0, 0);
             // 
             // CantidadNumericUpDown
             // 

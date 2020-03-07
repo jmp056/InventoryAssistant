@@ -287,6 +287,7 @@
             this.AgregarProductoButton.Size = new System.Drawing.Size(30, 30);
             this.AgregarProductoButton.TabIndex = 17;
             this.AgregarProductoButton.UseVisualStyleBackColor = true;
+            this.AgregarProductoButton.Click += new System.EventHandler(this.AgregarProductoButton_Click);
             // 
             // BuscarProductoButton
             // 

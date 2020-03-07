@@ -77,7 +77,40 @@ namespace InventoryAssistant.UI.Registros
         //--------------------------------------------------------------------------------------------------------
 
 
+        //Validadores -------------------------------------------------------------------------------------------
+        private bool ValidaProducto() // Funcion encargada de validar que el producto este corrextamente llenado
+        {
+            Productos ProductoTemporal = BuscaProducto((int)ProductoIdNumericUpDown.Value);
+            bool Paso = true;
 
+            if (ProductoIdNumericUpDown.Value == 0 || 
+                Convert.ToString(ProductoIdNumericUpDown.Value) == string.Empty ||
+                DescripcionTextBox.Text == string.Empty ||
+                DescripcionTextBox.Text != ProductoTemporal.Descripcion)// Valida que el producto este cargado
+            {
+                MyErrorProvider.SetError(BuscarProductoButton, "Debe cargar el producto!");
+                BuscarProductoButton.Focus();
+                Paso = false;
+            }
+
+            if(CantidadNumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad debe ser mayor a 0!");
+                CantidadNumericUpDown.Focus();
+                Paso = false;
+            }
+
+            if (PrecioNumericUpDown.Value <= 0)
+            {
+                MyErrorProvider.SetError(PrecioNumericUpDown, "El precio del producto debe ser mayor a 0.00!");
+                PrecioNumericUpDown.Focus();
+                Paso = false;
+            }
+
+            return Paso;
+        }
+
+        //--------------------------------------------------------------------------------------------------------
         private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
         {
 
@@ -130,6 +163,32 @@ namespace InventoryAssistant.UI.Registros
             Productos Producto = Repositorio.Buscar(Id);
 
             return Producto;
+        }
+
+        private void AgregarProductoButton_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            if (!ValidaProducto())
+                return;
+
+            RepositorioBase<DetalleFacturas> Repositorio = new RepositorioBase<DetalleFacturas>();
+
+            if (DetalleDataGridView.DataSource != null)
+                Detalle = (List<DetalleFacturas>)DetalleDataGridView.DataSource;
+            this.Detalle.Add(
+                new DetalleFacturas(
+                    detalleFacturaId: 0,
+                    facturaId: (int)FacturaIdNumericUpDown.Value,
+                    codigoProducto: (int)ProductoIdNumericUpDown.Value,
+                    cantidad: (int)CantidadNumericUpDown.Value,
+                    descripcionProducto: DescripcionTextBox.Text,
+                    precio: Convert.ToSingle(PrecioNumericUpDown.Value),
+                    importe: Convert.ToSingle(ImporteTextBox.Text)
+                )
+            );
+
+            CargaGrid();
+            LimpiarProductoGroupBox();
         }
     }
 }

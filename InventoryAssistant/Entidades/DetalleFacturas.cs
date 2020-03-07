@@ -14,7 +14,7 @@ namespace InventoryAssistant.Entidades
         public int FacturaId { get; set; }
         public int CodigoProducto { get; set; }
         public int Cantidad{ get; set; }
-        public string NombreProducto { get; set; }
+        public string DescripcionProducto { get; set; }
         public float Precio { get; set; }
         public float Importe { get; set; }
 
@@ -24,18 +24,18 @@ namespace InventoryAssistant.Entidades
             FacturaId = 0;
             CodigoProducto = 0;
             Cantidad = 0;
-            NombreProducto = string.Empty;
+            DescripcionProducto = string.Empty;
             Precio = 0;
             Importe = 0;
         }
 
-        public DetalleFacturas(int detalleFacturaId, int facturaId, int codigoProducto, int cantidad, string nombreProducto, float precio, float importe)
+        public DetalleFacturas(int detalleFacturaId, int facturaId, int codigoProducto, int cantidad, string descripcionProducto, float precio, float importe)
         {
             DetalleFacturaId = detalleFacturaId;
             FacturaId = facturaId;
             CodigoProducto = codigoProducto;
             Cantidad = cantidad;
-            NombreProducto = nombreProducto;
+            DescripcionProducto = descripcionProducto;
             Precio = precio;
             Importe = importe;
         }

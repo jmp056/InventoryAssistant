@@ -106,6 +106,7 @@
             this.DatosDelUsuarioButton.TabIndex = 24;
             this.DatosDelUsuarioButton.Text = "Datos del usuario";
             this.DatosDelUsuarioButton.UseVisualStyleBackColor = true;
+            this.DatosDelUsuarioButton.Click += new System.EventHandler(this.DatosDelUsuarioButton_Click);
             // 
             // groupBox1
             // 

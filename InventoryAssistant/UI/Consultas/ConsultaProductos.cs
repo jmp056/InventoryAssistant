@@ -104,5 +104,10 @@ namespace InventoryAssistant.UI.Consultas
         {
             Buscar();
         }
+
+        private void DatosDelUsuarioButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

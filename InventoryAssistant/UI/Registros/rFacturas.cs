@@ -1,4 +1,6 @@
-﻿using InventoryAssistant.Entidades;
+﻿using InventoryAssistant.BLL;
+using InventoryAssistant.Entidades;
+using InventoryAssistant.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,12 +67,69 @@ namespace InventoryAssistant.UI.Registros
 
             return Factura;
         }
+
+        private void LlenaCamposProducto(Productos Producto)
+        {
+            ProductoIdNumericUpDown.Value = (int)Producto.ProductoId;
+            DescripcionTextBox.Text = Producto.Descripcion;
+            PrecioNumericUpDown.Value = Producto.Precio;
+        }
         //--------------------------------------------------------------------------------------------------------
 
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+
+        private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
         {
 
+        }
+
+        private void BuscarProductoButton_Click(object sender, EventArgs e)
+        {
+            Productos Producto = BuscaProducto(Convert.ToInt32(ProductoIdNumericUpDown.Value));
+            LimpiarProductoGroupBox();
+            if (Producto == null)
+            {
+
+                MyErrorProvider.SetError(ProductoIdNumericUpDown, "No existe un producto con este código!");
+                ProductoIdNumericUpDown.Focus();
+            }
+            else
+            {
+
+                LlenaCamposProducto(Producto);
+                CantidadNumericUpDown.Focus();
+            }
+        }
+
+        private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            ImporteTextBox.Text = Convert.ToString(CantidadNumericUpDown.Value * PrecioNumericUpDown.Value); //Calcula el valor del importe si la cantidad cambia
+        }
+
+        private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e) //Calcula el valor del importe si el precio cambia
+        {
+            ImporteTextBox.Text = Convert.ToString(CantidadNumericUpDown.Value * PrecioNumericUpDown.Value);
+        }
+
+        private void VerProductosButton_Click(object sender, EventArgs e) //Boton que va a la consulta y trae un producto
+        {
+            LimpiarProductoGroupBox();
+            cProductos_Factura TraeProducto = new cProductos_Factura();
+            if (TraeProducto.ShowDialog() == DialogResult.OK)
+            {
+
+                Productos ProductoTraido = BuscaProducto(TraeProducto.IdProductoSeleccionado);
+                LlenaCamposProducto(ProductoTraido);
+                CantidadNumericUpDown.Focus();
+            }
+        }
+
+        private Productos BuscaProducto(int Id) // Funcion encargada de buscar el producto
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            Productos Producto = Repositorio.Buscar(Id);
+
+            return Producto;
         }
     }
 }

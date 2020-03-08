@@ -93,34 +93,62 @@ namespace InventoryAssistant.UI.Registros
                 BuscarProductoButton.Focus();
                 Paso = false;
             }
-
-            if(CantidadNumericUpDown.Value <= 0) //Valida que la cantidad sea mayor a 0
-            {
-                MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad debe ser mayor a 0!");
-                CantidadNumericUpDown.Focus();
-                Paso = false;
-            }
             else
             {
-                if(ProductoTemporal.ControlAlmacen == true)//Valida si el producto esta controlado en elmacen
+                if (CantidadNumericUpDown.Value <= 0) //Valida que la cantidad sea mayor a 0
                 {
-                    if(ProductoTemporal.Cantidad < CantidadNumericUpDown.Value)//Valida que la cantidad a facturar no sea mayor a la que existe en el almacen
+                    MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad debe ser mayor a 0!");
+                    CantidadNumericUpDown.Focus();
+                    Paso = false;
+                }
+                else
+                {
+                    if (ProductoTemporal.ControlAlmacen == true)//Valida si el producto esta controlado en elmacen
                     {
-                        MyErrorProvider.SetError(CantidadNumericUpDown, "De este producto solo quedan \"" + ProductoTemporal.Cantidad + "\" unidades en almacen!");
-                        CantidadNumericUpDown.Focus();
-                        Paso = false;
+                        if (ProductoTemporal.Cantidad < CantidadNumericUpDown.Value)//Valida que la cantidad a facturar no sea mayor a la que existe en el almacen
+                        {
+                            MyErrorProvider.SetError(CantidadNumericUpDown, "De este producto solo quedan \"" + ProductoTemporal.Cantidad + "\" unidades en almacen!");
+                            CantidadNumericUpDown.Focus();
+                            Paso = false;
+                        }
                     }
+                }
+
+                if (PrecioNumericUpDown.Value <= 0)
+                {
+                    MyErrorProvider.SetError(PrecioNumericUpDown, "El precio del producto debe ser mayor a 0.00!");
+                    PrecioNumericUpDown.Focus();
+                    Paso = false;
                 }
             }
 
-            if (PrecioNumericUpDown.Value <= 0)
+            return Paso;
+        }
+
+        private void SiProductoExiste()
+        {
+            bool Existe = false;
+            string DescripcionTemporal = string.Empty;
+
+            foreach (DataGridViewRow produ in DetalleDataGridView.Rows)
             {
-                MyErrorProvider.SetError(PrecioNumericUpDown, "El precio del producto debe ser mayor a 0.00!");
-                PrecioNumericUpDown.Focus();
-                Paso = false;
+                //DescripcionTemporal = Convert.ToString(produ.Cells["DescripcionProducto"].Value.ToString());
+
+                if (ProductoIdNumericUpDown.Value == Convert.ToInt32(produ.Cells["ProductoId"].Value))
+                {
+                    Existe = true;
+                    break;
+                }
             }
 
-            return Paso;
+            if (Existe)
+            {
+                var result = MessageBox.Show("Este producto ya se encuentra en la factura, ¿Desea modificarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+
+                }
+            }
         }
         //--------------------------------------------------------------------------------------------------------
         
@@ -193,8 +221,11 @@ namespace InventoryAssistant.UI.Registros
         private void AgregarProductoButton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
+
             if (!ValidaProducto())
                 return;
+
+            SiProductoExiste();
 
             RepositorioBase<DetalleFacturas> Repositorio = new RepositorioBase<DetalleFacturas>();
 
@@ -204,7 +235,7 @@ namespace InventoryAssistant.UI.Registros
                 new DetalleFacturas(
                     detalleFacturaId: 0,
                     facturaId: (int)FacturaIdNumericUpDown.Value,
-                    codigoProducto: (int)ProductoIdNumericUpDown.Value,
+                    productoId: (int)ProductoIdNumericUpDown.Value,
                     cantidad: (int)CantidadNumericUpDown.Value,
                     descripcionProducto: DescripcionTextBox.Text,
                     precio: Convert.ToSingle(PrecioNumericUpDown.Value),
@@ -225,7 +256,7 @@ namespace InventoryAssistant.UI.Registros
             DetalleDataGridView.Columns[2].Width = 58;
             DetalleDataGridView.Columns[3].HeaderText = "Cantidad";
             DetalleDataGridView.Columns[3].Width = 58;
-            DetalleDataGridView.Columns[4].HeaderText = "Descripcion";
+            DetalleDataGridView.Columns[4].HeaderText = "Descripción";
             DetalleDataGridView.Columns[4].Width = 250;
             DetalleDataGridView.Columns[5].HeaderText = "Precio";
             DetalleDataGridView.Columns[5].Width = 69;

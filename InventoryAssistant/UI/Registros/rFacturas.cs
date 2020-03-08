@@ -53,6 +53,8 @@ namespace InventoryAssistant.UI.Registros
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = this.Detalle;
             FormatoDataGridView();
+            CalcularTotal();
+            DetalleDataGridView.ClearSelection();
         }
 
         private Facturas LlenaClase() // Funcion encargada de llenar el objeto
@@ -125,30 +127,64 @@ namespace InventoryAssistant.UI.Registros
             return Paso;
         }
 
-        private void SiProductoExiste()
+        private bool SiProductoExiste()
         {
             bool Existe = false;
-            string DescripcionTemporal = string.Empty;
+            int Posicion = 0;
 
-            foreach (DataGridViewRow produ in DetalleDataGridView.Rows)
+            foreach (DataGridViewRow Producto in DetalleDataGridView.Rows)
             {
-                //DescripcionTemporal = Convert.ToString(produ.Cells["DescripcionProducto"].Value.ToString());
 
-                if (ProductoIdNumericUpDown.Value == Convert.ToInt32(produ.Cells["ProductoId"].Value))
+                if (ProductoIdNumericUpDown.Value == Convert.ToInt32(Producto.Cells["ProductoId"].Value))
                 {
+
                     Existe = true;
+                    Posicion = Convert.ToInt32(Producto.Index);
                     break;
                 }
             }
 
             if (Existe)
             {
+
                 var result = MessageBox.Show("Este producto ya se encuentra en la factura, ¿Desea modificarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.Yes)
                 {
+                    ProductoIdNumericUpDown.Value = Convert.ToInt32(DetalleDataGridView.Rows[Posicion].Cells["ProductoId"].Value);
+                    DescripcionTextBox.Text = DetalleDataGridView.Rows[Posicion].Cells["DescripcionProducto"].Value.ToString();
+                    CantidadNumericUpDown.Value = Convert.ToInt32(DetalleDataGridView.Rows[Posicion].Cells["Cantidad"].Value);
+                    PrecioNumericUpDown.Value = Convert.ToDecimal(DetalleDataGridView.Rows[Posicion].Cells["Precio"].Value);
+                    ImporteTextBox.Text = DetalleDataGridView.Rows[Posicion].Cells["Importe"].Value.ToString();
+                    DetalleDataGridView.ClearSelection();
 
+                    List<DetalleFacturas> items = new List<DetalleFacturas>();
+                    foreach (DataGridViewRow dr in DetalleDataGridView.Rows)
+                    {
+                        DetalleFacturas Producto = new DetalleFacturas();
+                        Producto.ProductoId = (int)dr.Cells["ProductoId"].Value;
+                        if (Producto.ProductoId != (int)ProductoIdNumericUpDown.Value)
+                        {
+                            Producto.DetalleFacturaId = (int)dr.Cells["DetalleFacturaId"].Value;
+                            Producto.FacturaId = (int)dr.Cells["FacturaId"].Value;
+                            Producto.Cantidad = (int)dr.Cells["Cantidad"].Value;
+                            Producto.DescripcionProducto = dr.Cells["DescripcionProducto"].Value.ToString();
+                            Producto.Precio = Convert.ToSingle(dr.Cells["Precio"].Value);
+                            Producto.Importe = Convert.ToSingle(dr.Cells["Importe"].Value);
+                        
+                            items.Add(Producto);
+                        }
+                    }
+
+                    this.Detalle = items;
+                    CargaGrid();
+                }
+                else
+                {
+                    LimpiarProductoGroupBox();
                 }
             }
+
+            return Existe;
         }
         //--------------------------------------------------------------------------------------------------------
         
@@ -225,7 +261,8 @@ namespace InventoryAssistant.UI.Registros
             if (!ValidaProducto())
                 return;
 
-            SiProductoExiste();
+            if(SiProductoExiste())
+                return;
 
             RepositorioBase<DetalleFacturas> Repositorio = new RepositorioBase<DetalleFacturas>();
 
@@ -245,7 +282,6 @@ namespace InventoryAssistant.UI.Registros
 
             CargaGrid();
             LimpiarProductoGroupBox();
-            CalcularTotal();
         }
 
         private void FormatoDataGridView()//Da el formato al DataGridView del detalle
@@ -263,6 +299,12 @@ namespace InventoryAssistant.UI.Registros
             DetalleDataGridView.Columns[6].HeaderText = "Importe";
             DetalleDataGridView.Columns[6].Width = 69;
 
+        }
+
+        private void EliminarProductoButton_Click(object sender, EventArgs e) //Boton eliminar producto!
+        {
+            Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
+            CargaGrid();
         }
     }
 }

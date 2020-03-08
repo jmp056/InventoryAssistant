@@ -33,7 +33,7 @@
             this.DetalleGroupBox = new System.Windows.Forms.GroupBox();
             this.VerProductosButton = new System.Windows.Forms.Button();
             this.TotalLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.EliminarProductoButton = new System.Windows.Forms.Button();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -74,7 +74,7 @@
             // 
             this.DetalleGroupBox.Controls.Add(this.VerProductosButton);
             this.DetalleGroupBox.Controls.Add(this.TotalLabel);
-            this.DetalleGroupBox.Controls.Add(this.button1);
+            this.DetalleGroupBox.Controls.Add(this.EliminarProductoButton);
             this.DetalleGroupBox.Controls.Add(this.TotalTextBox);
             this.DetalleGroupBox.Controls.Add(this.CantidadNumericUpDown);
             this.DetalleGroupBox.Controls.Add(this.PrecioNumericUpDown);
@@ -117,17 +117,18 @@
             this.TotalLabel.TabIndex = 116;
             this.TotalLabel.Text = "Total RD$";
             // 
-            // button1
+            // EliminarProductoButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(10, 289);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 35);
-            this.button1.TabIndex = 115;
-            this.button1.Text = "Eliminar Producto";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.EliminarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarProductoButton.Location = new System.Drawing.Point(10, 289);
+            this.EliminarProductoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarProductoButton.Name = "EliminarProductoButton";
+            this.EliminarProductoButton.Size = new System.Drawing.Size(169, 35);
+            this.EliminarProductoButton.TabIndex = 115;
+            this.EliminarProductoButton.Text = "Eliminar Producto";
+            this.EliminarProductoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarProductoButton.UseVisualStyleBackColor = true;
+            this.EliminarProductoButton.Click += new System.EventHandler(this.EliminarProductoButton_Click);
             // 
             // TotalTextBox
             // 
@@ -275,6 +276,7 @@
             this.DetalleDataGridView.Location = new System.Drawing.Point(8, 97);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
             this.DetalleDataGridView.ReadOnly = true;
+            this.DetalleDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DetalleDataGridView.Size = new System.Drawing.Size(548, 175);
             this.DetalleDataGridView.TabIndex = 18;
             // 
@@ -497,7 +499,7 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button LimpiarButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button EliminarProductoButton;
         private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;

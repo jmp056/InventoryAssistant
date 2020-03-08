@@ -52,6 +52,7 @@ namespace InventoryAssistant.UI.Registros
         {
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = this.Detalle;
+            FormatoDataGridView();
         }
 
         private Facturas LlenaClase() // Funcion encargada de llenar el objeto
@@ -93,11 +94,23 @@ namespace InventoryAssistant.UI.Registros
                 Paso = false;
             }
 
-            if(CantidadNumericUpDown.Value <= 0)
+            if(CantidadNumericUpDown.Value <= 0) //Valida que la cantidad sea mayor a 0
             {
                 MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad debe ser mayor a 0!");
                 CantidadNumericUpDown.Focus();
                 Paso = false;
+            }
+            else
+            {
+                if(ProductoTemporal.ControlAlmacen == true)//Valida si el producto esta controlado en elmacen
+                {
+                    if(ProductoTemporal.Cantidad < CantidadNumericUpDown.Value)//Valida que la cantidad a facturar no sea mayor a la que existe en el almacen
+                    {
+                        MyErrorProvider.SetError(CantidadNumericUpDown, "De este producto solo quedan \"" + ProductoTemporal.Cantidad + "\" unidades en almacen!");
+                        CantidadNumericUpDown.Focus();
+                        Paso = false;
+                    }
+                }
             }
 
             if (PrecioNumericUpDown.Value <= 0)
@@ -109,8 +122,20 @@ namespace InventoryAssistant.UI.Registros
 
             return Paso;
         }
-
         //--------------------------------------------------------------------------------------------------------
+        
+        private void CalcularTotal()//Funcion encargada de calcular el total de la compra
+        {
+            float Total = 0;
+
+            foreach (DataGridViewRow produ in DetalleDataGridView.Rows)
+            {
+                Total += Convert.ToSingle(produ.Cells["Importe"].Value);
+            }
+
+            TotalTextBox.Text = Convert.ToString(Total);
+        }
+
         private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
         {
 
@@ -189,6 +214,24 @@ namespace InventoryAssistant.UI.Registros
 
             CargaGrid();
             LimpiarProductoGroupBox();
+            CalcularTotal();
+        }
+
+        private void FormatoDataGridView()//Da el formato al DataGridView del detalle
+        {
+            DetalleDataGridView.Columns[0].Visible = false;
+            DetalleDataGridView.Columns[1].Visible = false;
+            DetalleDataGridView.Columns[2].HeaderText = "Codigo";
+            DetalleDataGridView.Columns[2].Width = 58;
+            DetalleDataGridView.Columns[3].HeaderText = "Cantidad";
+            DetalleDataGridView.Columns[3].Width = 58;
+            DetalleDataGridView.Columns[4].HeaderText = "Descripcion";
+            DetalleDataGridView.Columns[4].Width = 250;
+            DetalleDataGridView.Columns[5].HeaderText = "Precio";
+            DetalleDataGridView.Columns[5].Width = 69;
+            DetalleDataGridView.Columns[6].HeaderText = "Importe";
+            DetalleDataGridView.Columns[6].Width = 69;
+
         }
     }
 }

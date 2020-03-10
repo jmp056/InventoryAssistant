@@ -47,7 +47,7 @@ namespace InventoryAssistant.UI.Registros
             Productos Producto = new Productos();
 
             Producto.ProductoId = (int)ProductoIdNumericUpDown.Value;
-            Producto.Descripcion = DescripcionTextBox.Text;
+            Producto.Descripcion = DescripcionTextBox.Text.ToUpper();
             Producto.Categoria = Convert.ToInt32(CategoriaComboBox.SelectedIndex);
             Producto.ControlAlmacen = ControlAlmacenCheckBox.Checked;
             Producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);

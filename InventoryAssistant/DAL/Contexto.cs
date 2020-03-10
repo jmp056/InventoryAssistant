@@ -14,7 +14,7 @@ namespace InventoryAssistant.DAL
         public DbSet<Categorias> Categoria { get; set; }
         public DbSet<Productos> Productos { get; set; }
         public DbSet<EntradaProductos> EntradaProductos { get; set; }
-
+        public DbSet<Facturas> Facturas { get; set; }
 
         public Contexto() : base("ConStr")
         {   }

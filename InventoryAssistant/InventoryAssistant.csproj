@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\FacturasBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />

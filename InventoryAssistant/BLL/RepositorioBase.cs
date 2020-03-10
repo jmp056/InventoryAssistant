@@ -97,6 +97,7 @@ namespace InventoryAssistant.BLL
             return entity;
         }
 
+
         public List<T> GetList(Expression<Func<T, bool>> expression)
         {
             Contexto contexto = new Contexto();

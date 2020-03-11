@@ -145,18 +145,18 @@ namespace InventoryAssistant.BLL
             throw new NotImplementedException();
         }
 
-        /*
-            private static Usuarios usuario = new Usuarios();
+        
+        private static Usuarios usuario = new Usuarios();
 
-            public virtual void NombreLogin(string Usuario, string tipodeusuario)
-            {
-                usuario.Usuario = Usuario;
-                usuario.NivelUsuario = tipodeusuario;
+        public virtual void NombreLogin(string Usuario, int tipodeusuario)
+        {
+             usuario.Usuario = Usuario;
+             usuario.NivelDeUsuario = tipodeusuario;
 
-            }
-            public virtual Usuarios ReturnUsuario()
-            {
-                return usuario;
-            }*/
+        }
+        public virtual Usuarios ReturnUsuario()
+        {
+           return usuario;
+        }
     }
 }

@@ -39,6 +39,9 @@
             this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Userlabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,15 +135,51 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(348, 168);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Userlabel
+            // 
+            this.Userlabel.AutoSize = true;
+            this.Userlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Userlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Userlabel.Location = new System.Drawing.Point(93, 239);
+            this.Userlabel.Name = "Userlabel";
+            this.Userlabel.Size = new System.Drawing.Size(41, 15);
+            this.Userlabel.TabIndex = 18;
+            this.Userlabel.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(42, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Usuario:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Userlabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button1);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -161,6 +200,9 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label Userlabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -41,7 +41,7 @@ namespace InventoryAssistant.UI.Registros
             usuario.Cedula = CedulaMaskedTextBox.Text;
             usuario.Celular = TelefonoMaskedTextBox.Text;
             usuario.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
-            usuario.Usuario = UsuarioTextBox.Text.ToUpper();
+            usuario.Usuario = UsuarioTextBox.Text;
             usuario.NivelDeUsuario = Convert.ToInt32(NivelDeUsuarioComboBox.SelectedIndex);
             usuario.Contrasena = ContrasenaTextBox.Text;
 

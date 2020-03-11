@@ -17,11 +17,13 @@ namespace InventoryAssistant.UI.Registros
     public partial class rFacturas : Form
     {
         public List<DetalleFacturas> Detalle;
-
+        RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
         public rFacturas()
         {
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
+            UsuarioTextBox.Text = repositorio.ReturnUsuario().Usuario;
+
         }
 
         //Limpiadores -------------------------------------------------------------------------------------------

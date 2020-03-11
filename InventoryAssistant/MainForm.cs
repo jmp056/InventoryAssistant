@@ -1,4 +1,6 @@
-﻿using InventoryAssistant.UI.Consultas;
+﻿using InventoryAssistant.BLL;
+using InventoryAssistant.Entidades;
+using InventoryAssistant.UI.Consultas;
 using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -61,6 +63,20 @@ namespace InventoryAssistant
         {
             ConsultaProductos cp = new ConsultaProductos();
             cp.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.ShowDialog();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+
+            Userlabel.Text = repositorio.ReturnUsuario().Usuario;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+         
         }
     }
 }

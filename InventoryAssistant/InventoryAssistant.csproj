@@ -95,6 +95,12 @@
     <Compile Include="UI\Consultas\cProductos_Factura.Designer.cs">
       <DependentUpon>cProductos_Factura.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rEntradaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cProductos_Factura.resx">
       <DependentUpon>cProductos_Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rEntradaProductos.resx">
       <DependentUpon>rEntradaProductos.cs</DependentUpon>

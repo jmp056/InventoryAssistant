@@ -415,24 +415,35 @@ namespace InventoryAssistant.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de que desea eliminar esta factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+
+            if (!ExisteEnLaBaseDeDatos())
             {
-
-                MyErrorProvider.Clear();
-                int id;
-                int.TryParse(FacturaIdNumericUpDown.Text, out id);
-                if (FacturasBLL.Eliminar(id))
-                {
-
-                    MessageBox.Show("La factura fue eliminada de manera exitosa", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
-                }
+                MyErrorProvider.SetError(FacturaIdNumericUpDown, "Factura no existe!!!");
+                return;
             }
             else
             {
-                MessageBox.Show("La factura no pudo ser eliminada!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                if (MessageBox.Show("¿Está seguro de que desea eliminar esta factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+
+                    MyErrorProvider.Clear();
+                    int id;
+                    int.TryParse(FacturaIdNumericUpDown.Text, out id);
+
+                    if (FacturasBLL.Eliminar(id))
+                    {
+
+                        MessageBox.Show("La factura fue eliminada de manera exitosa", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La factura no pudo ser eliminada!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
             }
+       
         }
 
         private void rFacturas_Load(object sender, EventArgs e)

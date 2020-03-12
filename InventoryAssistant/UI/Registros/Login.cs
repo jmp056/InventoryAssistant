@@ -22,6 +22,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void Logins()
         {
+
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
             List<Usuarios> usuario = new List<Usuarios>();

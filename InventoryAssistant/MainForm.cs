@@ -31,8 +31,17 @@ namespace InventoryAssistant
 
         private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios rU = new rUsuarios();
-            rU.ShowDialog();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+
+            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
+            {
+                rUsuarios rU = new rUsuarios();
+                rU.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene Acceso a Registrar Usuarios", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,20 +52,47 @@ namespace InventoryAssistant
 
         private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCategorias rc = new rCategorias();
-            rc.ShowDialog();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+
+            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
+            {
+                rCategorias rc = new rCategorias();
+                rc.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene Acceso a Registrar Categoria", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProductos rp = new rProductos();
-            rp.ShowDialog();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+
+            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
+            {
+                rProductos rp = new rProductos();
+                rp.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene Acceso a Registrar Productos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEntradaProductos rep = new rEntradaProductos();
-            rep.ShowDialog();
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+
+            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
+            {
+                rEntradaProductos rep = new rEntradaProductos();
+                rep.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene Acceso a Agregar Productos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)

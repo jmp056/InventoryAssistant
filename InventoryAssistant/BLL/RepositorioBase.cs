@@ -148,10 +148,10 @@ namespace InventoryAssistant.BLL
         
         private static Usuarios usuario = new Usuarios();
 
-        public virtual void NombreLogin(string Usuario, int tipodeusuario)
+        public virtual void NombreLogin(string Usuario, int NivelDeUsuario)
         {
              usuario.Usuario = Usuario;
-             usuario.NivelDeUsuario = tipodeusuario;
+             usuario.NivelDeUsuario = NivelDeUsuario;
 
         }
         public virtual Usuarios ReturnUsuario()

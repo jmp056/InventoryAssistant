@@ -4,12 +4,6 @@ using InventoryAssistant.Entidades;
 using InventoryAssistant.UI.Consultas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
@@ -23,7 +17,6 @@ namespace InventoryAssistant.UI.Registros
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
             UsuarioTextBox.Text = repositorio.ReturnUsuario().Usuario;
-
         }
 
         //Limpiadores -------------------------------------------------------------------------------------------
@@ -296,7 +289,7 @@ namespace InventoryAssistant.UI.Registros
         private void VerProductosButton_Click(object sender, EventArgs e) //Boton ver lista de productos
         {
             LimpiarProductoGroupBox();
-            cProductos_Factura TraeProducto = new cProductos_Factura();
+            SeleccionProducto TraeProducto = new SeleccionProducto();
             if (TraeProducto.ShowDialog() == DialogResult.OK)
             {
 
@@ -440,6 +433,11 @@ namespace InventoryAssistant.UI.Registros
                 MessageBox.Show("La factura no pudo ser eliminada!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+        }
+
+        private void rFacturas_Load(object sender, EventArgs e)
+        {
+            FechaDateTimePicker.Value = DateTime.Now;
         }
     }
 }

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
 {
-    public partial class cProductos_Factura : Form
+    public partial class SeleccionProducto : Form
     {
         public int IdProductoSeleccionado { get; set; }
 
-        public cProductos_Factura()
+        public SeleccionProducto()
         {
             InitializeComponent();
         }

@@ -318,8 +318,12 @@
             this.Controls.Add(this.DescripcionLabel);
             this.Controls.Add(this.ProductoIdLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "rProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Productos";
             this.Activated += new System.EventHandler(this.rProductos_Activated);
             this.Load += new System.EventHandler(this.rProductos_Load);

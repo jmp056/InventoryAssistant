@@ -355,11 +355,11 @@
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.UsuarioIdLabel);
             this.Controls.Add(this.LimpiarButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rUsuarios";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();

@@ -1,6 +1,6 @@
 ﻿namespace InventoryAssistant.UI.Consultas
 {
-    partial class cProductos_Factura
+    partial class SeleccionProducto
     {
         /// <summary>
         /// Required designer variable.

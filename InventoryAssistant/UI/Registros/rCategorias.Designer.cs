@@ -97,7 +97,7 @@
             // NombreTextBox
             // 
             this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreTextBox.Location = new System.Drawing.Point(224, 67);
+            this.NombreTextBox.Location = new System.Drawing.Point(224, 72);
             this.NombreTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(218, 22);
@@ -118,7 +118,7 @@
             // 
             this.NombreLabel.AutoSize = true;
             this.NombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreLabel.Location = new System.Drawing.Point(35, 70);
+            this.NombreLabel.Location = new System.Drawing.Point(35, 75);
             this.NombreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NombreLabel.Name = "NombreLabel";
             this.NombreLabel.Size = new System.Drawing.Size(178, 16);

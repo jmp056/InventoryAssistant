@@ -101,6 +101,12 @@
     <Compile Include="UI\Registros\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\Reglas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\Reglas.Designer.cs">
+      <DependentUpon>Reglas.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rEntradaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Consultas\ConsultaProductos.resx">
       <DependentUpon>ConsultaProductos.cs</DependentUpon>
@@ -154,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\Reglas.resx">
+      <DependentUpon>Reglas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rEntradaProductos.resx">
       <DependentUpon>rEntradaProductos.cs</DependentUpon>
@@ -184,7 +194,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\descarga.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

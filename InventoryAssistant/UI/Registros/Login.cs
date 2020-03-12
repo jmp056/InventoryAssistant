@@ -51,9 +51,14 @@ namespace InventoryAssistant.UI.Registros
 
         private void Entrarbutton_Click(object sender, EventArgs e)
         {
-            Logins();
-   
+     
 
+
+        }
+
+        private void Entrarbutton_Click_1(object sender, EventArgs e)
+        {
+            Logins();
 
         }
     }

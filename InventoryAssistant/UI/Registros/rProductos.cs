@@ -35,7 +35,7 @@ namespace InventoryAssistant.UI.Registros
             ProductoIdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
             CategoriaComboBox.SelectedIndex = -1;
-            ControlAlmacenCheckBox.Checked = false;
+            ControlAlmacenCheckBox.Checked = true;
             CantidadNumericUpDown.Value = 0;
             PrecioNumericUpDown.Value = 0;
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;

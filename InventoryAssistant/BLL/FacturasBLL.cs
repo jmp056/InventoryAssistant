@@ -17,6 +17,7 @@ namespace InventoryAssistant.BLL
 
             bool Paso = false;
             Contexto contexto = new Contexto();
+            Productos Producto = new Productos();
 
             try
             {
@@ -26,8 +27,10 @@ namespace InventoryAssistant.BLL
 
                     foreach (var item in Factura.Detalle)
                     {
-
-                        contexto.Productos.Find(item.ProductoId).Cantidad -= item.Cantidad;
+                        Producto = new Productos();
+                        Producto = contexto.Productos.Find(item.ProductoId);
+                        if(Producto.ControlAlmacen == true)
+                            Producto.Cantidad -= item.Cantidad;
                     }
                 }
                 Paso = contexto.SaveChanges() > 0;
@@ -53,6 +56,7 @@ namespace InventoryAssistant.BLL
             bool Paso = false;
             Contexto contexto = new Contexto();
             RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
+            Productos Producto = new Productos();
 
             try
             {
@@ -60,22 +64,24 @@ namespace InventoryAssistant.BLL
                 Facturas Anterior = Buscar(Factura.FacturaId);
                 foreach (var item in Anterior.Detalle)
                 {
-
+                    Producto = new Productos();
                     if (!Factura.Detalle.Any(d => d.DetalleFacturaId == item.DetalleFacturaId))
                     {
-
-                        contexto.Productos.Find(item.ProductoId).Cantidad += item.Cantidad;
+                        Producto = contexto.Productos.Find(item.ProductoId);
+                        if(Producto.ControlAlmacen == true)
+                            Producto.Cantidad += item.Cantidad;
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
 
                 foreach (var item in Factura.Detalle)
                 {
-
+                    Producto = new Productos();
                     if (item.DetalleFacturaId == 0)
                     {
-
-                        contexto.Productos.Find(item.ProductoId).Cantidad -= item.Cantidad;
+                        Producto = contexto.Productos.Find(item.ProductoId);
+                        if (Producto.ControlAlmacen == true)
+                            Producto.Cantidad -= item.Cantidad;
                         contexto.Entry(item).State = EntityState.Added;
                     }
                     else

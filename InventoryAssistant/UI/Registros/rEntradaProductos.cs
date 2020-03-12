@@ -1,43 +1,29 @@
 ﻿using InventoryAssistant.BLL;
+using InventoryAssistant.DAL;
 using InventoryAssistant.Entidades;
+using InventoryAssistant.UI.Consultas;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
 {
     public partial class rEntradaProductos : Form
     {
+        private Productos Producto = new Productos();
         public rEntradaProductos()
         {
             InitializeComponent();
-            LlenaComboBoxProductos();
             Limpiar();
+            Producto = new Productos();
         }
 
         public void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
             EntradaIdNumericUpDown.Value = 0;
-            ProductoComboBox.SelectedIndex = -1;
+            ProductoTextBox.Text = string.Empty;
             CantidadNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             EntradaIdNumericUpDown.Focus();
-        }
-
-        public void LlenaComboBoxProductos() // Funcion encargada de llenar el ComboBox de los productos
-        {
-            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
-            var productos = new List<Productos>();
-            productos = Repositorio.GetList(p => true);
-            ProductoComboBox.DataSource = productos;
-            ProductoComboBox.ValueMember = "ProductoId";
-            ProductoComboBox.DisplayMember = "Descripcion";
         }
 
         private EntradaProductos LlenaClase()  // Funcion encargada de llenar el objeto
@@ -45,7 +31,7 @@ namespace InventoryAssistant.UI.Registros
             EntradaProductos entradaProductos = new EntradaProductos();
 
             entradaProductos.EntradaProductoId = (int)EntradaIdNumericUpDown.Value;
-            entradaProductos.ProductoId = Convert.ToInt32(ProductoComboBox.SelectedValue);
+            entradaProductos.ProductoId = (int)Producto.ProductoId;
             entradaProductos.Cantidad = (int)CantidadNumericUpDown.Value;
             entradaProductos.Fecha = FechaDateTimePicker.Value;
 
@@ -55,7 +41,7 @@ namespace InventoryAssistant.UI.Registros
         private void LlenaCampo(EntradaProductos entradaProductos)  // Funcion encargada de llenar los campos del registro con los datos de un objeto
         {
             EntradaIdNumericUpDown.Value = entradaProductos.EntradaProductoId;
-            ProductoComboBox.SelectedValue = entradaProductos.ProductoId;
+            ProductoTextBox.Text = Producto.Descripcion;
             CantidadNumericUpDown.Value = entradaProductos.Cantidad;
             FechaDateTimePicker.Value = entradaProductos.Fecha;
         }
@@ -65,10 +51,10 @@ namespace InventoryAssistant.UI.Registros
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if(ProductoComboBox.SelectedIndex < 0)//Valida que haya un producto seleccionado
+            if(ProductoTextBox.Text == string.Empty)//Valida que haya un producto seleccionado
             {
-                MyErrorProvider.SetError(ProductoComboBox, "Debe seleccionar un producto!");
-                ProductoComboBox.Focus();
+                MyErrorProvider.SetError(ProductoTextBox, "Debe seleccionar un producto!");
+                ProductoTextBox.Focus();
                 paso = false;
             }
 
@@ -106,8 +92,6 @@ namespace InventoryAssistant.UI.Registros
             }
             else
                 MyErrorProvider.SetError(EntradaIdNumericUpDown, "No existe una entrada con este codigo!");
-            ProductoComboBox.DroppedDown = true;
-            ProductoComboBox.Focus();
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)//Clic al boton limpiar
@@ -210,6 +194,26 @@ namespace InventoryAssistant.UI.Registros
 
             }
             EntradaIdNumericUpDown.Focus();
+        }
+
+        private void VerProductosButton_Click(object sender, EventArgs e)
+        {
+            Contexto contexto = new Contexto();
+            SeleccionProducto TraeProducto = new SeleccionProducto();
+            if (TraeProducto.ShowDialog() == DialogResult.OK)
+            {
+
+                Producto = BuscaProducto(TraeProducto.IdProductoSeleccionado);
+                ProductoTextBox.Text = Producto.Descripcion;
+                CantidadNumericUpDown.Focus();
+            }
+        }
+        private Productos BuscaProducto(int Id) // Funcion encargada de buscar el producto
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            Productos Producto = Repositorio.Buscar(Id);
+
+            return Producto;
         }
     }
 }

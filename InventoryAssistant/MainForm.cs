@@ -78,5 +78,11 @@ namespace InventoryAssistant
         {
          
         }
+
+        private void consultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaFacturas cf = new ConsultaFacturas();
+            cf.ShowDialog();
+        }
     }
 }

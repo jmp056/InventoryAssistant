@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Userlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.consultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,7 +111,8 @@
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaDeUsuariosToolStripMenuItem,
-            this.consultaDeProductosToolStripMenuItem});
+            this.consultaDeProductosToolStripMenuItem,
+            this.consultaDeFacturasToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -167,6 +169,13 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Usuario:";
             // 
+            // consultaDeFacturasToolStripMenuItem
+            // 
+            this.consultaDeFacturasToolStripMenuItem.Name = "consultaDeFacturasToolStripMenuItem";
+            this.consultaDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.consultaDeFacturasToolStripMenuItem.Text = "Consulta de Facturas";
+            this.consultaDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeFacturasToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +214,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label Userlabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeFacturasToolStripMenuItem;
     }
 }
 

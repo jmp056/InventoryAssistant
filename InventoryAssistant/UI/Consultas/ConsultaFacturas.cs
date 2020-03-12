@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
 {
-    public partial class ConsultasUsuarios : Form
+    public partial class ConsultaFacturas : Form
     {
-        private List<Usuarios> listaUsuario;
+        private List<Facturas> listaFactura;
 
-        public ConsultasUsuarios()
+        public ConsultaFacturas()
         {
             InitializeComponent();
         }
@@ -37,18 +37,20 @@ namespace InventoryAssistant.UI.Consultas
                 CristerioTextBox.Focus();
                 paso = false;
             }
-            if (FiltroComboBox.Text == "Todo")
+            if (FiltroComboBox.Text =="Todo")
             {
                 paso = true;
                 MyErrorProvider.Clear();
             }
+
             return paso;
         }
+
         private void Buscar()
         {
-            RepositorioBase<Usuarios> repositorioE = new RepositorioBase<Usuarios>();
+            RepositorioBase<Facturas> repositorioE = new RepositorioBase<Facturas>();
 
-            var listado = new List<Usuarios>();
+            var listado = new List<Facturas>();
 
             if (!Validar())
                 return;
@@ -69,7 +71,7 @@ namespace InventoryAssistant.UI.Consultas
                         else
                         {
                             int id = Convert.ToInt32(CristerioTextBox.Text);
-                            listado = repositorioE.GetList(p => p.UsuarioId == id);
+                            listado = repositorioE.GetList(p => p.FacturaId == id);
                         }
                         break;
                     case 2://Todo: Nombres
@@ -78,7 +80,7 @@ namespace InventoryAssistant.UI.Consultas
                             return;
                         }
                         else
-                            listado = repositorioE.GetList(p => p.Nombres.Contains(CristerioTextBox.Text));
+                            listado = repositorioE.GetList(p => p.Cliente.Contains(CristerioTextBox.Text));
                         break;
                     case 3://Usuarios
                         listado = repositorioE.GetList(p => p.Usuario.Contains(CristerioTextBox.Text));
@@ -90,33 +92,23 @@ namespace InventoryAssistant.UI.Consultas
                 listado = repositorioE.GetList(p => true);
             }
 
-            cUsuariosdataGridView.DataSource = null;
+            cFacturasdataGridView.DataSource = null;
 
-            cUsuariosdataGridView.DataSource = listado;
-            listaUsuario = listado;
+            cFacturasdataGridView.DataSource = listado;
+            listaFactura = listado;
 
-            cUsuariosdataGridView.Columns[0].HeaderText = "ID";
-            cUsuariosdataGridView.Columns[0].Width = 40;
-            cUsuariosdataGridView.Columns[1].HeaderText = "Nombres";
-            cUsuariosdataGridView.Columns[1].Width = 120;
-            cUsuariosdataGridView.Columns[2].HeaderText = "Apellidos";
-            cUsuariosdataGridView.Columns[2].Width = 120;
-            cUsuariosdataGridView.Columns[3].HeaderText = "Cedula";
-            cUsuariosdataGridView.Columns[3].Width = 80;
-            cUsuariosdataGridView.Columns[4].HeaderText = "Celular";
-            cUsuariosdataGridView.Columns[4].Width = 80;
-            cUsuariosdataGridView.Columns[5].HeaderText = "Fecha Ingreso";
-            cUsuariosdataGridView.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
-            // cUsuariosdataGridView.Columns[4].Visible = false;
-            cUsuariosdataGridView.Columns[6].Visible = false;
-            // cUsuariosdataGridView.Columns[6].Width = 100;
-            cUsuariosdataGridView.Columns[7].Visible = false;
-            cUsuariosdataGridView.Columns[8].Visible = false;
-            cUsuariosdataGridView.Columns[9].Visible = false;
-            cUsuariosdataGridView.Columns[10].Visible = false;
+            cFacturasdataGridView.Columns[0].HeaderText = "ID";
+            cFacturasdataGridView.Columns[0].Width = 50;
+            cFacturasdataGridView.Columns[1].HeaderText = "Usuario";
+            cFacturasdataGridView.Columns[1].Width = 120;
+            cFacturasdataGridView.Columns[2].HeaderText = "Fecha Ingreso";
+            cFacturasdataGridView.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
+            cFacturasdataGridView.Columns[3].HeaderText = "Cliente";
+            cFacturasdataGridView.Columns[3].Width = 180;
+            cFacturasdataGridView.Columns[4].HeaderText = "Total";
+            cFacturasdataGridView.Columns[4].Width = 90;
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void RealizarBusquedaButton_Click(object sender, EventArgs e)
         {
             Buscar();
         }

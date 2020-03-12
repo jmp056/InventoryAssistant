@@ -37,6 +37,11 @@ namespace InventoryAssistant.UI.Consultas
                 CristerioTextBox.Focus();
                 paso = false;
             }
+            if (FiltroComboBox.Text == "Todo")
+            {
+                paso = true;
+                MyErrorProvider.Clear();
+            }
 
             return paso;
         }

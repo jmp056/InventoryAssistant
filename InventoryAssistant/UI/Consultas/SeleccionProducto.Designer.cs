@@ -131,7 +131,7 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // cProductos_Factura
+            // SeleccionProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.ProductosDataGridView);
             this.Controls.Add(this.AnadirProductoButton);
             this.Controls.Add(this.BusquedaGroupBox);
-            this.Name = "cProductos_Factura";
+            this.Name = "SeleccionProducto";
             this.Text = "CProductos_Factura";
             this.Load += new System.EventHandler(this.CProductos_Factura_Load);
             this.BusquedaGroupBox.ResumeLayout(false);

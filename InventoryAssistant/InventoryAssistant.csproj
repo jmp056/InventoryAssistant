@@ -77,6 +77,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultas\ConsultaEntradaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaEntradaProductos.Designer.cs">
+      <DependentUpon>ConsultaEntradaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\ConsultaFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Consultas\ConsultaEntradaProductos.resx">
+      <DependentUpon>ConsultaEntradaProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ConsultaFacturas.resx">
       <DependentUpon>ConsultaFacturas.cs</DependentUpon>
     </EmbeddedResource>

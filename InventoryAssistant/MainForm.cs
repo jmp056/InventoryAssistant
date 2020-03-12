@@ -84,5 +84,11 @@ namespace InventoryAssistant
             ConsultaFacturas cf = new ConsultaFacturas();
             cf.ShowDialog();
         }
+
+        private void consultaDeEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaEntradaProductos cep = new ConsultaEntradaProductos();
+            cep.ShowDialog();
+        }
     }
 }

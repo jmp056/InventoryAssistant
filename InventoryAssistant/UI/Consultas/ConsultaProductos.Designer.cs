@@ -32,9 +32,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cProductosdataGridView = new System.Windows.Forms.DataGridView();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
-            this.EliminarUsuarioButton = new System.Windows.Forms.Button();
-            this.EditarUsuarioButton = new System.Windows.Forms.Button();
-            this.DatosDelUsuarioButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.RealizarBusquedaButton = new System.Windows.Forms.Button();
             this.CristerioTextBox = new System.Windows.Forms.TextBox();
@@ -68,9 +65,6 @@
             // 
             // DatosDelUsuarioGroupBox
             // 
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.EliminarUsuarioButton);
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.EditarUsuarioButton);
-            this.DatosDelUsuarioGroupBox.Controls.Add(this.DatosDelUsuarioButton);
             this.DatosDelUsuarioGroupBox.Controls.Add(this.groupBox1);
             this.DatosDelUsuarioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDelUsuarioGroupBox.Location = new System.Drawing.Point(6, 2);
@@ -80,34 +74,6 @@
             this.DatosDelUsuarioGroupBox.TabStop = false;
             this.DatosDelUsuarioGroupBox.Text = "Datos del Producto";
             // 
-            // EliminarUsuarioButton
-            // 
-            this.EliminarUsuarioButton.Location = new System.Drawing.Point(13, 163);
-            this.EliminarUsuarioButton.Name = "EliminarUsuarioButton";
-            this.EliminarUsuarioButton.Size = new System.Drawing.Size(152, 50);
-            this.EliminarUsuarioButton.TabIndex = 26;
-            this.EliminarUsuarioButton.Text = "Eliminar usuario";
-            this.EliminarUsuarioButton.UseVisualStyleBackColor = true;
-            // 
-            // EditarUsuarioButton
-            // 
-            this.EditarUsuarioButton.Location = new System.Drawing.Point(13, 94);
-            this.EditarUsuarioButton.Name = "EditarUsuarioButton";
-            this.EditarUsuarioButton.Size = new System.Drawing.Size(152, 50);
-            this.EditarUsuarioButton.TabIndex = 25;
-            this.EditarUsuarioButton.Text = "Editar Usuario";
-            this.EditarUsuarioButton.UseVisualStyleBackColor = true;
-            // 
-            // DatosDelUsuarioButton
-            // 
-            this.DatosDelUsuarioButton.Location = new System.Drawing.Point(13, 29);
-            this.DatosDelUsuarioButton.Name = "DatosDelUsuarioButton";
-            this.DatosDelUsuarioButton.Size = new System.Drawing.Size(152, 50);
-            this.DatosDelUsuarioButton.TabIndex = 24;
-            this.DatosDelUsuarioButton.Text = "Datos del usuario";
-            this.DatosDelUsuarioButton.UseVisualStyleBackColor = true;
-            this.DatosDelUsuarioButton.Click += new System.EventHandler(this.DatosDelUsuarioButton_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.RealizarBusquedaButton);
@@ -116,7 +82,7 @@
             this.groupBox1.Controls.Add(this.FiltroComboBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 219);
+            this.groupBox1.Location = new System.Drawing.Point(0, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(190, 202);
             this.groupBox1.TabIndex = 23;
@@ -199,9 +165,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView cProductosdataGridView;
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
-        private System.Windows.Forms.Button EliminarUsuarioButton;
-        private System.Windows.Forms.Button EditarUsuarioButton;
-        private System.Windows.Forms.Button DatosDelUsuarioButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button RealizarBusquedaButton;
         private System.Windows.Forms.TextBox CristerioTextBox;

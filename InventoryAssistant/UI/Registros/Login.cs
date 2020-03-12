@@ -52,18 +52,44 @@ namespace InventoryAssistant.UI.Registros
                 Limpiar();
             }
         }
+        private bool Validar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+            if (UsuariotextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(UsuariotextBox, "Este Campo No puede Estar Vacio!!");
+                paso = false;
+            }
 
+            if (ContrasenatextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(ContrasenatextBox, "Este Campo No puede Estar Vacio!!");
+                paso = false;
+            }
+
+            return paso;
+        }
         private void Entrarbutton_Click_1(object sender, EventArgs e)
         {
+            if (!Validar())
+                return;
             Logins();
         }
 
         private void ContrasenatextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!Validar())
+                return;
             if (e.KeyCode == Keys.Enter)
             {
                 Logins();
             }
+        }
+
+        private void UsuariotextBox_Leave(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
         }
     }
 }

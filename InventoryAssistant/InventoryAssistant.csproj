@@ -197,6 +197,12 @@
   <ItemGroup>
     <None Include="Resources\descarga.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_icon-icons.com_52393.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-social-web-network-internet_340_icon-icons.com_61497.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

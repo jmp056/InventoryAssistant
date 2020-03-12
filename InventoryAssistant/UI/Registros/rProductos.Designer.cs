@@ -114,6 +114,8 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::InventoryAssistant.Properties.Resources.seo_social_web_network_internet_340_icon_icons_com_61497;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(343, 21);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
@@ -283,6 +285,7 @@
             // AnadirCategoriasButton
             // 
             this.AnadirCategoriasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnadirCategoriasButton.Image = global::InventoryAssistant.Properties.Resources.add_icon_icons_com_52393;
             this.AnadirCategoriasButton.Location = new System.Drawing.Point(404, 104);
             this.AnadirCategoriasButton.Margin = new System.Windows.Forms.Padding(4);
             this.AnadirCategoriasButton.Name = "AnadirCategoriasButton";

@@ -333,16 +333,20 @@ namespace InventoryAssistant.UI.Registros
 
             int.TryParse(UsuarioIdNumericUpDown.Text, out int id); 
 
-            usuario = repositorio.Buscar(id); 
+            usuario = repositorio.Buscar(id);
 
-            if (usuario != null) 
+            if (usuario != null)
             {
                 MyErrorProvider.Clear();
-                LlenaCampo(usuario); 
+                LlenaCampo(usuario);
             }
             else
+            {
+                Limpiar();
                 MyErrorProvider.SetError(UsuarioIdNumericUpDown, "No existe un usuario con este codigo!");
-            NombresTextBox.Focus();
+                NombresTextBox.Focus();
+            }
+               
         }
 
         private void LimpiarButton_Click_1(object sender, EventArgs e) //Clic al boton limpiar

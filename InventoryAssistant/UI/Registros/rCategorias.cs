@@ -107,8 +107,12 @@ namespace InventoryAssistant.UI.Registros
                 LlenaCampo(Categoria);
             }
             else
+            {
+                Limpiar();
                 MyErrorProvider.SetError(CategoriaIdNumericUpDown, "No existe una categoria con este codigo!");
-            NombreTextBox.Focus();
+                NombreTextBox.Focus();
+            }
+               
         }
         
         private void LimpiarButton_Click(object sender, EventArgs e)

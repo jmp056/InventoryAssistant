@@ -24,6 +24,7 @@ namespace InventoryAssistant.UI.Registros
             CantidadNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             EntradaIdNumericUpDown.Focus();
+            MyErrorProvider.Clear();
         }
 
         private EntradaProductos LlenaClase()  // Funcion encargada de llenar el objeto

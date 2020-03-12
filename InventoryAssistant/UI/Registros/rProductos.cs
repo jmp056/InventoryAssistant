@@ -35,7 +35,7 @@ namespace InventoryAssistant.UI.Registros
             ProductoIdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
             CategoriaComboBox.SelectedIndex = -1;
-            ControlAlmacenCheckBox.Checked = true;
+            ControlAlmacenCheckBox.Checked = false;
             CantidadNumericUpDown.Value = 0;
             PrecioNumericUpDown.Value = 0;
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;
@@ -173,8 +173,11 @@ namespace InventoryAssistant.UI.Registros
                 LlenaCampo(Producto);
             }
             else
+            {
+                Limpiar();
                 MyErrorProvider.SetError(ProductoIdNumericUpDown, "No existe un producto con este codigo!");
-            DescripcionTextBox.Focus();
+                DescripcionTextBox.Focus();
+            }         
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)//Clic al boton limpiar

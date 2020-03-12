@@ -20,6 +20,11 @@ namespace InventoryAssistant.UI.Registros
             InitializeComponent();
         }
 
+        public void Limpiar()
+        {
+            ContrasenatextBox.Text = "";
+        }
+
         private void Logins()
         {
 
@@ -44,22 +49,21 @@ namespace InventoryAssistant.UI.Registros
             else
             {
                 MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //Limpiar();
+                Limpiar();
             }
-
-        }
-
-        private void Entrarbutton_Click(object sender, EventArgs e)
-        {
-     
-
-
         }
 
         private void Entrarbutton_Click_1(object sender, EventArgs e)
         {
             Logins();
+        }
 
+        private void ContrasenatextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Logins();
+            }
         }
     }
 }

@@ -32,10 +32,10 @@
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.ContrasenatextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Entrarbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -57,6 +57,7 @@
             this.ContrasenatextBox.Size = new System.Drawing.Size(149, 22);
             this.ContrasenatextBox.TabIndex = 3;
             this.ContrasenatextBox.UseSystemPasswordChar = true;
+            this.ContrasenatextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContrasenatextBox_KeyDown);
             // 
             // groupBox1
             // 
@@ -74,14 +75,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acceso al Sistema";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Usuario";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Contraseña";
             // 
             // Entrarbutton
             // 
@@ -102,14 +103,14 @@
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Contraseña";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Usuario";
             // 
             // panel1
             // 

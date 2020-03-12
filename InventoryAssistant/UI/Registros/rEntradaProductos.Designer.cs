@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rEntradaProductos));
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.LimpiarButton = new System.Windows.Forms.Button();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ProductoComboBox = new System.Windows.Forms.ComboBox();
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.CantidadLabel = new System.Windows.Forms.Label();
             this.FechaLabel = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@
             this.EntradaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.EntradaIdLabel = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ProductoTextBox = new System.Windows.Forms.TextBox();
+            this.VerProductosButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -106,16 +108,6 @@
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.CantidadNumericUpDown.TabIndex = 51;
-            // 
-            // ProductoComboBox
-            // 
-            this.ProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductoComboBox.FormattingEnabled = true;
-            this.ProductoComboBox.Location = new System.Drawing.Point(200, 73);
-            this.ProductoComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ProductoComboBox.Name = "ProductoComboBox";
-            this.ProductoComboBox.Size = new System.Drawing.Size(206, 21);
-            this.ProductoComboBox.TabIndex = 50;
             // 
             // ProductoLabel
             // 
@@ -187,17 +179,40 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // ProductoTextBox
+            // 
+            this.ProductoTextBox.BackColor = System.Drawing.Color.White;
+            this.ProductoTextBox.Enabled = false;
+            this.ProductoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoTextBox.Location = new System.Drawing.Point(200, 73);
+            this.ProductoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ProductoTextBox.Name = "ProductoTextBox";
+            this.ProductoTextBox.Size = new System.Drawing.Size(190, 22);
+            this.ProductoTextBox.TabIndex = 56;
+            // 
+            // VerProductosButton
+            // 
+            this.VerProductosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerProductosButton.Image = ((System.Drawing.Image)(resources.GetObject("VerProductosButton.Image")));
+            this.VerProductosButton.Location = new System.Drawing.Point(412, 69);
+            this.VerProductosButton.Name = "VerProductosButton";
+            this.VerProductosButton.Size = new System.Drawing.Size(30, 30);
+            this.VerProductosButton.TabIndex = 118;
+            this.VerProductosButton.UseVisualStyleBackColor = true;
+            this.VerProductosButton.Click += new System.EventHandler(this.VerProductosButton_Click);
+            // 
             // rEntradaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 279);
+            this.Controls.Add(this.VerProductosButton);
+            this.Controls.Add(this.ProductoTextBox);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.LimpiarButton);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.CantidadNumericUpDown);
-            this.Controls.Add(this.ProductoComboBox);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.CantidadLabel);
             this.Controls.Add(this.FechaLabel);
@@ -221,7 +236,6 @@
         private System.Windows.Forms.Button LimpiarButton;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
-        private System.Windows.Forms.ComboBox ProductoComboBox;
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label CantidadLabel;
         private System.Windows.Forms.Label FechaLabel;
@@ -229,5 +243,7 @@
         private System.Windows.Forms.NumericUpDown EntradaIdNumericUpDown;
         private System.Windows.Forms.Label EntradaIdLabel;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.TextBox ProductoTextBox;
+        private System.Windows.Forms.Button VerProductosButton;
     }
 }

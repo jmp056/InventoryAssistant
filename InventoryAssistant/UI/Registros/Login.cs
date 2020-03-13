@@ -20,14 +20,8 @@ namespace InventoryAssistant.UI.Registros
             InitializeComponent();
         }
 
-        public void Limpiar()
+        private void Logins() //Funcion para logearse
         {
-            ContrasenatextBox.Text = "";
-        }
-
-        private void Logins()
-        {
-
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
             List<Usuarios> usuario = new List<Usuarios>();
@@ -37,11 +31,11 @@ namespace InventoryAssistant.UI.Registros
             usuario = repositorio.GetList(filtrar);
            
 
-            if (usuario.Exists(x => x.Usuario == UsuariotextBox.Text) && usuario.Exists(x => x.Contrasena == ContrasenatextBox.Text))
+            if (usuario.Exists(x => x.Usuario == UsuariotextBox.Text) && usuario.Exists(x => x.Contrasena == ContrasenaTextBox.Text))
             {
                 foreach (var item in repositorio.GetList(x => x.Usuario == UsuariotextBox.Text))
                 {
-                    repositorio.NombreLogin(item.Usuario, item.NivelDeUsuario);
+                    repositorio.NombreLogin(item.Nombres, item.Apellidos, item.NivelDeUsuario);
                 }
                 MessageBox.Show("Logeado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
@@ -49,52 +43,72 @@ namespace InventoryAssistant.UI.Registros
             else
             {
                 MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Limpiar();
+                ContrasenaTextBox.Text = string.Empty;
             }
         }
-        private bool Validar()
+
+        private bool Validar() //Funcion encargada de validar el login
         {
             bool paso = true;
             MyErrorProvider.Clear();
             if (UsuariotextBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(UsuariotextBox, "Este Campo No puede Estar Vacio!!");
+                MyErrorProvider.SetError(UsuariotextBox, "El usuario no puede estar vacío!");
                 paso = false;
             }
 
-            if (ContrasenatextBox.Text == string.Empty)
+            if (ContrasenaTextBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(ContrasenatextBox, "Este Campo No puede Estar Vacio!!");
+                MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede estar vacía!");
                 paso = false;
             }
 
             return paso;
         }
-        private void Entrarbutton_Click_1(object sender, EventArgs e)
+
+        //Botones -------------------------------------------------------------------------------------------------------------------------
+        private void Entrarbutton_Click_1(object sender, EventArgs e) //Boton entrar
         {
+            MyErrorProvider.Clear();
             if (!Validar())
                 return;
             Logins();
         }
-
-        private void ContrasenatextBox_KeyDown(object sender, KeyEventArgs e)
+        
+        private void CancelarButton_Click(object sender, EventArgs e) // Boton cancelar
         {
-            if (!Validar())
-                return;
-            if (e.KeyCode == Keys.Enter)
+            this.Close();
+        }
+        
+        //---------------------------------------------------------------------------------------------------------------------------------
+        
+        
+        //Moviendo el foco entre los campos -----------------------------------------------------------------------------------------------
+        private void Login_Load(object sender, EventArgs e) //Cuando la ventana termina de cargar, el foco va hacia el Usuario
+        {
+            UsuariotextBox.Focus();
+        }
+
+        private void UsuariotextBox_KeyPress(object sender, KeyPressEventArgs e)//Del usuario a la contraseña al pulsar enter
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
             {
+                ContrasenaTextBox.Focus();
+            }
+        }
+
+        private void ContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e) //De la contraseña al la funcion de loguearse
+        {
+
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                MyErrorProvider.Clear();
+                if (!Validar())
+                    return;
                 Logins();
             }
         }
 
-        private void UsuariotextBox_Leave(object sender, EventArgs e)
-        {
-            MyErrorProvider.Clear();
-        }
-
-        private void ContrasenatextBox_Leave(object sender, EventArgs e)
-        {
-            MyErrorProvider.Clear();
-        }
+        //---------------------------------------------------------------------------------------------------------------------------------
     }
 }

@@ -21,28 +21,46 @@ namespace InventoryAssistant
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e) //Registro de facturas
         {
-            rFacturas r = new rFacturas();
-            r.Show();
+            rFacturas rF = new rFacturas();
+            rF.ShowDialog();
+        }
+       
+        private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Entrada de productos
+        {
+            rEntradaProductos rE = new rEntradaProductos();
+            rE.ShowDialog();
+        }
+        
+        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e) //Registro de productos
+        {
+            rProductos rP = new rProductos();
+            rP.ShowDialog();
+        }
+
+        private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e) //Registro de categorias
+        {
+            rCategorias rC = new rCategorias();
+            rC.ShowDialog();
+        }
+        
+        private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)//Registro de usuarios
+        {
+            rUsuarios rU = new rUsuarios();
+            rU.ShowDialog();
         }
 
 
 
-        private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
-            {
-                rUsuarios rU = new rUsuarios();
-                rU.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No tiene Acceso a Registrar Usuarios", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
-        }
+
+
+
+
+
+
+
 
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -50,50 +68,11 @@ namespace InventoryAssistant
             cU.ShowDialog();
         }
 
-        private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
-            {
-                rCategorias rc = new rCategorias();
-                rc.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No tiene Acceso a Registrar Categoria", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
-        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
-            {
-                rProductos rp = new rProductos();
-                rp.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No tiene Acceso a Registrar Productos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
-        }
 
-        private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            if (repositorio.ReturnUsuario().NivelDeUsuario == 0 || repositorio.ReturnUsuario().NivelDeUsuario == 1)
-            {
-                rEntradaProductos rep = new rEntradaProductos();
-                rep.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No tiene Acceso a Agregar Productos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
-        }
 
         private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -107,7 +86,7 @@ namespace InventoryAssistant
             lg.ShowDialog();
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            Userlabel.Text = repositorio.ReturnUsuario().Usuario;
+            Userlabel.Text = repositorio.ReturnUsuario().Nombres;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -121,10 +100,6 @@ namespace InventoryAssistant
             cf.ShowDialog();
         }
 
-        private void consultaDeEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaEntradaProductos cep = new ConsultaEntradaProductos();
-            cep.ShowDialog();
-        }
+
     }
 }

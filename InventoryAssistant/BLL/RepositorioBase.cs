@@ -139,24 +139,24 @@ namespace InventoryAssistant.BLL
 
             return paso;
         }
+        
+        private static Usuarios usuario = new Usuarios();
+
+        public virtual void NombreLogin(string Nombres, string Apellidos, int NivelDeUsuario)
+        {
+             usuario.Nombres = string.Concat(Nombres, Apellidos);
+             usuario.NivelDeUsuario = NivelDeUsuario;
+
+        }
+
+        public virtual Usuarios ReturnUsuario()
+        {
+           return usuario;
+        }
 
         public void Dispose()
         {
             throw new NotImplementedException();
-        }
-
-        
-        private static Usuarios usuario = new Usuarios();
-
-        public virtual void NombreLogin(string Usuario, int NivelDeUsuario)
-        {
-             usuario.Usuario = Usuario;
-             usuario.NivelDeUsuario = NivelDeUsuario;
-
-        }
-        public virtual Usuarios ReturnUsuario()
-        {
-           return usuario;
         }
     }
 }

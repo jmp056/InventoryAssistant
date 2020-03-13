@@ -212,6 +212,33 @@
   <ItemGroup>
     <None Include="Resources\seo-social-web-network-internet_340_icon-icons.com_61497.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\LimpiarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\GuardarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\EliminarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\BuscarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\AgregarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\ListaProductosButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\EliminarDelDetallaButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\ClaveImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagenes\UsuarioImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

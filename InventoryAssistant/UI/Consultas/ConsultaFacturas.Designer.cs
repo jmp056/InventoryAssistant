@@ -122,7 +122,7 @@
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
             "Id",
-            "Nombres",
+            "Cliente",
             "Usuario"});
             this.FiltroComboBox.Location = new System.Drawing.Point(9, 63);
             this.FiltroComboBox.Name = "FiltroComboBox";

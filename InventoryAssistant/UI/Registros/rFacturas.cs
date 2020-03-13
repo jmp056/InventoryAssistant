@@ -30,6 +30,7 @@ namespace InventoryAssistant.UI.Registros
             this.Detalle = new List<DetalleFacturas>();
             CargaGrid();
             LimpiarProductoGroupBox();
+            UsuarioTextBox.Text = repositorio.ReturnUsuario().Usuario;
         }
 
         private void LimpiarProductoGroupBox() // Funcion encargada de limpiar todos los campos de agregar productos

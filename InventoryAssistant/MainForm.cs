@@ -21,19 +21,46 @@ namespace InventoryAssistant
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e) //Registro de facturas
         {
-            rFacturas r = new rFacturas();
-            r.Show();
+            rFacturas rF = new rFacturas();
+            rF.ShowDialog();
+        }
+       
+        private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Entrada de productos
+        {
+            rEntradaProductos rE = new rEntradaProductos();
+            rE.ShowDialog();
+        }
+        
+        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e) //Registro de productos
+        {
+            rProductos rP = new rProductos();
+            rP.ShowDialog();
         }
 
-
-
-        private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e) //Registro de categorias
+        {
+            rCategorias rC = new rCategorias();
+            rC.ShowDialog();
+        }
+        
+        private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)//Registro de usuarios
         {
             rUsuarios rU = new rUsuarios();
             rU.ShowDialog();
         }
+
+
+
+
+
+
+
+
+
+
+
 
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -41,23 +68,11 @@ namespace InventoryAssistant
             cU.ShowDialog();
         }
 
-        private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rCategorias rc = new rCategorias();
-            rc.ShowDialog();
-        }
 
-        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rProductos rp = new rProductos();
-            rp.ShowDialog();
-        }
 
-        private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            rEntradaProductos rep = new rEntradaProductos();
-            rep.ShowDialog();
-        }
+
+
+
 
         private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -84,5 +99,7 @@ namespace InventoryAssistant
             ConsultaFacturas cf = new ConsultaFacturas();
             cf.ShowDialog();
         }
+
+
     }
 }

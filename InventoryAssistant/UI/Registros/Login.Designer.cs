@@ -62,6 +62,7 @@
             this.ContrasenatextBox.TabIndex = 3;
             this.ContrasenatextBox.UseSystemPasswordChar = true;
             this.ContrasenatextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContrasenatextBox_KeyDown);
+            this.ContrasenatextBox.Leave += new System.EventHandler(this.ContrasenatextBox_Leave);
             // 
             // groupBox1
             // 

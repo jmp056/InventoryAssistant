@@ -91,5 +91,10 @@ namespace InventoryAssistant.UI.Registros
         {
             MyErrorProvider.Clear();
         }
+
+        private void ContrasenatextBox_Leave(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+        }
     }
 }

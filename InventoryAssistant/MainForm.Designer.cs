@@ -73,7 +73,6 @@
             // 
             // registroDeFacturasToolStripMenuItem
             // 
-            this.registroDeFacturasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeFacturasToolStripMenuItem.Image")));
             this.registroDeFacturasToolStripMenuItem.Name = "registroDeFacturasToolStripMenuItem";
             this.registroDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeFacturasToolStripMenuItem.Text = "Registro de Facturas";
@@ -81,7 +80,6 @@
             // 
             // entradaDeProductosToolStripMenuItem
             // 
-            this.entradaDeProductosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("entradaDeProductosToolStripMenuItem.Image")));
             this.entradaDeProductosToolStripMenuItem.Name = "entradaDeProductosToolStripMenuItem";
             this.entradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.entradaDeProductosToolStripMenuItem.Text = "Entrada de productos";
@@ -89,7 +87,6 @@
             // 
             // registroDeProductosToolStripMenuItem
             // 
-            this.registroDeProductosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeProductosToolStripMenuItem.Image")));
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de Productos";
@@ -97,7 +94,6 @@
             // 
             // registroDeCategoriaToolStripMenuItem
             // 
-            this.registroDeCategoriaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeCategoriaToolStripMenuItem.Image")));
             this.registroDeCategoriaToolStripMenuItem.Name = "registroDeCategoriaToolStripMenuItem";
             this.registroDeCategoriaToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeCategoriaToolStripMenuItem.Text = "Registro de Categoria";
@@ -105,7 +101,6 @@
             // 
             // registroDeUsuariosToolStripMenuItem
             // 
-            this.registroDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registroDeUsuariosToolStripMenuItem.Image")));
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
             this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";

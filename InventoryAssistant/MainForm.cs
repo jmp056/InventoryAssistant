@@ -86,7 +86,7 @@ namespace InventoryAssistant
             lg.ShowDialog();
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            Userlabel.Text = repositorio.ReturnUsuario().Usuario;
+            Userlabel.Text = repositorio.ReturnUsuario().Nombres;
         }
 
         private void MainForm_Load(object sender, EventArgs e)

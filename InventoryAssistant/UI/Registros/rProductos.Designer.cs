@@ -51,10 +51,14 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.LimpiarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RDLabel
@@ -206,12 +210,13 @@
             // 
             // CantidadNumericUpDown
             // 
+            this.CantidadNumericUpDown.BackColor = System.Drawing.Color.White;
             this.CantidadNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadNumericUpDown.Location = new System.Drawing.Point(209, 188);
             this.CantidadNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            -727379969,
+            232,
             0,
             0});
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
@@ -224,6 +229,11 @@
             this.PrecioNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrecioNumericUpDown.Location = new System.Drawing.Point(210, 228);
             this.PrecioNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.PrecioNumericUpDown.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.PrecioNumericUpDown.TabIndex = 67;
@@ -302,11 +312,39 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 376);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(473, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 69;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.UsuarioToolStripStatusLabel.Text = "          ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.EstadoToolStripStatusLabel.Text = "          ";
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 391);
+            this.ClientSize = new System.Drawing.Size(473, 398);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.AnadirCategoriasButton);
             this.Controls.Add(this.PrecioNumericUpDown);
             this.Controls.Add(this.CantidadNumericUpDown);
@@ -342,6 +380,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +409,8 @@
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
         private System.Windows.Forms.Button AnadirCategoriasButton;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

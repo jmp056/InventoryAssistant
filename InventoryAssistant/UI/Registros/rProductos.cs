@@ -14,8 +14,13 @@ namespace InventoryAssistant.UI.Registros
 {
     public partial class rProductos : Form
     {
-        public rProductos()
+        string NombreUsuario;
+        int Nivel;
+
+        public rProductos(string nombreUsuario, int nivel)
         {
+            this.NombreUsuario = nombreUsuario;
+            this.Nivel = nivel;
             InitializeComponent();
             Limpiar();
         }
@@ -27,7 +32,7 @@ namespace InventoryAssistant.UI.Registros
         }
         private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
         {
-            //DescripcionTextBox.Focus();
+            CantidadNumericUpDown.Enabled = (Nivel <= 0) ? true: false;
         }
 
         private void Limpiar()// Funcion encargada de limpiar todos los campos del registro
@@ -35,11 +40,14 @@ namespace InventoryAssistant.UI.Registros
             ProductoIdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
             CategoriaComboBox.SelectedIndex = -1;
-            ControlAlmacenCheckBox.Checked = false;
+            ControlAlmacenCheckBox.Checked = true;
             CantidadNumericUpDown.Value = 0;
             PrecioNumericUpDown.Value = 0;
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;
             MyErrorProvider.Clear();
+
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            UsuarioToolStripStatusLabel.Text = string.Empty;
         }
 
         private Productos LlenaClase()// Funcion encargada de llenar el objeto
@@ -54,6 +62,9 @@ namespace InventoryAssistant.UI.Registros
             Producto.Precio = Convert.ToInt32(PrecioNumericUpDown.Value);
             Producto.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
 
+            Producto.Estado = (Producto.ProductoId== 0) ? false : true;
+            Producto.UsuarioR = NombreUsuario;
+
             return Producto;
         }
 
@@ -66,6 +77,9 @@ namespace InventoryAssistant.UI.Registros
             CantidadNumericUpDown.Value= Producto.Cantidad;
             PrecioNumericUpDown.Value = Producto.Precio;
             FechaDeRegistroDateTimePicker.Value = Producto.FechaDeRegistro;
+
+            EstadoToolStripStatusLabel.Text = (Producto.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            UsuarioToolStripStatusLabel.Text = Producto.UsuarioR;
         }
 
         public void LlenaComboBoxCategorias() // Funcion encargada de llenar el ComboBox de las categorias
@@ -247,7 +261,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            /*RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             MyErrorProvider.Clear();
             bool Paso = false;
             int.TryParse(ProductoIdNumericUpDown.Text, out int Id);
@@ -282,14 +296,14 @@ namespace InventoryAssistant.UI.Registros
                 }
 
             }
-            DescripcionTextBox.Focus();
+            DescripcionTextBox.Focus();*/
         }
 
 
 
         private void AnadirCategoriasButton_Click(object sender, EventArgs e)
         {
-            rCategorias rcategorias= new rCategorias();
+            rCategorias rcategorias= new rCategorias(NombreUsuario);
             rcategorias.ShowDialog();
 
         }

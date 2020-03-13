@@ -15,6 +15,7 @@ namespace InventoryAssistant.UI.Consultas
     public partial class SeleccionProducto : Form
     {
         public int IdProductoSeleccionado { get; set; }
+        private List<Productos> ListadoProductos = new List<Productos>();
 
         public SeleccionProducto()
         {
@@ -46,7 +47,7 @@ namespace InventoryAssistant.UI.Consultas
         private void Buscar() // Funcion que realiza las bsquedas
         {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
-            var Listado = new List<Productos>();
+            ListadoProductos = new List<Productos>();
 
             if(FiltroComboBox.SelectedIndex > 0)
             {
@@ -59,7 +60,7 @@ namespace InventoryAssistant.UI.Consultas
                 switch (FiltroComboBox.SelectedIndex)
                 {
                     case 0://Filtra por todo
-                        Listado = Repositorio.GetList(p => true);
+                        ListadoProductos = Repositorio.GetList(p => true);
                         MyErrorProvider.Clear();
                         break;
 
@@ -71,7 +72,7 @@ namespace InventoryAssistant.UI.Consultas
                         else
                         {
                             int id = Convert.ToInt32(CriterioTextBox.Text);
-                            Listado = Repositorio.GetList(p => p.ProductoId == id);
+                            ListadoProductos = Repositorio.GetList(p => p.ProductoId == id);
                         }
                         break;
 
@@ -82,7 +83,7 @@ namespace InventoryAssistant.UI.Consultas
                         }
                         else
                         {
-                            Listado = Repositorio.GetList(p => p.Descripcion.Contains(CriterioTextBox.Text));
+                            ListadoProductos = Repositorio.GetList(p => p.Descripcion.Contains(CriterioTextBox.Text));
                         }
 
                         break;
@@ -90,12 +91,12 @@ namespace InventoryAssistant.UI.Consultas
             }
             else
             {
-                Listado = Repositorio.GetList(p => true);
+                ListadoProductos = Repositorio.GetList(p => true);
             }
 
             ProductosDataGridView.DataSource = null;
 
-            ProductosDataGridView.DataSource = Listado;
+            ProductosDataGridView.DataSource = ListadoProductos;
             Formato();
             ProductosDataGridView.ClearSelection();
         }
@@ -109,14 +110,19 @@ namespace InventoryAssistant.UI.Consultas
 
         private void CProductos_Factura_Load(object sender, EventArgs e)
         {
-            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
-            var Listado = new List<Productos>();
-            Listado = Repositorio.GetList(p => true);
-            ProductosDataGridView.DataSource = null;
-            ProductosDataGridView.DataSource = Listado;
-            Formato();
-            ProductosDataGridView.ClearSelection();
             AnadirProductoButton.Enabled = false;
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            ListadoProductos = new List<Productos>();
+            ListadoProductos = Repositorio.GetList(p => true);
+            if (ListadoProductos.Count > 0)
+            {
+                ProductosDataGridView.DataSource = null;
+                ProductosDataGridView.DataSource = ListadoProductos;
+                Formato();
+                ProductosDataGridView.ClearSelection();
+                AnadirProductoButton.Enabled = false;
+            }
+
         }
 
         private void Formato()//Le da el formato a la consulta
@@ -137,13 +143,16 @@ namespace InventoryAssistant.UI.Consultas
 
         private void ProductosDataGridView_Click(object sender, EventArgs e)//Verifica que haya un producto seleccionado
         {
-            if(ProductosDataGridView.CurrentRow.Index >= 0)
+            if(ListadoProductos.Count > 0)
             {
-                AnadirProductoButton.Enabled = true;
-            }
-            else
-            {
-                AnadirProductoButton.Enabled = false;
+                if(ProductosDataGridView.CurrentRow.Index >= 0)
+                {
+                    AnadirProductoButton.Enabled = true;
+                }
+                else
+                {
+                    AnadirProductoButton.Enabled = false;
+                }
             }
         }
 

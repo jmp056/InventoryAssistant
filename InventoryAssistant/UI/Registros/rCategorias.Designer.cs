@@ -39,8 +39,12 @@
             this.NombreLabel = new System.Windows.Forms.Label();
             this.CategoriaIdLabel = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // EliminarButton
@@ -149,11 +153,39 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 185);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(482, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 70;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.UsuarioToolStripStatusLabel.Text = "          ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.EstadoToolStripStatusLabel.Text = "          ";
+            // 
             // rCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 190);
+            this.ClientSize = new System.Drawing.Size(482, 207);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.LimpiarButton);
@@ -169,6 +201,8 @@
             this.Text = "Registro de Categorias";
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +219,8 @@
         private System.Windows.Forms.Label NombreLabel;
         private System.Windows.Forms.Label CategoriaIdLabel;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

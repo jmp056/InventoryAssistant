@@ -42,9 +42,14 @@
             this.consultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
-            this.Userlabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.NivelDeUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.NombreUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.UsuarioStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,6 +78,7 @@
             // 
             // registroDeFacturasToolStripMenuItem
             // 
+            this.registroDeFacturasToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.FacturaImg;
             this.registroDeFacturasToolStripMenuItem.Name = "registroDeFacturasToolStripMenuItem";
             this.registroDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeFacturasToolStripMenuItem.Text = "Registro de Facturas";
@@ -80,6 +86,7 @@
             // 
             // entradaDeProductosToolStripMenuItem
             // 
+            this.entradaDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.EntradaImg;
             this.entradaDeProductosToolStripMenuItem.Name = "entradaDeProductosToolStripMenuItem";
             this.entradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.entradaDeProductosToolStripMenuItem.Text = "Entrada de productos";
@@ -87,6 +94,7 @@
             // 
             // registroDeProductosToolStripMenuItem
             // 
+            this.registroDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.ProductosImg;
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de Productos";
@@ -94,6 +102,7 @@
             // 
             // registroDeCategoriaToolStripMenuItem
             // 
+            this.registroDeCategoriaToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CategoriaImg;
             this.registroDeCategoriaToolStripMenuItem.Name = "registroDeCategoriaToolStripMenuItem";
             this.registroDeCategoriaToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeCategoriaToolStripMenuItem.Text = "Registro de Categoria";
@@ -101,6 +110,7 @@
             // 
             // registroDeUsuariosToolStripMenuItem
             // 
+            this.registroDeUsuariosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.UsuarioMenuImg;
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
             this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
@@ -145,43 +155,73 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(348, 168);
+            this.button2.Location = new System.Drawing.Point(217, 164);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Userlabel
+            // statusStrip1
             // 
-            this.Userlabel.AutoSize = true;
-            this.Userlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Userlabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Userlabel.Location = new System.Drawing.Point(93, 239);
-            this.Userlabel.Name = "Userlabel";
-            this.Userlabel.Size = new System.Drawing.Size(41, 15);
-            this.Userlabel.TabIndex = 18;
-            this.Userlabel.Text = "label2";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NivelDeUsuarioToolStripStatusLabel,
+            this.ToolStripStatusLabel,
+            this.NombreUsuarioToolStripStatusLabel,
+            this.UsuarioStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 19;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // label1
+            // NivelDeUsuarioToolStripStatusLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(42, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Usuario:";
+            this.NivelDeUsuarioToolStripStatusLabel.Name = "NivelDeUsuarioToolStripStatusLabel";
+            this.NivelDeUsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NivelDeUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(34, 17);
+            this.NivelDeUsuarioToolStripStatusLabel.Text = "Nivel";
+            // 
+            // ToolStripStatusLabel
+            // 
+            this.ToolStripStatusLabel.Name = "ToolStripStatusLabel";
+            this.ToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ToolStripStatusLabel.Size = new System.Drawing.Size(24, 17);
+            this.ToolStripStatusLabel.Text = "  -  ";
+            // 
+            // NombreUsuarioToolStripStatusLabel
+            // 
+            this.NombreUsuarioToolStripStatusLabel.Name = "NombreUsuarioToolStripStatusLabel";
+            this.NombreUsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NombreUsuarioToolStripStatusLabel.Size = new System.Drawing.Size(47, 17);
+            this.NombreUsuarioToolStripStatusLabel.Text = "Usuario";
+            // 
+            // UsuarioStripStatusLabel
+            // 
+            this.UsuarioStripStatusLabel.Name = "UsuarioStripStatusLabel";
+            this.UsuarioStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioStripStatusLabel.Size = new System.Drawing.Size(53, 17);
+            this.UsuarioStripStatusLabel.Text = "Usuario: ";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(462, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Ventana en proceso";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Userlabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -192,6 +232,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,10 +251,14 @@
         private System.Windows.Forms.ToolStripMenuItem entradaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label Userlabel;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem consultaDeFacturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeFacturasToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel NombreUsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel NivelDeUsuarioToolStripStatusLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

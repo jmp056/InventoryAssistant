@@ -19,7 +19,7 @@ namespace InventoryAssistant.Entidades
         public string Usuario { get; set; }
         public int NivelDeUsuario { get; set; }
         public string Contrasena { get; set; }
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
         public string UsuarioR { get; set; }
 
         public Usuarios()
@@ -33,7 +33,7 @@ namespace InventoryAssistant.Entidades
             Usuario = string.Empty;
             NivelDeUsuario = 0;
             Contrasena = string.Empty;
-            Estado = string.Empty;
+            Estado = false;
             UsuarioR = string.Empty;
         }
     }

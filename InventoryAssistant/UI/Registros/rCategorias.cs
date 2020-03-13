@@ -14,8 +14,11 @@ namespace InventoryAssistant.UI.Registros
 {
     public partial class rCategorias : Form
     {
-        public rCategorias()
+        string NombreUsuario;
+
+        public rCategorias(string nombreUsuario)
         {
+            this.NombreUsuario = nombreUsuario;
             InitializeComponent();
             Limpiar();
         }
@@ -26,6 +29,9 @@ namespace InventoryAssistant.UI.Registros
             NombreTextBox.Text = string.Empty;
             MyErrorProvider.Clear();
             NombreTextBox.Focus();
+
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            UsuarioToolStripStatusLabel.Text = string.Empty;
         }
 
         private Categorias LlenaClase()  // Funcion encargada de llenar el objeto
@@ -35,6 +41,9 @@ namespace InventoryAssistant.UI.Registros
             Categoria.CategoriaId = (int)CategoriaIdNumericUpDown.Value;
             Categoria.Nombre = NombreTextBox.Text.ToUpper();
 
+            Categoria.Estado = (Categoria.CategoriaId == 0) ? false : true;
+            Categoria.UsuarioR = NombreUsuario;
+
             return Categoria;
         }
 
@@ -42,6 +51,9 @@ namespace InventoryAssistant.UI.Registros
         {
             CategoriaIdNumericUpDown.Value = Categoria.CategoriaId;
             NombreTextBox.Text = Categoria.Nombre;
+
+            EstadoToolStripStatusLabel.Text = (Categoria.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            UsuarioToolStripStatusLabel.Text = Categoria.UsuarioR;
         }
 
         private bool Validar() //Funcion que valida todo el registro
@@ -182,7 +194,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)//Clic al boton eliminar
         {
-            RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
+            /*RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
             MyErrorProvider.Clear();
             bool Paso = false;
             int.TryParse(CategoriaIdNumericUpDown.Text, out int Id);
@@ -217,7 +229,7 @@ namespace InventoryAssistant.UI.Registros
                 }
 
             }
-            NombreTextBox.Focus();
+            NombreTextBox.Focus();*/
         }
         //---------------------------------------------------------------------------------------------------------
 

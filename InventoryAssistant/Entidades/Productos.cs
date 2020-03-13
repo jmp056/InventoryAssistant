@@ -17,7 +17,8 @@ namespace InventoryAssistant.Entidades
         public int Cantidad { get; set; }
         public int Precio { get; set; }
         public DateTime FechaDeRegistro { get; set; }
-
+        public bool Estado { get; set; }
+        public string UsuarioR { get; set; }
         public Productos()
         {
             ProductoId = 0;
@@ -26,6 +27,8 @@ namespace InventoryAssistant.Entidades
             Categoria = 0;
             Cantidad = 0;
             FechaDeRegistro = DateTime.Now;
+            Estado = false;
+            UsuarioR = string.Empty;
         }
     }
 }

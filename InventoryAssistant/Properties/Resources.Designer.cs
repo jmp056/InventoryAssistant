@@ -93,6 +93,16 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CategoriaImg {
+            get {
+                object obj = ResourceManager.GetObject("CategoriaImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ClaveImg {
             get {
                 object obj = ResourceManager.GetObject("ClaveImg", resourceCulture);
@@ -133,6 +143,36 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EntradaImg {
+            get {
+                object obj = ResourceManager.GetObject("EntradaImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EntradaImg1 {
+            get {
+                object obj = ResourceManager.GetObject("EntradaImg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FacturaImg {
+            get {
+                object obj = ResourceManager.GetObject("FacturaImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GuardarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("GuardarButtonImg", resourceCulture);
@@ -163,6 +203,16 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ProductosImg {
+            get {
+                object obj = ResourceManager.GetObject("ProductosImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seo_social_web_network_internet_340_icon_icons_com_61497 {
             get {
                 object obj = ResourceManager.GetObject("seo-social-web-network-internet_340_icon-icons.com_61497", resourceCulture);
@@ -176,6 +226,16 @@ namespace InventoryAssistant.Properties {
         internal static System.Drawing.Bitmap UsuarioImg {
             get {
                 object obj = ResourceManager.GetObject("UsuarioImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UsuarioMenuImg {
+            get {
+                object obj = ResourceManager.GetObject("UsuarioMenuImg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

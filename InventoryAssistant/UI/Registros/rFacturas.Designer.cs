@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rFacturas));
             this.DetalleGroupBox = new System.Windows.Forms.GroupBox();
+            this.VerProductosButton = new System.Windows.Forms.Button();
             this.TotalLabel = new System.Windows.Forms.Label();
+            this.EliminarProductoButton = new System.Windows.Forms.Button();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -44,6 +46,8 @@
             this.DescripcionLabel = new System.Windows.Forms.Label();
             this.ProductoIdLabel = new System.Windows.Forms.Label();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
+            this.AgregarProductoButton = new System.Windows.Forms.Button();
+            this.BuscarProductoButton = new System.Windows.Forms.Button();
             this.FacturaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FacturaIdLabel = new System.Windows.Forms.Label();
             this.VendedorLabel = new System.Windows.Forms.Label();
@@ -57,10 +61,9 @@
             this.LimpiarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.VerProductosButton = new System.Windows.Forms.Button();
-            this.EliminarProductoButton = new System.Windows.Forms.Button();
-            this.AgregarProductoButton = new System.Windows.Forms.Button();
-            this.BuscarProductoButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DetalleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
@@ -68,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DetalleGroupBox
@@ -95,6 +99,17 @@
             this.DetalleGroupBox.TabIndex = 100;
             this.DetalleGroupBox.TabStop = false;
             // 
+            // VerProductosButton
+            // 
+            this.VerProductosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerProductosButton.Image = global::InventoryAssistant.Properties.Resources.ListaProductosButtonImg;
+            this.VerProductosButton.Location = new System.Drawing.Point(20, 15);
+            this.VerProductosButton.Name = "VerProductosButton";
+            this.VerProductosButton.Size = new System.Drawing.Size(33, 35);
+            this.VerProductosButton.TabIndex = 117;
+            this.VerProductosButton.UseVisualStyleBackColor = true;
+            this.VerProductosButton.Click += new System.EventHandler(this.VerProductosButton_Click);
+            // 
             // TotalLabel
             // 
             this.TotalLabel.AutoSize = true;
@@ -105,6 +120,21 @@
             this.TotalLabel.Size = new System.Drawing.Size(78, 16);
             this.TotalLabel.TabIndex = 116;
             this.TotalLabel.Text = "Total RD$";
+            // 
+            // EliminarProductoButton
+            // 
+            this.EliminarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarProductoButton.Image = global::InventoryAssistant.Properties.Resources.EliminarDelDetallaButtonImg;
+            this.EliminarProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarProductoButton.Location = new System.Drawing.Point(30, 290);
+            this.EliminarProductoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarProductoButton.Name = "EliminarProductoButton";
+            this.EliminarProductoButton.Size = new System.Drawing.Size(165, 30);
+            this.EliminarProductoButton.TabIndex = 115;
+            this.EliminarProductoButton.Text = "Eliminar Producto";
+            this.EliminarProductoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarProductoButton.UseVisualStyleBackColor = true;
+            this.EliminarProductoButton.Click += new System.EventHandler(this.EliminarProductoButton_Click);
             // 
             // TotalTextBox
             // 
@@ -259,6 +289,27 @@
             this.DetalleDataGridView.Size = new System.Drawing.Size(548, 175);
             this.DetalleDataGridView.TabIndex = 18;
             // 
+            // AgregarProductoButton
+            // 
+            this.AgregarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarProductoButton.Image = global::InventoryAssistant.Properties.Resources.AgregarButtonImg;
+            this.AgregarProductoButton.Location = new System.Drawing.Point(525, 58);
+            this.AgregarProductoButton.Name = "AgregarProductoButton";
+            this.AgregarProductoButton.Size = new System.Drawing.Size(30, 30);
+            this.AgregarProductoButton.TabIndex = 17;
+            this.AgregarProductoButton.UseVisualStyleBackColor = true;
+            this.AgregarProductoButton.Click += new System.EventHandler(this.AgregarProductoButton_Click);
+            // 
+            // BuscarProductoButton
+            // 
+            this.BuscarProductoButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
+            this.BuscarProductoButton.Location = new System.Drawing.Point(214, 17);
+            this.BuscarProductoButton.Name = "BuscarProductoButton";
+            this.BuscarProductoButton.Size = new System.Drawing.Size(33, 33);
+            this.BuscarProductoButton.TabIndex = 8;
+            this.BuscarProductoButton.UseVisualStyleBackColor = true;
+            this.BuscarProductoButton.Click += new System.EventHandler(this.BuscarProductoButton_Click);
+            // 
             // FacturaIdNumericUpDown
             // 
             this.FacturaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,7 +356,7 @@
             // 
             this.FechaLabel.AutoSize = true;
             this.FechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaLabel.Location = new System.Drawing.Point(350, 29);
+            this.FechaLabel.Location = new System.Drawing.Point(399, 29);
             this.FechaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaLabel.Name = "FechaLabel";
             this.FechaLabel.Size = new System.Drawing.Size(55, 16);
@@ -314,14 +365,13 @@
             // 
             // FechaDateTimePicker
             // 
-            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy - hh:mm tt";
-            this.FechaDateTimePicker.Enabled = false;
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(405, 27);
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(462, 27);
             this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(173, 22);
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
             this.FechaDateTimePicker.TabIndex = 108;
             this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 12, 0, 0, 0, 0);
             // 
@@ -409,58 +459,39 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // VerProductosButton
+            // statusStrip1
             // 
-            this.VerProductosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VerProductosButton.Image = global::InventoryAssistant.Properties.Resources.ListaProductosButtonImg;
-            this.VerProductosButton.Location = new System.Drawing.Point(20, 15);
-            this.VerProductosButton.Name = "VerProductosButton";
-            this.VerProductosButton.Size = new System.Drawing.Size(30, 30);
-            this.VerProductosButton.TabIndex = 117;
-            this.VerProductosButton.UseVisualStyleBackColor = true;
-            this.VerProductosButton.Click += new System.EventHandler(this.VerProductosButton_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 512);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(616, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 115;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // EliminarProductoButton
+            // UsuarioToolStripStatusLabel
             // 
-            this.EliminarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarProductoButton.Image = global::InventoryAssistant.Properties.Resources.EliminarDelDetallaButtonImg;
-            this.EliminarProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarProductoButton.Location = new System.Drawing.Point(30, 290);
-            this.EliminarProductoButton.Margin = new System.Windows.Forms.Padding(4);
-            this.EliminarProductoButton.Name = "EliminarProductoButton";
-            this.EliminarProductoButton.Size = new System.Drawing.Size(165, 30);
-            this.EliminarProductoButton.TabIndex = 115;
-            this.EliminarProductoButton.Text = "Eliminar Producto";
-            this.EliminarProductoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarProductoButton.UseVisualStyleBackColor = true;
-            this.EliminarProductoButton.Click += new System.EventHandler(this.EliminarProductoButton_Click);
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.UsuarioToolStripStatusLabel.Text = "          ";
             // 
-            // AgregarProductoButton
+            // EstadoToolStripStatusLabel
             // 
-            this.AgregarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarProductoButton.Image = global::InventoryAssistant.Properties.Resources.AgregarButtonImg;
-            this.AgregarProductoButton.Location = new System.Drawing.Point(525, 58);
-            this.AgregarProductoButton.Name = "AgregarProductoButton";
-            this.AgregarProductoButton.Size = new System.Drawing.Size(30, 30);
-            this.AgregarProductoButton.TabIndex = 17;
-            this.AgregarProductoButton.UseVisualStyleBackColor = true;
-            this.AgregarProductoButton.Click += new System.EventHandler(this.AgregarProductoButton_Click);
-            // 
-            // BuscarProductoButton
-            // 
-            this.BuscarProductoButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
-            this.BuscarProductoButton.Location = new System.Drawing.Point(203, 15);
-            this.BuscarProductoButton.Name = "BuscarProductoButton";
-            this.BuscarProductoButton.Size = new System.Drawing.Size(35, 35);
-            this.BuscarProductoButton.TabIndex = 8;
-            this.BuscarProductoButton.UseVisualStyleBackColor = true;
-            this.BuscarProductoButton.Click += new System.EventHandler(this.BuscarProductoButton_Click);
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.EstadoToolStripStatusLabel.Text = "          ";
             // 
             // rFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 512);
+            this.ClientSize = new System.Drawing.Size(616, 534);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.LimpiarButton);
@@ -490,6 +521,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +560,8 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Button VerProductosButton;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

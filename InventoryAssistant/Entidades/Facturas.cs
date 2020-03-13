@@ -18,6 +18,8 @@ namespace InventoryAssistant.Entidades
         [Browsable(false)]
         public virtual List<DetalleFacturas> Detalle { get; set; }
         public float Total { get; set; }
+        public bool Estado { get; set; }
+        public string UsuarioR { get; set; }
 
         public Facturas()
         {
@@ -27,6 +29,8 @@ namespace InventoryAssistant.Entidades
             Cliente = string.Empty;
             Detalle = new List<DetalleFacturas>();
             Total = 0;
+            Estado = false;
+            UsuarioR = string.Empty;
         }
     }
 }

@@ -14,6 +14,8 @@ namespace InventoryAssistant.Entidades
         public int ProductoId { get; set; }
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
+        public bool Estado { get; set; }
+        public string UsuarioR { get; set; }
 
         public EntradaProductos()
         {
@@ -21,6 +23,8 @@ namespace InventoryAssistant.Entidades
             ProductoId = 0;
             Cantidad = 0;
             Fecha = DateTime.Now;
+            Estado = false;
+            UsuarioR = string.Empty;
         }
     }
 }

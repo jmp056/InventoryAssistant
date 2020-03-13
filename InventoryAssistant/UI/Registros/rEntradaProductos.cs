@@ -10,8 +10,11 @@ namespace InventoryAssistant.UI.Registros
     public partial class rEntradaProductos : Form
     {
         private Productos Producto = new Productos();
-        public rEntradaProductos()
+        string NombreUsuario;
+
+        public rEntradaProductos(string nombreUsuario)
         {
+            this.NombreUsuario = nombreUsuario;
             InitializeComponent();
             Limpiar();
             Producto = new Productos();
@@ -25,6 +28,9 @@ namespace InventoryAssistant.UI.Registros
             FechaDateTimePicker.Value = DateTime.Now;
             EntradaIdNumericUpDown.Focus();
             MyErrorProvider.Clear();
+
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            UsuarioToolStripStatusLabel.Text = string.Empty;
         }
 
         private EntradaProductos LlenaClase()  // Funcion encargada de llenar el objeto
@@ -36,15 +42,23 @@ namespace InventoryAssistant.UI.Registros
             entradaProductos.Cantidad = (int)CantidadNumericUpDown.Value;
             entradaProductos.Fecha = FechaDateTimePicker.Value;
 
+            entradaProductos.Estado = (entradaProductos.EntradaProductoId == 0) ? false : true;
+            entradaProductos.UsuarioR = NombreUsuario;
+
             return entradaProductos;
         }
 
         private void LlenaCampo(EntradaProductos entradaProductos)  // Funcion encargada de llenar los campos del registro con los datos de un objeto
         {
+            Producto = BuscaProducto(entradaProductos.ProductoId);
+
             EntradaIdNumericUpDown.Value = entradaProductos.EntradaProductoId;
             ProductoTextBox.Text = Producto.Descripcion;
             CantidadNumericUpDown.Value = entradaProductos.Cantidad;
             FechaDateTimePicker.Value = entradaProductos.Fecha;
+
+            EstadoToolStripStatusLabel.Text = (entradaProductos.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            UsuarioToolStripStatusLabel.Text = entradaProductos.UsuarioR;
         }
 
         private bool Validar() //Funcion que valida todo el registro
@@ -59,6 +73,17 @@ namespace InventoryAssistant.UI.Registros
                 paso = false;
             }
 
+            if(EntradaIdNumericUpDown.Value > 0)//Valida que si se modifica una entrada el producto sea el mismo!
+            {
+                if (!ValidarProducto())
+                {
+                    MyErrorProvider.SetError(ProductoTextBox, "El producto de la entrada no puede variar!");
+                    VerProductosButton.Focus();
+                    paso = false;
+                }
+            }
+
+
             if (CantidadNumericUpDown.Value == 0)//Valida que la cantidad de entrada sea mayor a 0
             {
                 MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad de la entrada debe ser mayor a 0!");
@@ -68,6 +93,21 @@ namespace InventoryAssistant.UI.Registros
 
             return paso;
         }
+
+        private bool ValidarProducto()//Funcion que valida que si se modifica una entrada, el producto sea el mismo
+        {
+            bool Paso = true;
+
+            EntradaProductos entradaProductos = BuscaEntrada((int)EntradaIdNumericUpDown.Value);
+            Productos ProductoTemporal = BuscaProducto(entradaProductos.ProductoId);
+            if(ProductoTemporal.Descripcion != ProductoTextBox.Text)
+            {
+                Paso = false;
+            }
+
+            return Paso;
+        }
+
 
         private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario existe en una base de datos!
         {
@@ -79,12 +119,7 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------
         private void BuscarButton_Click(object sender, EventArgs e)//Clic al boton buscar
         {
-            RepositorioBase<EntradaProductos> repositorio = new RepositorioBase<EntradaProductos>();
-            EntradaProductos entradaProductos = new EntradaProductos();
-
-            int.TryParse(EntradaIdNumericUpDown.Text, out int id);
-
-            entradaProductos = repositorio.Buscar(id);
+            EntradaProductos entradaProductos = BuscaEntrada((int)EntradaIdNumericUpDown.Value);
 
             if (entradaProductos != null)
             {
@@ -159,7 +194,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
+            /*RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
             MyErrorProvider.Clear();
             bool paso = false;
             int.TryParse(EntradaIdNumericUpDown.Text, out int Id);
@@ -194,7 +229,7 @@ namespace InventoryAssistant.UI.Registros
                 }
 
             }
-            EntradaIdNumericUpDown.Focus();
+            EntradaIdNumericUpDown.Focus();*/
         }
 
         private void VerProductosButton_Click(object sender, EventArgs e)
@@ -216,5 +251,14 @@ namespace InventoryAssistant.UI.Registros
 
             return Producto;
         }
+
+        private EntradaProductos BuscaEntrada(int Id)
+        {
+            RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
+            EntradaProductos entradaProductos = Repositorio.Buscar(Id);
+
+            return entradaProductos;
+        }
+
     }
 }

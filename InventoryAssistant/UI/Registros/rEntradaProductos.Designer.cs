@@ -44,9 +44,13 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ProductoTextBox = new System.Windows.Forms.TextBox();
             this.VerProductosButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // EliminarButton
@@ -111,6 +115,11 @@
             this.CantidadNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadNumericUpDown.Location = new System.Drawing.Point(200, 113);
             this.CantidadNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.CantidadNumericUpDown.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
             this.CantidadNumericUpDown.TabIndex = 51;
@@ -209,11 +218,39 @@
             this.VerProductosButton.UseVisualStyleBackColor = true;
             this.VerProductosButton.Click += new System.EventHandler(this.VerProductosButton_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 264);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(469, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 119;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.UsuarioToolStripStatusLabel.Text = "          ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.EstadoToolStripStatusLabel.Text = "          ";
+            // 
             // rEntradaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 279);
+            this.ClientSize = new System.Drawing.Size(469, 286);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.VerProductosButton);
             this.Controls.Add(this.ProductoTextBox);
             this.Controls.Add(this.EliminarButton);
@@ -237,6 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +297,8 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.TextBox ProductoTextBox;
         private System.Windows.Forms.Button VerProductosButton;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

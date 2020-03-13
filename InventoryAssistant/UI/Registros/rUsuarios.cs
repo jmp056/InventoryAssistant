@@ -9,8 +9,11 @@ namespace InventoryAssistant.UI.Registros
 {
     public partial class rUsuarios : Form
     {
-        public rUsuarios()
+        string NombreUsuario;
+
+        public rUsuarios(string nombreUsuario)
         {
+            this.NombreUsuario = nombreUsuario;
             InitializeComponent();
             Limpiar();
         }
@@ -29,6 +32,9 @@ namespace InventoryAssistant.UI.Registros
             ConfirmarContrasenaTextBox.Text = string.Empty;
             MyErrorProvider.Clear();
             NombresTextBox.Focus();
+
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            UsuarioToolStripStatusLabel.Text = string.Empty;
         }
 
         private Usuarios LlenaClase()  // Funcion encargada de llenar el objeto
@@ -45,6 +51,9 @@ namespace InventoryAssistant.UI.Registros
             usuario.NivelDeUsuario = Convert.ToInt32(NivelDeUsuarioComboBox.SelectedIndex);
             usuario.Contrasena = ContrasenaTextBox.Text;
 
+            usuario.Estado = (usuario.UsuarioId == 0) ? false : true;
+            usuario.UsuarioR = NombreUsuario;
+
             return usuario;
         }
 
@@ -59,6 +68,9 @@ namespace InventoryAssistant.UI.Registros
             UsuarioTextBox.Text = usuario.Usuario;
             NivelDeUsuarioComboBox.SelectedIndex = usuario.NivelDeUsuario;
             ContrasenaTextBox.Text = usuario.Contrasena;
+
+            EstadoToolStripStatusLabel.Text = (usuario.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            UsuarioToolStripStatusLabel.Text = usuario.UsuarioR;
         }
 
         //* Método o función para validar una cédula dominicana*

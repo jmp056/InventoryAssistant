@@ -11,12 +11,13 @@ namespace InventoryAssistant.UI.Registros
     public partial class rFacturas : Form
     {
         public List<DetalleFacturas> Detalle;
-        RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-        public rFacturas()
+        string NombreUsuario;
+        public rFacturas(string nombreUsuario)
         {
+            this.NombreUsuario = nombreUsuario;
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
-            UsuarioTextBox.Text = repositorio.ReturnUsuario().Usuario;
+            Limpiar();
         }
 
         //Limpiadores -------------------------------------------------------------------------------------------
@@ -30,7 +31,10 @@ namespace InventoryAssistant.UI.Registros
             this.Detalle = new List<DetalleFacturas>();
             CargaGrid();
             LimpiarProductoGroupBox();
-            UsuarioTextBox.Text = repositorio.ReturnUsuario().Usuario;
+            UsuarioTextBox.Text = NombreUsuario;
+
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            UsuarioToolStripStatusLabel.Text = string.Empty;
         }
 
         private void LimpiarProductoGroupBox() // Funcion encargada de limpiar todos los campos de agregar productos
@@ -66,6 +70,9 @@ namespace InventoryAssistant.UI.Registros
             Factura.Detalle = this.Detalle;
             Factura.Total = Convert.ToSingle(TotalTextBox.Text);
 
+            Factura.Estado = (Factura.FacturaId== 0) ? false : true;
+            Factura.UsuarioR = NombreUsuario;
+
             return Factura;
         }
 
@@ -74,6 +81,7 @@ namespace InventoryAssistant.UI.Registros
             ProductoIdNumericUpDown.Value = (int)Producto.ProductoId;
             DescripcionTextBox.Text = Producto.Descripcion;
             PrecioNumericUpDown.Value = Producto.Precio;
+
         }
         //--------------------------------------------------------------------------------------------------------
 
@@ -89,7 +97,7 @@ namespace InventoryAssistant.UI.Registros
                 DescripcionTextBox.Text == string.Empty ||
                 DescripcionTextBox.Text != ProductoTemporal.Descripcion)// Valida que el producto este cargado
             {
-                MyErrorProvider.SetError(BuscarProductoButton, "Debe cargar el producto!");
+                MyErrorProvider.SetError(ProductoIdNumericUpDown, "Debe cargar el producto!");
                 BuscarProductoButton.Focus();
                 Paso = false;
             }
@@ -196,7 +204,7 @@ namespace InventoryAssistant.UI.Registros
                 Paso = false;
             }
 
-            if (UsuarioTextBox.Text == string.Empty) //Valida que el cliente no este vacio
+            if (ClienteTextBox.Text == string.Empty) //Valida que el cliente no este vacio
             {
                 MyErrorProvider.SetError(ClienteTextBox, "La factura debe tener un cliente!");
                 ClienteTextBox.Focus();
@@ -258,6 +266,9 @@ namespace InventoryAssistant.UI.Registros
             ClienteTextBox.Text = Factura.Cliente;
             this.Detalle = Factura.Detalle;
             CargaGrid();
+
+            EstadoToolStripStatusLabel.Text = (Factura.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            UsuarioToolStripStatusLabel.Text = Factura.UsuarioR;
         }
         private void BuscarProductoButton_Click(object sender, EventArgs e) //Boton de buscar producto
         {
@@ -357,8 +368,14 @@ namespace InventoryAssistant.UI.Registros
 
         private void EliminarProductoButton_Click(object sender, EventArgs e) //Boton eliminar producto!
         {
-            Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
-            CargaGrid();
+            if(DetalleDataGridView.SelectedRows.Count > 0)
+            {
+                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
+                CargaGrid();
+            }
+            else
+                MessageBox.Show("Debe seleccionar el producto que desea eliminar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -450,6 +467,8 @@ namespace InventoryAssistant.UI.Registros
         private void rFacturas_Load(object sender, EventArgs e)
         {
             FechaDateTimePicker.Value = DateTime.Now;
+            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
         }
     }
 }

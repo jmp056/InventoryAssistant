@@ -56,9 +56,13 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.LimpiarButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             this.DatosDelUsuarioGroupBox.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // UsuarioIdLabel
@@ -342,11 +346,39 @@
             this.LimpiarButton.UseVisualStyleBackColor = true;
             this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click_1);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 340);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(627, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 71;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.UsuarioToolStripStatusLabel.Text = "          ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.EstadoToolStripStatusLabel.Text = "          ";
+            // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 351);
+            this.ClientSize = new System.Drawing.Size(627, 362);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.TelefonoMaskedTextBox);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.Controls.Add(this.CedulaLabel);
@@ -375,6 +407,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             this.DatosDelUsuarioGroupBox.ResumeLayout(false);
             this.DatosDelUsuarioGroupBox.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +442,8 @@
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
         private System.Windows.Forms.ComboBox NivelDeUsuarioComboBox;
         private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
     }
 }

@@ -16,6 +16,11 @@ namespace InventoryAssistant
 {
     public partial class MainForm : Form
     {
+
+        RepositorioBase<Usuarios> RepositorioUsuario = new RepositorioBase<Usuarios>();
+        string nombre = "";
+        int nivel;// = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
+
         public MainForm()
         {
             InitializeComponent();
@@ -23,32 +28,56 @@ namespace InventoryAssistant
 
         private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e) //Registro de facturas
         {
-            rFacturas rF = new rFacturas();
+            rFacturas rF = new rFacturas(nombre);
             rF.ShowDialog();
         }
        
         private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Entrada de productos
         {
-            rEntradaProductos rE = new rEntradaProductos();
-            rE.ShowDialog();
+            if (nivel <= 1)
+            {
+                rEntradaProductos rE = new rEntradaProductos(nombre);
+                rE.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+
         }
         
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e) //Registro de productos
         {
-            rProductos rP = new rProductos();
-            rP.ShowDialog();
+
+            if (nivel <= 1)
+            {
+                rProductos rP = new rProductos(nombre, nivel);
+                rP.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+
         }
 
         private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e) //Registro de categorias
         {
-            rCategorias rC = new rCategorias();
-            rC.ShowDialog();
+            if (nivel <= 1)
+            {
+                rCategorias rC = new rCategorias(nombre);
+                rC.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+
         }
         
         private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)//Registro de usuarios
         {
-            rUsuarios rU = new rUsuarios();
-            rU.ShowDialog();
+            if (nivel <= 0)
+            {
+                rUsuarios rU = new rUsuarios(nombre);
+                rU.ShowDialog();
+            }
+            else
+                NoTienePermiso();
         }
 
 
@@ -68,7 +97,11 @@ namespace InventoryAssistant
             cU.ShowDialog();
         }
 
-
+        private void consultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaFacturas cf = new ConsultaFacturas();
+            cf.ShowDialog();
+        }
 
 
 
@@ -86,20 +119,58 @@ namespace InventoryAssistant
             lg.ShowDialog();
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            Userlabel.Text = repositorio.ReturnUsuario().Nombres;
+            nombre = repositorio.ReturnUsuario().Nombres;
+            NombreUsuarioToolStripStatusLabel.Text = nombre;
+            nivel = repositorio.ReturnUsuario().NivelDeUsuario;
+            switch (nivel)
+            {
+                case 0:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Administrador  ";
+                        break;
+                    }
+                case 1:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Supervisor   ";
+                        break;
+                    }
+                default:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Usuario   ";
+                        break;
+                    }
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-         
+
+
+            NombreUsuarioToolStripStatusLabel.Text = RepositorioUsuario.ReturnUsuario().Nombres;
+            int nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
+            switch (nivel)
+            {
+                case 0:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Administrador  ";
+                        break;
+                    }
+                case 1:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Supervisor   ";
+                        break;
+                    }
+                default:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Usuario   ";
+                        break;
+                    }
+            }
         }
 
-        private void consultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NoTienePermiso()
         {
-            ConsultaFacturas cf = new ConsultaFacturas();
-            cf.ShowDialog();
+            MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
     }
 }

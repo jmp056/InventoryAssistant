@@ -118,32 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="GuardarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\GuardarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AgregarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\AgregarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BuscarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\BuscarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ListaProductosButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\ListaProductosButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="seo-social-web-network-internet_340_icon-icons.com_61497" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\seo-social-web-network-internet_340_icon-icons.com_61497.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\descarga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ProductosImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\ProductosImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_icon-icons.com_52393" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_icon-icons.com_52393.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CategoriaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\CategoriaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EliminarDelDetallaButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\EliminarDelDetallaButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LimpiarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Imagenes\LimpiarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descarga.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClaveImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\ClaveImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +139,37 @@
   <data name="EliminarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\EliminarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GuardarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\GuardarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AgregarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\AgregarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FacturaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\FacturaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EntradaImg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\EntradaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LimpiarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\LimpiarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuscarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\BuscarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="UsuarioImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagenes\UsuarioImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListaProductosButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\ListaProductosButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_icon-icons.com_52393" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_icon-icons.com_52393.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EntradaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\EntradaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsuarioMenuImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagenes\UsuarioMenuImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

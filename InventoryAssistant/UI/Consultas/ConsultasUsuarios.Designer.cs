@@ -35,17 +35,17 @@
             this.DatosDelUsuarioButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.RealizarBusquedaButton = new System.Windows.Forms.Button();
-            this.CristerioTextBox = new System.Windows.Forms.TextBox();
+            this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cUsuariosdataGridView = new System.Windows.Forms.DataGridView();
+            this.UsuariosDataGridView = new System.Windows.Forms.DataGridView();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.DatosDelUsuarioGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cUsuariosdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +89,12 @@
             this.DatosDelUsuarioButton.TabIndex = 24;
             this.DatosDelUsuarioButton.Text = "Datos del usuario";
             this.DatosDelUsuarioButton.UseVisualStyleBackColor = true;
+            this.DatosDelUsuarioButton.Click += new System.EventHandler(this.DatosDelUsuarioButton_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.RealizarBusquedaButton);
-            this.groupBox1.Controls.Add(this.CristerioTextBox);
+            this.groupBox1.Controls.Add(this.CriterioTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.FiltroComboBox);
             this.groupBox1.Controls.Add(this.label1);
@@ -115,12 +116,12 @@
             this.RealizarBusquedaButton.UseVisualStyleBackColor = true;
             this.RealizarBusquedaButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // CristerioTextBox
+            // CriterioTextBox
             // 
-            this.CristerioTextBox.Location = new System.Drawing.Point(9, 127);
-            this.CristerioTextBox.Name = "CristerioTextBox";
-            this.CristerioTextBox.Size = new System.Drawing.Size(155, 22);
-            this.CristerioTextBox.TabIndex = 3;
+            this.CriterioTextBox.Location = new System.Drawing.Point(9, 127);
+            this.CriterioTextBox.Name = "CriterioTextBox";
+            this.CriterioTextBox.Size = new System.Drawing.Size(155, 22);
+            this.CriterioTextBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -156,20 +157,20 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cUsuariosdataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(196, 12);
+            this.groupBox2.Controls.Add(this.UsuariosDataGridView);
+            this.groupBox2.Location = new System.Drawing.Point(200, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(592, 426);
+            this.groupBox2.Size = new System.Drawing.Size(749, 436);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             // 
-            // cUsuariosdataGridView
+            // UsuariosDataGridView
             // 
-            this.cUsuariosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cUsuariosdataGridView.Location = new System.Drawing.Point(0, 19);
-            this.cUsuariosdataGridView.Name = "cUsuariosdataGridView";
-            this.cUsuariosdataGridView.Size = new System.Drawing.Size(586, 401);
-            this.cUsuariosdataGridView.TabIndex = 0;
+            this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsuariosDataGridView.Location = new System.Drawing.Point(5, 10);
+            this.UsuariosDataGridView.Name = "UsuariosDataGridView";
+            this.UsuariosDataGridView.Size = new System.Drawing.Size(738, 401);
+            this.UsuariosDataGridView.TabIndex = 0;
             // 
             // MyErrorProvider
             // 
@@ -179,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(952, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -189,7 +190,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cUsuariosdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuariosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -199,12 +200,12 @@
         private System.Windows.Forms.GroupBox DatosDelUsuarioGroupBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button RealizarBusquedaButton;
-        private System.Windows.Forms.TextBox CristerioTextBox;
+        private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView cUsuariosdataGridView;
+        private System.Windows.Forms.DataGridView UsuariosDataGridView;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Button DatosDelUsuarioButton;
         private System.Windows.Forms.Button EliminarUsuarioButton;

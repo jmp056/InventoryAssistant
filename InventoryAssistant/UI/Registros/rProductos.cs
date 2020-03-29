@@ -56,13 +56,13 @@ namespace InventoryAssistant.UI.Registros
 
             Producto.ProductoId = (int)ProductoIdNumericUpDown.Value;
             Producto.Descripcion = DescripcionTextBox.Text.ToUpper();
-            Producto.Categoria = Convert.ToInt32(CategoriaComboBox.SelectedIndex);
+            Producto.CategoriaId = Convert.ToInt32(CategoriaComboBox.SelectedValue);
             Producto.ControlAlmacen = ControlAlmacenCheckBox.Checked;
             Producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
             Producto.Precio = Convert.ToInt32(PrecioNumericUpDown.Value);
             Producto.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
 
-            Producto.Estado = (Producto.ProductoId== 0) ? false : true;
+            Producto.Estado = (Producto.ProductoId == 0) ? false : true;
             Producto.UsuarioR = NombreUsuario;
 
             return Producto;
@@ -72,7 +72,7 @@ namespace InventoryAssistant.UI.Registros
         {
             ProductoIdNumericUpDown.Value = Producto.ProductoId;
             DescripcionTextBox.Text = Producto.Descripcion;
-            CategoriaComboBox.SelectedIndex= Producto.Categoria;
+            CategoriaComboBox.SelectedValue = Producto.CategoriaId;
             ControlAlmacenCheckBox.Checked = Producto.ControlAlmacen;
             CantidadNumericUpDown.Value= Producto.Cantidad;
             PrecioNumericUpDown.Value = Producto.Precio;

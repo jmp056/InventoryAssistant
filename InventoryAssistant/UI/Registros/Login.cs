@@ -31,7 +31,7 @@ namespace InventoryAssistant.UI.Registros
             usuario = repositorio.GetList(filtrar);
            
 
-            if (usuario.Exists(x => x.Usuario == UsuariotextBox.Text) && usuario.Exists(x => x.Contrasena == ContrasenaTextBox.Text))
+            if (usuario.Exists(x => x.Usuario.ToUpper() == UsuariotextBox.Text.ToUpper()) && usuario.Exists(x => x.Contrasena == ContrasenaTextBox.Text))
             {
                 foreach (var item in repositorio.GetList(x => x.Usuario == UsuariotextBox.Text))
                 {

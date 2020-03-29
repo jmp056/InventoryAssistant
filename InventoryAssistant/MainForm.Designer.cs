@@ -78,7 +78,6 @@
             // 
             // registroDeFacturasToolStripMenuItem
             // 
-            this.registroDeFacturasToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.FacturaImg;
             this.registroDeFacturasToolStripMenuItem.Name = "registroDeFacturasToolStripMenuItem";
             this.registroDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeFacturasToolStripMenuItem.Text = "Registro de Facturas";
@@ -86,7 +85,6 @@
             // 
             // entradaDeProductosToolStripMenuItem
             // 
-            this.entradaDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.EntradaImg;
             this.entradaDeProductosToolStripMenuItem.Name = "entradaDeProductosToolStripMenuItem";
             this.entradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.entradaDeProductosToolStripMenuItem.Text = "Entrada de productos";
@@ -94,7 +92,6 @@
             // 
             // registroDeProductosToolStripMenuItem
             // 
-            this.registroDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.ProductosImg;
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de Productos";
@@ -102,7 +99,6 @@
             // 
             // registroDeCategoriaToolStripMenuItem
             // 
-            this.registroDeCategoriaToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CategoriaImg;
             this.registroDeCategoriaToolStripMenuItem.Name = "registroDeCategoriaToolStripMenuItem";
             this.registroDeCategoriaToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeCategoriaToolStripMenuItem.Text = "Registro de Categoria";
@@ -110,7 +106,6 @@
             // 
             // registroDeUsuariosToolStripMenuItem
             // 
-            this.registroDeUsuariosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.UsuarioMenuImg;
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
             this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
@@ -214,6 +209,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "Ventana en proceso";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 

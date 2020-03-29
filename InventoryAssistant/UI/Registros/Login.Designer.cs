@@ -87,7 +87,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::InventoryAssistant.Properties.Resources.UsuarioImg;
             this.pictureBox1.Location = new System.Drawing.Point(15, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
@@ -97,7 +96,6 @@
             // 
             // ContrasenaPictureBox
             // 
-            this.ContrasenaPictureBox.Image = global::InventoryAssistant.Properties.Resources.ClaveImg;
             this.ContrasenaPictureBox.Location = new System.Drawing.Point(15, 90);
             this.ContrasenaPictureBox.Name = "ContrasenaPictureBox";
             this.ContrasenaPictureBox.Size = new System.Drawing.Size(30, 30);

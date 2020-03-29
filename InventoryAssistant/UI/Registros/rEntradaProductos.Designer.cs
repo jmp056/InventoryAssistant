@@ -56,7 +56,6 @@
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Image = global::InventoryAssistant.Properties.Resources.EliminarButtonImg;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(342, 215);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -71,7 +70,6 @@
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Image = global::InventoryAssistant.Properties.Resources.GuardarButtonImg;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(191, 215);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -86,7 +84,6 @@
             // LimpiarButton
             // 
             this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LimpiarButton.Image = global::InventoryAssistant.Properties.Resources.LimpiarButtonImg;
             this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LimpiarButton.Location = new System.Drawing.Point(38, 215);
             this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -160,7 +157,6 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(342, 21);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -210,7 +206,6 @@
             // VerProductosButton
             // 
             this.VerProductosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VerProductosButton.Image = global::InventoryAssistant.Properties.Resources.ListaProductosButtonImg;
             this.VerProductosButton.Location = new System.Drawing.Point(410, 69);
             this.VerProductosButton.Name = "VerProductosButton";
             this.VerProductosButton.Size = new System.Drawing.Size(30, 30);

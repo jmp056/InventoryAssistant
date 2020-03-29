@@ -67,6 +67,12 @@ namespace InventoryAssistant.UI.Registros
                 NombreTextBox.Focus();
                 Paso = false;
             }
+            else if(NombreTextBox.Text.Length > 50)
+            {
+                MyErrorProvider.SetError(NombreTextBox, "El nombre de la categoría es demasiado largo!");
+                NombreTextBox.Focus();
+                Paso = false;
+            }
             else //Valida que si al modificar una categoria, el nombre de categoria sea unico
             {
                 RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
@@ -80,14 +86,14 @@ namespace InventoryAssistant.UI.Registros
                     CategoriaTemporal = Listado[0];
                     if (CategoriaTemporal.CategoriaId != CategoriaIdNumericUpDown.Value) // Verifica si la categoria que tiene ese nombre en la base de datos no es al que se esta modificando!
                     {
-                        MyErrorProvider.SetError(NombreTextBox, "Ya este tipo de categoría existe!");
+                        MyErrorProvider.SetError(NombreTextBox, "Ya existe una categoría con este nombre!");
                         NombreTextBox.Focus();
                         Paso = false;
                     }
                 }
                 else if (Listado.Count > 1)
                 {
-                    MyErrorProvider.SetError(NombreTextBox, "Ya este tipo de categoría existe!");
+                    MyErrorProvider.SetError(NombreTextBox, "Ya existe una categoría con este nombre!");
                     NombreTextBox.Focus();
                     Paso = false;
                 }

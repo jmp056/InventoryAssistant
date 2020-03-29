@@ -32,10 +32,10 @@
             this.BusquedaGroupBox = new System.Windows.Forms.GroupBox();
             this.RealizarBusquedaButton = new System.Windows.Forms.Button();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CriterioLabel = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AnadirProductoButton = new System.Windows.Forms.Button();
+            this.FiltrarPorLabel = new System.Windows.Forms.Label();
+            this.SeleccionarProductoButton = new System.Windows.Forms.Button();
             this.ProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BusquedaGroupBox.SuspendLayout();
@@ -47,41 +47,43 @@
             // 
             this.BusquedaGroupBox.Controls.Add(this.RealizarBusquedaButton);
             this.BusquedaGroupBox.Controls.Add(this.CriterioTextBox);
-            this.BusquedaGroupBox.Controls.Add(this.label2);
+            this.BusquedaGroupBox.Controls.Add(this.CriterioLabel);
             this.BusquedaGroupBox.Controls.Add(this.FiltroComboBox);
-            this.BusquedaGroupBox.Controls.Add(this.label1);
+            this.BusquedaGroupBox.Controls.Add(this.FiltrarPorLabel);
             this.BusquedaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusquedaGroupBox.Location = new System.Drawing.Point(7, 2);
             this.BusquedaGroupBox.Name = "BusquedaGroupBox";
-            this.BusquedaGroupBox.Size = new System.Drawing.Size(619, 53);
+            this.BusquedaGroupBox.Size = new System.Drawing.Size(584, 53);
             this.BusquedaGroupBox.TabIndex = 24;
             this.BusquedaGroupBox.TabStop = false;
             // 
             // RealizarBusquedaButton
             // 
-            this.RealizarBusquedaButton.Location = new System.Drawing.Point(507, 19);
+            this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RealizarBusquedaButton.Location = new System.Drawing.Point(474, 11);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
-            this.RealizarBusquedaButton.Size = new System.Drawing.Size(81, 23);
+            this.RealizarBusquedaButton.Size = new System.Drawing.Size(100, 35);
             this.RealizarBusquedaButton.TabIndex = 4;
             this.RealizarBusquedaButton.Text = "Buscar";
+            this.RealizarBusquedaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RealizarBusquedaButton.UseVisualStyleBackColor = true;
             this.RealizarBusquedaButton.Click += new System.EventHandler(this.RealizarBusquedaButton_Click);
             // 
             // CriterioTextBox
             // 
-            this.CriterioTextBox.Location = new System.Drawing.Point(330, 18);
+            this.CriterioTextBox.Location = new System.Drawing.Point(305, 18);
             this.CriterioTextBox.Name = "CriterioTextBox";
-            this.CriterioTextBox.Size = new System.Drawing.Size(155, 22);
+            this.CriterioTextBox.Size = new System.Drawing.Size(163, 22);
             this.CriterioTextBox.TabIndex = 3;
             // 
-            // label2
+            // CriterioLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Criterio:";
+            this.CriterioLabel.AutoSize = true;
+            this.CriterioLabel.Location = new System.Drawing.Point(240, 20);
+            this.CriterioLabel.Name = "CriterioLabel";
+            this.CriterioLabel.Size = new System.Drawing.Size(62, 16);
+            this.CriterioLabel.TabIndex = 2;
+            this.CriterioLabel.Text = "Criterio:";
             // 
             // FiltroComboBox
             // 
@@ -90,31 +92,36 @@
             this.FiltroComboBox.Items.AddRange(new object[] {
             "Todo",
             "Codigo",
-            "Descripcion"});
+            "Descripcion",
+            "Categoria",
+            "Cantidad",
+            "Precio"});
             this.FiltroComboBox.Location = new System.Drawing.Point(95, 18);
             this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(155, 24);
+            this.FiltroComboBox.Size = new System.Drawing.Size(127, 24);
             this.FiltroComboBox.TabIndex = 1;
             // 
-            // label1
+            // FiltrarPorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Filtrar por:";
+            this.FiltrarPorLabel.AutoSize = true;
+            this.FiltrarPorLabel.Location = new System.Drawing.Point(10, 20);
+            this.FiltrarPorLabel.Name = "FiltrarPorLabel";
+            this.FiltrarPorLabel.Size = new System.Drawing.Size(79, 16);
+            this.FiltrarPorLabel.TabIndex = 0;
+            this.FiltrarPorLabel.Text = "Filtrar por:";
             // 
-            // AnadirProductoButton
+            // SeleccionarProductoButton
             // 
-            this.AnadirProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnadirProductoButton.Location = new System.Drawing.Point(644, 15);
-            this.AnadirProductoButton.Name = "AnadirProductoButton";
-            this.AnadirProductoButton.Size = new System.Drawing.Size(81, 34);
-            this.AnadirProductoButton.TabIndex = 25;
-            this.AnadirProductoButton.Text = "Añadir";
-            this.AnadirProductoButton.UseVisualStyleBackColor = true;
-            this.AnadirProductoButton.Click += new System.EventHandler(this.AnadirProductoButton_Click);
+            this.SeleccionarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeleccionarProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SeleccionarProductoButton.Location = new System.Drawing.Point(597, 15);
+            this.SeleccionarProductoButton.Name = "SeleccionarProductoButton";
+            this.SeleccionarProductoButton.Size = new System.Drawing.Size(125, 35);
+            this.SeleccionarProductoButton.TabIndex = 25;
+            this.SeleccionarProductoButton.Text = "Seleccionar";
+            this.SeleccionarProductoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SeleccionarProductoButton.UseVisualStyleBackColor = true;
+            this.SeleccionarProductoButton.Click += new System.EventHandler(this.AnadirProductoButton_Click);
             // 
             // ProductosDataGridView
             // 
@@ -126,6 +133,7 @@
             this.ProductosDataGridView.Size = new System.Drawing.Size(718, 377);
             this.ProductosDataGridView.TabIndex = 26;
             this.ProductosDataGridView.Click += new System.EventHandler(this.ProductosDataGridView_Click);
+            this.ProductosDataGridView.DoubleClick += new System.EventHandler(this.ProductosDataGridView_DoubleClick);
             // 
             // MyErrorProvider
             // 
@@ -135,12 +143,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 450);
+            this.ClientSize = new System.Drawing.Size(738, 450);
             this.Controls.Add(this.ProductosDataGridView);
-            this.Controls.Add(this.AnadirProductoButton);
+            this.Controls.Add(this.SeleccionarProductoButton);
             this.Controls.Add(this.BusquedaGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SeleccionProducto";
-            this.Text = "CProductos_Factura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Seleccion de producto";
             this.Load += new System.EventHandler(this.CProductos_Factura_Load);
             this.BusquedaGroupBox.ResumeLayout(false);
             this.BusquedaGroupBox.PerformLayout();
@@ -155,10 +167,10 @@
         private System.Windows.Forms.GroupBox BusquedaGroupBox;
         private System.Windows.Forms.Button RealizarBusquedaButton;
         private System.Windows.Forms.TextBox CriterioTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CriterioLabel;
         private System.Windows.Forms.ComboBox FiltroComboBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button AnadirProductoButton;
+        private System.Windows.Forms.Label FiltrarPorLabel;
+        private System.Windows.Forms.Button SeleccionarProductoButton;
         private System.Windows.Forms.DataGridView ProductosDataGridView;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }

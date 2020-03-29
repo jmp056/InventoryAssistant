@@ -172,5 +172,11 @@ namespace InventoryAssistant
         {
             MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConsultasUsuarios p = new ConsultasUsuarios();
+            p.ShowDialog();
+        }
     }
 }

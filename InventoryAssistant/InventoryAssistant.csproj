@@ -65,9 +65,11 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\DetalleFacturas.cs" />
+    <Compile Include="Entidades\EntidadesParaConsultas\UsuariosConsulta.cs" />
     <Compile Include="Entidades\EntradaProductos.cs" />
     <Compile Include="Entidades\Facturas.cs" />
     <Compile Include="Entidades\Productos.cs" />
+    <Compile Include="Entidades\EntidadesParaConsultas\ProductosConsulta.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -146,16 +148,6 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\Consultas\ConsultaEntradaProductos.resx">
       <DependentUpon>ConsultaEntradaProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,57 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\descarga.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_icon-icons.com_52393.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\seo-social-web-network-internet_340_icon-icons.com_61497.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\LimpiarButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\GuardarButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\EliminarButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\BuscarButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\AgregarButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\ListaProductosButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\EliminarDelDetallaButtonImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\ClaveImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\UsuarioImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\FacturaImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\EntradaImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\ProductosImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\CategoriaImg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Imagenes\UsuarioMenuImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

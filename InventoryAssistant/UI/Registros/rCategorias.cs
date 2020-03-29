@@ -15,10 +15,12 @@ namespace InventoryAssistant.UI.Registros
     public partial class rCategorias : Form
     {
         string NombreUsuario;
+        int CategoriaId;
 
-        public rCategorias(string nombreUsuario)
+        public rCategorias(string nombreUsuario, int categoriaId)
         {
             this.NombreUsuario = nombreUsuario;
+            this.CategoriaId = categoriaId;
             InitializeComponent();
             Limpiar();
         }
@@ -112,6 +114,11 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------
         private void Buscarbutton_Click(object sender, EventArgs e)// Clic al boton buscar
         {
+            Buscar();
+        }
+        
+        private void Buscar()
+        {
             RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
             Categorias Categoria = new Categorias();
 
@@ -130,9 +137,7 @@ namespace InventoryAssistant.UI.Registros
                 MyErrorProvider.SetError(CategoriaIdNumericUpDown, "No existe una categoria con este codigo!");
                 NombreTextBox.Focus();
             }
-               
         }
-        
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -253,6 +258,15 @@ namespace InventoryAssistant.UI.Registros
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 GuardarButton.Focus();
+            }
+        }
+
+        private void rCategorias_Load(object sender, EventArgs e)
+        {
+            if (CategoriaId > 0)
+            {
+                CategoriaIdNumericUpDown.Value = CategoriaId;
+                Buscar();
             }
         }
         //Moviendo el foco entre los campos del registro ----------------------------------------------------------

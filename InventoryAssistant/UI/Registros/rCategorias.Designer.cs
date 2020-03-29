@@ -195,6 +195,7 @@
             this.Name = "rCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Categorias";
+            this.Load += new System.EventHandler(this.rCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.statusStrip1.ResumeLayout(false);

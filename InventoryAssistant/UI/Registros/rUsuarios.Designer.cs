@@ -399,6 +399,7 @@
             this.Name = "rUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de usuarios";
+            this.Load += new System.EventHandler(this.rUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
             this.DatosDelUsuarioGroupBox.ResumeLayout(false);

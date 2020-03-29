@@ -303,7 +303,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void AnadirCategoriasButton_Click(object sender, EventArgs e)
         {
-            rCategorias rcategorias= new rCategorias(NombreUsuario);
+            rCategorias rcategorias= new rCategorias(NombreUsuario, 0);
             rcategorias.ShowDialog();
 
         }

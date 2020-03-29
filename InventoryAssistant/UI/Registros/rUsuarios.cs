@@ -10,10 +10,12 @@ namespace InventoryAssistant.UI.Registros
     public partial class rUsuarios : Form
     {
         string NombreUsuario;
+        int UsuarioId;
 
-        public rUsuarios(string nombreUsuario)
+        public rUsuarios(string nombreUsuario, int usuarioId)
         {
             this.NombreUsuario = nombreUsuario;
+            this.UsuarioId = usuarioId;
             InitializeComponent();
             Limpiar();
         }
@@ -340,10 +342,16 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------
         private void BuscarButton_Click_1(object sender, EventArgs e)// Clic al boton buscar
         {
+            Buscar();
+               
+        }
+
+        private void Buscar()
+        {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             Usuarios usuario = new Usuarios();
 
-            int.TryParse(UsuarioIdNumericUpDown.Text, out int id); 
+            int.TryParse(UsuarioIdNumericUpDown.Text, out int id);
 
             usuario = repositorio.Buscar(id);
 
@@ -358,7 +366,6 @@ namespace InventoryAssistant.UI.Registros
                 MyErrorProvider.SetError(UsuarioIdNumericUpDown, "No existe un usuario con este codigo!");
                 NombresTextBox.Focus();
             }
-               
         }
 
         private void LimpiarButton_Click_1(object sender, EventArgs e) //Clic al boton limpiar
@@ -556,7 +563,14 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-
+        private void rUsuarios_Load(object sender, EventArgs e)
+        {
+            if(UsuarioId > 0)
+            {
+                UsuarioIdNumericUpDown.Value = UsuarioId;
+                Buscar();
+            }
+        }
     }
 }
 

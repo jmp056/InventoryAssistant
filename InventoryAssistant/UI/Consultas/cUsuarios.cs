@@ -1,6 +1,7 @@
 ﻿using InventoryAssistant.BLL;
 using InventoryAssistant.Entidades;
 using InventoryAssistant.Entidades.EntidadesParaConsultas;
+using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,18 +14,19 @@ using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
 {
-    public partial class ConsultasUsuarios : Form
+    public partial class cUsuarios : Form
     {
-        public int IdUsuaioSeleccionado { get; set; }
+        string NombreUsuario;
+        public int IdUsuarioSeleccionado { get; set; }
         private List<Usuarios> ListadoUsuarios = new List<Usuarios>();
         private List<UsuariosConsulta> ListadoUsuariosConsulta = new List<UsuariosConsulta>();
 
-        private List<Usuarios> listaUsuario;
-
-        public ConsultasUsuarios()
+        public cUsuarios(string nombreUsuario)
         {
+            this.NombreUsuario = nombreUsuario;
             InitializeComponent();
         }
+
         private bool Validar()//Funcion encargada de validar la busqueda 
         {
             bool paso = true;
@@ -32,6 +34,7 @@ namespace InventoryAssistant.UI.Consultas
 
             if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty)
             {
+                CriterioTextBox.Width = 160;
                 MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                 CriterioTextBox.Focus();
                 paso = false;
@@ -40,6 +43,7 @@ namespace InventoryAssistant.UI.Consultas
             {
                 if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
                 {
+                    CriterioTextBox.Width = 160;
                     MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
                     CriterioTextBox.Focus();
                     paso = false;
@@ -87,6 +91,11 @@ namespace InventoryAssistant.UI.Consultas
                 if (!Validar())
                     return;
             }
+            else
+            {
+                MyErrorProvider.Clear();
+            }
+            CriterioTextBox.Width = 180;
 
             if (CriterioTextBox.Text.Trim().Length > 0)
             {
@@ -114,7 +123,7 @@ namespace InventoryAssistant.UI.Consultas
                         break;
 
                     case 6://Filtrar por Nivel de usuario
-                        ListadoUsuariosConsulta = ListadoUsuariosConsulta.Where(l => l.Usuario.ToUpper().Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                        ListadoUsuariosConsulta = ListadoUsuariosConsulta.Where(l => l.NivelDeUsuario.ToUpper().Contains(CriterioTextBox.Text.ToUpper())).ToList();
                         break;
                 }
             }
@@ -141,14 +150,66 @@ namespace InventoryAssistant.UI.Consultas
             UsuariosDataGridView.Columns[5].Width = 110;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void ConsultasUsuarios_Load(object sender, EventArgs e)
         {
-            Buscar();
+            DatosDelUsuarioButton.Enabled = false;
+            RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
+            ListadoUsuarios = new List<Usuarios>();
+            ListadoUsuarios = Repositorio.GetList(p => true);
+            ListadoUsuariosConsulta = CargarLista(ListadoUsuarios);
+
+            if (ListadoUsuariosConsulta.Count > 0)
+            {
+                UsuariosDataGridView.DataSource = null;
+                UsuariosDataGridView.DataSource = ListadoUsuariosConsulta;
+                Formato();
+                UsuariosDataGridView.ClearSelection();
+                DatosDelUsuarioButton.Enabled = false;
+            }
+
+            FiltroComboBox.SelectedIndex = 0;
         }
 
+        private void UsuariosDataGridView_Click(object sender, EventArgs e)
+        {
+            if (ListadoUsuariosConsulta.Count > 0)
+            {
+                if (UsuariosDataGridView.CurrentRow.Index >= 0)
+                {
+                    DatosDelUsuarioButton.Enabled = true;
+                }
+                else
+                {
+                    DatosDelUsuarioButton.Enabled = false;
+                }
+            }
+        }
+
+        private void UsuariosDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (ListadoUsuariosConsulta.Count > 0)
+            {
+                if (UsuariosDataGridView.CurrentRow.Index >= 0)
+                {
+                    DatosDelUsuarioButton.Enabled = true;
+                    IdUsuarioSeleccionado = Convert.ToInt32(UsuariosDataGridView.CurrentRow.Cells["UsuarioId"].Value);
+                    rUsuarios rU = new rUsuarios(NombreUsuario, IdUsuarioSeleccionado);
+                    rU.ShowDialog();
+                }
+            }
+        }
+        
         private void DatosDelUsuarioButton_Click(object sender, EventArgs e)
         {
+            IdUsuarioSeleccionado = Convert.ToInt32(UsuariosDataGridView.CurrentRow.Cells["UsuarioId"].Value);
+            rUsuarios rU = new rUsuarios(NombreUsuario, IdUsuarioSeleccionado);
+            rU.ShowDialog();
+        }
 
+        private void RealizarBusquedaButton_Click(object sender, EventArgs e)
+        {
+            Buscar();
         }
     }
 }

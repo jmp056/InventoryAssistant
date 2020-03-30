@@ -11,10 +11,14 @@ namespace InventoryAssistant.UI.Registros
     {
         private Productos Producto = new Productos();
         string NombreUsuario;
+        int EntradaProductoId;
+        int ProductoId;
 
-        public rEntradaProductos(string nombreUsuario)
+        public rEntradaProductos(string nombreUsuario, int entradaProductoId, int productoId)
         {
             this.NombreUsuario = nombreUsuario;
+            this.EntradaProductoId = entradaProductoId;
+            this.ProductoId = productoId;
             InitializeComponent();
             Limpiar();
             Producto = new Productos();
@@ -234,7 +238,6 @@ namespace InventoryAssistant.UI.Registros
 
         private void VerProductosButton_Click(object sender, EventArgs e)
         {
-            Contexto contexto = new Contexto();
             SeleccionProducto TraeProducto = new SeleccionProducto();
             if (TraeProducto.ShowDialog() == DialogResult.OK)
             {
@@ -260,5 +263,14 @@ namespace InventoryAssistant.UI.Registros
             return entradaProductos;
         }
 
+        private void rEntradaProductos_Load(object sender, EventArgs e)
+        {
+            if (ProductoId > 0)
+            {
+                Producto = BuscaProducto(ProductoId);
+                ProductoTextBox.Text = Producto.Descripcion;
+                CantidadNumericUpDown.Focus();
+            }
+        }
     }
 }

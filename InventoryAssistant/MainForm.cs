@@ -66,7 +66,7 @@ namespace InventoryAssistant
         {
             if (nivel <= 1)
             {
-                rEntradaProductos rE = new rEntradaProductos(nombre);
+                rEntradaProductos rE = new rEntradaProductos(nombre, 0, 0);
                 rE.ShowDialog();
             }
             else
@@ -79,7 +79,7 @@ namespace InventoryAssistant
 
             if (nivel <= 1)
             {
-                rProductos rP = new rProductos(nombre, nivel);
+                rProductos rP = new rProductos(nombre, nivel, 0);
                 rP.ShowDialog();
             }
             else
@@ -112,13 +112,19 @@ namespace InventoryAssistant
 
 
         // C O N S U L T A S ------------------------------------------------------------------------------------
+        
+        private void consultaDeProductosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cProductos cP = new cProductos(nombre, nivel);
+            cP.ShowDialog();
+        }
 
         private void consultaDeCategoríasToolStripMenuItem_Click(object sender, EventArgs e) //Consulta de Categorías
         {
             if (nivel <= 1)
             {
-                rCategorias rC = new rCategorias(nombre, 0);
-                rC.ShowDialog();
+                cCategorias cC = new cCategorias(nombre);
+                cC.ShowDialog();
             }
             else
                 NoTienePermiso();
@@ -139,21 +145,11 @@ namespace InventoryAssistant
 
 
 
-        private void consultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaFacturas cf = new ConsultaFacturas();
-            cf.ShowDialog();
-        }
 
 
 
 
 
-        private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaProductos cp = new ConsultaProductos();
-            cp.ShowDialog();
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -190,8 +186,8 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cCategorias p = new cCategorias(nombre);
-            p.ShowDialog();
+            cProductos cP = new cProductos(nombre, nivel);
+            cP.ShowDialog();
         }
 
 

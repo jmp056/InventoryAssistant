@@ -61,7 +61,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.CategoriasDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(199, 4);
+            this.groupBox2.Location = new System.Drawing.Point(214, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(402, 323);
             this.groupBox2.TabIndex = 26;
@@ -74,7 +74,7 @@
             this.DatosDeLaCategoriaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatosDeLaCategoriaGroupBox.Location = new System.Drawing.Point(4, 3);
             this.DatosDeLaCategoriaGroupBox.Name = "DatosDeLaCategoriaGroupBox";
-            this.DatosDeLaCategoriaGroupBox.Size = new System.Drawing.Size(190, 324);
+            this.DatosDeLaCategoriaGroupBox.Size = new System.Drawing.Size(205, 324);
             this.DatosDeLaCategoriaGroupBox.TabIndex = 25;
             this.DatosDeLaCategoriaGroupBox.TabStop = false;
             this.DatosDeLaCategoriaGroupBox.Text = "Consultar Categorías";
@@ -83,9 +83,9 @@
             // 
             this.DatosDeLaCategoriaButton.Location = new System.Drawing.Point(5, 30);
             this.DatosDeLaCategoriaButton.Name = "DatosDeLaCategoriaButton";
-            this.DatosDeLaCategoriaButton.Size = new System.Drawing.Size(180, 50);
+            this.DatosDeLaCategoriaButton.Size = new System.Drawing.Size(195, 50);
             this.DatosDeLaCategoriaButton.TabIndex = 24;
-            this.DatosDeLaCategoriaButton.Text = "Datos del usuario";
+            this.DatosDeLaCategoriaButton.Text = "Datos de la Categoria";
             this.DatosDeLaCategoriaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DatosDeLaCategoriaButton.UseVisualStyleBackColor = true;
             this.DatosDeLaCategoriaButton.Click += new System.EventHandler(this.DatosDeLaCategoriaButton_Click);
@@ -100,7 +100,7 @@
             this.BuscarGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarGroupBox.Location = new System.Drawing.Point(0, 101);
             this.BuscarGroupBox.Name = "BuscarGroupBox";
-            this.BuscarGroupBox.Size = new System.Drawing.Size(190, 223);
+            this.BuscarGroupBox.Size = new System.Drawing.Size(205, 223);
             this.BuscarGroupBox.TabIndex = 23;
             this.BuscarGroupBox.TabStop = false;
             this.BuscarGroupBox.Text = "Buscar";
@@ -109,7 +109,7 @@
             // 
             this.RealizarBusquedaButton.Image = ((System.Drawing.Image)(resources.GetObject("RealizarBusquedaButton.Image")));
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RealizarBusquedaButton.Location = new System.Drawing.Point(9, 157);
+            this.RealizarBusquedaButton.Location = new System.Drawing.Point(17, 157);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
             this.RealizarBusquedaButton.Size = new System.Drawing.Size(173, 46);
             this.RealizarBusquedaButton.TabIndex = 4;
@@ -122,7 +122,7 @@
             // 
             this.CriterioTextBox.Location = new System.Drawing.Point(5, 115);
             this.CriterioTextBox.Name = "CriterioTextBox";
-            this.CriterioTextBox.Size = new System.Drawing.Size(180, 22);
+            this.CriterioTextBox.Size = new System.Drawing.Size(195, 22);
             this.CriterioTextBox.TabIndex = 3;
             // 
             // CriterioLabel
@@ -144,7 +144,7 @@
             "Nombre"});
             this.FiltroComboBox.Location = new System.Drawing.Point(5, 55);
             this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(180, 24);
+            this.FiltroComboBox.Size = new System.Drawing.Size(195, 24);
             this.FiltroComboBox.TabIndex = 1;
             // 
             // FiltrarPorLabel
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 335);
+            this.ClientSize = new System.Drawing.Size(622, 335);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDeLaCategoriaGroupBox);
             this.Name = "cCategorias";
@@ -185,7 +185,6 @@
         private System.Windows.Forms.DataGridView CategoriasDataGridView;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox DatosDeLaCategoriaGroupBox;
-        private System.Windows.Forms.Button DatosDeLaCategoriaButton;
         private System.Windows.Forms.GroupBox BuscarGroupBox;
         private System.Windows.Forms.Button RealizarBusquedaButton;
         private System.Windows.Forms.TextBox CriterioTextBox;
@@ -193,5 +192,6 @@
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.Label FiltrarPorLabel;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button DatosDeLaCategoriaButton;
     }
 }

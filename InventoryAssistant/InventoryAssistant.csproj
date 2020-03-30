@@ -90,23 +90,11 @@
     <Compile Include="UI\Consultas\cCategorias.Designer.cs">
       <DependentUpon>cCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Consultas\ConsultaEntradaProductos.cs">
+    <Compile Include="UI\Consultas\cProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Consultas\ConsultaEntradaProductos.Designer.cs">
-      <DependentUpon>ConsultaEntradaProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Consultas\ConsultaFacturas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Consultas\ConsultaFacturas.Designer.cs">
-      <DependentUpon>ConsultaFacturas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Consultas\ConsultaProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Consultas\ConsultaProductos.Designer.cs">
-      <DependentUpon>ConsultaProductos.cs</DependentUpon>
+    <Compile Include="UI\Consultas\cProductos.Designer.cs">
+      <DependentUpon>cProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cUsuarios.cs">
       <SubType>Form</SubType>
@@ -166,14 +154,8 @@
     <EmbeddedResource Include="UI\Consultas\cCategorias.resx">
       <DependentUpon>cCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Consultas\ConsultaEntradaProductos.resx">
-      <DependentUpon>ConsultaEntradaProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Consultas\ConsultaFacturas.resx">
-      <DependentUpon>ConsultaFacturas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Consultas\ConsultaProductos.resx">
-      <DependentUpon>ConsultaProductos.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Consultas\cProductos.resx">
+      <DependentUpon>cProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cUsuarios.resx">
       <DependentUpon>cUsuarios.cs</DependentUpon>

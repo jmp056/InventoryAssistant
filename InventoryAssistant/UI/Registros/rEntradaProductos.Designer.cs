@@ -266,6 +266,7 @@
             this.Name = "rEntradaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Entrada de Productos";
+            this.Load += new System.EventHandler(this.rEntradaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();

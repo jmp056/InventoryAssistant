@@ -16,23 +16,35 @@ namespace InventoryAssistant.UI.Registros
     {
         string NombreUsuario;
         int Nivel;
+        int ProductoId;
 
-        public rProductos(string nombreUsuario, int nivel)
+        public rProductos(string nombreUsuario, int nivel, int productoId)
         {
             this.NombreUsuario = nombreUsuario;
             this.Nivel = nivel;
+            this.ProductoId = productoId;
             InitializeComponent();
             Limpiar();
         }
 
         private void rProductos_Activated(object sender, EventArgs e)//Llena el ComboBox de las categorias cuando la ventana gana el foco
         {
-            LlenaComboBoxCategorias();
-            CategoriaComboBox.SelectedIndex = -1;
+            if(ProductoId <= 0)
+            {
+                LlenaComboBoxCategorias();
+                CategoriaComboBox.SelectedIndex = -1;
+            }
         }
         private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
         {
             CantidadNumericUpDown.Enabled = (Nivel <= 0) ? true: false;
+            LlenaComboBoxCategorias();
+
+            if (ProductoId > 0)
+            {
+                ProductoIdNumericUpDown.Value = ProductoId;
+                Buscar();
+            }
         }
 
         private void Limpiar()// Funcion encargada de limpiar todos los campos del registro
@@ -174,6 +186,11 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------
         private void Buscarbutton_Click(object sender, EventArgs e)// Clic al boton buscar
         {
+            Buscar();  
+        }
+
+        private void Buscar()
+        {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             Productos Producto = new Productos();
 
@@ -191,7 +208,7 @@ namespace InventoryAssistant.UI.Registros
                 Limpiar();
                 MyErrorProvider.SetError(ProductoIdNumericUpDown, "No existe un producto con este codigo!");
                 DescripcionTextBox.Focus();
-            }         
+            }
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)//Clic al boton limpiar

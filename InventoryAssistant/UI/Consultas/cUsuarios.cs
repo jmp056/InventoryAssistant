@@ -32,7 +32,7 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty)
+            if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty || FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text.Trim().Length > 0)
             {
                 CriterioTextBox.Width = 160;
                 MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
@@ -97,8 +97,6 @@ namespace InventoryAssistant.UI.Consultas
             }
             CriterioTextBox.Width = 180;
 
-            if (CriterioTextBox.Text.Trim().Length > 0)
-            {
                 switch (FiltroComboBox.SelectedIndex)
                 {
 
@@ -125,7 +123,6 @@ namespace InventoryAssistant.UI.Consultas
                     case 6://Filtrar por Nivel de usuario
                         ListadoUsuariosConsulta = ListadoUsuariosConsulta.Where(l => l.NivelDeUsuario.ToUpper().Contains(CriterioTextBox.Text.ToUpper())).ToList();
                         break;
-                }
             }
 
             UsuariosDataGridView.DataSource = null;
@@ -153,7 +150,6 @@ namespace InventoryAssistant.UI.Consultas
 
         private void ConsultasUsuarios_Load(object sender, EventArgs e)
         {
-            DatosDelUsuarioButton.Enabled = false;
             RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
             ListadoUsuarios = new List<Usuarios>();
             ListadoUsuarios = Repositorio.GetList(p => true);
@@ -165,9 +161,9 @@ namespace InventoryAssistant.UI.Consultas
                 UsuariosDataGridView.DataSource = ListadoUsuariosConsulta;
                 Formato();
                 UsuariosDataGridView.ClearSelection();
-                DatosDelUsuarioButton.Enabled = false;
             }
 
+            DatosDelUsuarioButton.Enabled = false;
             FiltroComboBox.SelectedIndex = 0;
         }
 

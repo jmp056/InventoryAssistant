@@ -19,9 +19,9 @@ namespace InventoryAssistant.Entidades.EntidadesParaConsultas
         {
             ProductoId = 0;
             Descripcion = string.Empty;
-            Precio = 0;
             Categoria = string.Empty;
-            Cantidad = 0;
+            Cantidad = 0;            
+            Precio = 0;
         }
     }
 }

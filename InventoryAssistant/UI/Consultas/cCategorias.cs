@@ -29,9 +29,9 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty)
+            if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty || FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text.Trim().Length > 0)
             {
-                CriterioTextBox.Width = 160;
+                CriterioTextBox.Width = 175;
                 MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                 CriterioTextBox.Focus();
                 paso = false;
@@ -40,7 +40,7 @@ namespace InventoryAssistant.UI.Consultas
             {
                 if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
                 {
-                    CriterioTextBox.Width = 160;
+                    CriterioTextBox.Width = 175;
                     MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
                     CriterioTextBox.Focus();
                     paso = false;
@@ -65,10 +65,8 @@ namespace InventoryAssistant.UI.Consultas
             {
                 MyErrorProvider.Clear();
             }
-            CriterioTextBox.Width = 180;
+            CriterioTextBox.Width = 195;
 
-            if (CriterioTextBox.Text.Trim().Length > 0)
-            {
                 switch (FiltroComboBox.SelectedIndex)
                 {
 
@@ -81,7 +79,6 @@ namespace InventoryAssistant.UI.Consultas
                         break;
 
                 }
-            }
 
             CategoriasDataGridView.DataSource = null;
             CategoriasDataGridView.DataSource = ListadoCatgorias;

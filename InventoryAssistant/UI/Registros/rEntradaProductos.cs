@@ -123,6 +123,11 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------
         private void BuscarButton_Click(object sender, EventArgs e)//Clic al boton buscar
         {
+            Buscar();
+        }
+
+        private void Buscar()
+        {
             EntradaProductos entradaProductos = BuscaEntrada((int)EntradaIdNumericUpDown.Value);
 
             if (entradaProductos != null)
@@ -265,7 +270,12 @@ namespace InventoryAssistant.UI.Registros
 
         private void rEntradaProductos_Load(object sender, EventArgs e)
         {
-            if (ProductoId > 0)
+            if(EntradaProductoId > 0)
+            {
+                EntradaIdNumericUpDown.Value = EntradaProductoId;
+                Buscar();
+            }
+            else if (ProductoId > 0)
             {
                 Producto = BuscaProducto(ProductoId);
                 ProductoTextBox.Text = Producto.Descripcion;

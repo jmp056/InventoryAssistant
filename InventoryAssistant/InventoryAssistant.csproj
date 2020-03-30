@@ -65,6 +65,7 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\DetalleFacturas.cs" />
+    <Compile Include="Entidades\EntidadesParaConsultas\EntradaProductosConsulta.cs" />
     <Compile Include="Entidades\EntidadesParaConsultas\UsuariosConsulta.cs" />
     <Compile Include="Entidades\EntradaProductos.cs" />
     <Compile Include="Entidades\Facturas.cs" />
@@ -89,6 +90,18 @@
     </Compile>
     <Compile Include="UI\Consultas\cCategorias.Designer.cs">
       <DependentUpon>cCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cEntradaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cEntradaProductos.Designer.cs">
+      <DependentUpon>cEntradaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cFacturas.Designer.cs">
+      <DependentUpon>cFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cProductos.cs">
       <SubType>Form</SubType>
@@ -153,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cCategorias.resx">
       <DependentUpon>cCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cEntradaProductos.resx">
+      <DependentUpon>cEntradaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cFacturas.resx">
+      <DependentUpon>cFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cProductos.resx">
       <DependentUpon>cProductos.cs</DependentUpon>

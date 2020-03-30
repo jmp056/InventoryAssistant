@@ -45,16 +45,6 @@ namespace InventoryAssistant.UI.Consultas
                 }
             }
 
-            //if (FiltroComboBox.SelectedIndex == 4 && FiltroComboBox.SelectedIndex == 5)
-            //{
-            //    if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
-            //    {
-            //        CriterioTextBox.Width = 160;
-            //        MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
-            //        CriterioTextBox.Focus();
-            //        paso = false;
-            //    }
-            //}
 
             return paso;
         }
@@ -132,7 +122,7 @@ namespace InventoryAssistant.UI.Consultas
 
         private void Formato()//Le da el formato a la consulta
         {
-            ProductosDataGridView.Columns[0].HeaderText = "Codigo";
+            ProductosDataGridView.Columns[0].HeaderText = "Código";
             ProductosDataGridView.Columns[0].Width = 60;
             ProductosDataGridView.Columns[1].HeaderText = "Descripcion";
             ProductosDataGridView.Columns[1].Width = 275;
@@ -248,6 +238,56 @@ namespace InventoryAssistant.UI.Consultas
             {
                 MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ProductosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DatosDelUsuarioGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FiltrarPorlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CriterioLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HastaLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HastaNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DesdeNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

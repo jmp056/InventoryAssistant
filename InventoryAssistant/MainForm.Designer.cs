@@ -136,6 +136,7 @@
             this.consultaDeEntradaDeProductosToolStripMenuItem.Name = "consultaDeEntradaDeProductosToolStripMenuItem";
             this.consultaDeEntradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.consultaDeEntradaDeProductosToolStripMenuItem.Text = "Consulta de Entrada de Productos";
+            this.consultaDeEntradaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeEntradaDeProductosToolStripMenuItem_Click);
             // 
             // consultaDeProductosToolStripMenuItem1
             // 

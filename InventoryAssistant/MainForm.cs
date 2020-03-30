@@ -58,7 +58,7 @@ namespace InventoryAssistant
         // R E G I S T R O S --------------------------------------------------------------------------------------
         private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e) //Registro de facturas
         {
-            rFacturas rF = new rFacturas(nombre);
+            rFacturas rF = new rFacturas(nombre, 0);
             rF.ShowDialog();
         }
        
@@ -112,8 +112,18 @@ namespace InventoryAssistant
 
 
         // C O N S U L T A S ------------------------------------------------------------------------------------
-        
-        private void consultaDeProductosToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void consultaDeEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Consulta de entrada de productos
+        {
+            if (nivel <= 1)
+            {
+                cEntradaProductos cE = new cEntradaProductos(nombre);
+                cE.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }        
+
+        private void consultaDeProductosToolStripMenuItem1_Click(object sender, EventArgs e) //Consulta de Productos
         {
             cProductos cP = new cProductos(nombre, nivel);
             cP.ShowDialog();
@@ -186,7 +196,7 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cProductos cP = new cProductos(nombre, nivel);
+            cFacturas cP = new cFacturas(nombre);
             cP.ShowDialog();
         }
 

@@ -32,25 +32,33 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex < 4)
+            if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex <= 2)
             {
-                if (CriterioTextBox.Text == string.Empty || CriterioTextBox.Text.Trim().Length <= 0)
+                if (CriterioTextBox.Text == string.Empty)
                 {
                     CriterioTextBox.Width = 160;
                     MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                     CriterioTextBox.Focus();
                     paso = false;
                 }
-            }
-            else
-            {
-                if(DesdeNumericUpDown.Value > HastaNumericUpDown.Value)
+                else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
                 {
-                    MyErrorProvider.SetError(DesdeNumericUpDown, "La cantidad de inicio no puede ser mayor a la cantidad limite!");
+                    CriterioTextBox.Width = 160;
+                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
+            }
+            else if (FiltroComboBox.SelectedIndex >= 3)
+            {
+                if (DesdeNumericUpDown.Value > HastaNumericUpDown.Value)
+                {
+                    MyErrorProvider.SetError(DesdeNumericUpDown, "El valor inicial no puede ser mayor al valor limite!");
                     DesdeNumericUpDown.Focus();
                     paso = false;
                 }
             }
+
 
             return paso;
         }
@@ -67,7 +75,7 @@ namespace InventoryAssistant.UI.Consultas
                 p = repositorio.Buscar(item.ProductoId);
                 e.Producto = (p != null) ? p.Descripcion : "No fue posible recuperar el dato";
                 e.Cantidad = item.Cantidad;
-                e.Fecha = item.Fecha.Date;
+                e.Fecha = item.Fecha.Date; 
 
                 ListaProcesada.Add(e);
             }
@@ -116,6 +124,7 @@ namespace InventoryAssistant.UI.Consultas
                 ListadoEntradasProductosConsulta = ListadoEntradasProductosConsulta.Where(l => l.Fecha.Date >= DesdeDateTimePicker.Value.Date && l.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
             }
 
+            DatosDeLaEntradaButton.Enabled = false;
             EntradasProductosDataGridView.DataSource = null;
             EntradasProductosDataGridView.DataSource = ListadoEntradasProductosConsulta;
             Formato();
@@ -126,12 +135,14 @@ namespace InventoryAssistant.UI.Consultas
         {
             EntradasProductosDataGridView.Columns[0].HeaderText = "Código";
             EntradasProductosDataGridView.Columns[0].Width = 60;
-            EntradasProductosDataGridView.Columns[1].HeaderText = "Descripcion";
+            EntradasProductosDataGridView.Columns[1].HeaderText = "Producto";
             EntradasProductosDataGridView.Columns[1].Width = 275;
             EntradasProductosDataGridView.Columns[2].HeaderText = "Cantidad";
             EntradasProductosDataGridView.Columns[2].Width = 95;
+            EntradasProductosDataGridView.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
             EntradasProductosDataGridView.Columns[3].HeaderText = "Fecha";
             EntradasProductosDataGridView.Columns[3].Width = 80;
+
         }
 
 

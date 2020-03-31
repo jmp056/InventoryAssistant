@@ -30,25 +30,33 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex < 4)
+            if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex <= 2)
             {
-                if (CriterioTextBox.Text == string.Empty || CriterioTextBox.Text.Trim().Length <= 0)
+                if (CriterioTextBox.Text == string.Empty)
                 {
                     CriterioTextBox.Width = 160;
                     MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                     CriterioTextBox.Focus();
                     paso = false;
                 }
+                else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                {
+                    CriterioTextBox.Width = 160;
+                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
             }
-            else
+            else if (FiltroComboBox.SelectedIndex >= 3)
             {
                 if (DesdeNumericUpDown.Value > HastaNumericUpDown.Value)
                 {
-                    MyErrorProvider.SetError(DesdeNumericUpDown, "La cantidad de inicio no puede ser mayor a la cantidad limite!");
+                    MyErrorProvider.SetError(DesdeNumericUpDown, "El valor inicial no puede ser mayor al valor limite!");
                     DesdeNumericUpDown.Focus();
                     paso = false;
                 }
             }
+
 
             return paso;
         }
@@ -96,6 +104,7 @@ namespace InventoryAssistant.UI.Consultas
                 ListadoFacturas = ListadoFacturas.Where(l => l.Fecha.Date >= DesdeDateTimePicker.Value.Date && l.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
             }
 
+            DatosDeLaFacturaButton.Enabled = false;
             FacturaDataGridView.DataSource = null;
             FacturaDataGridView.DataSource = ListadoFacturas;
             Formato();
@@ -108,8 +117,9 @@ namespace InventoryAssistant.UI.Consultas
             FacturaDataGridView.Columns[0].Width = 60;
             FacturaDataGridView.Columns[1].HeaderText = "Vendedor";
             FacturaDataGridView.Columns[1].Width = 200;
+            FacturaDataGridView.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy - hh:mm:ss tt";
             FacturaDataGridView.Columns[2].HeaderText = "Fecha";
-            FacturaDataGridView.Columns[2].Width = 110;
+            FacturaDataGridView.Columns[2].Width = 140;
             FacturaDataGridView.Columns[3].HeaderText = "Cliente";
             FacturaDataGridView.Columns[3].Width = 200;
             FacturaDataGridView.Columns[4].HeaderText = "Monto";

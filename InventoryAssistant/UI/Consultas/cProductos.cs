@@ -34,13 +34,29 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex < 4)
+            if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex <= 3)
             {
-                if(CriterioTextBox.Text == string.Empty || CriterioTextBox.Text.Trim().Length <= 0)
+                if (CriterioTextBox.Text == string.Empty)
                 {
                     CriterioTextBox.Width = 160;
                     MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                     CriterioTextBox.Focus();
+                    paso = false;
+                }
+                else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                {
+                    CriterioTextBox.Width = 160;
+                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
+            }
+            else if(FiltroComboBox.SelectedIndex >= 4)
+            {
+                if (DesdeNumericUpDown.Value > HastaNumericUpDown.Value)
+                {
+                    MyErrorProvider.SetError(DesdeNumericUpDown, "El valor inicial no puede ser mayor al valor limite!");
+                    DesdeNumericUpDown.Focus();
                     paso = false;
                 }
             }
@@ -89,31 +105,32 @@ namespace InventoryAssistant.UI.Consultas
 
             CriterioTextBox.Width = 180;
 
-                switch (FiltroComboBox.SelectedIndex)
-                {
+            switch (FiltroComboBox.SelectedIndex)
+            {
 
-                    case 1: //Filtrar por Id
-                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.ProductoId.ToString().Contains(CriterioTextBox.Text)).ToList();
-                        break;
+                case 1: //Filtrar por Id
+                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.ProductoId.ToString().Contains(CriterioTextBox.Text)).ToList();
+                    break;
 
-                    case 2://Filtrar por descripcion
-                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Descripcion.Contains(CriterioTextBox.Text.ToUpper())).ToList();
-                        break;
+                case 2://Filtrar por descripcion
+                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Descripcion.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                    break;
 
-                    case 3://Filtrar por Categoría
-                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Categoria.Contains(CriterioTextBox.Text.ToUpper())).ToList();
-                        break;
+                case 3://Filtrar por Categoría
+                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Categoria.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                    break;
 
-                    case 4://Filtrar por Cantidad
-                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Cantidad >= DesdeNumericUpDown.Value && l.Cantidad <= HastaNumericUpDown.Value).ToList();
-                        break;
+                case 4://Filtrar por Cantidad
+                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Cantidad >= DesdeNumericUpDown.Value && l.Cantidad <= HastaNumericUpDown.Value).ToList();
+                    break;
 
-                    case 5://Filtrar por Precio
-                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio >= DesdeNumericUpDown.Value && l.Precio <= HastaNumericUpDown.Value).ToList();
-                        break;
-                }
+                case 5://Filtrar por Precio
+                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio >= DesdeNumericUpDown.Value && l.Precio <= HastaNumericUpDown.Value).ToList();
+                    break;
+            }
 
-
+            DatosDelProductoButton.Enabled = false;
+            GenerarEntradaButton.Enabled = false;
             ProductosDataGridView.DataSource = null;
             ProductosDataGridView.DataSource = ListadoProductosConsulta;
             Formato();

@@ -37,8 +37,7 @@
             this.RegistroDeCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeEntradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeProductosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeCategoríasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +49,7 @@
             this.NombreUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.UsuarioStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.ConsultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -116,8 +116,8 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaDeUsuariosToolStripMenuItem,
-            this.consultaDeEntradaDeProductosToolStripMenuItem,
+            this.ConsultaDeFacturasToolStripMenuItem,
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem,
             this.consultaDeProductosToolStripMenuItem1,
             this.consultaDeCategoríasToolStripMenuItem,
             this.ConsultaToolStripMenuItem});
@@ -125,18 +125,12 @@
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
-            // consultaDeUsuariosToolStripMenuItem
+            // ConsultaDeEntradaDeProductosToolStripMenuItem
             // 
-            this.consultaDeUsuariosToolStripMenuItem.Name = "consultaDeUsuariosToolStripMenuItem";
-            this.consultaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.consultaDeUsuariosToolStripMenuItem.Text = "Consulta de Usuarios";
-            // 
-            // consultaDeEntradaDeProductosToolStripMenuItem
-            // 
-            this.consultaDeEntradaDeProductosToolStripMenuItem.Name = "consultaDeEntradaDeProductosToolStripMenuItem";
-            this.consultaDeEntradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.consultaDeEntradaDeProductosToolStripMenuItem.Text = "Consulta de Entrada de Productos";
-            this.consultaDeEntradaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeEntradaDeProductosToolStripMenuItem_Click);
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem.Name = "ConsultaDeEntradaDeProductosToolStripMenuItem";
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem.Text = "Consulta de Entrada de Productos";
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeEntradaDeProductosToolStripMenuItem_Click);
             // 
             // consultaDeProductosToolStripMenuItem1
             // 
@@ -228,6 +222,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ConsultaDeFacturasToolStripMenuItem
+            // 
+            this.ConsultaDeFacturasToolStripMenuItem.Name = "ConsultaDeFacturasToolStripMenuItem";
+            this.ConsultaDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.ConsultaDeFacturasToolStripMenuItem.Text = "Consulta de Facturas";
+            this.ConsultaDeFacturasToolStripMenuItem.Click += new System.EventHandler(this.ConsultaDeFacturasToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,7 +259,6 @@
         private System.Windows.Forms.ToolStripMenuItem RegistroDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RegistroDeCategoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RegistroDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EntradaDeProductosToolStripMenuItem;
@@ -273,7 +273,8 @@
         private System.Windows.Forms.ToolStripMenuItem ConsultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeCategoríasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeEntradaDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConsultaDeEntradaDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ConsultaDeFacturasToolStripMenuItem;
     }
 }
 

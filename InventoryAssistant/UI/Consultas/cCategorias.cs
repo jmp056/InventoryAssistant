@@ -29,16 +29,16 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty || FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text.Trim().Length > 0)
+            if (FiltroComboBox.SelectedIndex > 0)
             {
-                CriterioTextBox.Width = 175;
-                MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
-                CriterioTextBox.Focus();
-                paso = false;
-            }
-            else
-            {
-                if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                if (CriterioTextBox.Text == string.Empty)
+                {
+                    CriterioTextBox.Width = 175;
+                    MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
+                else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
                 {
                     CriterioTextBox.Width = 175;
                     MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
@@ -67,19 +67,20 @@ namespace InventoryAssistant.UI.Consultas
             }
             CriterioTextBox.Width = 195;
 
-                switch (FiltroComboBox.SelectedIndex)
-                {
+            switch (FiltroComboBox.SelectedIndex)
+            {
 
-                    case 1: //Filtrar por Id
-                        ListadoCatgorias = ListadoCatgorias.Where(l => l.CategoriaId.ToString().Contains(CriterioTextBox.Text)).ToList();
-                        break;
+                case 1: //Filtrar por Id
+                    ListadoCatgorias = ListadoCatgorias.Where(l => l.CategoriaId.ToString().Contains(CriterioTextBox.Text)).ToList();
+                    break;
 
-                    case 2://Filtrar por Nombre
-                        ListadoCatgorias = ListadoCatgorias.Where(l => l.Nombre.Contains(CriterioTextBox.Text.ToUpper())).ToList();
-                        break;
+                case 2://Filtrar por Nombre
+                    ListadoCatgorias = ListadoCatgorias.Where(l => l.Nombre.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                    break;
 
-                }
+            }
 
+            DatosDeLaCategoriaButton.Enabled = false;
             CategoriasDataGridView.DataSource = null;
             CategoriasDataGridView.DataSource = ListadoCatgorias;
             Formato();

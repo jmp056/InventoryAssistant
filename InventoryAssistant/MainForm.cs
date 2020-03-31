@@ -109,9 +109,19 @@ namespace InventoryAssistant
                 NoTienePermiso();
         }
 
-
-
         // C O N S U L T A S ------------------------------------------------------------------------------------
+        
+        private void ConsultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)//Consulta de Facturas
+        {
+            if (nivel <= 1)
+            {
+                cFacturas cF = new cFacturas(nombre);
+                cF.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }
+        
         private void consultaDeEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Consulta de entrada de productos
         {
             if (nivel <= 1)
@@ -196,8 +206,7 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cFacturas cP = new cFacturas(nombre);
-            cP.ShowDialog();
+
         }
 
 

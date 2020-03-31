@@ -139,6 +139,7 @@
             this.Controls.Add(this.ProductosDataGridView);
             this.Controls.Add(this.AnadirProductoButton);
             this.Controls.Add(this.BusquedaGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "SeleccionProducto";
             this.Text = "CProductos_Factura";
             this.Load += new System.EventHandler(this.CProductos_Factura_Load);

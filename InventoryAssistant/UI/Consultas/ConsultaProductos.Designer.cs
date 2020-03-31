@@ -148,6 +148,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ConsultaProductos";
             this.Text = "Consulta de Productos";
             this.groupBox2.ResumeLayout(false);

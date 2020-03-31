@@ -149,8 +149,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ConsultaFacturas";
-            this.Text = "ConsultaFacturas";
+            this.Text = "Consultas de Facturas";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cFacturasdataGridView)).EndInit();
             this.DatosDelUsuarioGroupBox.ResumeLayout(false);

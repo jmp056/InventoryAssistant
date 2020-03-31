@@ -94,15 +94,20 @@ namespace InventoryAssistant.UI.Consultas
             listaProducto = listado;
 
             cProductosdataGridView.Columns[0].HeaderText = "ID";
-            cProductosdataGridView.Columns[0].Width = 40;
+            cProductosdataGridView.Columns[0].Width = 50;
             cProductosdataGridView.Columns[1].HeaderText = "Descripcion";
-            cProductosdataGridView.Columns[1].Width = 250;
+            cProductosdataGridView.Columns[1].Width = 190;
             cProductosdataGridView.Columns[2].Visible = false;
             cProductosdataGridView.Columns[3].Visible = false;
             cProductosdataGridView.Columns[4].Visible = false;
-            cProductosdataGridView.Columns[6].Width = 150;
+            cProductosdataGridView.Columns[5].Width = 80;
+            cProductosdataGridView.Columns[5].HeaderText = "Precio";
+            cProductosdataGridView.Columns[6].Width = 120;
             cProductosdataGridView.Columns[6].HeaderText = "Fecha de Registro";
             cProductosdataGridView.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
+            cProductosdataGridView.Columns[7].Visible = false;
+            cProductosdataGridView.Columns[8].HeaderText = "Usuario";
+
         }
 
         private void RealizarBusquedaButton_Click(object sender, EventArgs e)

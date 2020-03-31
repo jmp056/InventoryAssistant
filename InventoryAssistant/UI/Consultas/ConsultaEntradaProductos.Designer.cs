@@ -33,11 +33,11 @@
             this.cEntradasdataGridView = new System.Windows.Forms.DataGridView();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CristerioTextBox = new System.Windows.Forms.TextBox();
             this.RealizarBusquedaButton = new System.Windows.Forms.Button();
+            this.CristerioTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cEntradasdataGridView)).BeginInit();
@@ -81,14 +81,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
             // 
-            // label1
+            // RealizarBusquedaButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Filtrar por";
+            this.RealizarBusquedaButton.Location = new System.Drawing.Point(12, 169);
+            this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
+            this.RealizarBusquedaButton.Size = new System.Drawing.Size(153, 23);
+            this.RealizarBusquedaButton.TabIndex = 4;
+            this.RealizarBusquedaButton.Text = "Realizar Busqueda";
+            this.RealizarBusquedaButton.UseVisualStyleBackColor = true;
+            this.RealizarBusquedaButton.Click += new System.EventHandler(this.RealizarBusquedaButton_Click);
+            // 
+            // CristerioTextBox
+            // 
+            this.CristerioTextBox.Location = new System.Drawing.Point(9, 127);
+            this.CristerioTextBox.Name = "CristerioTextBox";
+            this.CristerioTextBox.Size = new System.Drawing.Size(155, 22);
+            this.CristerioTextBox.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Criterio";
             // 
             // FiltroComboBox
             // 
@@ -103,31 +120,14 @@
             this.FiltroComboBox.Size = new System.Drawing.Size(155, 24);
             this.FiltroComboBox.TabIndex = 1;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Criterio";
-            // 
-            // CristerioTextBox
-            // 
-            this.CristerioTextBox.Location = new System.Drawing.Point(9, 127);
-            this.CristerioTextBox.Name = "CristerioTextBox";
-            this.CristerioTextBox.Size = new System.Drawing.Size(155, 22);
-            this.CristerioTextBox.TabIndex = 3;
-            // 
-            // RealizarBusquedaButton
-            // 
-            this.RealizarBusquedaButton.Location = new System.Drawing.Point(12, 169);
-            this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
-            this.RealizarBusquedaButton.Size = new System.Drawing.Size(153, 23);
-            this.RealizarBusquedaButton.TabIndex = 4;
-            this.RealizarBusquedaButton.Text = "Realizar Busqueda";
-            this.RealizarBusquedaButton.UseVisualStyleBackColor = true;
-            this.RealizarBusquedaButton.Click += new System.EventHandler(this.RealizarBusquedaButton_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Filtrar por";
             // 
             // DatosDelUsuarioGroupBox
             // 
@@ -147,6 +147,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ConsultaEntradaProductos";
             this.Text = "ConsultaEntradaProductos";
             this.groupBox2.ResumeLayout(false);

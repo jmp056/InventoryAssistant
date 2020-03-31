@@ -18,17 +18,47 @@ namespace InventoryAssistant
     {
 
         RepositorioBase<Usuarios> RepositorioUsuario = new RepositorioBase<Usuarios>();
-        string nombre = "";
-        int nivel;// = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
+        string nombre = string.Empty;
+        int nivel;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e) //Funcion encargada de tomar los datos del usuario que esta logueado.
+        {
+            NombreUsuarioToolStripStatusLabel.Text = RepositorioUsuario.ReturnUsuario().Nombres;
+            int nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
+            switch (nivel)
+            {
+                case 0:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Administrador  ";
+                        break;
+                    }
+                case 1:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Supervisor   ";
+                        break;
+                    }
+                default:
+                    {
+                        NivelDeUsuarioToolStripStatusLabel.Text = "Usuario   ";
+                        break;
+                    }
+            }
+        }
+        
+        private void NoTienePermiso() //Ventana para negar el acceso a usuarios sin permiso
+        {
+            MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }   
+        
+        // R E G I S T R O S --------------------------------------------------------------------------------------
         private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e) //Registro de facturas
         {
-            rFacturas rF = new rFacturas(nombre);
+            rFacturas rF = new rFacturas(nombre, 0);
             rF.ShowDialog();
         }
        
@@ -36,7 +66,7 @@ namespace InventoryAssistant
         {
             if (nivel <= 1)
             {
-                rEntradaProductos rE = new rEntradaProductos(nombre);
+                rEntradaProductos rE = new rEntradaProductos(nombre, 0, 0);
                 rE.ShowDialog();
             }
             else
@@ -49,7 +79,7 @@ namespace InventoryAssistant
 
             if (nivel <= 1)
             {
-                rProductos rP = new rProductos(nombre, nivel);
+                rProductos rP = new rProductos(nombre, nivel, 0);
                 rP.ShowDialog();
             }
             else
@@ -61,20 +91,71 @@ namespace InventoryAssistant
         {
             if (nivel <= 1)
             {
-                rCategorias rC = new rCategorias(nombre);
+                rCategorias rC = new rCategorias(nombre, 0);
                 rC.ShowDialog();
             }
             else
                 NoTienePermiso();
-
         }
         
         private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)//Registro de usuarios
         {
             if (nivel <= 0)
             {
-                rUsuarios rU = new rUsuarios(nombre);
+                rUsuarios rU = new rUsuarios(nombre, 0);
                 rU.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }
+
+        // C O N S U L T A S ------------------------------------------------------------------------------------
+        
+        private void ConsultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)//Consulta de Facturas
+        {
+            if (nivel <= 1)
+            {
+                cFacturas cF = new cFacturas(nombre);
+                cF.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }
+        
+        private void consultaDeEntradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Consulta de entrada de productos
+        {
+            if (nivel <= 1)
+            {
+                cEntradaProductos cE = new cEntradaProductos(nombre);
+                cE.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }        
+
+        private void consultaDeProductosToolStripMenuItem1_Click(object sender, EventArgs e) //Consulta de Productos
+        {
+            cProductos cP = new cProductos(nombre, nivel);
+            cP.ShowDialog();
+        }
+
+        private void consultaDeCategoríasToolStripMenuItem_Click(object sender, EventArgs e) //Consulta de Categorías
+        {
+            if (nivel <= 1)
+            {
+                cCategorias cC = new cCategorias(nombre);
+                cC.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }
+
+        private void ConsultaToolStripMenuItem_Click(object sender, EventArgs e)//Consulta de Usuarios
+        {
+            if (nivel <= 0)
+            {
+                cUsuarios cU = new cUsuarios(nombre);
+                cU.ShowDialog();
             }
             else
                 NoTienePermiso();
@@ -89,29 +170,6 @@ namespace InventoryAssistant
 
 
 
-
-
-        private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultasUsuarios cU = new ConsultasUsuarios();
-            cU.ShowDialog();
-        }
-
-        private void consultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaFacturas cf = new ConsultaFacturas();
-            cf.ShowDialog();
-        }
-
-
-
-
-
-        private void consultaDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaProductos cp = new ConsultaProductos();
-            cp.ShowDialog();
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -142,35 +200,15 @@ namespace InventoryAssistant
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
-
-            NombreUsuarioToolStripStatusLabel.Text = RepositorioUsuario.ReturnUsuario().Nombres;
-            int nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
-            switch (nivel)
-            {
-                case 0:
-                    {
-                        NivelDeUsuarioToolStripStatusLabel.Text = "Administrador  ";
-                        break;
-                    }
-                case 1:
-                    {
-                        NivelDeUsuarioToolStripStatusLabel.Text = "Supervisor   ";
-                        break;
-                    }
-                default:
-                    {
-                        NivelDeUsuarioToolStripStatusLabel.Text = "Usuario   ";
-                        break;
-                    }
-            }
         }
 
-        private void NoTienePermiso()
-        {
-            MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+
     }
 }

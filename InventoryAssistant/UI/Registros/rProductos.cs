@@ -16,23 +16,35 @@ namespace InventoryAssistant.UI.Registros
     {
         string NombreUsuario;
         int Nivel;
+        int ProductoId;
 
-        public rProductos(string nombreUsuario, int nivel)
+        public rProductos(string nombreUsuario, int nivel, int productoId)
         {
             this.NombreUsuario = nombreUsuario;
             this.Nivel = nivel;
+            this.ProductoId = productoId;
             InitializeComponent();
             Limpiar();
         }
 
         private void rProductos_Activated(object sender, EventArgs e)//Llena el ComboBox de las categorias cuando la ventana gana el foco
         {
-            LlenaComboBoxCategorias();
-            CategoriaComboBox.SelectedIndex = -1;
+            if(ProductoId <= 0)
+            {
+                LlenaComboBoxCategorias();
+                CategoriaComboBox.SelectedIndex = -1;
+            }
         }
         private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
         {
             CantidadNumericUpDown.Enabled = (Nivel <= 0) ? true: false;
+            LlenaComboBoxCategorias();
+
+            if (ProductoId > 0)
+            {
+                ProductoIdNumericUpDown.Value = ProductoId;
+                Buscar();
+            }
         }
 
         private void Limpiar()// Funcion encargada de limpiar todos los campos del registro
@@ -56,13 +68,13 @@ namespace InventoryAssistant.UI.Registros
 
             Producto.ProductoId = (int)ProductoIdNumericUpDown.Value;
             Producto.Descripcion = DescripcionTextBox.Text.ToUpper();
-            Producto.Categoria = Convert.ToInt32(CategoriaComboBox.SelectedIndex);
+            Producto.CategoriaId = Convert.ToInt32(CategoriaComboBox.SelectedValue);
             Producto.ControlAlmacen = ControlAlmacenCheckBox.Checked;
             Producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
             Producto.Precio = Convert.ToInt32(PrecioNumericUpDown.Value);
             Producto.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
 
-            Producto.Estado = (Producto.ProductoId== 0) ? false : true;
+            Producto.Estado = (Producto.ProductoId == 0) ? false : true;
             Producto.UsuarioR = NombreUsuario;
 
             return Producto;
@@ -72,7 +84,7 @@ namespace InventoryAssistant.UI.Registros
         {
             ProductoIdNumericUpDown.Value = Producto.ProductoId;
             DescripcionTextBox.Text = Producto.Descripcion;
-            CategoriaComboBox.SelectedIndex= Producto.Categoria;
+            CategoriaComboBox.SelectedValue = Producto.CategoriaId;
             ControlAlmacenCheckBox.Checked = Producto.ControlAlmacen;
             CantidadNumericUpDown.Value= Producto.Cantidad;
             PrecioNumericUpDown.Value = Producto.Precio;
@@ -174,6 +186,11 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------
         private void Buscarbutton_Click(object sender, EventArgs e)// Clic al boton buscar
         {
+            Buscar();  
+        }
+
+        private void Buscar()
+        {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             Productos Producto = new Productos();
 
@@ -191,7 +208,7 @@ namespace InventoryAssistant.UI.Registros
                 Limpiar();
                 MyErrorProvider.SetError(ProductoIdNumericUpDown, "No existe un producto con este codigo!");
                 DescripcionTextBox.Focus();
-            }         
+            }
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)//Clic al boton limpiar
@@ -303,7 +320,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void AnadirCategoriasButton_Click(object sender, EventArgs e)
         {
-            rCategorias rcategorias= new rCategorias(NombreUsuario);
+            rCategorias rcategorias= new rCategorias(NombreUsuario, 0);
             rcategorias.ShowDialog();
 
         }

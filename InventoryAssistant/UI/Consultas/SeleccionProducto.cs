@@ -1,5 +1,6 @@
 ﻿using InventoryAssistant.BLL;
 using InventoryAssistant.Entidades;
+using InventoryAssistant.Entidades.EntidadesParaConsultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace InventoryAssistant.UI.Consultas
     {
         public int IdProductoSeleccionado { get; set; }
         private List<Productos> ListadoProductos = new List<Productos>();
+        private List<ProductosConsulta> ListadoProductosConsulta = new List<ProductosConsulta>();
 
         public SeleccionProducto()
         {
@@ -27,29 +29,67 @@ namespace InventoryAssistant.UI.Consultas
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (FiltroComboBox.Text == string.Empty)
+            if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty)
             {
-                MyErrorProvider.SetError(FiltroComboBox, "Debe seleccionar una opción para filtrar!");
-                FiltroComboBox.DroppedDown = true;
-                FiltroComboBox.Focus();
-                paso = false;
-            }
-            if (CriterioTextBox.Text == string.Empty)
-            {
-                MyErrorProvider.SetError(CriterioTextBox, "El campo criterio esta vacío!");
+                MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                 CriterioTextBox.Focus();
                 paso = false;
             }
+            else
+            {
+                if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)) )
+                {
+                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
+                else if (FiltroComboBox.SelectedIndex == 4 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                {
+                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por cantidad, solo digite números!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
+                else if (FiltroComboBox.SelectedIndex == 5 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                {
+                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por precio, solo digite números!");
+                    CriterioTextBox.Focus();
+                    paso = false;
+                }
+
+            }
 
             return paso;
+        }
+
+        private List<ProductosConsulta> CargarLista(List<Productos> ListaSinProcesar)
+        {
+            RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
+            List<ProductosConsulta> ListaProcesada = new List<ProductosConsulta>();
+            foreach (var item in ListaSinProcesar)
+            {
+                ProductosConsulta p = new ProductosConsulta();
+                p.ProductoId = item.ProductoId;
+                p.Descripcion = item.Descripcion;
+                Categorias c = repositorio.Buscar(item.CategoriaId);
+                p.Categoria = c.Nombre;
+                p.Cantidad = item.Cantidad;
+                p.Precio = item.Precio;
+
+                ListaProcesada.Add(p);
+            }
+
+            return ListaProcesada;
         }
 
         private void Buscar() // Funcion que realiza las bsquedas
         {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             ListadoProductos = new List<Productos>();
+            ListadoProductos = Repositorio.GetList(p => true);
+            ListadoProductosConsulta = new List<ProductosConsulta>();
+            ListadoProductosConsulta = CargarLista(ListadoProductos);
 
-            if(FiltroComboBox.SelectedIndex > 0)
+            if (FiltroComboBox.SelectedIndex > 0)
             {
                 if (!Validar())
                     return;
@@ -59,44 +99,31 @@ namespace InventoryAssistant.UI.Consultas
             {
                 switch (FiltroComboBox.SelectedIndex)
                 {
-                    case 0://Filtra por todo
-                        ListadoProductos = Repositorio.GetList(p => true);
-                        MyErrorProvider.Clear();
-                        break;
 
                     case 1: //Filtrar por Id
-                        if (CriterioTextBox.Text.Any(x => !char.IsNumber(x)) || CriterioTextBox.Text == string.Empty)
-                        {
-                            MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
-                        }
-                        else
-                        {
-                            int id = Convert.ToInt32(CriterioTextBox.Text);
-                            ListadoProductos = Repositorio.GetList(p => p.ProductoId == id);
-                        }
+                         ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.ProductoId.ToString().Contains(CriterioTextBox.Text)).ToList();   
                         break;
 
                     case 2://Filtrar por descripcion
-                        if (CriterioTextBox.Text == string.Empty)
-                        {
-                            return;
-                        }
-                        else
-                        {
-                            ListadoProductos = Repositorio.GetList(p => p.Descripcion.Contains(CriterioTextBox.Text));
-                        }
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Descripcion.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                        break;
 
+                    case 3://Filtrar por categoria
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Categoria.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                        break;
+
+                    case 4: //Filtrar por cantidad
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Cantidad.ToString().Contains(CriterioTextBox.Text)).ToList();
+                        break;
+
+                    case 5: //Filtrar por precio
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio.ToString().Contains(CriterioTextBox.Text)).ToList();
                         break;
                 }
             }
-            else
-            {
-                ListadoProductos = Repositorio.GetList(p => true);
-            }
 
             ProductosDataGridView.DataSource = null;
-
-            ProductosDataGridView.DataSource = ListadoProductos;
+            ProductosDataGridView.DataSource = ListadoProductosConsulta;
             Formato();
             ProductosDataGridView.ClearSelection();
         }
@@ -110,19 +137,22 @@ namespace InventoryAssistant.UI.Consultas
 
         private void CProductos_Factura_Load(object sender, EventArgs e)
         {
-            AnadirProductoButton.Enabled = false;
+            SeleccionarProductoButton.Enabled = false;
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             ListadoProductos = new List<Productos>();
             ListadoProductos = Repositorio.GetList(p => true);
-            if (ListadoProductos.Count > 0)
+            ListadoProductosConsulta = CargarLista(ListadoProductos);
+
+            if (ListadoProductosConsulta.Count > 0)
             {
                 ProductosDataGridView.DataSource = null;
-                ProductosDataGridView.DataSource = ListadoProductos;
+                ProductosDataGridView.DataSource = ListadoProductosConsulta;
                 Formato();
                 ProductosDataGridView.ClearSelection();
-                AnadirProductoButton.Enabled = false;
+                SeleccionarProductoButton.Enabled = false;
             }
 
+            FiltroComboBox.SelectedIndex = 0;
         }
 
         private void Formato()//Le da el formato a la consulta
@@ -133,25 +163,23 @@ namespace InventoryAssistant.UI.Consultas
             ProductosDataGridView.Columns[1].Width = 275;
             ProductosDataGridView.Columns[2].HeaderText = "Categoria";
             ProductosDataGridView.Columns[2].Width = 150;
-            ProductosDataGridView.Columns[3].Visible = false;
-            ProductosDataGridView.Columns[4].HeaderText = "Cantidad";
+            ProductosDataGridView.Columns[3].HeaderText = "Cantidad";
+            ProductosDataGridView.Columns[3].Width = 95;
+            ProductosDataGridView.Columns[4].HeaderText = "Precio";
             ProductosDataGridView.Columns[4].Width = 95;
-            ProductosDataGridView.Columns[5].HeaderText = "Precio";
-            ProductosDataGridView.Columns[5].Width = 95;
-            ProductosDataGridView.Columns[6].Visible = false;
         }
 
         private void ProductosDataGridView_Click(object sender, EventArgs e)//Verifica que haya un producto seleccionado
         {
-            if(ListadoProductos.Count > 0)
+            if(ListadoProductosConsulta.Count > 0)
             {
                 if(ProductosDataGridView.CurrentRow.Index >= 0)
                 {
-                    AnadirProductoButton.Enabled = true;
+                    SeleccionarProductoButton.Enabled = true;
                 }
                 else
                 {
-                    AnadirProductoButton.Enabled = false;
+                    SeleccionarProductoButton.Enabled = false;
                 }
             }
         }
@@ -159,7 +187,21 @@ namespace InventoryAssistant.UI.Consultas
         private void RealizarBusquedaButton_Click(object sender, EventArgs e)
         {
             Buscar();
-            AnadirProductoButton.Enabled = false;
+            SeleccionarProductoButton.Enabled = false;
+        }
+
+        private void ProductosDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (ListadoProductosConsulta.Count > 0)
+            {
+                if (ProductosDataGridView.CurrentRow.Index >= 0)
+                {
+                    SeleccionarProductoButton.Enabled = true;
+                    IdProductoSeleccionado = Convert.ToInt32(ProductosDataGridView.CurrentRow.Cells["ProductoId"].Value);
+                    DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace InventoryAssistant.Entidades
         [Key]
         public int ProductoId { get; set; }
         public string Descripcion { get; set; }
-        public int Categoria { get; set; }
+        public int CategoriaId { get; set; }
         public bool ControlAlmacen { get; set; }
         public int Cantidad { get; set; }
         public int Precio { get; set; }
@@ -24,7 +24,7 @@ namespace InventoryAssistant.Entidades
             ProductoId = 0;
             Descripcion = string.Empty;
             Precio = 0;
-            Categoria = 0;
+            CategoriaId = 0;
             Cantidad = 0;
             FechaDeRegistro = DateTime.Now;
             Estado = false;

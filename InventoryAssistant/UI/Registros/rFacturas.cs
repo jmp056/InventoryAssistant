@@ -12,9 +12,11 @@ namespace InventoryAssistant.UI.Registros
     {
         public List<DetalleFacturas> Detalle;
         string NombreUsuario;
-        public rFacturas(string nombreUsuario)
+        int FacturaId;
+        public rFacturas(string nombreUsuario, int facturaId)
         {
             this.NombreUsuario = nombreUsuario;
+            this.FacturaId = facturaId;
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
             Limpiar();
@@ -65,8 +67,8 @@ namespace InventoryAssistant.UI.Registros
 
             Factura.FacturaId = (int)FacturaIdNumericUpDown.Value;
             Factura.Fecha = FechaDateTimePicker.Value;
-            Factura.Usuario = UsuarioTextBox.Text;
-            Factura.Cliente = ClienteTextBox.Text;
+            Factura.Usuario = UsuarioTextBox.Text.ToUpper();
+            Factura.Cliente = ClienteTextBox.Text.ToUpper();
             Factura.Detalle = this.Detalle;
             Factura.Total = Convert.ToSingle(TotalTextBox.Text);
 
@@ -235,6 +237,11 @@ namespace InventoryAssistant.UI.Registros
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
+        {
+            Buscar();
+        }
+
+        private void Buscar()
         {
             MyErrorProvider.Clear();
             int Id;
@@ -466,9 +473,17 @@ namespace InventoryAssistant.UI.Registros
 
         private void rFacturas_Load(object sender, EventArgs e)
         {
-            FechaDateTimePicker.Value = DateTime.Now;
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-            UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
+            if (FacturaId > 0)
+            {
+                FacturaIdNumericUpDown.Value = FacturaId;
+                Buscar();
+            }
+            else
+            {
+                FechaDateTimePicker.Value = DateTime.Now;
+                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+                UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
+            }
         }
     }
 }

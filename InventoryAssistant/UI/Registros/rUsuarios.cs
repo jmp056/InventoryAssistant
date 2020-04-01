@@ -565,6 +565,8 @@ namespace InventoryAssistant.UI.Registros
 
         private void rUsuarios_Load(object sender, EventArgs e)
         {
+            FechaDeRegistroDateTimePicker.Value = DateTime.Now;
+
             if(UsuarioId > 0)
             {
                 UsuarioIdNumericUpDown.Value = UsuarioId;

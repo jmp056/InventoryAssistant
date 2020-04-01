@@ -58,7 +58,7 @@ namespace InventoryAssistant
         // R E G I S T R O S --------------------------------------------------------------------------------------
         private void registroDeFacturasToolStripMenuItem_Click(object sender, EventArgs e) //Registro de facturas
         {
-            rFacturas rF = new rFacturas(nombre, 0);
+            rFacturas rF = new rFacturas(nombre, nivel, 0);
             rF.ShowDialog();
         }
        
@@ -115,7 +115,7 @@ namespace InventoryAssistant
         {
             if (nivel <= 1)
             {
-                cFacturas cF = new cFacturas(nombre);
+                cFacturas cF = new cFacturas(nombre, nivel);
                 cF.ShowDialog();
             }
             else
@@ -206,7 +206,8 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            CuadreDeCaja p = new CuadreDeCaja();
+            p.ShowDialog();
         }
 
 

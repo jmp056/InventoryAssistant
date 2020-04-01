@@ -80,6 +80,8 @@
             this.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductosDataGridView.Location = new System.Drawing.Point(5, 10);
             this.ProductosDataGridView.Name = "ProductosDataGridView";
+            this.ProductosDataGridView.ReadOnly = true;
+            this.ProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductosDataGridView.Size = new System.Drawing.Size(718, 353);
             this.ProductosDataGridView.TabIndex = 0;
             this.ProductosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosDataGridView_CellContentClick);
@@ -244,7 +246,12 @@
             this.ClientSize = new System.Drawing.Size(938, 380);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cProductos";
             this.Load += new System.EventHandler(this.cProductos_Load);
             this.groupBox2.ResumeLayout(false);

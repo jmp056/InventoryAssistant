@@ -282,6 +282,8 @@
             this.FacturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FacturaDataGridView.Location = new System.Drawing.Point(6, 10);
             this.FacturaDataGridView.Name = "FacturaDataGridView";
+            this.FacturaDataGridView.ReadOnly = true;
+            this.FacturaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FacturaDataGridView.Size = new System.Drawing.Size(723, 400);
             this.FacturaDataGridView.TabIndex = 0;
             this.FacturaDataGridView.Click += new System.EventHandler(this.FacturaDataGridView_Click);
@@ -295,11 +297,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 450);
+            this.ClientSize = new System.Drawing.Size(942, 428);
             this.Controls.Add(this.FechaGroupBox);
             this.Controls.Add(this.DatosDeLaFacturaGroupBox);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cFacturas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cFacturas";
             this.Load += new System.EventHandler(this.cFacturas_Load);
             this.FechaGroupBox.ResumeLayout(false);

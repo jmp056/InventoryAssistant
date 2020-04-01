@@ -53,6 +53,8 @@
             this.CategoriasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CategoriasDataGridView.Location = new System.Drawing.Point(5, 10);
             this.CategoriasDataGridView.Name = "CategoriasDataGridView";
+            this.CategoriasDataGridView.ReadOnly = true;
+            this.CategoriasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CategoriasDataGridView.Size = new System.Drawing.Size(393, 307);
             this.CategoriasDataGridView.TabIndex = 0;
             this.CategoriasDataGridView.Click += new System.EventHandler(this.CategoriasDataGridView_Click);
@@ -167,7 +169,11 @@
             this.ClientSize = new System.Drawing.Size(622, 335);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDeLaCategoriaGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cCategorias";
             this.Load += new System.EventHandler(this.cCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).EndInit();

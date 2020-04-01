@@ -16,12 +16,14 @@ namespace InventoryAssistant.UI.Consultas
     public partial class cFacturas : Form
     {
         string NombreUsuario;
+        int Nivel;
         public int IdFacturaSeleccionada { get; set; }
         private List<Facturas> ListadoFacturas = new List<Facturas>();
 
-        public cFacturas(string nombreUsuario)
+        public cFacturas(string nombreUsuario, int nivel)
         {
             this.NombreUsuario = nombreUsuario;
+            this.Nivel = nivel;
             InitializeComponent();
         }
 
@@ -132,7 +134,7 @@ namespace InventoryAssistant.UI.Consultas
         private void DatosDeLaEntradaButton_Click(object sender, EventArgs e)
         {
             IdFacturaSeleccionada = Convert.ToInt32(FacturaDataGridView.CurrentRow.Cells["FacturaId"].Value);
-            rFacturas rF = new rFacturas(NombreUsuario, IdFacturaSeleccionada);
+            rFacturas rF = new rFacturas(NombreUsuario, Nivel, IdFacturaSeleccionada);
             rF.ShowDialog();
         }
 
@@ -169,6 +171,9 @@ namespace InventoryAssistant.UI.Consultas
 
         private void cFacturas_Load(object sender, EventArgs e)
         {
+            HastaDateTimePicker.Value = DateTime.Now;
+            DesdeDateTimePicker.Value = DateTime.Now;
+
             BuscarPorCriterio();
 
             RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
@@ -210,7 +215,7 @@ namespace InventoryAssistant.UI.Consultas
                 {
                     DatosDeLaFacturaButton.Enabled = true;
                     IdFacturaSeleccionada = Convert.ToInt32(FacturaDataGridView.CurrentRow.Cells["FacturaId"].Value);
-                    rFacturas rF = new rFacturas(NombreUsuario, IdFacturaSeleccionada);
+                    rFacturas rF = new rFacturas(NombreUsuario, Nivel, IdFacturaSeleccionada);
                     rF.ShowDialog();
                 }
             }

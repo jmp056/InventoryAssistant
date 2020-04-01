@@ -186,6 +186,9 @@ namespace InventoryAssistant.UI.Consultas
 
         private void cEntradaProductos_Load(object sender, EventArgs e)
         {
+            HastaDateTimePicker.Value = DateTime.Now;
+            DesdeDateTimePicker.Value = DateTime.Now;
+
             BuscarPorCriterio();
 
             RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();

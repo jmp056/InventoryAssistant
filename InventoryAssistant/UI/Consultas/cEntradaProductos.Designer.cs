@@ -75,6 +75,8 @@
             this.EntradasProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EntradasProductosDataGridView.Location = new System.Drawing.Point(6, 10);
             this.EntradasProductosDataGridView.Name = "EntradasProductosDataGridView";
+            this.EntradasProductosDataGridView.ReadOnly = true;
+            this.EntradasProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EntradasProductosDataGridView.Size = new System.Drawing.Size(553, 400);
             this.EntradasProductosDataGridView.TabIndex = 0;
             this.EntradasProductosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EntradasProductosDataGridView_CellContentClick);
@@ -313,7 +315,11 @@
             this.Controls.Add(this.FechaGroupBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cEntradaProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cEntradaProductos";
             this.Load += new System.EventHandler(this.cEntradaProductos_Load);
             this.groupBox2.ResumeLayout(false);

@@ -155,6 +155,8 @@
             this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsuariosDataGridView.Location = new System.Drawing.Point(5, 10);
             this.UsuariosDataGridView.Name = "UsuariosDataGridView";
+            this.UsuariosDataGridView.ReadOnly = true;
+            this.UsuariosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsuariosDataGridView.Size = new System.Drawing.Size(738, 307);
             this.UsuariosDataGridView.TabIndex = 0;
             this.UsuariosDataGridView.Click += new System.EventHandler(this.UsuariosDataGridView_Click);
@@ -171,8 +173,11 @@
             this.ClientSize = new System.Drawing.Size(952, 335);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Consultas de Usuarios";
             this.Load += new System.EventHandler(this.ConsultasUsuarios_Load);
             this.DatosDelUsuarioGroupBox.ResumeLayout(false);

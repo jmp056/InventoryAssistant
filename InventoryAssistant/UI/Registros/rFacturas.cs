@@ -12,10 +12,12 @@ namespace InventoryAssistant.UI.Registros
     {
         public List<DetalleFacturas> Detalle;
         string NombreUsuario;
+        int Nivel;
         int FacturaId;
-        public rFacturas(string nombreUsuario, int facturaId)
+        public rFacturas(string nombreUsuario,int nivel, int facturaId)
         {
             this.NombreUsuario = nombreUsuario;
+            this.Nivel = nivel;
             this.FacturaId = facturaId;
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
@@ -70,7 +72,7 @@ namespace InventoryAssistant.UI.Registros
             Factura.Usuario = UsuarioTextBox.Text.ToUpper();
             Factura.Cliente = ClienteTextBox.Text.ToUpper();
             Factura.Detalle = this.Detalle;
-            Factura.Total = Convert.ToSingle(TotalTextBox.Text);
+            Factura.Total = Convert.ToInt32(TotalTextBox.Text);
 
             Factura.Estado = (Factura.FacturaId== 0) ? false : true;
             Factura.UsuarioR = NombreUsuario;
@@ -82,7 +84,7 @@ namespace InventoryAssistant.UI.Registros
         {
             ProductoIdNumericUpDown.Value = (int)Producto.ProductoId;
             DescripcionTextBox.Text = Producto.Descripcion;
-            PrecioNumericUpDown.Value = Producto.Precio;
+            PrecioNumericUpDown.Value = Convert.ToInt32(Producto.Precio);
 
         }
         //--------------------------------------------------------------------------------------------------------
@@ -176,8 +178,8 @@ namespace InventoryAssistant.UI.Registros
                             Producto.FacturaId = (int)dr.Cells["FacturaId"].Value;
                             Producto.Cantidad = (int)dr.Cells["Cantidad"].Value;
                             Producto.DescripcionProducto = dr.Cells["DescripcionProducto"].Value.ToString();
-                            Producto.Precio = Convert.ToSingle(dr.Cells["Precio"].Value);
-                            Producto.Importe = Convert.ToSingle(dr.Cells["Importe"].Value);
+                            Producto.Precio = Convert.ToInt32(dr.Cells["Precio"].Value);
+                            Producto.Importe = Convert.ToInt32(dr.Cells["Importe"].Value);
 
                             items.Add(Producto);
                         }
@@ -347,8 +349,8 @@ namespace InventoryAssistant.UI.Registros
                     productoId: (int)ProductoIdNumericUpDown.Value,
                     cantidad: (int)CantidadNumericUpDown.Value,
                     descripcionProducto: DescripcionTextBox.Text,
-                    precio: Convert.ToSingle(PrecioNumericUpDown.Value),
-                    importe: Convert.ToSingle(ImporteTextBox.Text)
+                    precio: Convert.ToInt32(PrecioNumericUpDown.Value),
+                    importe: Convert.ToInt32(ImporteTextBox.Text)
                 )
             );
 
@@ -473,6 +475,9 @@ namespace InventoryAssistant.UI.Registros
 
         private void rFacturas_Load(object sender, EventArgs e)
         {
+            FechaDateTimePicker.Value = DateTime.Now;
+            FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
+
             if (FacturaId > 0)
             {
                 FacturaIdNumericUpDown.Value = FacturaId;
@@ -480,7 +485,6 @@ namespace InventoryAssistant.UI.Registros
             }
             else
             {
-                FechaDateTimePicker.Value = DateTime.Now;
                 RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
                 UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
             }

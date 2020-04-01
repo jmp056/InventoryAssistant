@@ -270,6 +270,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void rEntradaProductos_Load(object sender, EventArgs e)
         {
+            FechaDateTimePicker.Value = DateTime.Now;
             if(EntradaProductoId > 0)
             {
                 EntradaIdNumericUpDown.Value = EntradaProductoId;

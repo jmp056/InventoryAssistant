@@ -37,6 +37,8 @@ namespace InventoryAssistant.UI.Registros
         }
         private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
         {
+            FechaDeRegistroDateTimePicker.Value = DateTime.Now;
+
             CantidadNumericUpDown.Enabled = (Nivel <= 0) ? true: false;
             LlenaComboBoxCategorias();
 

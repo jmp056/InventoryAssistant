@@ -15,7 +15,7 @@ namespace InventoryAssistant.Entidades
         public int CategoriaId { get; set; }
         public bool ControlAlmacen { get; set; }
         public int Cantidad { get; set; }
-        public int Precio { get; set; }
+        public float Precio { get; set; }
         public DateTime FechaDeRegistro { get; set; }
         public bool Estado { get; set; }
         public string UsuarioR { get; set; }

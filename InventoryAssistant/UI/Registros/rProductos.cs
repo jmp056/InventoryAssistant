@@ -38,8 +38,8 @@ namespace InventoryAssistant.UI.Registros
         private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
         {
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;
-
-            CantidadNumericUpDown.Enabled = (Nivel <= 0) ? true: false;
+            CantidadNumericUpDown.ReadOnly = (Nivel <= 0) ? false: true;
+            
             LlenaComboBoxCategorias();
 
             if (ProductoId > 0)
@@ -89,7 +89,7 @@ namespace InventoryAssistant.UI.Registros
             CategoriaComboBox.SelectedValue = Producto.CategoriaId;
             ControlAlmacenCheckBox.Checked = Producto.ControlAlmacen;
             CantidadNumericUpDown.Value= Producto.Cantidad;
-            PrecioNumericUpDown.Value = Producto.Precio;
+            PrecioNumericUpDown.Value = Convert.ToDecimal(Producto.Precio);
             FechaDeRegistroDateTimePicker.Value = Producto.FechaDeRegistro;
 
             EstadoToolStripStatusLabel.Text = (Producto.Estado == false) ? "Agregado por: " : "Modificado por: ";

@@ -15,8 +15,8 @@ namespace InventoryAssistant.Entidades
         public int ProductoId { get; set; }
         public int Cantidad{ get; set; }
         public string DescripcionProducto { get; set; }
-        public int Precio { get; set; }
-        public int Importe { get; set; }
+        public float Precio { get; set; }
+        public float Importe { get; set; }
 
         public DetalleFacturas()
         {

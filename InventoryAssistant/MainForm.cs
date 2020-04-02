@@ -77,7 +77,7 @@ namespace InventoryAssistant
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e) //Registro de productos
         {
 
-            if (nivel <= 1)
+            if (nivel <= 0)
             {
                 rProductos rP = new rProductos(nombre, nivel, 0);
                 rP.ShowDialog();
@@ -89,7 +89,7 @@ namespace InventoryAssistant
 
         private void registroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e) //Registro de categorias
         {
-            if (nivel <= 1)
+            if (nivel <= 0)
             {
                 rCategorias rC = new rCategorias(nombre, 0);
                 rC.ShowDialog();
@@ -113,7 +113,7 @@ namespace InventoryAssistant
         
         private void ConsultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)//Consulta de Facturas
         {
-            if (nivel <= 1)
+            if (nivel <= 0)
             {
                 cFacturas cF = new cFacturas(nombre, nivel);
                 cF.ShowDialog();
@@ -143,7 +143,7 @@ namespace InventoryAssistant
         {
             if (nivel <= 1)
             {
-                cCategorias cC = new cCategorias(nombre);
+                cCategorias cC = new cCategorias(nombre, nivel);
                 cC.ShowDialog();
             }
             else
@@ -206,7 +206,7 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CuadreDeCaja p = new CuadreDeCaja();
+            CuadreDeCaja p = new CuadreDeCaja(nombre, nivel, 0);
             p.ShowDialog();
         }
 

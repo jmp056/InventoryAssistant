@@ -14,11 +14,56 @@ namespace InventoryAssistant.UI.Registros
 {
     public partial class CuadreDeCaja : Form
     {
+        string NombreUsuario;
+        int Nivel;
+        int CuadreDeCajaId;
+
         List<Facturas> ListadoFacturas = new List<Facturas>();
         string Decimas = ".00";
-        public CuadreDeCaja()
+        
+        public CuadreDeCaja(string nombreUsuario, int nivel, int cuadreDeCajaId)
         {
+            this.NombreUsuario = nombreUsuario;
+            this.Nivel = nivel;
+            this.CuadreDeCajaId = cuadreDeCajaId;
             InitializeComponent();
+        }
+
+        private void Limpiar()
+        {
+            // Limpiar los NumericUpDown del desglose
+            DosMilNumericUpDown.Value = 0;
+            MilNumericUpDown.Value = 0;
+            QuinientosNumericUpDown.Value = 0;
+            DoscientosNumericUpDown.Value = 0;
+            CienNumericUpDown.Value = 0;
+            CincuentaNumericUpDown.Value = 0;
+            VeinticincoNumericUpDown.Value = 0;
+            VeinteNumericUpDown.Value = 0;
+            DiezNumericUpDown.Value = 0;
+            CincoNumericUpDown.Value = 0;
+            UnoNumericUpDown.Value = 0;
+
+            // Limpiar los Textbox del desglose
+            DosmilTextBox.Text = "0.00";
+            MilTextBox.Text = "0.00";
+            QuinientosTextBox.Text = "0.00";
+            DoscientosTextBox.Text = "0.00";
+            CienTextBox.Text = "0.00";
+            CincuentaTextBox.Text = "0.00";
+            VeinticincoTextBox.Text = "0.00";
+            VeinteTextBox.Text = "0.00";
+            DiezTextBox.Text = "0.00";
+            CincoTextBox.Text = "0.00";
+            UnoTextBox.Text = "0.00";
+
+            //Limpiar Textbox de totales
+            TotalEnCajaTextBox.Text = "0.00";
+            DiferenciaTextBox.Text = "0.00";
+            TotalVendidoTextBox.Text = "0.00";
+
+            //Limpiar el DataGridView
+            FacturasDataGridView.DataSource = null;
         }
 
         private void CuadreDeCaja_Load(object sender, EventArgs e)
@@ -37,8 +82,84 @@ namespace InventoryAssistant.UI.Registros
 
             FechaDateTimePicker.Value = DateTime.Now;
             CargarFacturas();
+
+            Buscar();
         }
 
+        private CuadresDeCaja LlenaClase()  // Funcion encargada de llenar el objeto
+        {
+            CuadresDeCaja CuadreDeCaja = new CuadresDeCaja();
+
+            CuadreDeCaja.CuadreDeCajaId = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
+            CuadreDeCaja.Fecha = FechaDateTimePicker.Value;
+            CuadreDeCaja.Dosmil = Convert.ToInt32(DosMilNumericUpDown.Value);
+            CuadreDeCaja.Mil = Convert.ToInt32(MilNumericUpDown.Value);
+            CuadreDeCaja.Quinientos = Convert.ToInt32(QuinientosNumericUpDown.Value);
+            CuadreDeCaja.Doscientos = Convert.ToInt32(DoscientosNumericUpDown.Value);
+            CuadreDeCaja.Cien = Convert.ToInt32(CienNumericUpDown.Value);
+            CuadreDeCaja.Cincuenta = Convert.ToInt32(CincuentaNumericUpDown.Value);
+            CuadreDeCaja.Veinticinco = Convert.ToInt32(VeinticincoNumericUpDown.Value);
+            CuadreDeCaja.Veinte = Convert.ToInt32(VeinteNumericUpDown.Value);
+            CuadreDeCaja.Diez = Convert.ToInt32(DiezNumericUpDown.Value);
+            CuadreDeCaja.Cinco = Convert.ToInt32(CincoNumericUpDown.Value);
+            CuadreDeCaja.Uno = Convert.ToInt32(UnoNumericUpDown.Value);
+            CuadreDeCaja.TotalVendido = Convert.ToSingle(TotalVendidoTextBox.Text);
+            CuadreDeCaja.Diferencia = Convert.ToSingle(DiferenciaTextBox.Text);
+            CuadreDeCaja.TotalEnCaja = Convert.ToSingle(TotalEnCajaTextBox.Text);
+            CuadreDeCaja.Estado = (ExisteEnLaBaseDeDatos()) ? false : true;
+            CuadreDeCaja.UsuarioR = NombreUsuario;
+
+            return CuadreDeCaja;
+        }
+
+
+        private void LlenaCampo(CuadresDeCaja CuadreDeCaja)  // Funcion encargada de llenar los campos del registro con los datos de un objeto
+        {
+            DosMilNumericUpDown.Value = CuadreDeCaja.Dosmil;
+            MilNumericUpDown.Value = CuadreDeCaja.Mil;
+            QuinientosNumericUpDown.Value = CuadreDeCaja.Quinientos;
+            DoscientosNumericUpDown.Value = CuadreDeCaja.Doscientos;
+            CienNumericUpDown.Value = CuadreDeCaja.Cien;
+            CincuentaNumericUpDown.Value = CuadreDeCaja.Cincuenta;
+            VeinticincoNumericUpDown.Value = CuadreDeCaja.Veinticinco;
+            VeinteNumericUpDown.Value = CuadreDeCaja.Veinte;
+            DiezNumericUpDown.Value = CuadreDeCaja.Diez;
+            CincoNumericUpDown.Value = CuadreDeCaja.Cinco;
+            UnoNumericUpDown.Value = CuadreDeCaja.Uno;
+
+            //EstadoToolStripStatusLabel.Text = (CuadreDeCaja.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            //UsuarioToolStripStatusLabel.Text = CuadreDeCaja.UsuarioR;
+        }
+
+        private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario exist en una base de datos!
+        {
+            RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
+            int Codigo = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
+            CuadresDeCaja CuadreDeCaja = Repositorio.Buscar(Codigo);
+            return (CuadreDeCaja != null);
+        }
+
+        private void Buscar()
+        {
+            RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
+            CuadresDeCaja CuadreDeCaja = new CuadresDeCaja();
+
+            int Codigo = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
+
+            CuadreDeCaja = Repositorio.Buscar(Codigo);
+
+            if (CuadreDeCaja != null)
+            {
+                LlenaCampo(CuadreDeCaja);
+                CalcularTotales();
+                CalcularTotalEnCaja();
+            }
+            else
+            {
+                Limpiar();
+                CargarFacturas();
+            }
+        }
 
         public void CargarFacturas()
         {
@@ -102,7 +223,11 @@ namespace InventoryAssistant.UI.Registros
         private void FechaDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             CargarFacturas();
+
             TotalVendido();
+
+            Buscar();
+
         }
 
         private void Diferencia() // Funcion encargada de calcular la diferencia entre lo cobrado y lo que hay en caja
@@ -112,8 +237,43 @@ namespace InventoryAssistant.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+            bool paso = false;
+
+            CuadresDeCaja CuadreDeCaja = LlenaClase();
+
+            if (ExisteEnLaBaseDeDatos())
+            {
+                RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
+
+                var result = MessageBox.Show("¿Seguro que desea modificar este cuadre de caja?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    paso = Repositorio.Modificar(CuadreDeCaja);
+                    if (paso)
+                        MessageBox.Show("El cuadre de caja se modifico de manera exitosa!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("El cuadre de caja no se pudo modifico!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                paso = CuadresDeCajaBLL.Guardar(CuadreDeCaja);
+                if(paso)
+                    MessageBox.Show("El cuadre de caja se guardó de manera exitosa!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("El cuadre de caja no se pudo guardar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
+
+
+
+
 
         private void DosMilNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -263,6 +423,44 @@ namespace InventoryAssistant.UI.Registros
         private void TotalEnCajaTextBox_TextChanged(object sender, EventArgs e)
         {
             Diferencia();
+        }
+
+        private void DosMilNumericUpDown_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TotalVendidoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Diferencia();
+        }
+
+        private void CalcularTotales()
+        {
+            DosmilTextBox.Text = Convert.ToString(DosMilNumericUpDown.Value * 2000) + Decimas;
+            MilTextBox.Text = Convert.ToString(MilNumericUpDown.Value * 1000) + Decimas;
+            QuinientosTextBox.Text = Convert.ToString(QuinientosNumericUpDown.Value * 500) + Decimas;
+            DoscientosTextBox.Text = Convert.ToString(DoscientosNumericUpDown.Value * 200) + Decimas;
+            CienTextBox.Text = Convert.ToString(CienNumericUpDown.Value * 100) + Decimas;
+            CincuentaTextBox.Text = Convert.ToString(CincuentaNumericUpDown.Value * 50) + Decimas;
+            VeinticincoTextBox.Text = Convert.ToString(VeinticincoNumericUpDown.Value * 25) + Decimas;
+            VeinteTextBox.Text = Convert.ToString(VeinteNumericUpDown.Value * 20) + Decimas;
+            DiezTextBox.Text = Convert.ToString(DiezNumericUpDown.Value * 10) + Decimas;
+            CincoTextBox.Text = Convert.ToString(CincoNumericUpDown.Value * 5) + Decimas;
+            UnoTextBox.Text = Convert.ToString(UnoNumericUpDown.Value * 1) + Decimas;
+        }
+
+        private void FacturasDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (ListadoFacturas.Count > 0)
+            {
+                if (FacturasDataGridView.CurrentRow.Index >= 0)
+                {
+                    int IdFacturaSeleccionada = Convert.ToInt32(FacturasDataGridView.CurrentRow.Cells["FacturaId"].Value);
+                    rFacturas rF = new rFacturas(NombreUsuario, Nivel, IdFacturaSeleccionada);
+                    rF.ShowDialog();
+                }
+            }
         }
     }
 }

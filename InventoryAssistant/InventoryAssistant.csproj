@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CuadresDeCajaBLL.cs" />
     <Compile Include="BLL\FacturasBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\ProductosBLL.cs" />
@@ -64,7 +65,7 @@
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Categorias.cs" />
-    <Compile Include="Entidades\Cuadres.cs" />
+    <Compile Include="Entidades\CuadresDeCaja.cs" />
     <Compile Include="Entidades\DetalleFacturas.cs" />
     <Compile Include="Entidades\EntidadesParaConsultas\EntradaProductosConsulta.cs" />
     <Compile Include="Entidades\EntidadesParaConsultas\UsuariosConsulta.cs" />

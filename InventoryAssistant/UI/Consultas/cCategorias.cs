@@ -16,12 +16,14 @@ namespace InventoryAssistant.UI.Consultas
     public partial class cCategorias : Form
     {
         string NombreUsuario;
+        int Nivel;
         public int IdCategoriaSeleccionada { get; set; }
         private List<Categorias> ListadoCatgorias = new List<Categorias>();
 
-        public cCategorias(string nombreUsuario)
+        public cCategorias(string nombreUsuario, int nivel)
         {
             this.NombreUsuario = nombreUsuario;
+            this.Nivel = nivel;
             InitializeComponent();
         }
         private bool Validar()//Funcion encargada de validar la busqueda 
@@ -99,9 +101,16 @@ namespace InventoryAssistant.UI.Consultas
 
         private void DatosDeLaCategoriaButton_Click(object sender, EventArgs e)
         {
-            IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
-            rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
-            rC.ShowDialog();
+            if (Nivel <= 0)
+            {
+                IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
+                rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
+                rC.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void RealizarBusquedaButton_Click(object sender, EventArgs e)
@@ -126,15 +135,22 @@ namespace InventoryAssistant.UI.Consultas
 
         private void CategoriasDataGridView_DoubleClick(object sender, EventArgs e)
         {
-            if (ListadoCatgorias.Count > 0)
+            if (Nivel <= 0)
             {
-                if (CategoriasDataGridView.CurrentRow.Index >= 0)
+                if (ListadoCatgorias.Count > 0)
                 {
-                    DatosDeLaCategoriaButton.Enabled = true;
-                    IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
-                    rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
-                    rC.ShowDialog();
+                    if (CategoriasDataGridView.CurrentRow.Index >= 0)
+                    {
+                        DatosDeLaCategoriaButton.Enabled = true;
+                        IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
+                        rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
+                        rC.ShowDialog();
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

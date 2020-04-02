@@ -117,7 +117,7 @@
             this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(103, 20);
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(93, 20);
             this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
@@ -129,7 +129,7 @@
             // 
             this.FechaLabel.AutoSize = true;
             this.FechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaLabel.Location = new System.Drawing.Point(40, 22);
+            this.FechaLabel.Location = new System.Drawing.Point(30, 22);
             this.FechaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaLabel.Name = "FechaLabel";
             this.FechaLabel.Size = new System.Drawing.Size(55, 16);
@@ -151,6 +151,7 @@
             this.DosMilNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.DosMilNumericUpDown.TabIndex = 113;
             this.DosMilNumericUpDown.ValueChanged += new System.EventHandler(this.DosMilNumericUpDown_ValueChanged);
+            this.DosMilNumericUpDown.Enter += new System.EventHandler(this.DosMilNumericUpDown_Enter);
             this.DosMilNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyDown);
             this.DosMilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyUp);
             // 
@@ -355,7 +356,7 @@
             this.DesgloseGroupBox.Controls.Add(this.CincuentaNumericUpDown);
             this.DesgloseGroupBox.Controls.Add(this.CienNumericUpDown);
             this.DesgloseGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesgloseGroupBox.Location = new System.Drawing.Point(18, 57);
+            this.DesgloseGroupBox.Location = new System.Drawing.Point(8, 57);
             this.DesgloseGroupBox.Name = "DesgloseGroupBox";
             this.DesgloseGroupBox.Size = new System.Drawing.Size(255, 374);
             this.DesgloseGroupBox.TabIndex = 123;
@@ -921,6 +922,7 @@
             this.FacturasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FacturasDataGridView.Size = new System.Drawing.Size(523, 292);
             this.FacturasDataGridView.TabIndex = 125;
+            this.FacturasDataGridView.DoubleClick += new System.EventHandler(this.FacturasDataGridView_DoubleClick);
             // 
             // DiferenciaLabel
             // 
@@ -965,6 +967,7 @@
             this.TotalVendidoTextBox.Size = new System.Drawing.Size(90, 22);
             this.TotalVendidoTextBox.TabIndex = 173;
             this.TotalVendidoTextBox.Text = "0.00";
+            this.TotalVendidoTextBox.TextChanged += new System.EventHandler(this.TotalVendidoTextBox_TextChanged);
             // 
             // GuardarButton
             // 
@@ -989,7 +992,7 @@
             this.FacturasDelDiaGroupBox.Controls.Add(this.DiferenciaTextBox);
             this.FacturasDelDiaGroupBox.Controls.Add(this.TotalVendidoTextBox);
             this.FacturasDelDiaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacturasDelDiaGroupBox.Location = new System.Drawing.Point(279, 12);
+            this.FacturasDelDiaGroupBox.Location = new System.Drawing.Point(269, 12);
             this.FacturasDelDiaGroupBox.Name = "FacturasDelDiaGroupBox";
             this.FacturasDelDiaGroupBox.Size = new System.Drawing.Size(536, 373);
             this.FacturasDelDiaGroupBox.TabIndex = 175;
@@ -1000,7 +1003,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 441);
+            this.ClientSize = new System.Drawing.Size(815, 440);
             this.Controls.Add(this.FacturasDelDiaGroupBox);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.DesgloseGroupBox);

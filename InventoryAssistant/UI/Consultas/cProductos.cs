@@ -125,7 +125,7 @@ namespace InventoryAssistant.UI.Consultas
                     break;
 
                 case 5://Filtrar por Precio
-                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio >= DesdeNumericUpDown.Value && l.Precio <= HastaNumericUpDown.Value).ToList();
+                    ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio >= Convert.ToSingle(DesdeNumericUpDown.Value) && l.Precio <= Convert.ToSingle(HastaNumericUpDown.Value)).ToList();
                     break;
             }
 
@@ -223,24 +223,40 @@ namespace InventoryAssistant.UI.Consultas
 
         private void ProductosDataGridView_DoubleClick(object sender, EventArgs e)
         {
-            if (ListadoProductosConsulta.Count > 0)
+            if (Nivel <= 0)
             {
-                if (ProductosDataGridView.CurrentRow.Index >= 0)
+                if (ListadoProductosConsulta.Count > 0)
                 {
-                    DatosDelProductoButton.Enabled = true;
-                    GenerarEntradaButton.Enabled = true;
-                    IdProductoeleccionado = Convert.ToInt32(ProductosDataGridView.CurrentRow.Cells["ProductoId"].Value);
-                    rProductos rP = new rProductos(NombreUsuario, Nivel, IdProductoeleccionado);
-                    rP.ShowDialog();
+                    if (ProductosDataGridView.CurrentRow.Index >= 0)
+                    {
+                        DatosDelProductoButton.Enabled = true;
+                        GenerarEntradaButton.Enabled = true;
+                        IdProductoeleccionado = Convert.ToInt32(ProductosDataGridView.CurrentRow.Cells["ProductoId"].Value);
+                        rProductos rP = new rProductos(NombreUsuario, Nivel, IdProductoeleccionado);
+                        rP.ShowDialog();
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void DatosDelProductoButton_Click(object sender, EventArgs e)
         {
-            IdProductoeleccionado = Convert.ToInt32(ProductosDataGridView.CurrentRow.Cells["ProductoId"].Value);
-            rProductos rP = new rProductos(NombreUsuario, Nivel, IdProductoeleccionado);
-            rP.ShowDialog();
+            if (Nivel <= 0)
+            {
+                IdProductoeleccionado = Convert.ToInt32(ProductosDataGridView.CurrentRow.Cells["ProductoId"].Value);
+                rProductos rP = new rProductos(NombreUsuario, Nivel, IdProductoeleccionado);
+                rP.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void GenerarEntradaButton_Click(object sender, EventArgs e)

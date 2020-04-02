@@ -17,7 +17,7 @@ namespace InventoryAssistant.Entidades
         public string Cliente { get; set; }
         [Browsable(false)]
         public virtual List<DetalleFacturas> Detalle { get; set; }
-        public int Total { get; set; }
+        public float Total { get; set; }
         public bool Estado { get; set; }
         public string UsuarioR { get; set; }
 

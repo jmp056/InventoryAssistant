@@ -14,7 +14,7 @@ namespace InventoryAssistant.Entidades.EntidadesParaConsultas
         public string Descripcion { get; set; }
         public string Categoria { get; set; }
         public int Cantidad { get; set; }
-        public int Precio { get; set; }
+        public float Precio { get; set; }
         public ProductosConsulta()
         {
             ProductoId = 0;

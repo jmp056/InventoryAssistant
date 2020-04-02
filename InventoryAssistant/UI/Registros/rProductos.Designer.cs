@@ -228,6 +228,11 @@
             // 
             this.PrecioNumericUpDown.DecimalPlaces = 2;
             this.PrecioNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioNumericUpDown.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.PrecioNumericUpDown.Location = new System.Drawing.Point(210, 228);
             this.PrecioNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.PrecioNumericUpDown.Maximum = new decimal(new int[] {

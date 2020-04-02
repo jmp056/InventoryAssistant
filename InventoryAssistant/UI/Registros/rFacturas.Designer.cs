@@ -137,11 +137,11 @@
             // TotalTextBox
             // 
             this.TotalTextBox.BackColor = System.Drawing.Color.White;
-            this.TotalTextBox.Enabled = false;
             this.TotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTextBox.Location = new System.Drawing.Point(457, 292);
             this.TotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(98, 22);
             this.TotalTextBox.TabIndex = 115;
             this.TotalTextBox.Text = "0.00";
@@ -163,6 +163,7 @@
             // 
             // PrecioNumericUpDown
             // 
+            this.PrecioNumericUpDown.BackColor = System.Drawing.Color.White;
             this.PrecioNumericUpDown.DecimalPlaces = 2;
             this.PrecioNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrecioNumericUpDown.Increment = new decimal(new int[] {
@@ -185,7 +186,6 @@
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.BackColor = System.Drawing.Color.White;
-            this.DescripcionTextBox.Enabled = false;
             this.DescripcionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescripcionTextBox.Location = new System.Drawing.Point(355, 22);
             this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -197,7 +197,6 @@
             // ImporteTextBox
             // 
             this.ImporteTextBox.BackColor = System.Drawing.Color.White;
-            this.ImporteTextBox.Enabled = false;
             this.ImporteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImporteTextBox.Location = new System.Drawing.Point(425, 63);
             this.ImporteTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -340,11 +339,11 @@
             // UsuarioTextBox
             // 
             this.UsuarioTextBox.BackColor = System.Drawing.Color.White;
-            this.UsuarioTextBox.Enabled = false;
             this.UsuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioTextBox.Location = new System.Drawing.Point(107, 67);
             this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.ReadOnly = true;
             this.UsuarioTextBox.Size = new System.Drawing.Size(190, 22);
             this.UsuarioTextBox.TabIndex = 106;
             // 

@@ -27,6 +27,11 @@ namespace InventoryAssistant.UI.Registros
         //Limpiadores -------------------------------------------------------------------------------------------
         private void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
+            if(Nivel <= 1)
+            {
+                FacturaIdNumericUpDown.Enabled = true;
+                BuscarButton.Enabled = true;
+            }
             FacturaIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             UsuarioTextBox.Text = string.Empty;
@@ -255,7 +260,17 @@ namespace InventoryAssistant.UI.Registros
 
             if (Factura != null)
             {
-                LlenaCampos(Factura);
+                if(Factura.Fecha.Date == DateTime.Now.Date || Nivel <= 0)
+                {
+                    LlenaCampos(Factura);
+                    FacturaIdNumericUpDown.Enabled = false;
+                    BuscarButton.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Usted no tiene acceso a esta factura!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
+                }
             }
             else
             {
@@ -414,7 +429,6 @@ namespace InventoryAssistant.UI.Registros
 
                 if (MessageBox.Show("Esta seguro que desea modificar esta factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-
                     Paso = FacturasBLL.Modificar(Factura);
                     MessageBox.Show("Factura modificada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -476,7 +490,10 @@ namespace InventoryAssistant.UI.Registros
         private void rFacturas_Load(object sender, EventArgs e)
         {
             FechaDateTimePicker.Value = DateTime.Now;
+            FacturaIdNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
+            BuscarButton.Enabled = (Nivel <= 1) ? true : false;
             FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
+            PrecioNumericUpDown.ReadOnly = (Nivel <= 1) ? false : true;
 
             if (FacturaId > 0)
             {

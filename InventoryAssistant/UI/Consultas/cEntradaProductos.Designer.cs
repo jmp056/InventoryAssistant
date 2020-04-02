@@ -137,6 +137,7 @@
             // 
             // HastaNumericUpDown
             // 
+            this.HastaNumericUpDown.DecimalPlaces = 2;
             this.HastaNumericUpDown.Increment = new decimal(new int[] {
             10,
             0,
@@ -155,6 +156,7 @@
             // 
             // DesdeNumericUpDown
             // 
+            this.DesdeNumericUpDown.DecimalPlaces = 2;
             this.DesdeNumericUpDown.Increment = new decimal(new int[] {
             10,
             0,

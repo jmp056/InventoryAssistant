@@ -240,7 +240,7 @@ namespace InventoryAssistant.UI.Registros
                 Total += Convert.ToSingle(produ.Cells["Importe"].Value);
             }
 
-            TotalTextBox.Text = Convert.ToString(Total);
+            TotalTextBox.Text = Convert.ToString(Total) + ".00";
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
@@ -347,10 +347,10 @@ namespace InventoryAssistant.UI.Registros
         {
             MyErrorProvider.Clear();
 
-            if (!ValidaProducto())
-                return;
-
             if (SiProductoExiste())
+                return;
+            
+            if (!ValidaProducto())
                 return;
 
             RepositorioBase<DetalleFacturas> Repositorio = new RepositorioBase<DetalleFacturas>();
@@ -385,8 +385,10 @@ namespace InventoryAssistant.UI.Registros
             DetalleDataGridView.Columns[4].Width = 250;
             DetalleDataGridView.Columns[5].HeaderText = "Precio";
             DetalleDataGridView.Columns[5].Width = 69;
+            DetalleDataGridView.Columns[5].DefaultCellStyle.Format = "N2";
             DetalleDataGridView.Columns[6].HeaderText = "Importe";
             DetalleDataGridView.Columns[6].Width = 69;
+            DetalleDataGridView.Columns[6].DefaultCellStyle.Format = "N2";
 
         }
 
@@ -394,8 +396,13 @@ namespace InventoryAssistant.UI.Registros
         {
             if(DetalleDataGridView.SelectedRows.Count > 0)
             {
-                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
-                CargaGrid();
+                if(DetalleDataGridView.CurrentRow.Index > 0)
+                {
+                    Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
+                    CargaGrid();
+                }
+                else
+                    MessageBox.Show("Debe seleccionar el producto que desea eliminar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 MessageBox.Show("Debe seleccionar el producto que desea eliminar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -493,7 +500,7 @@ namespace InventoryAssistant.UI.Registros
             FacturaIdNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
             BuscarButton.Enabled = (Nivel <= 1) ? true : false;
             FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
-            PrecioNumericUpDown.ReadOnly = (Nivel <= 1) ? false : true;
+            PrecioNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
 
             if (FacturaId > 0)
             {
@@ -505,6 +512,16 @@ namespace InventoryAssistant.UI.Registros
                 RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
                 UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
             }
+        }
+
+        private void DetalleDataGridView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DetalleDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

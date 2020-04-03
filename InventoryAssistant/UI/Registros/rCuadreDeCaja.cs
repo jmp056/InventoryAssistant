@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
 {
-    public partial class CuadreDeCaja : Form
+    public partial class rCuadreDeCaja : Form
     {
         string NombreUsuario;
         int Nivel;
@@ -21,7 +21,7 @@ namespace InventoryAssistant.UI.Registros
         List<Facturas> ListadoFacturas = new List<Facturas>();
         string Decimas = ".00";
         
-        public CuadreDeCaja(string nombreUsuario, int nivel, int cuadreDeCajaId)
+        public rCuadreDeCaja(string nombreUsuario, int nivel, int cuadreDeCajaId)
         {
             this.NombreUsuario = nombreUsuario;
             this.Nivel = nivel;
@@ -64,10 +64,16 @@ namespace InventoryAssistant.UI.Registros
 
             //Limpiar el DataGridView
             FacturasDataGridView.DataSource = null;
+
+            UsuarioTextBox.Text = NombreUsuario;
+            EstadoToolStripStatusLabel.Text = string.Empty;
+            UsuarioToolStripStatusLabel.Text = string.Empty;
         }
 
         private void CuadreDeCaja_Load(object sender, EventArgs e)
         {
+            FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
+
             DosMilNumericUpDown.Controls[0].Visible = false;
             MilNumericUpDown.Controls[0].Visible = false;
             QuinientosNumericUpDown.Controls[0].Visible = false;
@@ -79,6 +85,8 @@ namespace InventoryAssistant.UI.Registros
             DiezNumericUpDown.Controls[0].Visible = false;
             CincoNumericUpDown.Controls[0].Visible = false;
             UnoNumericUpDown.Controls[0].Visible = false;
+            
+            if(CuadreDeCajaId != 0)
 
             FechaDateTimePicker.Value = DateTime.Now;
             CargarFacturas();
@@ -92,6 +100,7 @@ namespace InventoryAssistant.UI.Registros
 
             CuadreDeCaja.CuadreDeCajaId = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
             CuadreDeCaja.Fecha = FechaDateTimePicker.Value;
+            CuadreDeCaja.Usuario = UsuarioTextBox.Text;
             CuadreDeCaja.Dosmil = Convert.ToInt32(DosMilNumericUpDown.Value);
             CuadreDeCaja.Mil = Convert.ToInt32(MilNumericUpDown.Value);
             CuadreDeCaja.Quinientos = Convert.ToInt32(QuinientosNumericUpDown.Value);
@@ -115,6 +124,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void LlenaCampo(CuadresDeCaja CuadreDeCaja)  // Funcion encargada de llenar los campos del registro con los datos de un objeto
         {
+            UsuarioTextBox.Text = CuadreDeCaja.Usuario;
             DosMilNumericUpDown.Value = CuadreDeCaja.Dosmil;
             MilNumericUpDown.Value = CuadreDeCaja.Mil;
             QuinientosNumericUpDown.Value = CuadreDeCaja.Quinientos;
@@ -127,8 +137,8 @@ namespace InventoryAssistant.UI.Registros
             CincoNumericUpDown.Value = CuadreDeCaja.Cinco;
             UnoNumericUpDown.Value = CuadreDeCaja.Uno;
 
-            //EstadoToolStripStatusLabel.Text = (CuadreDeCaja.Estado == false) ? "Agregado por: " : "Modificado por: ";
-            //UsuarioToolStripStatusLabel.Text = CuadreDeCaja.UsuarioR;
+            EstadoToolStripStatusLabel.Text = (CuadreDeCaja.Estado == false) ? "Agregado por: " : "Modificado por: ";
+            UsuarioToolStripStatusLabel.Text = CuadreDeCaja.UsuarioR;
         }
 
         private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario exist en una base de datos!
@@ -143,8 +153,12 @@ namespace InventoryAssistant.UI.Registros
         {
             RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
             CuadresDeCaja CuadreDeCaja = new CuadresDeCaja();
+            int Codigo = 0;
 
-            int Codigo = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
+            if (CuadreDeCajaId == 0)
+                Codigo = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
+            else
+                Codigo = CuadreDeCajaId;
 
             CuadreDeCaja = Repositorio.Buscar(Codigo);
 

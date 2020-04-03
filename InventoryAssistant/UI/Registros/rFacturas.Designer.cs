@@ -285,6 +285,8 @@
             this.DetalleDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DetalleDataGridView.Size = new System.Drawing.Size(548, 175);
             this.DetalleDataGridView.TabIndex = 18;
+            this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick);
+            this.DetalleDataGridView.Click += new System.EventHandler(this.DetalleDataGridView_Click);
             // 
             // AgregarProductoButton
             // 

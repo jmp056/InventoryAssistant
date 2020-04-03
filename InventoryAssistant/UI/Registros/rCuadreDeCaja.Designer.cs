@@ -1,6 +1,6 @@
 ﻿namespace InventoryAssistant.UI.Registros
 {
-    partial class CuadreDeCaja
+    partial class rCuadreDeCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CuadreDeCaja));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCuadreDeCaja));
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FechaLabel = new System.Windows.Forms.Label();
             this.DosMilNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -96,6 +96,11 @@
             this.TotalVendidoTextBox = new System.Windows.Forms.TextBox();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.FacturasDelDiaGroupBox = new System.Windows.Forms.GroupBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.UsuarioLabel = new System.Windows.Forms.Label();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DosMilNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VeinteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiezNumericUpDown)).BeginInit();
@@ -110,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CincoNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturasDataGridView)).BeginInit();
             this.FacturasDelDiaGroupBox.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FechaDateTimePicker
@@ -986,6 +992,8 @@
             // 
             // FacturasDelDiaGroupBox
             // 
+            this.FacturasDelDiaGroupBox.Controls.Add(this.UsuarioLabel);
+            this.FacturasDelDiaGroupBox.Controls.Add(this.UsuarioTextBox);
             this.FacturasDelDiaGroupBox.Controls.Add(this.FacturasDataGridView);
             this.FacturasDelDiaGroupBox.Controls.Add(this.DiferenciaLabel);
             this.FacturasDelDiaGroupBox.Controls.Add(this.TotalVendidoLabel);
@@ -999,17 +1007,66 @@
             this.FacturasDelDiaGroupBox.TabStop = false;
             this.FacturasDelDiaGroupBox.Text = "Facturas del Dia";
             // 
-            // CuadreDeCaja
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsuarioToolStripStatusLabel,
+            this.EstadoToolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 436);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(815, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 176;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // UsuarioToolStripStatusLabel
+            // 
+            this.UsuarioToolStripStatusLabel.Name = "UsuarioToolStripStatusLabel";
+            this.UsuarioToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UsuarioToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.UsuarioToolStripStatusLabel.Text = "          ";
+            // 
+            // EstadoToolStripStatusLabel
+            // 
+            this.EstadoToolStripStatusLabel.Name = "EstadoToolStripStatusLabel";
+            this.EstadoToolStripStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.EstadoToolStripStatusLabel.Text = "          ";
+            // 
+            // UsuarioLabel
+            // 
+            this.UsuarioLabel.AutoSize = true;
+            this.UsuarioLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioLabel.Location = new System.Drawing.Point(8, 333);
+            this.UsuarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UsuarioLabel.Name = "UsuarioLabel";
+            this.UsuarioLabel.Size = new System.Drawing.Size(66, 16);
+            this.UsuarioLabel.TabIndex = 176;
+            this.UsuarioLabel.Text = "Usuario:";
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.BackColor = System.Drawing.Color.White;
+            this.UsuarioTextBox.Location = new System.Drawing.Point(74, 330);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.ReadOnly = true;
+            this.UsuarioTextBox.Size = new System.Drawing.Size(247, 22);
+            this.UsuarioTextBox.TabIndex = 175;
+            // 
+            // rCuadreDeCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 440);
+            this.ClientSize = new System.Drawing.Size(815, 458);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.FacturasDelDiaGroupBox);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.DesgloseGroupBox);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.FechaLabel);
-            this.Name = "CuadreDeCaja";
+            this.Name = "rCuadreDeCaja";
             this.Text = "CuadreDeCaja";
             this.Load += new System.EventHandler(this.CuadreDeCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DosMilNumericUpDown)).EndInit();
@@ -1028,6 +1085,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.FacturasDataGridView)).EndInit();
             this.FacturasDelDiaGroupBox.ResumeLayout(false);
             this.FacturasDelDiaGroupBox.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1102,5 +1161,10 @@
         private System.Windows.Forms.Label VeinticincoLabel;
         private System.Windows.Forms.Label DosmilLabel;
         private System.Windows.Forms.GroupBox FacturasDelDiaGroupBox;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
+        private System.Windows.Forms.Label UsuarioLabel;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
     }
 }

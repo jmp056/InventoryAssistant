@@ -22,12 +22,13 @@ namespace InventoryAssistant.BLL
             try
             {
 
-                string query = "INSERT INTO CuadresDeCajas (CuadreDeCajaId, Fecha, Dosmil, Mil, Quinientos ,Doscientos, Cien, Cincuenta, Veinticinco, Veinte, Diez, Cinco, Uno, TotalVendido, Diferencia, TotalEnCaja, Estado, UsuarioR) VALUES" +
-                                                          "(@CuadreDeCajaId, @Fecha, @Dosmil, @Mil, @Quinientos, @Doscientos, @Cien, @Cincuenta, @Veinticinco, @Veinte, @Diez, @Cinco, @Uno, @TotalVendido, @Diferencia, @TotalEnCaja, @Estado, @UsuarioR)";
+                string query = "INSERT INTO CuadresDeCajas (CuadreDeCajaId, Fecha, Usuario, Dosmil, Mil, Quinientos ,Doscientos, Cien, Cincuenta, Veinticinco, Veinte, Diez, Cinco, Uno, TotalVendido, Diferencia, TotalEnCaja, Estado, UsuarioR) VALUES" +
+                                                          "(@CuadreDeCajaId, @Fecha, @Usuario, @Dosmil, @Mil, @Quinientos, @Doscientos, @Cien, @Cincuenta, @Veinticinco, @Veinte, @Diez, @Cinco, @Uno, @TotalVendido, @Diferencia, @TotalEnCaja, @Estado, @UsuarioR)";
                 Conexion.Open();
                 SqlCommand comando = new SqlCommand(query, Conexion);
                 comando.Parameters.AddWithValue("@CuadreDeCajaId", CuadreDeCaja.CuadreDeCajaId);
                 comando.Parameters.AddWithValue("@Fecha", CuadreDeCaja.Fecha);
+                comando.Parameters.AddWithValue("@Usuario", CuadreDeCaja.Usuario);
                 comando.Parameters.AddWithValue("@Dosmil", CuadreDeCaja.Dosmil);
                 comando.Parameters.AddWithValue("@Mil", CuadreDeCaja.Mil);
                 comando.Parameters.AddWithValue("@Quinientos", CuadreDeCaja.Quinientos);

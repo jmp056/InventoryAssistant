@@ -60,6 +60,7 @@ namespace InventoryAssistant
         {
             rFacturas rF = new rFacturas(nombre, nivel, 0);
             rF.ShowDialog();
+
         }
        
         private void entradaDeProductosToolStripMenuItem_Click(object sender, EventArgs e) // Entrada de productos
@@ -107,6 +108,12 @@ namespace InventoryAssistant
             }
             else
                 NoTienePermiso();
+        }
+
+        private void cuadreDeCajaToolStripMenuItem_Click(object sender, EventArgs e) // Cuadre de caja
+        {
+            rCuadreDeCaja rCC = new rCuadreDeCaja(nombre, nivel, 0);
+            rCC.ShowDialog();
         }
 
         // C O N S U L T A S ------------------------------------------------------------------------------------
@@ -161,7 +168,16 @@ namespace InventoryAssistant
                 NoTienePermiso();
         }
 
-
+        private void consultaDeCuadresDeCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (nivel <= 0)
+            {
+                cCuadreDeCaja cCC = new cCuadreDeCaja(nombre, nivel);
+                cCC.ShowDialog();
+            }
+            else
+                NoTienePermiso();
+        }
 
 
 
@@ -206,8 +222,8 @@ namespace InventoryAssistant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CuadreDeCaja p = new CuadreDeCaja(nombre, nivel, 0);
-            p.ShowDialog();
+            rFacturas rF = new rFacturas(nombre, nivel, 0);
+            rF.ShowDialog();
         }
 
 

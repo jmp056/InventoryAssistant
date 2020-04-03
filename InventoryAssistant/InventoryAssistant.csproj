@@ -93,6 +93,12 @@
     <Compile Include="UI\Consultas\cCategorias.Designer.cs">
       <DependentUpon>cCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cCuadreDeCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cCuadreDeCaja.Designer.cs">
+      <DependentUpon>cCuadreDeCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\cEntradaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +129,11 @@
     <Compile Include="UI\Consultas\SeleccionProducto.Designer.cs">
       <DependentUpon>SeleccionProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\CuadreDeCaja.cs">
+    <Compile Include="UI\Registros\rCuadreDeCaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\CuadreDeCaja.Designer.cs">
-      <DependentUpon>CuadreDeCaja.cs</DependentUpon>
+    <Compile Include="UI\Registros\rCuadreDeCaja.Designer.cs">
+      <DependentUpon>rCuadreDeCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\Login.cs">
       <SubType>Form</SubType>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="UI\Consultas\cCategorias.resx">
       <DependentUpon>cCategorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cCuadreDeCaja.resx">
+      <DependentUpon>cCuadreDeCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cEntradaProductos.resx">
       <DependentUpon>cEntradaProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,8 +199,8 @@
     <EmbeddedResource Include="UI\Consultas\SeleccionProducto.resx">
       <DependentUpon>SeleccionProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\CuadreDeCaja.resx">
-      <DependentUpon>CuadreDeCaja.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rCuadreDeCaja.resx">
+      <DependentUpon>rCuadreDeCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

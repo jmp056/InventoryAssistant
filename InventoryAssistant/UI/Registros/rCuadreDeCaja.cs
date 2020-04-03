@@ -85,13 +85,18 @@ namespace InventoryAssistant.UI.Registros
             DiezNumericUpDown.Controls[0].Visible = false;
             CincoNumericUpDown.Controls[0].Visible = false;
             UnoNumericUpDown.Controls[0].Visible = false;
-            
-            if(CuadreDeCajaId != 0)
 
-            FechaDateTimePicker.Value = DateTime.Now;
-            CargarFacturas();
+            if(CuadreDeCajaId == 0)
+            {
+                FechaDateTimePicker.Value = DateTime.Now;
+                CargarFacturas();
 
-            Buscar();
+            }
+            else
+            {
+                Buscar();
+
+            }
         }
 
         private CuadresDeCaja LlenaClase()  // Funcion encargada de llenar el objeto
@@ -115,7 +120,7 @@ namespace InventoryAssistant.UI.Registros
             CuadreDeCaja.TotalVendido = Convert.ToSingle(TotalVendidoTextBox.Text);
             CuadreDeCaja.Diferencia = Convert.ToSingle(DiferenciaTextBox.Text);
             CuadreDeCaja.TotalEnCaja = Convert.ToSingle(TotalEnCajaTextBox.Text);
-            CuadreDeCaja.Estado = (ExisteEnLaBaseDeDatos()) ? false : true;
+            CuadreDeCaja.Estado = (ExisteEnLaBaseDeDatos()) ? true : false;
             CuadreDeCaja.UsuarioR = NombreUsuario;
 
             return CuadreDeCaja;
@@ -153,25 +158,29 @@ namespace InventoryAssistant.UI.Registros
         {
             RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
             CuadresDeCaja CuadreDeCaja = new CuadresDeCaja();
-            int Codigo = 0;
+            int Codigo;
 
             if (CuadreDeCajaId == 0)
+            {
                 Codigo = Convert.ToInt32(Convert.ToString(FechaDateTimePicker.Value.Day) + Convert.ToString(FechaDateTimePicker.Value.Month) + Convert.ToString(FechaDateTimePicker.Value.Year));
+            }
             else
+            {
                 Codigo = CuadreDeCajaId;
+            }
 
             CuadreDeCaja = Repositorio.Buscar(Codigo);
 
             if (CuadreDeCaja != null)
             {
                 LlenaCampo(CuadreDeCaja);
+                FechaDateTimePicker.Value = CuadreDeCaja.Fecha;
                 CalcularTotales();
                 CalcularTotalEnCaja();
             }
             else
             {
                 Limpiar();
-                CargarFacturas();
             }
         }
 
@@ -192,7 +201,6 @@ namespace InventoryAssistant.UI.Registros
                 FacturasDataGridView.ClearSelection();
                 TotalVendido();
             }
-
 
             FuenteDelDataGridView();
         }
@@ -236,11 +244,18 @@ namespace InventoryAssistant.UI.Registros
 
         private void FechaDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            CargarFacturas();
-
-            TotalVendido();
-
             Buscar();
+            CargarFacturas();
+            //if(CuadreDeCajaId == 0)
+            //{
+            //    CargarFacturas();
+            //    TotalVendido();
+            //}
+            //else
+            //{
+            //    Buscar();
+            //    CuadreDeCajaId = 0;
+            //}
 
         }
 

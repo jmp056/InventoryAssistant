@@ -96,11 +96,11 @@
             this.TotalVendidoTextBox = new System.Windows.Forms.TextBox();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.FacturasDelDiaGroupBox = new System.Windows.Forms.GroupBox();
+            this.UsuarioLabel = new System.Windows.Forms.Label();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.UsuarioLabel = new System.Windows.Forms.Label();
-            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DosMilNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VeinteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiezNumericUpDown)).BeginInit();
@@ -1007,6 +1007,27 @@
             this.FacturasDelDiaGroupBox.TabStop = false;
             this.FacturasDelDiaGroupBox.Text = "Facturas del Dia";
             // 
+            // UsuarioLabel
+            // 
+            this.UsuarioLabel.AutoSize = true;
+            this.UsuarioLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioLabel.Location = new System.Drawing.Point(8, 333);
+            this.UsuarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UsuarioLabel.Name = "UsuarioLabel";
+            this.UsuarioLabel.Size = new System.Drawing.Size(66, 16);
+            this.UsuarioLabel.TabIndex = 176;
+            this.UsuarioLabel.Text = "Usuario:";
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.BackColor = System.Drawing.Color.White;
+            this.UsuarioTextBox.Location = new System.Drawing.Point(74, 330);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.ReadOnly = true;
+            this.UsuarioTextBox.Size = new System.Drawing.Size(247, 22);
+            this.UsuarioTextBox.TabIndex = 175;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1034,27 +1055,6 @@
             this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
             this.EstadoToolStripStatusLabel.Text = "          ";
             // 
-            // UsuarioLabel
-            // 
-            this.UsuarioLabel.AutoSize = true;
-            this.UsuarioLabel.BackColor = System.Drawing.Color.Transparent;
-            this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioLabel.Location = new System.Drawing.Point(8, 333);
-            this.UsuarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UsuarioLabel.Name = "UsuarioLabel";
-            this.UsuarioLabel.Size = new System.Drawing.Size(66, 16);
-            this.UsuarioLabel.TabIndex = 176;
-            this.UsuarioLabel.Text = "Usuario:";
-            // 
-            // UsuarioTextBox
-            // 
-            this.UsuarioTextBox.BackColor = System.Drawing.Color.White;
-            this.UsuarioTextBox.Location = new System.Drawing.Point(74, 330);
-            this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.ReadOnly = true;
-            this.UsuarioTextBox.Size = new System.Drawing.Size(247, 22);
-            this.UsuarioTextBox.TabIndex = 175;
-            // 
             // rCuadreDeCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1066,7 +1066,9 @@
             this.Controls.Add(this.DesgloseGroupBox);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.FechaLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "rCuadreDeCaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CuadreDeCaja";
             this.Load += new System.EventHandler(this.CuadreDeCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DosMilNumericUpDown)).EndInit();

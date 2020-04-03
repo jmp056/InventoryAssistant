@@ -133,13 +133,13 @@ namespace InventoryAssistant.UI.Consultas
             CuadresDataGridView.Columns[12].Visible = false;
             CuadresDataGridView.Columns[13].Visible = false;
             CuadresDataGridView.Columns[14].HeaderText = "Total Vendido";
-            CuadresDataGridView.Columns[14].Width = 80;
+            CuadresDataGridView.Columns[14].Width = 100;
             CuadresDataGridView.Columns[14].DefaultCellStyle.Format = "N2";
             CuadresDataGridView.Columns[15].HeaderText = "Diferencia";
-            CuadresDataGridView.Columns[15].Width = 50;
+            CuadresDataGridView.Columns[15].Width = 70;
             CuadresDataGridView.Columns[15].DefaultCellStyle.Format = "N2";
             CuadresDataGridView.Columns[16].HeaderText = "Total en Caja";
-            CuadresDataGridView.Columns[16].Width = 80;
+            CuadresDataGridView.Columns[16].Width = 100;
             CuadresDataGridView.Columns[16].DefaultCellStyle.Format = "N2";
             CuadresDataGridView.Columns[17].Visible = false;
             CuadresDataGridView.Columns[18].Visible = false;
@@ -232,6 +232,11 @@ namespace InventoryAssistant.UI.Consultas
             IdCuadreSeleccionado = Convert.ToInt32(CuadresDataGridView.CurrentRow.Cells["CuadreDeCajaId"].Value);
             rCuadreDeCaja rCC = new rCuadreDeCaja(NombreUsuario, Nivel, IdCuadreSeleccionado);
             rCC.ShowDialog();
+        }
+
+        private void CuadresDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

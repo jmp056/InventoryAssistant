@@ -45,7 +45,6 @@
             this.CantidadLabel = new System.Windows.Forms.Label();
             this.DescripcionLabel = new System.Windows.Forms.Label();
             this.ProductoIdLabel = new System.Windows.Forms.Label();
-            this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.AgregarProductoButton = new System.Windows.Forms.Button();
             this.BuscarProductoButton = new System.Windows.Forms.Button();
             this.FacturaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -64,18 +63,20 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.DetalleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // DetalleGroupBox
             // 
+            this.DetalleGroupBox.Controls.Add(this.DetalleDataGridView);
             this.DetalleGroupBox.Controls.Add(this.VerProductosButton);
             this.DetalleGroupBox.Controls.Add(this.TotalLabel);
             this.DetalleGroupBox.Controls.Add(this.EliminarProductoButton);
@@ -90,7 +91,6 @@
             this.DetalleGroupBox.Controls.Add(this.CantidadLabel);
             this.DetalleGroupBox.Controls.Add(this.DescripcionLabel);
             this.DetalleGroupBox.Controls.Add(this.ProductoIdLabel);
-            this.DetalleGroupBox.Controls.Add(this.DetalleDataGridView);
             this.DetalleGroupBox.Controls.Add(this.AgregarProductoButton);
             this.DetalleGroupBox.Controls.Add(this.BuscarProductoButton);
             this.DetalleGroupBox.Location = new System.Drawing.Point(12, 108);
@@ -275,18 +275,6 @@
             this.ProductoIdLabel.Size = new System.Drawing.Size(62, 16);
             this.ProductoIdLabel.TabIndex = 112;
             this.ProductoIdLabel.Text = "Código:";
-            // 
-            // DetalleDataGridView
-            // 
-            this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalleDataGridView.Location = new System.Drawing.Point(18, 97);
-            this.DetalleDataGridView.Name = "DetalleDataGridView";
-            this.DetalleDataGridView.ReadOnly = true;
-            this.DetalleDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DetalleDataGridView.Size = new System.Drawing.Size(548, 175);
-            this.DetalleDataGridView.TabIndex = 18;
-            this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick);
-            this.DetalleDataGridView.Click += new System.EventHandler(this.DetalleDataGridView_Click);
             // 
             // AgregarProductoButton
             // 
@@ -479,6 +467,15 @@
             this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
             this.EstadoToolStripStatusLabel.Text = "          ";
             // 
+            // DetalleDataGridView
+            // 
+            this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleDataGridView.Location = new System.Drawing.Point(18, 97);
+            this.DetalleDataGridView.Name = "DetalleDataGridView";
+            this.DetalleDataGridView.Size = new System.Drawing.Size(548, 175);
+            this.DetalleDataGridView.TabIndex = 118;
+            this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick_1);
+            // 
             // rFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,11 +508,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,7 +520,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox DetalleGroupBox;
-        private System.Windows.Forms.DataGridView DetalleDataGridView;
         private System.Windows.Forms.Button AgregarProductoButton;
         private System.Windows.Forms.Button BuscarProductoButton;
         private System.Windows.Forms.NumericUpDown FacturaIdNumericUpDown;
@@ -556,5 +552,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
+        private System.Windows.Forms.DataGridView DetalleDataGridView;
     }
 }

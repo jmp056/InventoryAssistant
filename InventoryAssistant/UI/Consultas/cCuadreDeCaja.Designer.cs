@@ -67,8 +67,9 @@
             this.CuadresDataGridView.Name = "CuadresDataGridView";
             this.CuadresDataGridView.ReadOnly = true;
             this.CuadresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CuadresDataGridView.Size = new System.Drawing.Size(718, 388);
+            this.CuadresDataGridView.Size = new System.Drawing.Size(583, 388);
             this.CuadresDataGridView.TabIndex = 0;
+            this.CuadresDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CuadresDataGridView_CellContentClick);
             this.CuadresDataGridView.Click += new System.EventHandler(this.CuadresDataGridView_Click);
             this.CuadresDataGridView.DoubleClick += new System.EventHandler(this.CuadresDataGridView_DoubleClick);
             // 
@@ -77,7 +78,7 @@
             this.groupBox2.Controls.Add(this.CuadresDataGridView);
             this.groupBox2.Location = new System.Drawing.Point(202, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(730, 405);
+            this.groupBox2.Size = new System.Drawing.Size(593, 405);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             // 
@@ -303,7 +304,9 @@
             this.ClientSize = new System.Drawing.Size(800, 416);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelCuadreGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "cCuadreDeCaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cCuadreDeCaja";
             this.Load += new System.EventHandler(this.cCuadreDeCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CuadresDataGridView)).EndInit();

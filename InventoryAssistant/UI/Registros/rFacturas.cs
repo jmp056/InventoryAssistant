@@ -21,7 +21,6 @@ namespace InventoryAssistant.UI.Registros
             this.FacturaId = facturaId;
             InitializeComponent();
             Detalle = new List<DetalleFacturas>();
-            Limpiar();
         }
 
         //Limpiadores -------------------------------------------------------------------------------------------
@@ -38,7 +37,7 @@ namespace InventoryAssistant.UI.Registros
             ClienteTextBox.Text = string.Empty;
             LimpiarProductoGroupBox();
             this.Detalle = new List<DetalleFacturas>();
-            CargaGrid();
+            DetalleDataGridView.DataSource = null;
             LimpiarProductoGroupBox();
             UsuarioTextBox.Text = NombreUsuario;
 
@@ -77,7 +76,7 @@ namespace InventoryAssistant.UI.Registros
             Factura.Usuario = UsuarioTextBox.Text.ToUpper();
             Factura.Cliente = ClienteTextBox.Text.ToUpper();
             Factura.Detalle = this.Detalle;
-            Factura.Total = Convert.ToInt32(TotalTextBox.Text);
+            Factura.Total = Convert.ToSingle(TotalTextBox.Text);
 
             Factura.Estado = (Factura.FacturaId== 0) ? false : true;
             Factura.UsuarioR = NombreUsuario;
@@ -394,15 +393,13 @@ namespace InventoryAssistant.UI.Registros
 
         private void EliminarProductoButton_Click(object sender, EventArgs e) //Boton eliminar producto!
         {
-            if(DetalleDataGridView.SelectedRows.Count > 0)
+            if(DetalleDataGridView.CurrentRow.Index >= 0)
             {
-                if(DetalleDataGridView.CurrentRow.Index > 0)
+                if (MessageBox.Show("Esta seguro que desea eliminar esta producto de la factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
                     Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
                     CargaGrid();
                 }
-                else
-                    MessageBox.Show("Debe seleccionar el producto que desea eliminar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 MessageBox.Show("Debe seleccionar el producto que desea eliminar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -520,6 +517,11 @@ namespace InventoryAssistant.UI.Registros
         }
 
         private void DetalleDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DetalleDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

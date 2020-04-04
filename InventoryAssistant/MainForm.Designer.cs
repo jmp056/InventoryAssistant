@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,12 +37,14 @@
             this.RegistroDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroDeCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuadreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaDeEntradaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeProductosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeCategoríasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeCuadresDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -49,11 +52,13 @@
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.NombreUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.UsuarioStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cuadreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeCuadresDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MyTimer = new System.Windows.Forms.Timer(this.components);
+            this.FechaGroupBox = new System.Windows.Forms.GroupBox();
+            this.FechaTextBox = new System.Windows.Forms.TextBox();
+            this.HoraTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.FechaGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -116,6 +121,13 @@
             this.RegistroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
             this.RegistroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registroDeUsuariosToolStripMenuItem_Click);
             // 
+            // cuadreDeCajaToolStripMenuItem
+            // 
+            this.cuadreDeCajaToolStripMenuItem.Name = "cuadreDeCajaToolStripMenuItem";
+            this.cuadreDeCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.cuadreDeCajaToolStripMenuItem.Text = "Cuadre de Caja";
+            this.cuadreDeCajaToolStripMenuItem.Click += new System.EventHandler(this.cuadreDeCajaToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -164,6 +176,13 @@
             this.ConsultaToolStripMenuItem.Text = "Consulta de Usuarios";
             this.ConsultaToolStripMenuItem.Click += new System.EventHandler(this.ConsultaToolStripMenuItem_Click);
             // 
+            // consultaDeCuadresDeCajaToolStripMenuItem
+            // 
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Name = "consultaDeCuadresDeCajaToolStripMenuItem";
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Text = "Consulta de Cuadres de Caja";
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Click += new System.EventHandler(this.consultaDeCuadresDeCajaToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -172,7 +191,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(217, 164);
+            this.button2.Location = new System.Drawing.Point(28, 44);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -223,36 +242,51 @@
             this.UsuarioStripStatusLabel.Size = new System.Drawing.Size(53, 17);
             this.UsuarioStripStatusLabel.Text = "Usuario: ";
             // 
-            // button1
+            // MyTimer
             // 
-            this.button1.Location = new System.Drawing.Point(462, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Ventana en proceso";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.MyTimer.Tick += new System.EventHandler(this.MyTimer_Tick);
             // 
-            // cuadreDeCajaToolStripMenuItem
+            // FechaGroupBox
             // 
-            this.cuadreDeCajaToolStripMenuItem.Name = "cuadreDeCajaToolStripMenuItem";
-            this.cuadreDeCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.cuadreDeCajaToolStripMenuItem.Text = "Cuadre de Caja";
-            this.cuadreDeCajaToolStripMenuItem.Click += new System.EventHandler(this.cuadreDeCajaToolStripMenuItem_Click);
+            this.FechaGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FechaGroupBox.Controls.Add(this.FechaTextBox);
+            this.FechaGroupBox.Controls.Add(this.HoraTextBox);
+            this.FechaGroupBox.Location = new System.Drawing.Point(526, 329);
+            this.FechaGroupBox.Name = "FechaGroupBox";
+            this.FechaGroupBox.Size = new System.Drawing.Size(274, 100);
+            this.FechaGroupBox.TabIndex = 22;
+            this.FechaGroupBox.TabStop = false;
             // 
-            // consultaDeCuadresDeCajaToolStripMenuItem
+            // FechaTextBox
             // 
-            this.consultaDeCuadresDeCajaToolStripMenuItem.Name = "consultaDeCuadresDeCajaToolStripMenuItem";
-            this.consultaDeCuadresDeCajaToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.consultaDeCuadresDeCajaToolStripMenuItem.Text = "Consulta de Cuadres de Caja";
-            this.consultaDeCuadresDeCajaToolStripMenuItem.Click += new System.EventHandler(this.consultaDeCuadresDeCajaToolStripMenuItem_Click);
+            this.FechaTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.FechaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FechaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaTextBox.Location = new System.Drawing.Point(5, 77);
+            this.FechaTextBox.Name = "FechaTextBox";
+            this.FechaTextBox.Size = new System.Drawing.Size(255, 15);
+            this.FechaTextBox.TabIndex = 23;
+            this.FechaTextBox.Text = "Sabado 30 de diciembre del 2020";
+            this.FechaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // HoraTextBox
+            // 
+            this.HoraTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.HoraTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.HoraTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoraTextBox.Location = new System.Drawing.Point(2, 27);
+            this.HoraTextBox.Name = "HoraTextBox";
+            this.HoraTextBox.Size = new System.Drawing.Size(258, 46);
+            this.HoraTextBox.TabIndex = 24;
+            this.HoraTextBox.Text = "hh:mm:ss pm";
+            this.HoraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FechaGroupBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
@@ -266,6 +300,8 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.FechaGroupBox.ResumeLayout(false);
+            this.FechaGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +323,6 @@
         private System.Windows.Forms.ToolStripStatusLabel NombreUsuarioToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel NivelDeUsuarioToolStripStatusLabel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem ConsultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeCategoríasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem1;
@@ -295,6 +330,10 @@
         private System.Windows.Forms.ToolStripMenuItem ConsultaDeFacturasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadreDeCajaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeCuadresDeCajaToolStripMenuItem;
+        private System.Windows.Forms.Timer MyTimer;
+        private System.Windows.Forms.GroupBox FechaGroupBox;
+        private System.Windows.Forms.TextBox FechaTextBox;
+        private System.Windows.Forms.TextBox HoraTextBox;
     }
 }
 

@@ -28,6 +28,7 @@ namespace InventoryAssistant
 
         private void MainForm_Load(object sender, EventArgs e) //Funcion encargada de tomar los datos del usuario que esta logueado.
         {
+            MyTimer.Enabled = true;
             NombreUsuarioToolStripStatusLabel.Text = RepositorioUsuario.ReturnUsuario().Nombres;
             int nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
             switch (nivel)
@@ -226,6 +227,10 @@ namespace InventoryAssistant
             rF.ShowDialog();
         }
 
-
+        private void MyTimer_Tick(object sender, EventArgs e)
+        {
+            HoraTextBox.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            FechaTextBox.Text = DateTime.Now.ToString("dddd dd \\de MMMM \\del yyyy ");
+        }
     }
 }

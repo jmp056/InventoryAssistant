@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InformacionConsultaFacturasLabel.Text" xml:space="preserve">
+    <value>Esta consulta permite a los usuarios que tienen la autorización para ingresar a ella realizar tareas como: ver todas las facturas que se han 
+realizado en el sistema, desde su inicio hasta la fecha actual, al igual que poder realizar consultas con filtros, en este caso los filtros que
+se pueden usar para poder depurar la información y obtener la requerida son filtrar por código, vendedor, cliente, monto y por ultimo, 
+la fecha en la que se realizo esa facturaDe otra manera esta consulta contiene un botón, que al seleccionar una factura x, si deseas 
+obtener más información sobre ella, puedes obtenerla haciendo doble clic en esta, como también haciendo clic en el botón una vez 
+seleccionada la factura.</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Esta consulta permite a los usuarios que tienen la autorización para ingresar a ella realizar tareas como: ver todos los usuarios que se 
+encuentran en ese momento registrados en el sistema, posee varias herramientas para poder filtrar la información, las cuales permiten
+realizar el filtrado por: Nombre y/o apellido, cedula, numero telefónico, nivel que posea el usuario y su nombre de usuarios, ademas
+de un filtrado de fecha ingresar al sistema. Además, posee un botón que se activa al seleccionar un usuario de la consulta con el cual 
+se pueden ver todos los datos del usuario en el sistema, esta tarea también se puede realizar haciendo dos clics en un usuario de los de
+ la consulta.</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Esta consulta permite a los usuarios que tienen la autorización para ingresar a ella realizar tareas como: ver todas las categorías de 
+productos disponibles, es decir almacenadas en el sistema, al igual que las demás consultas esta posee varias herramientas para realizar
+la filtración de estas, pueden ayudar a filtrar tanto por el condigo como por el nombre de la consulta, posee también un botón con el
+cual si hay una categoría seleccionada se puede acceder al registro para que esta pueda ser modificada.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PaginaSiguienteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7pAAAO6QEOM0IcAAAAGXRF
+        WHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAASZJREFUSEu9lj0OQUEUhV8hETVR2YBOKcQ6
+        WIMFsAYLsAG7UOjVhA0oFRqNBud7MQnj8mb8zEm+SN7cOfNz78zIClQRfTETG3EU59vvVvB9IIiLVlmM
+        xF5cAiBuLOgXpKZYC8usCPrR/6064iAsg1Doj48pZvDtAA58nlbEXn66Ra/A7yFHJM0KtKC6rO8W+Oai
+        /EKraC6qgtK12n3wzcubOrcCLKbCaShOwoq7h3MWPCu4HwS1xU5YsQ7885PrN7DMnmh5NISvulgI38PB
+        TZFfEX7DUsSoJCbCKgr8zYbYQZysXcE/zUqS5CRJdSU5J7EnviaiTzz6+92FktzC6O/vidOvXsaueCtm
+        sBKWQRFBb7wTe0nSQquOOOKfchAiyu/L/11ZdgUL25y6HFWW7wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Esta consulta permite a todos los usuarios ver todos los productos que se encuentran registrados en el sistema, para realizar tareas como
+las siguientes: Filtrar productos por código, descripción, categoría a la que pertenece, cantidad existente en inventario y precio actual con
+diferentes herramientas para facilitar la búsqueda del producto que se desea encontrar, además de poseer dos botones, uno que lleva al
+registro con toda la información del producto y otro que va a la ventana para realizar una entrada del producto seleccionado, de igual
+manera, si se realizan dos clics va al registro de productos con la información del producto seleccionado.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Esta consulta permite a los usuarios que tienen la autorización para ingresar a ella realizar tareas como: ver todas las entradas de
+productos que se han realizado en la vida útil que ha tenido el sistema en la empresa, posee herramientas que ayudan a filtrar la 
+entrada que se desea encontrar buscando tanto por código, como por el producto, la fecha en la que se realizó y la cantidad que
+se registró en esa entrada, al igual que las demás consultas posee un botón que lleva al registro con los datos de la entrada, en la
+cual se puede modificar y/o ver los datos de esa entrada en una perspectiva diferente.</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Esta consulta permite a los usuarios que tienen la autorización para ingresar a ella realizar tareas como: todos los cuadres de caja
+que se han realizado en lo que tiene la empresa con el sistema de información, esta permite buscar de manera rápida el cuadre 
+que se desea encontrar con herramientas que ayudan a filtrar la información sea por el usuario que realizo el cuadre, el total
+vendido ese día, la diferencia que hubo entre lo vendido y lo que se encuentra en la caja y el total que hay en efectivo en caja,
+esta consulta también posee un botón que al seleccionar un cuadre y darle clic permite ir a ese cuadre para obtener más información
+de él, a esto también se puede acceder realizando dos clics sobre un cuadre en la consulta.</value>
+  </data>
+  <data name="PaginaAnteriorButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7pAAAO6QEOM0IcAAAAGXRF
+        WHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAASJJREFUSEu9lj0OAUEYhreQiF5ULqDTIs7B
+        GRyAMziAC7iFQq8mXECp0Gg0eJ+JSdbuZ3fWz7zJE8nsN+/8fN/MSErUECOxFHtxEbfn70HQPhbEVVZd
+        TMVJ3AMgbiboF6SO2AnLrAz60b9QfXEWlkEo9MfHFDP4dgAPPrkVsZefbtE78HvJEUmzAi2oLqvdAl8n
+        yi+0iijZplil2orA15U3dW4FpLmKifBaCCvOgnPmZmd99BxFT6RVZRD83cm1PsJatERWbdHNMBTWtnNT
+        uCsi+4HkzkVNVNFGZL3wN6uF1X0iaxD846wkSk6iVFeUcxLlxKO/310oyi2M/v6eeP3qZRyIQjGDrbAM
+        ygh6473YS5IWWnXEEZ/LQYgovy//dyXJA15TnL1piiUMAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

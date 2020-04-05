@@ -35,6 +35,8 @@ namespace InventoryAssistant.UI.Registros
 
             EstadoToolStripStatusLabel.Text = string.Empty;
             UsuarioToolStripStatusLabel.Text = string.Empty;
+            EntradaIdNumericUpDown.Enabled = true;
+            BuscarButton.Enabled = true;
         }
 
         private EntradaProductos LlenaClase()  // Funcion encargada de llenar el objeto
@@ -134,6 +136,8 @@ namespace InventoryAssistant.UI.Registros
             {
                 MyErrorProvider.Clear();
                 LlenaCampo(entradaProductos);
+                EntradaIdNumericUpDown.Enabled = false;
+                BuscarButton.Enabled = false;
             }
             else
                 MyErrorProvider.SetError(EntradaIdNumericUpDown, "No existe una entrada con este codigo!");

@@ -31,6 +31,7 @@ namespace InventoryAssistant.UI.Registros
                 FacturaIdNumericUpDown.Enabled = true;
                 BuscarButton.Enabled = true;
             }
+
             FacturaIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             UsuarioTextBox.Text = string.Empty;

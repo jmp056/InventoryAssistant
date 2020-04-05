@@ -359,6 +359,8 @@ namespace InventoryAssistant.UI.Registros
             {
                 MyErrorProvider.Clear();
                 LlenaCampo(usuario);
+                UsuarioIdNumericUpDown.Enabled = false;
+                BuscarButton.Enabled = false;
             }
             else
             {
@@ -372,6 +374,8 @@ namespace InventoryAssistant.UI.Registros
         {
             Limpiar();
             NombresTextBox.Focus();
+            UsuarioIdNumericUpDown.Enabled = true;
+            BuscarButton.Enabled = true;
         }
 
         private void GuardarButton_Click_1(object sender, EventArgs e) //Clic al boton guardar

@@ -155,7 +155,6 @@
             this.DosMilNumericUpDown.Name = "DosMilNumericUpDown";
             this.DosMilNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.DosMilNumericUpDown.TabIndex = 113;
-            this.DosMilNumericUpDown.ValueChanged += new System.EventHandler(this.DosMilNumericUpDown_ValueChanged);
             this.DosMilNumericUpDown.Enter += new System.EventHandler(this.DosMilNumericUpDown_Enter);
             this.DosMilNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyDown);
             this.DosMilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyUp);
@@ -285,7 +284,6 @@
             this.MilNumericUpDown.Name = "MilNumericUpDown";
             this.MilNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.MilNumericUpDown.TabIndex = 121;
-            this.MilNumericUpDown.ValueChanged += new System.EventHandler(this.MilNumericUpDown_ValueChanged);
             this.MilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MilNumericUpDown_KeyUp);
             // 
             // XDosmilLabel

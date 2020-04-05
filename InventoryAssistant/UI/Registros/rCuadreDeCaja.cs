@@ -279,7 +279,11 @@ namespace InventoryAssistant.UI.Registros
                 {
                     paso = Repositorio.Modificar(CuadreDeCaja);
                     if (paso)
+                    {
                         MessageBox.Show("El cuadre de caja se modifico de manera exitosa!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GuardarButton.Enabled = false;
+                    }
+
                     else
                         MessageBox.Show("El cuadre de caja no se pudo modifico!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -291,26 +295,15 @@ namespace InventoryAssistant.UI.Registros
             else
             {
                 paso = CuadresDeCajaBLL.Guardar(CuadreDeCaja);
-                if(paso)
+                if (paso)
+                {
                     MessageBox.Show("El cuadre de caja se guardó de manera exitosa!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GuardarButton.Enabled = false;
+                }
                 else
                     MessageBox.Show("El cuadre de caja no se pudo guardar!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-        }
-
-
-
-
-
-        private void DosMilNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MilNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
 
         }
 

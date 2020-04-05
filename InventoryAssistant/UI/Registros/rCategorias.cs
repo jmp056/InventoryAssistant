@@ -34,6 +34,8 @@ namespace InventoryAssistant.UI.Registros
 
             EstadoToolStripStatusLabel.Text = string.Empty;
             UsuarioToolStripStatusLabel.Text = string.Empty;
+            CategoriaIdNumericUpDown.Enabled = true;
+            BuscarButton.Enabled = true;
         }
 
         private Categorias LlenaClase()  // Funcion encargada de llenar el objeto
@@ -130,6 +132,8 @@ namespace InventoryAssistant.UI.Registros
             {
                 MyErrorProvider.Clear();
                 LlenaCampo(Categoria);
+                CategoriaIdNumericUpDown.Enabled = false;
+                BuscarButton.Enabled = false;
             }
             else
             {

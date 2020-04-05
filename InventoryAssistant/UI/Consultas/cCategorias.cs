@@ -20,7 +20,7 @@ namespace InventoryAssistant.UI.Consultas
         public int IdCategoriaSeleccionada { get; set; }
         private List<Categorias> ListadoCatgorias = new List<Categorias>();
 
-        public cCategorias(string nombreUsuario, int nivel)
+        public cCategorias(string nombreUsuario, int nivel) //Iniciador del form
         {
             try
             {
@@ -33,25 +33,25 @@ namespace InventoryAssistant.UI.Consultas
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private bool Validar()//Funcion encargada de validar la busqueda 
         {
             bool paso = true;
 
             try
             {
-
                 MyErrorProvider.Clear();
 
-                if (FiltroComboBox.SelectedIndex > 0)
+                if (FiltroComboBox.SelectedIndex > 0) // Valida si el indice seleccionado en el combobox  es mayor a 0
                 {
-                    if (CriterioTextBox.Text == string.Empty)
+                    if (CriterioTextBox.Text == string.Empty) // En caso de ser mayor a 0, el criterio no este vacio
                     {
                         CriterioTextBox.Width = 175;
                         MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
                         CriterioTextBox.Focus();
                         paso = false;
                     }
-                    else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                    else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x))) // Si desea filtrar por codigo, que el criterio solo tenga numeros
                     {
                         CriterioTextBox.Width = 175;
                         MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");

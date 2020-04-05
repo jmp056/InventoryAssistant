@@ -50,5 +50,6 @@ namespace InventoryAssistant.UI.Otras
         {
             Pagina2();
         }
+
     }
 }

@@ -117,4 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Atreves de este registro se pueden realizar los que son las facturas del negocio, está compuesto por muchos componentes, algunos de
+ellos obligatorias, es decir que no pueden estar en blanco para que la factura pueda ser almacenada, en este registro también los usuarios
+que tenga la autorización podrán buscar facturas ya realizadas para visualizar algunos detalles de esta y/o con fines de modificarlas, 
+este registro posee la peculiaridad que posee un botón el cual lleva a una consulta en la cual puedes seleccionar un producto y
+traerlo al registro de la factura, para si se desea agregarlo a esta.
+</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>En este registro, los usuarios que estén autorizados a hacer uso de él podrán realizar lo que es la entrada de productos al inventario,
+este también posee un botón que lleva a una consulta de productos, para que el producto el cual se desea realizar la entrada sea
+seleccionado y de esta manera se pueda realizar la tarea de una manera as fácil, en este registro se pueden buscar entradas anteriores
+sea para ver alguna información en específico y/o modificarla.
+</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Los usuarios que tienen acceso a este registro pueden ingresar al sistema nuevos productos, al igual que buscar productos ya existentes
+por el código para obtener más información sobre ello o para modificarlos, en este registro también, si el usuario está autorizado puede
+modificar la cantidad del producto que esta seleccionado, en caso de que haya visto un error en el control del inventario o exista alguna
+perdida de un producto que se encuentra registrado.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>En el registro de Categorías, los usuarios que tienen autorización a ingresar a él pueden realizar lo que es el registro de nuevas categorías
+de productos y modificar categorías ya existentes, que han sido agregadas con anterioridad al sistema por usuarios de este.</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Los usuarios que tienen acceso a este registro pueden realizar tareas como agrega nuevos usuarios para que puedan ingresar al sistema,
+modificar usuarios ya existentes y de igual manera también pueden ser eliminados, se puede decir que este registro es el más completo
+del sistema, ya que es el más exigente de todos en cuanto a la calidad de la información ingresada a la hora de registrar un nuevo usuario
+y/o modificar un usuario existente.</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>En este registro se lleva a cabo lo que es el cuadre de caja diario de lo que se facturo en un periodo de un día, este posee un desglose
+de efectivo y un detalle de todas las facturas que se realizaron, para poder realizar la búsqueda de cuadres de caja de días anteriores
+basta con que los usuarios que tienen acceso a realizar esa tarea cambien la fecha a la que desean ver su cuadre, y si desea verificar
+una factura de las que se realizaron ese día, basta con dar dos clics a la factura en lo que es el detalle de facturas.</value>
+  </data>
 </root>

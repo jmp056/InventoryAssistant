@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rUsuarios));
             this.UsuarioIdLabel = new System.Windows.Forms.Label();
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -393,7 +392,6 @@
             this.Controls.Add(this.UsuarioIdLabel);
             this.Controls.Add(this.LimpiarButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rUsuarios";

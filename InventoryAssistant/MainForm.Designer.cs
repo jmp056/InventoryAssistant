@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -242,15 +241,15 @@
             // registrosToolStripMenuItem1
             // 
             this.registrosToolStripMenuItem1.Name = "registrosToolStripMenuItem1";
-            this.registrosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.registrosToolStripMenuItem1.Text = "Registros";
+            this.registrosToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.registrosToolStripMenuItem1.Text = "Sobre los Registros";
             this.registrosToolStripMenuItem1.Click += new System.EventHandler(this.registrosToolStripMenuItem1_Click);
             // 
             // consultasToolStripMenuItem1
             // 
             this.consultasToolStripMenuItem1.Name = "consultasToolStripMenuItem1";
-            this.consultasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.consultasToolStripMenuItem1.Text = "Consultas";
+            this.consultasToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.consultasToolStripMenuItem1.Text = "Sobre las Consultas";
             this.consultasToolStripMenuItem1.Click += new System.EventHandler(this.consultasToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
@@ -264,7 +263,7 @@
             // inventoryAssistantToolStripMenuItem
             // 
             this.inventoryAssistantToolStripMenuItem.Name = "inventoryAssistantToolStripMenuItem";
-            this.inventoryAssistantToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventoryAssistantToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.inventoryAssistantToolStripMenuItem.Text = "Inventory Assistant";
             this.inventoryAssistantToolStripMenuItem.Click += new System.EventHandler(this.inventoryAssistantToolStripMenuItem_Click);
             // 
@@ -363,7 +362,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(701, 380);
             this.Controls.Add(this.FechaPanel);
@@ -371,7 +369,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Assistant";

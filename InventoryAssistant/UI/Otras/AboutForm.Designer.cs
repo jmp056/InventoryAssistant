@@ -32,12 +32,12 @@
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.Informacionlabel = new System.Windows.Forms.Label();
             this.LeanGroupBox = new System.Windows.Forms.GroupBox();
-            this.LeanLabel = new System.Windows.Forms.Label();
-            this.NumeroLeanLabel = new System.Windows.Forms.Label();
-            this.CorreoLeanLabel = new System.Windows.Forms.Label();
-            this.NumeroLeanPictureBox = new System.Windows.Forms.PictureBox();
-            this.CorreoLeanPictureBox = new System.Windows.Forms.PictureBox();
             this.LeanCircularPictureBox = new InventoryAssistant.UI.Otras.CircularPictureBox();
+            this.CorreoLeanPictureBox = new System.Windows.Forms.PictureBox();
+            this.NumeroLeanPictureBox = new System.Windows.Forms.PictureBox();
+            this.CorreoLeanLabel = new System.Windows.Forms.Label();
+            this.NumeroLeanLabel = new System.Windows.Forms.Label();
+            this.LeanLabel = new System.Windows.Forms.Label();
             this.JmpGroupBox = new System.Windows.Forms.GroupBox();
             this.JmpCircularPictureBox = new InventoryAssistant.UI.Otras.CircularPictureBox();
             this.CorreoJmpPictureBox = new System.Windows.Forms.PictureBox();
@@ -47,9 +47,9 @@
             this.JmpLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.LeanGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeanCircularPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).BeginInit();
             this.JmpGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JmpCircularPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorreoJmpPictureBox)).BeginInit();
@@ -89,25 +89,32 @@
             this.LeanGroupBox.TabIndex = 2;
             this.LeanGroupBox.TabStop = false;
             // 
-            // LeanLabel
+            // LeanCircularPictureBox
             // 
-            this.LeanLabel.AutoSize = true;
-            this.LeanLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeanLabel.Location = new System.Drawing.Point(129, 19);
-            this.LeanLabel.Name = "LeanLabel";
-            this.LeanLabel.Size = new System.Drawing.Size(247, 20);
-            this.LeanLabel.TabIndex = 0;
-            this.LeanLabel.Text = "Leonardo Emil Amparo Nuñez";
+            this.LeanCircularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LeanCircularPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.LeanCircularPictureBox.Name = "LeanCircularPictureBox";
+            this.LeanCircularPictureBox.Size = new System.Drawing.Size(103, 98);
+            this.LeanCircularPictureBox.TabIndex = 5;
+            this.LeanCircularPictureBox.TabStop = false;
             // 
-            // NumeroLeanLabel
+            // CorreoLeanPictureBox
             // 
-            this.NumeroLeanLabel.AutoSize = true;
-            this.NumeroLeanLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumeroLeanLabel.Location = new System.Drawing.Point(168, 54);
-            this.NumeroLeanLabel.Name = "NumeroLeanLabel";
-            this.NumeroLeanLabel.Size = new System.Drawing.Size(127, 16);
-            this.NumeroLeanLabel.TabIndex = 1;
-            this.NumeroLeanLabel.Text = "1 (829) 886 - 4441";
+            this.CorreoLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CorreoLeanPictureBox.Location = new System.Drawing.Point(133, 88);
+            this.CorreoLeanPictureBox.Name = "CorreoLeanPictureBox";
+            this.CorreoLeanPictureBox.Size = new System.Drawing.Size(29, 29);
+            this.CorreoLeanPictureBox.TabIndex = 4;
+            this.CorreoLeanPictureBox.TabStop = false;
+            // 
+            // NumeroLeanPictureBox
+            // 
+            this.NumeroLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.NumeroLeanPictureBox.Location = new System.Drawing.Point(133, 47);
+            this.NumeroLeanPictureBox.Name = "NumeroLeanPictureBox";
+            this.NumeroLeanPictureBox.Size = new System.Drawing.Size(29, 29);
+            this.NumeroLeanPictureBox.TabIndex = 3;
+            this.NumeroLeanPictureBox.TabStop = false;
             // 
             // CorreoLeanLabel
             // 
@@ -119,32 +126,25 @@
             this.CorreoLeanLabel.TabIndex = 2;
             this.CorreoLeanLabel.Text = "Lean56@gmail.com";
             // 
-            // NumeroLeanPictureBox
+            // NumeroLeanLabel
             // 
-            this.NumeroLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NumeroLeanPictureBox.Location = new System.Drawing.Point(133, 47);
-            this.NumeroLeanPictureBox.Name = "NumeroLeanPictureBox";
-            this.NumeroLeanPictureBox.Size = new System.Drawing.Size(29, 29);
-            this.NumeroLeanPictureBox.TabIndex = 3;
-            this.NumeroLeanPictureBox.TabStop = false;
+            this.NumeroLeanLabel.AutoSize = true;
+            this.NumeroLeanLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumeroLeanLabel.Location = new System.Drawing.Point(168, 54);
+            this.NumeroLeanLabel.Name = "NumeroLeanLabel";
+            this.NumeroLeanLabel.Size = new System.Drawing.Size(127, 16);
+            this.NumeroLeanLabel.TabIndex = 1;
+            this.NumeroLeanLabel.Text = "1 (829) 886 - 4441";
             // 
-            // CorreoLeanPictureBox
+            // LeanLabel
             // 
-            this.CorreoLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CorreoLeanPictureBox.Location = new System.Drawing.Point(133, 88);
-            this.CorreoLeanPictureBox.Name = "CorreoLeanPictureBox";
-            this.CorreoLeanPictureBox.Size = new System.Drawing.Size(29, 29);
-            this.CorreoLeanPictureBox.TabIndex = 4;
-            this.CorreoLeanPictureBox.TabStop = false;
-            // 
-            // LeanCircularPictureBox
-            // 
-            this.LeanCircularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LeanCircularPictureBox.Location = new System.Drawing.Point(6, 19);
-            this.LeanCircularPictureBox.Name = "LeanCircularPictureBox";
-            this.LeanCircularPictureBox.Size = new System.Drawing.Size(103, 98);
-            this.LeanCircularPictureBox.TabIndex = 5;
-            this.LeanCircularPictureBox.TabStop = false;
+            this.LeanLabel.AutoSize = true;
+            this.LeanLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeanLabel.Location = new System.Drawing.Point(129, 19);
+            this.LeanLabel.Name = "LeanLabel";
+            this.LeanLabel.Size = new System.Drawing.Size(247, 20);
+            this.LeanLabel.TabIndex = 0;
+            this.LeanLabel.Text = "Leonardo Emil Amparo Nuñez";
             // 
             // JmpGroupBox
             // 
@@ -231,13 +231,13 @@
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About";
+            this.Text = "Información sobre Inventory Assistant";
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.LeanGroupBox.ResumeLayout(false);
             this.LeanGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeanCircularPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).EndInit();
             this.JmpGroupBox.ResumeLayout(false);
             this.JmpGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JmpCircularPictureBox)).EndInit();

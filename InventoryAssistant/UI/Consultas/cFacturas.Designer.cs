@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cFacturas));
             this.FechaGroupBox = new System.Windows.Forms.GroupBox();
             this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -132,7 +131,6 @@
             // 
             // RealizarBusquedaButton
             // 
-            this.RealizarBusquedaButton.Image = ((System.Drawing.Image)(resources.GetObject("RealizarBusquedaButton.Image")));
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(8, 261);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";

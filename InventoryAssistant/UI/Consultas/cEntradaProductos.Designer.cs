@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cEntradaProductos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.EntradasProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
@@ -175,7 +174,6 @@
             // 
             // RealizarBusquedaButton
             // 
-            this.RealizarBusquedaButton.Image = ((System.Drawing.Image)(resources.GetObject("RealizarBusquedaButton.Image")));
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(8, 261);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";

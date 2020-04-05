@@ -251,9 +251,8 @@
             // PaginaSiguienteButton
             // 
             this.PaginaSiguienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaginaSiguienteButton.Image = ((System.Drawing.Image)(resources.GetObject("PaginaSiguienteButton.Image")));
             this.PaginaSiguienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PaginaSiguienteButton.Location = new System.Drawing.Point(803, 454);
+            this.PaginaSiguienteButton.Location = new System.Drawing.Point(437, 455);
             this.PaginaSiguienteButton.Name = "PaginaSiguienteButton";
             this.PaginaSiguienteButton.Size = new System.Drawing.Size(160, 40);
             this.PaginaSiguienteButton.TabIndex = 8;
@@ -354,7 +353,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(119, 34);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(781, 80);
+            this.label11.Size = new System.Drawing.Size(821, 80);
             this.label11.TabIndex = 3;
             this.label11.Text = resources.GetString("label11.Text");
             // 
@@ -408,7 +407,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(119, 34);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(797, 96);
+            this.label14.Size = new System.Drawing.Size(828, 96);
             this.label14.TabIndex = 3;
             this.label14.Text = resources.GetString("label14.Text");
             // 
@@ -427,9 +426,8 @@
             // PaginaAnteriorButton
             // 
             this.PaginaAnteriorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaginaAnteriorButton.Image = ((System.Drawing.Image)(resources.GetObject("PaginaAnteriorButton.Image")));
             this.PaginaAnteriorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PaginaAnteriorButton.Location = new System.Drawing.Point(10, 454);
+            this.PaginaAnteriorButton.Location = new System.Drawing.Point(437, 455);
             this.PaginaAnteriorButton.Name = "PaginaAnteriorButton";
             this.PaginaAnteriorButton.Size = new System.Drawing.Size(160, 40);
             this.PaginaAnteriorButton.TabIndex = 9;
@@ -444,20 +442,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 503);
             this.Controls.Add(this.PaginaAnteriorButton);
-            this.Controls.Add(this.GroupBox6);
             this.Controls.Add(this.GroupBox3);
-            this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.PaginaSiguienteButton);
-            this.Controls.Add(this.GroupBox4);
             this.Controls.Add(this.GroupBox5);
             this.Controls.Add(this.TituloLabel);
             this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.GroupBox4);
+            this.Controls.Add(this.GroupBox2);
+            this.Controls.Add(this.GroupBox6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AyudaConsultas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Ayuda - Consultas";
+            this.Text = "Ayuda sobre las consultas";
             this.Load += new System.EventHandler(this.AyudaConsultas_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

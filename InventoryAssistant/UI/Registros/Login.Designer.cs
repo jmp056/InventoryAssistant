@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.ContrasenaTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -114,7 +113,6 @@
             // 
             // Entrarbutton
             // 
-            this.Entrarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Entrarbutton.Image")));
             this.Entrarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Entrarbutton.Location = new System.Drawing.Point(23, 139);
             this.Entrarbutton.Name = "Entrarbutton";
@@ -127,7 +125,6 @@
             // 
             // CancelarButton
             // 
-            this.CancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelarButton.Image")));
             this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelarButton.Location = new System.Drawing.Point(188, 139);
             this.CancelarButton.Name = "CancelarButton";
@@ -159,7 +156,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(16, 27);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(175, 186);
@@ -179,7 +175,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";

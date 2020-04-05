@@ -149,6 +149,7 @@ namespace InventoryAssistant.UI.Consultas
                 FacturaDataGridView.Columns[3].Width = 200;
                 FacturaDataGridView.Columns[4].HeaderText = "Monto";
                 FacturaDataGridView.Columns[4].Width = 80;
+                FacturaDataGridView.Columns[4].DefaultCellStyle.Format = "N2";
                 FacturaDataGridView.Columns[5].Visible = false;
                 FacturaDataGridView.Columns[6].Visible = false;
             }

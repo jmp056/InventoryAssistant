@@ -180,6 +180,7 @@ namespace InventoryAssistant.UI.Consultas
                 ProductosDataGridView.Columns[3].Width = 95;
                 ProductosDataGridView.Columns[4].HeaderText = "Precio";
                 ProductosDataGridView.Columns[4].Width = 95;
+                ProductosDataGridView.Columns[4].DefaultCellStyle.Format = "N2";
             }
             catch (Exception ex)
             {

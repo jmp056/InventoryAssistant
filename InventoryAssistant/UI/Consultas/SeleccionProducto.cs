@@ -31,7 +31,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private bool Validar() //Funcion encargada de validar la busqueda 
+        private bool Validar()//Funcion encargada de validar la busqueda 
         {
             bool paso = true;
 
@@ -39,33 +39,29 @@ namespace InventoryAssistant.UI.Consultas
             {
                 MyErrorProvider.Clear();
 
-                if (FiltroComboBox.SelectedIndex > 0 && CriterioTextBox.Text == string.Empty)
+                if (FiltroComboBox.SelectedIndex > 0 && FiltroComboBox.SelectedIndex <= 3)
                 {
-                    MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
-                    CriterioTextBox.Focus();
-                    paso = false;
-                }
-                else
-                {
-                    if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)) )
+                    if (CriterioTextBox.Text == string.Empty)
+                    {
+                        MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
+                        CriterioTextBox.Focus();
+                        paso = false;
+                    }
+                    else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
                     {
                         MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
                         CriterioTextBox.Focus();
                         paso = false;
                     }
-                    else if (FiltroComboBox.SelectedIndex == 4 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                }
+                else if (FiltroComboBox.SelectedIndex >= 4)
+                {
+                    if (DesdeNumericUpDown.Value > HastaNumericUpDown.Value)
                     {
-                        MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por cantidad, solo digite números!");
-                        CriterioTextBox.Focus();
+                        MyErrorProvider.SetError(DesdeNumericUpDown, "El valor inicial no puede ser mayor al valor limite!");
+                        DesdeNumericUpDown.Focus();
                         paso = false;
                     }
-                    else if (FiltroComboBox.SelectedIndex == 5 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
-                    {
-                        MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por precio, solo digite números!");
-                        CriterioTextBox.Focus();
-                        paso = false;
-                    }
-
                 }
             }
             catch (Exception ex)
@@ -120,31 +116,28 @@ namespace InventoryAssistant.UI.Consultas
                         return;
                 }
 
-                if (CriterioTextBox.Text.Trim().Length > 0)
+                switch (FiltroComboBox.SelectedIndex)
                 {
-                    switch (FiltroComboBox.SelectedIndex)
-                    {
 
-                        case 1: //Filtrar por Id
-                             ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.ProductoId.ToString().Contains(CriterioTextBox.Text)).ToList();   
-                            break;
+                    case 1: //Filtrar por Id
+                            ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.ProductoId.ToString().Contains(CriterioTextBox.Text)).ToList();   
+                        break;
 
-                        case 2://Filtrar por descripcion
-                            ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Descripcion.Contains(CriterioTextBox.Text.ToUpper())).ToList();
-                            break;
+                    case 2://Filtrar por descripcion
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Descripcion.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                        break;
 
-                        case 3://Filtrar por categoria
-                            ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Categoria.Contains(CriterioTextBox.Text.ToUpper())).ToList();
-                            break;
+                    case 3://Filtrar por categoria
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Categoria.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                        break;
 
-                        case 4: //Filtrar por cantidad
-                            ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Cantidad.ToString().Contains(CriterioTextBox.Text)).ToList();
-                            break;
+                    case 4://Filtrar por Cantidad
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Cantidad >= DesdeNumericUpDown.Value && l.Cantidad <= HastaNumericUpDown.Value).ToList();
+                        break;
 
-                        case 5: //Filtrar por precio
-                            ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio.ToString().Contains(CriterioTextBox.Text)).ToList();
-                            break;
-                    }
+                    case 5://Filtrar por Precio
+                        ListadoProductosConsulta = ListadoProductosConsulta.Where(l => l.Precio >= Convert.ToSingle(DesdeNumericUpDown.Value) && l.Precio <= Convert.ToSingle(HastaNumericUpDown.Value)).ToList();
+                        break;
                 }
 
                 ProductosDataGridView.DataSource = null;
@@ -208,11 +201,46 @@ namespace InventoryAssistant.UI.Consultas
                 ProductosDataGridView.Columns[1].HeaderText = "Descripcion";
                 ProductosDataGridView.Columns[1].Width = 275;
                 ProductosDataGridView.Columns[2].HeaderText = "Categoria";
-                ProductosDataGridView.Columns[2].Width = 150;
+                ProductosDataGridView.Columns[2].Width = 180;
                 ProductosDataGridView.Columns[3].HeaderText = "Cantidad";
                 ProductosDataGridView.Columns[3].Width = 95;
                 ProductosDataGridView.Columns[4].HeaderText = "Precio";
                 ProductosDataGridView.Columns[4].Width = 95;
+                ProductosDataGridView.Columns[4].DefaultCellStyle.Format = "N2";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BuscarPorRango()
+        {
+            try
+            {
+                CriterioTextBox.Visible = false;
+                CriterioLabel.Text = "Desde";
+                HastaLabel.Visible = true;
+                DesdeNumericUpDown.Visible = true;
+                HastaNumericUpDown.Visible = true;
+                DesdeNumericUpDown.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BuscarPorCriterio()
+        {
+            try
+            {
+                HastaLabel.Visible = false;
+                DesdeNumericUpDown.Visible = false;
+                HastaNumericUpDown.Visible = false;
+                CriterioTextBox.Visible = true;
+                CriterioLabel.Text = "Criterio";
+                CriterioTextBox.Focus();
             }
             catch (Exception ex)
             {
@@ -282,6 +310,10 @@ namespace InventoryAssistant.UI.Consultas
             {
                 MyErrorProvider.Clear();
                 CriterioTextBox.Focus();
+                if (FiltroComboBox.SelectedIndex == 4 || FiltroComboBox.SelectedIndex == 5)
+                    BuscarPorRango();
+                else
+                    BuscarPorCriterio();
             }
             catch (Exception ex)
             {

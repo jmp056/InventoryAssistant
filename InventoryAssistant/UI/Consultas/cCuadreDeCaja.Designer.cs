@@ -68,7 +68,6 @@
             this.CuadresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CuadresDataGridView.Size = new System.Drawing.Size(583, 388);
             this.CuadresDataGridView.TabIndex = 0;
-            this.CuadresDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CuadresDataGridView_CellContentClick);
             this.CuadresDataGridView.Click += new System.EventHandler(this.CuadresDataGridView_Click);
             this.CuadresDataGridView.DoubleClick += new System.EventHandler(this.CuadresDataGridView_DoubleClick);
             // 

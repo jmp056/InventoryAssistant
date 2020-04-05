@@ -144,7 +144,7 @@ namespace InventoryAssistant.BLL
 
         public virtual void NombreLogin(string Nombres, string Apellidos, int NivelDeUsuario)
         {
-             usuario.Nombres = string.Concat(Nombres, Apellidos);
+             usuario.Nombres = string.Concat(Nombres + " " + Apellidos);
              usuario.NivelDeUsuario = NivelDeUsuario;
 
         }

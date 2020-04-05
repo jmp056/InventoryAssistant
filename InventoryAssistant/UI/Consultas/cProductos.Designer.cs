@@ -72,7 +72,6 @@
             this.groupBox2.Size = new System.Drawing.Size(730, 369);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // ProductosDataGridView
             // 
@@ -83,7 +82,6 @@
             this.ProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProductosDataGridView.Size = new System.Drawing.Size(718, 353);
             this.ProductosDataGridView.TabIndex = 0;
-            this.ProductosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosDataGridView_CellContentClick);
             this.ProductosDataGridView.Click += new System.EventHandler(this.ProductosDataGridView_Click);
             this.ProductosDataGridView.DoubleClick += new System.EventHandler(this.ProductosDataGridView_DoubleClick);
             // 
@@ -99,7 +97,6 @@
             this.DatosDelUsuarioGroupBox.TabIndex = 25;
             this.DatosDelUsuarioGroupBox.TabStop = false;
             this.DatosDelUsuarioGroupBox.Text = "Consultar Productos";
-            this.DatosDelUsuarioGroupBox.Enter += new System.EventHandler(this.DatosDelUsuarioGroupBox_Enter);
             // 
             // GenerarEntradaButton
             // 
@@ -128,7 +125,6 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // HastaLabel
             // 
@@ -138,7 +134,6 @@
             this.HastaLabel.Size = new System.Drawing.Size(49, 16);
             this.HastaLabel.TabIndex = 7;
             this.HastaLabel.Text = "Hasta";
-            this.HastaLabel.Click += new System.EventHandler(this.HastaLabel_Click);
             // 
             // HastaNumericUpDown
             // 
@@ -157,7 +152,6 @@
             this.HastaNumericUpDown.Name = "HastaNumericUpDown";
             this.HastaNumericUpDown.Size = new System.Drawing.Size(80, 22);
             this.HastaNumericUpDown.TabIndex = 6;
-            this.HastaNumericUpDown.ValueChanged += new System.EventHandler(this.HastaNumericUpDown_ValueChanged);
             // 
             // DesdeNumericUpDown
             // 
@@ -176,7 +170,6 @@
             this.DesdeNumericUpDown.Name = "DesdeNumericUpDown";
             this.DesdeNumericUpDown.Size = new System.Drawing.Size(80, 22);
             this.DesdeNumericUpDown.TabIndex = 5;
-            this.DesdeNumericUpDown.ValueChanged += new System.EventHandler(this.DesdeNumericUpDown_ValueChanged);
             // 
             // RealizarBusquedaButton
             // 
@@ -196,7 +189,6 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(180, 22);
             this.CriterioTextBox.TabIndex = 3;
-            this.CriterioTextBox.TextChanged += new System.EventHandler(this.CriterioTextBox_TextChanged);
             // 
             // CriterioLabel
             // 
@@ -206,7 +198,6 @@
             this.CriterioLabel.Size = new System.Drawing.Size(58, 16);
             this.CriterioLabel.TabIndex = 2;
             this.CriterioLabel.Text = "Criterio";
-            this.CriterioLabel.Click += new System.EventHandler(this.CriterioLabel_Click);
             // 
             // FiltroComboBox
             // 
@@ -233,7 +224,6 @@
             this.FiltrarPorlabel.Size = new System.Drawing.Size(75, 16);
             this.FiltrarPorlabel.TabIndex = 0;
             this.FiltrarPorlabel.Text = "Filtrar por";
-            this.FiltrarPorlabel.Click += new System.EventHandler(this.FiltrarPorlabel_Click);
             // 
             // MyErrorProvider
             // 

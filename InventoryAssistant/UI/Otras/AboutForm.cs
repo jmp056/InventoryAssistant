@@ -14,7 +14,15 @@ namespace InventoryAssistant.UI.Otras
     {
         public AboutForm()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }

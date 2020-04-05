@@ -22,31 +22,47 @@ namespace InventoryAssistant.UI.Consultas
 
         public cCategorias(string nombreUsuario, int nivel)
         {
-            this.NombreUsuario = nombreUsuario;
-            this.Nivel = nivel;
-            InitializeComponent();
+            try
+            {
+                this.NombreUsuario = nombreUsuario;
+                this.Nivel = nivel;
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private bool Validar()//Funcion encargada de validar la busqueda 
         {
             bool paso = true;
-            MyErrorProvider.Clear();
 
-            if (FiltroComboBox.SelectedIndex > 0)
+            try
             {
-                if (CriterioTextBox.Text == string.Empty)
+
+                MyErrorProvider.Clear();
+
+                if (FiltroComboBox.SelectedIndex > 0)
                 {
-                    CriterioTextBox.Width = 175;
-                    MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
-                    CriterioTextBox.Focus();
-                    paso = false;
+                    if (CriterioTextBox.Text == string.Empty)
+                    {
+                        CriterioTextBox.Width = 175;
+                        MyErrorProvider.SetError(CriterioTextBox, "Debe escribir algún criterio de búsqueda!");
+                        CriterioTextBox.Focus();
+                        paso = false;
+                    }
+                    else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
+                    {
+                        CriterioTextBox.Width = 175;
+                        MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
+                        CriterioTextBox.Focus();
+                        paso = false;
+                    }
                 }
-                else if (FiltroComboBox.SelectedIndex == 1 && CriterioTextBox.Text.Any(x => !char.IsNumber(x)))
-                {
-                    CriterioTextBox.Width = 175;
-                    MyErrorProvider.SetError(CriterioTextBox, "Si desea filtrar por código, solo digite números!");
-                    CriterioTextBox.Focus();
-                    paso = false;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return paso;
@@ -54,123 +70,185 @@ namespace InventoryAssistant.UI.Consultas
 
         private void Buscar() // Funcion que realiza las bsquedas
         {
-            RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
-            ListadoCatgorias = new List<Categorias>();
-            ListadoCatgorias = Repositorio.GetList(p => true);
-
-            if (FiltroComboBox.SelectedIndex > 0)
+            try
             {
-                if (!Validar())
-                    return;
+                RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
+                ListadoCatgorias = new List<Categorias>();
+                ListadoCatgorias = Repositorio.GetList(p => true);
+
+                if (FiltroComboBox.SelectedIndex > 0)
+                {
+                    if (!Validar())
+                        return;
+                }
+                else
+                {
+                    MyErrorProvider.Clear();
+                }
+                CriterioTextBox.Width = 195;
+
+                switch (FiltroComboBox.SelectedIndex)
+                {
+
+                    case 1: //Filtrar por Id
+                        ListadoCatgorias = ListadoCatgorias.Where(l => l.CategoriaId.ToString().Contains(CriterioTextBox.Text)).ToList();
+                        break;
+
+                    case 2://Filtrar por Nombre
+                        ListadoCatgorias = ListadoCatgorias.Where(l => l.Nombre.Contains(CriterioTextBox.Text.ToUpper())).ToList();
+                        break;
+
+                }
+
+                DatosDeLaCategoriaButton.Enabled = false;
+                CategoriasDataGridView.DataSource = null;
+                CategoriasDataGridView.DataSource = ListadoCatgorias;
+                Formato();
+                CategoriasDataGridView.ClearSelection();
             }
-            else
+            catch (Exception ex)
             {
-                MyErrorProvider.Clear();
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            CriterioTextBox.Width = 195;
-
-            switch (FiltroComboBox.SelectedIndex)
-            {
-
-                case 1: //Filtrar por Id
-                    ListadoCatgorias = ListadoCatgorias.Where(l => l.CategoriaId.ToString().Contains(CriterioTextBox.Text)).ToList();
-                    break;
-
-                case 2://Filtrar por Nombre
-                    ListadoCatgorias = ListadoCatgorias.Where(l => l.Nombre.Contains(CriterioTextBox.Text.ToUpper())).ToList();
-                    break;
-
-            }
-
-            DatosDeLaCategoriaButton.Enabled = false;
-            CategoriasDataGridView.DataSource = null;
-            CategoriasDataGridView.DataSource = ListadoCatgorias;
-            Formato();
-            CategoriasDataGridView.ClearSelection();
         }
 
         private void Formato()//Le da el formato a la consulta
         {
-            CategoriasDataGridView.Columns[0].HeaderText = "Codigo";
-            CategoriasDataGridView.Columns[0].Width = 50;
-            CategoriasDataGridView.Columns[1].HeaderText = "Nombre";
-            CategoriasDataGridView.Columns[1].Width = 300;
-            CategoriasDataGridView.Columns[2].Visible = false;
-            CategoriasDataGridView.Columns[3].Visible = false;
+            try
+            {
+                CategoriasDataGridView.Columns[0].HeaderText = "Codigo";
+                CategoriasDataGridView.Columns[0].Width = 50;
+                CategoriasDataGridView.Columns[1].HeaderText = "Nombre";
+                CategoriasDataGridView.Columns[1].Width = 300;
+                CategoriasDataGridView.Columns[2].Visible = false;
+                CategoriasDataGridView.Columns[3].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DatosDeLaCategoriaButton_Click(object sender, EventArgs e)
         {
-            if (Nivel <= 0)
+            try
             {
-                IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
-                rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
-                rC.ShowDialog();
+                if (Nivel <= 0)
+                {
+                    IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
+                    rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
+                    rC.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void RealizarBusquedaButton_Click(object sender, EventArgs e)
         {
-            Buscar();
+            try
+            {
+                Buscar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CategoriasDataGridView_Click(object sender, EventArgs e)
         {
-            if (ListadoCatgorias.Count > 0)
-            {
-                if (CategoriasDataGridView.CurrentRow.Index >= 0)
-                {
-                    DatosDeLaCategoriaButton.Enabled = true;
-                }
-                else
-                {
-                    DatosDeLaCategoriaButton.Enabled = false;
-                }
-            }
-        }
-
-        private void CategoriasDataGridView_DoubleClick(object sender, EventArgs e)
-        {
-            if (Nivel <= 0)
+            try
             {
                 if (ListadoCatgorias.Count > 0)
                 {
                     if (CategoriasDataGridView.CurrentRow.Index >= 0)
                     {
                         DatosDeLaCategoriaButton.Enabled = true;
-                        IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
-                        rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
-                        rC.ShowDialog();
+                    }
+                    else
+                    {
+                        DatosDeLaCategoriaButton.Enabled = false;
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CategoriasDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Nivel <= 0)
+                {
+                    if (ListadoCatgorias.Count > 0)
+                    {
+                        if (CategoriasDataGridView.CurrentRow.Index >= 0)
+                        {
+                            DatosDeLaCategoriaButton.Enabled = true;
+                            IdCategoriaSeleccionada = Convert.ToInt32(CategoriasDataGridView.CurrentRow.Cells["CategoriaId"].Value);
+                            rCategorias rC = new rCategorias(NombreUsuario, IdCategoriaSeleccionada);
+                            rC.ShowDialog();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void cCategorias_Load(object sender, EventArgs e)
         {
-            DatosDeLaCategoriaButton.Enabled = false;
-            RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
-            ListadoCatgorias = new List<Categorias>();
-            ListadoCatgorias = Repositorio.GetList(p => true);
-
-            if (ListadoCatgorias.Count > 0)
+            try
             {
-                CategoriasDataGridView.DataSource = null;
-                CategoriasDataGridView.DataSource = ListadoCatgorias;
-                Formato();
-                CategoriasDataGridView.ClearSelection();
                 DatosDeLaCategoriaButton.Enabled = false;
-            }
+                RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
+                ListadoCatgorias = new List<Categorias>();
+                ListadoCatgorias = Repositorio.GetList(p => true);
 
-            FiltroComboBox.SelectedIndex = 0;
+                if (ListadoCatgorias.Count > 0)
+                {
+                    CategoriasDataGridView.DataSource = null;
+                    CategoriasDataGridView.DataSource = ListadoCatgorias;
+                    Formato();
+                    CategoriasDataGridView.ClearSelection();
+                }
+
+                FiltroComboBox.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                MyErrorProvider.Clear();
+                CriterioTextBox.Width = 195;
+                CriterioTextBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

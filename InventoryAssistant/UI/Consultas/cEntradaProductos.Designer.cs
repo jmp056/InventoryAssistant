@@ -67,7 +67,6 @@
             this.groupBox2.Size = new System.Drawing.Size(565, 416);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // EntradasProductosDataGridView
             // 
@@ -78,7 +77,6 @@
             this.EntradasProductosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EntradasProductosDataGridView.Size = new System.Drawing.Size(553, 400);
             this.EntradasProductosDataGridView.TabIndex = 0;
-            this.EntradasProductosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EntradasProductosDataGridView_CellContentClick);
             this.EntradasProductosDataGridView.Click += new System.EventHandler(this.EntradasProductosDataGridView_Click);
             this.EntradasProductosDataGridView.DoubleClick += new System.EventHandler(this.EntradasProductosDataGridView_DoubleClick);
             // 
@@ -93,7 +91,6 @@
             this.DatosDelUsuarioGroupBox.TabIndex = 27;
             this.DatosDelUsuarioGroupBox.TabStop = false;
             this.DatosDelUsuarioGroupBox.Text = "Consultar Entradas";
-            this.DatosDelUsuarioGroupBox.Enter += new System.EventHandler(this.DatosDelUsuarioGroupBox_Enter);
             // 
             // DatosDeLaEntradaButton
             // 
@@ -132,7 +129,6 @@
             this.HastaLabel.Size = new System.Drawing.Size(49, 16);
             this.HastaLabel.TabIndex = 7;
             this.HastaLabel.Text = "Hasta";
-            this.HastaLabel.Click += new System.EventHandler(this.HastaLabel_Click);
             // 
             // HastaNumericUpDown
             // 
@@ -151,7 +147,6 @@
             this.HastaNumericUpDown.Name = "HastaNumericUpDown";
             this.HastaNumericUpDown.Size = new System.Drawing.Size(80, 22);
             this.HastaNumericUpDown.TabIndex = 6;
-            this.HastaNumericUpDown.ValueChanged += new System.EventHandler(this.HastaNumericUpDown_ValueChanged);
             // 
             // DesdeNumericUpDown
             // 
@@ -170,7 +165,6 @@
             this.DesdeNumericUpDown.Name = "DesdeNumericUpDown";
             this.DesdeNumericUpDown.Size = new System.Drawing.Size(80, 22);
             this.DesdeNumericUpDown.TabIndex = 5;
-            this.DesdeNumericUpDown.ValueChanged += new System.EventHandler(this.DesdeNumericUpDown_ValueChanged);
             // 
             // RealizarBusquedaButton
             // 
@@ -190,7 +184,6 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(180, 22);
             this.CriterioTextBox.TabIndex = 3;
-            this.CriterioTextBox.TextChanged += new System.EventHandler(this.CriterioTextBox_TextChanged);
             // 
             // CriterioLabel
             // 
@@ -200,7 +193,6 @@
             this.CriterioLabel.Size = new System.Drawing.Size(58, 16);
             this.CriterioLabel.TabIndex = 2;
             this.CriterioLabel.Text = "Criterio";
-            this.CriterioLabel.Click += new System.EventHandler(this.CriterioLabel_Click);
             // 
             // FiltroComboBox
             // 
@@ -225,7 +217,6 @@
             this.FiltrarPorlabel.Size = new System.Drawing.Size(75, 16);
             this.FiltrarPorlabel.TabIndex = 0;
             this.FiltrarPorlabel.Text = "Filtrar por";
-            this.FiltrarPorlabel.Click += new System.EventHandler(this.FiltrarPorlabel_Click);
             // 
             // DesdeDateTimePicker
             // 
@@ -239,7 +230,6 @@
             this.DesdeDateTimePicker.Size = new System.Drawing.Size(120, 21);
             this.DesdeDateTimePicker.TabIndex = 8;
             this.DesdeDateTimePicker.Value = new System.DateTime(2020, 3, 30, 0, 0, 0, 0);
-            this.DesdeDateTimePicker.ValueChanged += new System.EventHandler(this.DesdeDateTimePicker_ValueChanged);
             // 
             // DesdeFechaLabel
             // 
@@ -250,7 +240,6 @@
             this.DesdeFechaLabel.Size = new System.Drawing.Size(58, 16);
             this.DesdeFechaLabel.TabIndex = 10;
             this.DesdeFechaLabel.Text = "Desde:";
-            this.DesdeFechaLabel.Click += new System.EventHandler(this.DesdeFechaLabel_Click);
             // 
             // FechaGroupBox
             // 
@@ -266,7 +255,6 @@
             this.FechaGroupBox.TabIndex = 29;
             this.FechaGroupBox.TabStop = false;
             this.FechaGroupBox.Text = "     Filtrar por Fecha";
-            this.FechaGroupBox.Enter += new System.EventHandler(this.FechaGroupBox_Enter);
             // 
             // HastaDateTimePicker
             // 
@@ -280,7 +268,6 @@
             this.HastaDateTimePicker.Size = new System.Drawing.Size(120, 21);
             this.HastaDateTimePicker.TabIndex = 12;
             this.HastaDateTimePicker.Value = new System.DateTime(2020, 3, 30, 0, 0, 0, 0);
-            this.HastaDateTimePicker.ValueChanged += new System.EventHandler(this.HastaDateTimePicker_ValueChanged);
             // 
             // HastaFechaLabel
             // 
@@ -291,7 +278,6 @@
             this.HastaFechaLabel.Size = new System.Drawing.Size(53, 16);
             this.HastaFechaLabel.TabIndex = 11;
             this.HastaFechaLabel.Text = "Hasta:";
-            this.HastaFechaLabel.Click += new System.EventHandler(this.HastaFechaLabel_Click);
             // 
             // FiltrarPorFechaCheckBox
             // 
@@ -301,7 +287,6 @@
             this.FiltrarPorFechaCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FiltrarPorFechaCheckBox.TabIndex = 0;
             this.FiltrarPorFechaCheckBox.UseVisualStyleBackColor = true;
-            this.FiltrarPorFechaCheckBox.CheckedChanged += new System.EventHandler(this.FiltrarPorFechaCheckBox_CheckedChanged);
             // 
             // MyErrorProvider
             // 

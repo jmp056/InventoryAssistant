@@ -146,6 +146,7 @@
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(195, 24);
             this.FiltroComboBox.TabIndex = 1;
+            this.FiltroComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltroComboBox_SelectedIndexChanged);
             // 
             // FiltrarPorLabel
             // 

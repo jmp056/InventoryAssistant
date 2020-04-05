@@ -1,6 +1,7 @@
 ﻿using InventoryAssistant.BLL;
 using InventoryAssistant.Entidades;
 using InventoryAssistant.UI.Consultas;
+using InventoryAssistant.UI.Otras;
 using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -180,11 +181,27 @@ namespace InventoryAssistant
                 NoTienePermiso();
         }
 
+        // A Y U D A ------------------------------------------------------------------------------------------
 
+        private void registrosToolStripMenuItem1_Click(object sender, EventArgs e)//Ayuda de los registos
+        {
+            AyudaRegistros aR = new AyudaRegistros();
+            aR.ShowDialog();
+        }
 
+        private void consultasToolStripMenuItem1_Click(object sender, EventArgs e) // Ayuda de las consultas
+        {
+            AyudaConsultas aC = new AyudaConsultas();
+            aC.ShowDialog();
+        }
 
+        // A B O U T ------------------------------------------------------------------------------------------
 
-
+        private void inventoryAssistantToolStripMenuItem_Click(object sender, EventArgs e)// Sobre InventoryAssistant
+        {
+            AboutForm Af = new AboutForm();
+            Af.ShowDialog();
+        }
 
 
 
@@ -229,8 +246,12 @@ namespace InventoryAssistant
 
         private void MyTimer_Tick(object sender, EventArgs e)
         {
-            HoraTextBox.Text = DateTime.Now.ToString("hh:mm:ss tt");
-            FechaTextBox.Text = DateTime.Now.ToString("dddd dd \\de MMMM \\del yyyy ");
+            HoraLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            FechaLabel.Text = DateTime.Now.ToString("dddd dd \\de MMMM \\del yyyy ");
         }
+
+
+
+
     }
 }

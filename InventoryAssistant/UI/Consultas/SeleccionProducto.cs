@@ -3,12 +3,8 @@ using InventoryAssistant.Entidades;
 using InventoryAssistant.Entidades.EntidadesParaConsultas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
@@ -72,7 +68,7 @@ namespace InventoryAssistant.UI.Consultas
             return paso;
         }
 
-        private List<ProductosConsulta> CargarLista(List<Productos> ListaSinProcesar)
+        private List<ProductosConsulta> CargarLista(List<Productos> ListaSinProcesar) // Funcion que cambia el codigo de la categoria del producto por el nombre de la categoria
         {
             RepositorioBase<Categorias> repositorio = new RepositorioBase<Categorias>();
             List<ProductosConsulta> ListaProcesada = new List<ProductosConsulta>();
@@ -165,7 +161,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void CProductos_Factura_Load(object sender, EventArgs e)
+        private void CProductos_Factura_Load(object sender, EventArgs e) // Carga el Form
         {
             try
             {
@@ -214,7 +210,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void BuscarPorRango()
+        private void BuscarPorRango() // Funcion que activa los campos necesarios para la busqueda por un rango entre dos numeros
         {
             try
             {
@@ -231,7 +227,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void BuscarPorCriterio()
+        private void BuscarPorCriterio() // Funcion que activa los campos necesarios para la busqueda por un criterio
         {
             try
             {
@@ -270,7 +266,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void RealizarBusquedaButton_Click(object sender, EventArgs e)
+        private void RealizarBusquedaButton_Click(object sender, EventArgs e) // Clic al boton realizar busqueda
         {
             try
             {
@@ -283,7 +279,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void ProductosDataGridView_DoubleClick(object sender, EventArgs e)
+        private void ProductosDataGridView_DoubleClick(object sender, EventArgs e) // Dos clics al dataGridView
         {
             try
             {
@@ -304,7 +300,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e) // Cambia la seleccion en el combobox
         {
             try
             {

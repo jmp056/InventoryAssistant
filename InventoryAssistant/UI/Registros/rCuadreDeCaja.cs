@@ -447,11 +447,6 @@ namespace InventoryAssistant.UI.Registros
             Diferencia();
         }
 
-        private void DosMilNumericUpDown_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void TotalVendidoTextBox_TextChanged(object sender, EventArgs e)
         {
             Diferencia();
@@ -484,5 +479,6 @@ namespace InventoryAssistant.UI.Registros
                 }
             }
         }
+
     }
 }

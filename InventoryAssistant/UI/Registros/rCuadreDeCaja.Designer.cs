@@ -155,7 +155,6 @@
             this.DosMilNumericUpDown.Name = "DosMilNumericUpDown";
             this.DosMilNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.DosMilNumericUpDown.TabIndex = 113;
-            this.DosMilNumericUpDown.Enter += new System.EventHandler(this.DosMilNumericUpDown_Enter);
             this.DosMilNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyDown);
             this.DosMilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyUp);
             // 

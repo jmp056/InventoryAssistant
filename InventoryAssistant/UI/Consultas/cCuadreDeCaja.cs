@@ -3,12 +3,8 @@ using InventoryAssistant.Entidades;
 using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
@@ -35,7 +31,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private bool Validar()//Funcion encargada de validar la busqueda 
+        private bool Validar()// Funcion encargada de validar la busqueda 
         {
             bool paso = true;
 
@@ -128,7 +124,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void Formato()//Le da el formato a la consulta
+        private void Formato()// Le da el formato a la consulta
         {
             try
             {
@@ -166,7 +162,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void cCuadreDeCaja_Load(object sender, EventArgs e)
+        private void cCuadreDeCaja_Load(object sender, EventArgs e) // Evento de cargar el Form
         {
             try
             {
@@ -195,7 +191,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void RealizarBusquedaButton_Click(object sender, EventArgs e)
+        private void RealizarBusquedaButton_Click(object sender, EventArgs e) // Clic al boton Realizar busqueda
         {
             try
             {
@@ -208,7 +204,7 @@ namespace InventoryAssistant.UI.Consultas
 
         }
 
-        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e) // Evento al cambiar seleccion del combobox
         {
             try
             {
@@ -224,7 +220,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void BuscarPorRango()
+        private void BuscarPorRango() // Funcion que activa los campos necesarios para la busqueda por un rango entre dos numeros
         {
             try
             {
@@ -241,7 +237,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void BuscarPorCriterio()
+        private void BuscarPorCriterio() // Funcion que activa los campos necesarios para la busqueda por un criterio
         {
             try
             {
@@ -258,7 +254,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void CuadresDataGridView_Click(object sender, EventArgs e)
+        private void CuadresDataGridView_Click(object sender, EventArgs e) // Evento de un clic al DataGridView
         {
             try
             {
@@ -285,8 +281,7 @@ namespace InventoryAssistant.UI.Consultas
             }  
         }
 
-
-        private void CuadresDataGridView_DoubleClick(object sender, EventArgs e)
+        private void CuadresDataGridView_DoubleClick(object sender, EventArgs e) // Evento de dos clics al DataGridView
         {
             try
             {
@@ -310,7 +305,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void DatosDelCuadreButton_Click(object sender, EventArgs e)
+        private void DatosDelCuadreButton_Click(object sender, EventArgs e) //Clic al Boton Datos del cuadre
         {
             try
             {

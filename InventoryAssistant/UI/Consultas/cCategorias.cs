@@ -3,12 +3,8 @@ using InventoryAssistant.Entidades;
 using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
@@ -20,7 +16,7 @@ namespace InventoryAssistant.UI.Consultas
         public int IdCategoriaSeleccionada { get; set; }
         private List<Categorias> ListadoCatgorias = new List<Categorias>();
 
-        public cCategorias(string nombreUsuario, int nivel) //Iniciador del form
+        public cCategorias(string nombreUsuario, int nivel) // Iniciador del form
         {
             try
             {
@@ -34,7 +30,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private bool Validar()//Funcion encargada de validar la busqueda 
+        private bool Validar()// Funcion encargada de validar la busqueda 
         {
             bool paso = true;
 
@@ -112,7 +108,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void Formato()//Le da el formato a la consulta
+        private void Formato()// Le da el formato a la consulta
         {
             try
             {
@@ -129,7 +125,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void DatosDeLaCategoriaButton_Click(object sender, EventArgs e)
+        private void DatosDeLaCategoriaButton_Click(object sender, EventArgs e) // Boton de ver datos de la categoria
         {
             try
             {
@@ -150,7 +146,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void RealizarBusquedaButton_Click(object sender, EventArgs e)
+        private void RealizarBusquedaButton_Click(object sender, EventArgs e) // Boton de realizar la busqueda
         {
             try
             {
@@ -162,7 +158,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void CategoriasDataGridView_Click(object sender, EventArgs e)
+        private void CategoriasDataGridView_Click(object sender, EventArgs e) // Evento de un clic al DataGridView
         {
             try
             {
@@ -184,7 +180,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void CategoriasDataGridView_DoubleClick(object sender, EventArgs e)
+        private void CategoriasDataGridView_DoubleClick(object sender, EventArgs e) // Evento de dos clics al DataGridView
         {
             try
             {
@@ -212,7 +208,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void cCategorias_Load(object sender, EventArgs e)
+        private void cCategorias_Load(object sender, EventArgs e) // Evento al cargar el Form
         {
             try
             {
@@ -237,7 +233,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e) // Evento al cambiar la seleccion en el Combobox
         {
             try
             {

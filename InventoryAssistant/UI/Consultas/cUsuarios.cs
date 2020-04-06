@@ -4,12 +4,8 @@ using InventoryAssistant.Entidades.EntidadesParaConsultas;
 using InventoryAssistant.UI.Registros;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Consultas
@@ -68,7 +64,7 @@ namespace InventoryAssistant.UI.Consultas
             return paso;
         }
 
-        private List<UsuariosConsulta> CargarLista(List<Usuarios> ListaSinProcesar)
+        private List<UsuariosConsulta> CargarLista(List<Usuarios> ListaSinProcesar) // Funcion que cambia el numero del nivel del usuario por el nombre del nivel
         {
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             List<UsuariosConsulta> ListaProcesada = new List<UsuariosConsulta>();
@@ -185,8 +181,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-
-        private void ConsultasUsuarios_Load(object sender, EventArgs e)
+        private void ConsultasUsuarios_Load(object sender, EventArgs e) // Carga el Form
         {
             try
             {
@@ -212,7 +207,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void UsuariosDataGridView_Click(object sender, EventArgs e)
+        private void UsuariosDataGridView_Click(object sender, EventArgs e) // Un clic al DataGridView
         {
             try
             {
@@ -234,7 +229,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void UsuariosDataGridView_DoubleClick(object sender, EventArgs e)
+        private void UsuariosDataGridView_DoubleClick(object sender, EventArgs e) // Dos clics al DataGridView
         {
             try
             {
@@ -255,7 +250,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
         
-        private void DatosDelUsuarioButton_Click(object sender, EventArgs e)
+        private void DatosDelUsuarioButton_Click(object sender, EventArgs e) // Clic al boton datos del usuario
         {
             try
             {
@@ -269,7 +264,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void RealizarBusquedaButton_Click(object sender, EventArgs e)
+        private void RealizarBusquedaButton_Click(object sender, EventArgs e) // Clic al boton realizar busqueda
         {
             try
             {
@@ -281,7 +276,7 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
-        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void FiltroComboBox_SelectedIndexChanged(object sender, EventArgs e) // Cambia la seleccion del combobox
         {
             try
             {

@@ -126,7 +126,7 @@
             this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(116, 22);
-            this.FechaDateTimePicker.TabIndex = 110;
+            this.FechaDateTimePicker.TabIndex = 10;
             this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 12, 0, 0, 0, 0);
             this.FechaDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDateTimePicker_ValueChanged);
             // 
@@ -155,7 +155,7 @@
             this.DosMilNumericUpDown.Name = "DosMilNumericUpDown";
             this.DosMilNumericUpDown.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DosMilNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.DosMilNumericUpDown.TabIndex = 113;
+            this.DosMilNumericUpDown.TabIndex = 20;
             this.DosMilNumericUpDown.Enter += new System.EventHandler(this.DosMilNumericUpDown_Enter);
             this.DosMilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyUp);
             this.DosMilNumericUpDown.Leave += new System.EventHandler(this.DosMilNumericUpDown_Leave);
@@ -172,7 +172,7 @@
             0});
             this.VeinteNumericUpDown.Name = "VeinteNumericUpDown";
             this.VeinteNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.VeinteNumericUpDown.TabIndex = 114;
+            this.VeinteNumericUpDown.TabIndex = 90;
             this.VeinteNumericUpDown.Enter += new System.EventHandler(this.VeinteNumericUpDown_Enter);
             this.VeinteNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VeinteNumericUpDown_KeyUp);
             this.VeinteNumericUpDown.Leave += new System.EventHandler(this.VeinteNumericUpDown_Leave);
@@ -189,7 +189,7 @@
             0});
             this.DiezNumericUpDown.Name = "DiezNumericUpDown";
             this.DiezNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.DiezNumericUpDown.TabIndex = 115;
+            this.DiezNumericUpDown.TabIndex = 100;
             this.DiezNumericUpDown.Enter += new System.EventHandler(this.DiezNumericUpDown_Enter);
             this.DiezNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DiezNumericUpDown_KeyUp);
             this.DiezNumericUpDown.Leave += new System.EventHandler(this.DiezNumericUpDown_Leave);
@@ -206,7 +206,7 @@
             0});
             this.VeinticincoNumericUpDown.Name = "VeinticincoNumericUpDown";
             this.VeinticincoNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.VeinticincoNumericUpDown.TabIndex = 116;
+            this.VeinticincoNumericUpDown.TabIndex = 80;
             this.VeinticincoNumericUpDown.Enter += new System.EventHandler(this.VeinticincoNumericUpDown_Enter);
             this.VeinticincoNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VeinticincoNumericUpDown_KeyUp);
             this.VeinticincoNumericUpDown.Leave += new System.EventHandler(this.VeinticincoNumericUpDown_Leave);
@@ -223,7 +223,7 @@
             0});
             this.CincuentaNumericUpDown.Name = "CincuentaNumericUpDown";
             this.CincuentaNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.CincuentaNumericUpDown.TabIndex = 117;
+            this.CincuentaNumericUpDown.TabIndex = 70;
             this.CincuentaNumericUpDown.Enter += new System.EventHandler(this.CincuentaNumericUpDown_Enter);
             this.CincuentaNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CincuentaNumericUpDown_KeyUp);
             this.CincuentaNumericUpDown.Leave += new System.EventHandler(this.CincuentaNumericUpDown_Leave);
@@ -240,7 +240,7 @@
             0});
             this.CienNumericUpDown.Name = "CienNumericUpDown";
             this.CienNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.CienNumericUpDown.TabIndex = 118;
+            this.CienNumericUpDown.TabIndex = 60;
             this.CienNumericUpDown.Enter += new System.EventHandler(this.CienNumericUpDown_Enter);
             this.CienNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CienNumericUpDown_KeyUp);
             this.CienNumericUpDown.Leave += new System.EventHandler(this.CienNumericUpDown_Leave);
@@ -257,7 +257,7 @@
             0});
             this.DoscientosNumericUpDown.Name = "DoscientosNumericUpDown";
             this.DoscientosNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.DoscientosNumericUpDown.TabIndex = 119;
+            this.DoscientosNumericUpDown.TabIndex = 50;
             this.DoscientosNumericUpDown.Enter += new System.EventHandler(this.DoscientosNumericUpDown_Enter);
             this.DoscientosNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DoscientosNumericUpDown_KeyUp);
             this.DoscientosNumericUpDown.Leave += new System.EventHandler(this.DoscientosNumericUpDown_Leave);
@@ -274,7 +274,7 @@
             0});
             this.QuinientosNumericUpDown.Name = "QuinientosNumericUpDown";
             this.QuinientosNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.QuinientosNumericUpDown.TabIndex = 120;
+            this.QuinientosNumericUpDown.TabIndex = 40;
             this.QuinientosNumericUpDown.Enter += new System.EventHandler(this.QuinientosNumericUpDown_Enter);
             this.QuinientosNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.QuinientosNumericUpDown_KeyUp);
             this.QuinientosNumericUpDown.Leave += new System.EventHandler(this.QuinientosNumericUpDown_Leave);
@@ -291,7 +291,7 @@
             0});
             this.MilNumericUpDown.Name = "MilNumericUpDown";
             this.MilNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.MilNumericUpDown.TabIndex = 121;
+            this.MilNumericUpDown.TabIndex = 30;
             this.MilNumericUpDown.Enter += new System.EventHandler(this.MilNumericUpDown_Enter);
             this.MilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MilNumericUpDown_KeyUp);
             this.MilNumericUpDown.Leave += new System.EventHandler(this.MilNumericUpDown_Leave);
@@ -527,7 +527,7 @@
             this.TotalEnCajaTextBox.Name = "TotalEnCajaTextBox";
             this.TotalEnCajaTextBox.ReadOnly = true;
             this.TotalEnCajaTextBox.Size = new System.Drawing.Size(80, 22);
-            this.TotalEnCajaTextBox.TabIndex = 169;
+            this.TotalEnCajaTextBox.TabIndex = 200;
             this.TotalEnCajaTextBox.Text = "0.00";
             this.TotalEnCajaTextBox.TextChanged += new System.EventHandler(this.TotalEnCajaTextBox_TextChanged);
             // 
@@ -538,7 +538,7 @@
             this.UnoTextBox.Name = "UnoTextBox";
             this.UnoTextBox.ReadOnly = true;
             this.UnoTextBox.Size = new System.Drawing.Size(80, 22);
-            this.UnoTextBox.TabIndex = 168;
+            this.UnoTextBox.TabIndex = 210;
             this.UnoTextBox.Text = "0.00";
             // 
             // MilTextBox
@@ -548,7 +548,7 @@
             this.MilTextBox.Name = "MilTextBox";
             this.MilTextBox.ReadOnly = true;
             this.MilTextBox.Size = new System.Drawing.Size(80, 22);
-            this.MilTextBox.TabIndex = 167;
+            this.MilTextBox.TabIndex = 220;
             this.MilTextBox.Text = "0.00";
             // 
             // CincoTextBox
@@ -558,7 +558,7 @@
             this.CincoTextBox.Name = "CincoTextBox";
             this.CincoTextBox.ReadOnly = true;
             this.CincoTextBox.Size = new System.Drawing.Size(80, 22);
-            this.CincoTextBox.TabIndex = 166;
+            this.CincoTextBox.TabIndex = 230;
             this.CincoTextBox.Text = "0.00";
             // 
             // QuinientosTextBox
@@ -568,7 +568,7 @@
             this.QuinientosTextBox.Name = "QuinientosTextBox";
             this.QuinientosTextBox.ReadOnly = true;
             this.QuinientosTextBox.Size = new System.Drawing.Size(80, 22);
-            this.QuinientosTextBox.TabIndex = 165;
+            this.QuinientosTextBox.TabIndex = 240;
             this.QuinientosTextBox.Text = "0.00";
             // 
             // DiezTextBox
@@ -578,7 +578,7 @@
             this.DiezTextBox.Name = "DiezTextBox";
             this.DiezTextBox.ReadOnly = true;
             this.DiezTextBox.Size = new System.Drawing.Size(80, 22);
-            this.DiezTextBox.TabIndex = 164;
+            this.DiezTextBox.TabIndex = 250;
             this.DiezTextBox.Text = "0.00";
             // 
             // DoscientosTextBox
@@ -588,7 +588,7 @@
             this.DoscientosTextBox.Name = "DoscientosTextBox";
             this.DoscientosTextBox.ReadOnly = true;
             this.DoscientosTextBox.Size = new System.Drawing.Size(80, 22);
-            this.DoscientosTextBox.TabIndex = 163;
+            this.DoscientosTextBox.TabIndex = 260;
             this.DoscientosTextBox.Text = "0.00";
             // 
             // CienTextBox
@@ -598,7 +598,7 @@
             this.CienTextBox.Name = "CienTextBox";
             this.CienTextBox.ReadOnly = true;
             this.CienTextBox.Size = new System.Drawing.Size(80, 22);
-            this.CienTextBox.TabIndex = 162;
+            this.CienTextBox.TabIndex = 270;
             this.CienTextBox.Text = "0.00";
             // 
             // VeinteTextBox
@@ -608,7 +608,7 @@
             this.VeinteTextBox.Name = "VeinteTextBox";
             this.VeinteTextBox.ReadOnly = true;
             this.VeinteTextBox.Size = new System.Drawing.Size(80, 22);
-            this.VeinteTextBox.TabIndex = 161;
+            this.VeinteTextBox.TabIndex = 280;
             this.VeinteTextBox.Text = "0.00";
             // 
             // CincuentaTextBox
@@ -618,7 +618,7 @@
             this.CincuentaTextBox.Name = "CincuentaTextBox";
             this.CincuentaTextBox.ReadOnly = true;
             this.CincuentaTextBox.Size = new System.Drawing.Size(80, 22);
-            this.CincuentaTextBox.TabIndex = 160;
+            this.CincuentaTextBox.TabIndex = 290;
             this.CincuentaTextBox.Text = "0.00";
             // 
             // VeinticincoTextBox
@@ -628,7 +628,7 @@
             this.VeinticincoTextBox.Name = "VeinticincoTextBox";
             this.VeinticincoTextBox.ReadOnly = true;
             this.VeinticincoTextBox.Size = new System.Drawing.Size(80, 22);
-            this.VeinticincoTextBox.TabIndex = 159;
+            this.VeinticincoTextBox.TabIndex = 300;
             this.VeinticincoTextBox.Text = "0.00";
             // 
             // label12
@@ -895,7 +895,7 @@
             0});
             this.UnoNumericUpDown.Name = "UnoNumericUpDown";
             this.UnoNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.UnoNumericUpDown.TabIndex = 127;
+            this.UnoNumericUpDown.TabIndex = 120;
             this.UnoNumericUpDown.Enter += new System.EventHandler(this.UnoNumericUpDown_Enter);
             this.UnoNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnoNumericUpDown_KeyUp);
             this.UnoNumericUpDown.Leave += new System.EventHandler(this.UnoNumericUpDown_Leave);
@@ -912,7 +912,7 @@
             0});
             this.CincoNumericUpDown.Name = "CincoNumericUpDown";
             this.CincoNumericUpDown.Size = new System.Drawing.Size(55, 22);
-            this.CincoNumericUpDown.TabIndex = 126;
+            this.CincoNumericUpDown.TabIndex = 110;
             this.CincoNumericUpDown.Enter += new System.EventHandler(this.CincoNumericUpDown_Enter);
             this.CincoNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CincoNumericUpDown_KeyUp);
             this.CincoNumericUpDown.Leave += new System.EventHandler(this.CincoNumericUpDown_Leave);
@@ -924,7 +924,7 @@
             this.DosmilTextBox.Name = "DosmilTextBox";
             this.DosmilTextBox.ReadOnly = true;
             this.DosmilTextBox.Size = new System.Drawing.Size(80, 22);
-            this.DosmilTextBox.TabIndex = 125;
+            this.DosmilTextBox.TabIndex = 230;
             this.DosmilTextBox.Text = "0.00";
             // 
             // FacturasDataGridView
@@ -935,7 +935,7 @@
             this.FacturasDataGridView.ReadOnly = true;
             this.FacturasDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FacturasDataGridView.Size = new System.Drawing.Size(523, 292);
-            this.FacturasDataGridView.TabIndex = 125;
+            this.FacturasDataGridView.TabIndex = 240;
             this.FacturasDataGridView.DoubleClick += new System.EventHandler(this.FacturasDataGridView_DoubleClick);
             // 
             // DiferenciaLabel
@@ -957,7 +957,7 @@
             this.DiferenciaTextBox.Name = "DiferenciaTextBox";
             this.DiferenciaTextBox.ReadOnly = true;
             this.DiferenciaTextBox.Size = new System.Drawing.Size(90, 22);
-            this.DiferenciaTextBox.TabIndex = 171;
+            this.DiferenciaTextBox.TabIndex = 250;
             this.DiferenciaTextBox.Text = "0.00";
             // 
             // TotalVendidoLabel
@@ -969,7 +969,7 @@
             this.TotalVendidoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TotalVendidoLabel.Name = "TotalVendidoLabel";
             this.TotalVendidoLabel.Size = new System.Drawing.Size(110, 16);
-            this.TotalVendidoLabel.TabIndex = 174;
+            this.TotalVendidoLabel.TabIndex = 260;
             this.TotalVendidoLabel.Text = "Total Vendido:";
             // 
             // TotalVendidoTextBox
@@ -979,7 +979,7 @@
             this.TotalVendidoTextBox.Name = "TotalVendidoTextBox";
             this.TotalVendidoTextBox.ReadOnly = true;
             this.TotalVendidoTextBox.Size = new System.Drawing.Size(90, 22);
-            this.TotalVendidoTextBox.TabIndex = 173;
+            this.TotalVendidoTextBox.TabIndex = 270;
             this.TotalVendidoTextBox.Text = "0.00";
             this.TotalVendidoTextBox.TextChanged += new System.EventHandler(this.TotalVendidoTextBox_TextChanged);
             // 
@@ -991,7 +991,7 @@
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 35);
-            this.GuardarButton.TabIndex = 124;
+            this.GuardarButton.TabIndex = 125;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -1010,7 +1010,7 @@
             this.FacturasDelDiaGroupBox.Location = new System.Drawing.Point(269, 12);
             this.FacturasDelDiaGroupBox.Name = "FacturasDelDiaGroupBox";
             this.FacturasDelDiaGroupBox.Size = new System.Drawing.Size(536, 373);
-            this.FacturasDelDiaGroupBox.TabIndex = 175;
+            this.FacturasDelDiaGroupBox.TabIndex = 280;
             this.FacturasDelDiaGroupBox.TabStop = false;
             this.FacturasDelDiaGroupBox.Text = "Facturas del Dia";
             // 
@@ -1033,7 +1033,7 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.ReadOnly = true;
             this.UsuarioTextBox.Size = new System.Drawing.Size(247, 22);
-            this.UsuarioTextBox.TabIndex = 175;
+            this.UsuarioTextBox.TabIndex = 290;
             // 
             // statusStrip1
             // 
@@ -1045,7 +1045,7 @@
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusStrip1.Size = new System.Drawing.Size(815, 22);
             this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 176;
+            this.statusStrip1.TabIndex = 300;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // UsuarioToolStripStatusLabel

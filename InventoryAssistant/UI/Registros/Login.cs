@@ -2,13 +2,7 @@
 using InventoryAssistant.Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
@@ -22,45 +16,60 @@ namespace InventoryAssistant.UI.Registros
 
         private void Logins() //Funcion para logearse
         {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+            try
+            {
+                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-            List<Usuarios> usuario = new List<Usuarios>();
-            Expression<Func<Usuarios, bool>> filtrar = x => true;
+                List<Usuarios> usuario = new List<Usuarios>();
+                Expression<Func<Usuarios, bool>> filtrar = x => true;
 
-            filtrar = t => t.Usuario.Equals(UsuariotextBox.Text);
-            usuario = repositorio.GetList(filtrar);
+                filtrar = t => t.Usuario.Equals(UsuariotextBox.Text);
+                usuario = repositorio.GetList(filtrar);
            
 
-            if (usuario.Exists(x => x.Usuario.ToUpper() == UsuariotextBox.Text.ToUpper()) && usuario.Exists(x => x.Contrasena == ContrasenaTextBox.Text))
-            {
-                foreach (var item in repositorio.GetList(x => x.Usuario == UsuariotextBox.Text))
+                if (usuario.Exists(x => x.Usuario.ToUpper() == UsuariotextBox.Text.ToUpper()) && usuario.Exists(x => x.Contrasena == ContrasenaTextBox.Text))
                 {
-                    repositorio.NombreLogin(item.Nombres, item.Apellidos, item.NivelDeUsuario);
+                    foreach (var item in repositorio.GetList(x => x.Usuario == UsuariotextBox.Text))
+                    {
+                        repositorio.NombreLogin(item.Nombres, item.Apellidos, item.NivelDeUsuario);
+                    }
+                    MessageBox.Show("Logeado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    this.Close();
                 }
-                MessageBox.Show("Logeado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                this.Close();
+                else
+                {
+                    MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ContrasenaTextBox.Text = string.Empty;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                ContrasenaTextBox.Text = string.Empty;
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private bool Validar() //Funcion encargada de validar el login
         {
             bool paso = true;
-            MyErrorProvider.Clear();
-            if (UsuariotextBox.Text == string.Empty)
-            {
-                MyErrorProvider.SetError(UsuariotextBox, "El usuario no puede estar vacío!");
-                paso = false;
-            }
 
-            if (ContrasenaTextBox.Text == string.Empty)
+            try
             {
-                MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede estar vacía!");
-                paso = false;
+                MyErrorProvider.Clear();
+                if (UsuariotextBox.Text == string.Empty)
+                {
+                    MyErrorProvider.SetError(UsuariotextBox, "El usuario no puede estar vacío!");
+                    paso = false;
+                }
+
+                if (ContrasenaTextBox.Text == string.Empty)
+                {
+                    MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede estar vacía!");
+                    paso = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return paso;
@@ -69,43 +78,160 @@ namespace InventoryAssistant.UI.Registros
         //Botones -------------------------------------------------------------------------------------------------------------------------
         private void Entrarbutton_Click_1(object sender, EventArgs e) //Boton entrar
         {
-            MyErrorProvider.Clear();
-            if (!Validar())
-                return;
-            Logins();
+            try
+            {
+                MyErrorProvider.Clear();
+                if (!Validar())
+                    return;
+                Logins();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         
         private void CancelarButton_Click(object sender, EventArgs e) // Boton cancelar
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         
         //---------------------------------------------------------------------------------------------------------------------------------
         
         
         //Moviendo el foco entre los campos -----------------------------------------------------------------------------------------------
-        private void Login_Load(object sender, EventArgs e) //Cuando la ventana termina de cargar, el foco va hacia el Usuario
+        private void UsuariotextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox del usuario
         {
-            UsuariotextBox.Focus();
-        }
-
-        private void UsuariotextBox_KeyPress(object sender, KeyPressEventArgs e)//Del usuario a la contraseña al pulsar enter
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                ContrasenaTextBox.Focus();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        CancelarButton.Focus();
+                        break;
+
+                    case Keys.Down:
+                        ContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Left:
+                        CancelarButton.Focus();
+                        break;
+
+                    case Keys.Right:
+                        ContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        ContrasenaTextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void ContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e) //De la contraseña al la funcion de loguearse
+        private void ContrasenaTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                MyErrorProvider.Clear();
-                if (!Validar())
-                    return;
-                Logins();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        UsuariotextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        IngresarButton.Focus();
+                        break;
+
+                    case Keys.Left:
+                        UsuariotextBox.Focus();
+                        break;
+
+                    case Keys.Right:
+                        IngresarButton.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        MyErrorProvider.Clear();
+                        if (!Validar())
+                            return;
+                        Logins();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void IngresarButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        ContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        CancelarButton.Focus();
+                        break;
+
+                    case Keys.Left:
+                        ContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Right:
+                        CancelarButton.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CancelarButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        IngresarButton.Focus();
+                        break;
+
+                    case Keys.Down:
+                        UsuariotextBox.Focus();
+                        break;
+
+                    case Keys.Left:
+                        IngresarButton.Focus();
+                        break;
+
+                    case Keys.Right:
+                        UsuariotextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

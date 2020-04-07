@@ -35,7 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ContrasenaPictureBox = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Entrarbutton = new System.Windows.Forms.Button();
+            this.IngresarButton = new System.Windows.Forms.Button();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,24 +54,24 @@
             this.UsuariotextBox.Location = new System.Drawing.Point(150, 47);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(149, 22);
-            this.UsuariotextBox.TabIndex = 2;
-            this.UsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuariotextBox_KeyPress);
+            this.UsuariotextBox.TabIndex = 10;
+            this.UsuariotextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsuariotextBox_KeyDown);
             // 
             // ContrasenaTextBox
             // 
             this.ContrasenaTextBox.Location = new System.Drawing.Point(150, 92);
             this.ContrasenaTextBox.Name = "ContrasenaTextBox";
             this.ContrasenaTextBox.Size = new System.Drawing.Size(149, 22);
-            this.ContrasenaTextBox.TabIndex = 3;
+            this.ContrasenaTextBox.TabIndex = 20;
             this.ContrasenaTextBox.UseSystemPasswordChar = true;
-            this.ContrasenaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContrasenaTextBox_KeyPress);
+            this.ContrasenaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContrasenaTextBox_KeyDown);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.ContrasenaPictureBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.Entrarbutton);
+            this.groupBox1.Controls.Add(this.IngresarButton);
             this.groupBox1.Controls.Add(this.CancelarButton);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.UsuariotextBox);
@@ -111,17 +111,18 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Contraseña";
             // 
-            // Entrarbutton
+            // IngresarButton
             // 
-            this.Entrarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Entrarbutton.Location = new System.Drawing.Point(23, 139);
-            this.Entrarbutton.Name = "Entrarbutton";
-            this.Entrarbutton.Size = new System.Drawing.Size(100, 35);
-            this.Entrarbutton.TabIndex = 7;
-            this.Entrarbutton.Text = "Ingresar";
-            this.Entrarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Entrarbutton.UseVisualStyleBackColor = true;
-            this.Entrarbutton.Click += new System.EventHandler(this.Entrarbutton_Click_1);
+            this.IngresarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IngresarButton.Location = new System.Drawing.Point(23, 139);
+            this.IngresarButton.Name = "IngresarButton";
+            this.IngresarButton.Size = new System.Drawing.Size(100, 35);
+            this.IngresarButton.TabIndex = 30;
+            this.IngresarButton.Text = "Ingresar";
+            this.IngresarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IngresarButton.UseVisualStyleBackColor = true;
+            this.IngresarButton.Click += new System.EventHandler(this.Entrarbutton_Click_1);
+            this.IngresarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarButton_KeyDown);
             // 
             // CancelarButton
             // 
@@ -129,11 +130,12 @@
             this.CancelarButton.Location = new System.Drawing.Point(188, 139);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(100, 35);
-            this.CancelarButton.TabIndex = 6;
+            this.CancelarButton.TabIndex = 40;
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelarButton.UseVisualStyleBackColor = true;
             this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
+            this.CancelarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CancelarButton_KeyDown);
             // 
             // label4
             // 
@@ -180,7 +182,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -197,7 +198,7 @@
         private System.Windows.Forms.TextBox ContrasenaTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Entrarbutton;
+        private System.Windows.Forms.Button IngresarButton;
         private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;

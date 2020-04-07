@@ -629,11 +629,6 @@ namespace InventoryAssistant.UI.Registros
             ContrasenaTextBox.Focus();
         }
 
-        private void NivelDeUsuarioComboBox_SelectedIndexChanged(object sender, EventArgs e) // Si cambia la seleccion en el combobox del nivel del usuario
-        {
-            ContrasenaTextBox.Focus();
-        }
-
         private void ContrasenaTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de la contraseña
         {
             switch (e.KeyCode)

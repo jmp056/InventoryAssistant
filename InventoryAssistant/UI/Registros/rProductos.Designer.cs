@@ -50,14 +50,15 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.LimpiarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.MyStatusStrip = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MyToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            this.MyStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // RDLabel
@@ -122,8 +123,8 @@
             this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(233, 22);
-            this.DescripcionTextBox.TabIndex = 28;
-            this.DescripcionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescripcionTextBox_KeyPress);
+            this.DescripcionTextBox.TabIndex = 30;
+            this.DescripcionTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DescripcionTextBox_KeyDown);
             // 
             // ProductoIdNumericUpDown
             // 
@@ -132,8 +133,8 @@
             this.ProductoIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.ProductoIdNumericUpDown.Name = "ProductoIdNumericUpDown";
             this.ProductoIdNumericUpDown.Size = new System.Drawing.Size(113, 22);
-            this.ProductoIdNumericUpDown.TabIndex = 27;
-            this.ProductoIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductoIdNumericUpDown_KeyPress);
+            this.ProductoIdNumericUpDown.TabIndex = 10;
+            this.ProductoIdNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductoIdNumericUpDown_KeyDown);
             // 
             // ControlAlmacenCheckBox
             // 
@@ -142,8 +143,9 @@
             this.ControlAlmacenCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.ControlAlmacenCheckBox.Name = "ControlAlmacenCheckBox";
             this.ControlAlmacenCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.ControlAlmacenCheckBox.TabIndex = 31;
+            this.ControlAlmacenCheckBox.TabIndex = 150;
             this.ControlAlmacenCheckBox.UseVisualStyleBackColor = true;
+            this.ControlAlmacenCheckBox.CheckedChanged += new System.EventHandler(this.ControlAlmacenCheckBox_CheckedChanged);
             // 
             // InventarioLabel
             // 
@@ -175,8 +177,9 @@
             this.CategoriaComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CategoriaComboBox.Name = "CategoriaComboBox";
             this.CategoriaComboBox.Size = new System.Drawing.Size(173, 24);
-            this.CategoriaComboBox.TabIndex = 37;
+            this.CategoriaComboBox.TabIndex = 40;
             this.CategoriaComboBox.DropDownClosed += new System.EventHandler(this.CategoriaComboBox_DropDownClosed);
+            this.CategoriaComboBox.Enter += new System.EventHandler(this.CategoriaComboBox_Enter);
             // 
             // MyErrorProvider
             // 
@@ -191,10 +194,10 @@
             this.FechaDeRegistroDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDeRegistroDateTimePicker.Name = "FechaDeRegistroDateTimePicker";
             this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(113, 22);
-            this.FechaDeRegistroDateTimePicker.TabIndex = 39;
+            this.FechaDeRegistroDateTimePicker.TabIndex = 80;
             this.FechaDeRegistroDateTimePicker.Value = new System.DateTime(2020, 3, 5, 0, 0, 0, 0);
             this.FechaDeRegistroDateTimePicker.CloseUp += new System.EventHandler(this.FechaDeRegistroDateTimePicker_CloseUp);
-            this.FechaDeRegistroDateTimePicker.ValueChanged += new System.EventHandler(this.FechaDeRegistroDateTimePicker_ValueChanged);
+            this.FechaDeRegistroDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FechaDeRegistroDateTimePicker_KeyDown);
             // 
             // FechaDeRegistroLabel
             // 
@@ -220,8 +223,8 @@
             0});
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
-            this.CantidadNumericUpDown.TabIndex = 66;
-            this.CantidadNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadNumericUpDown_KeyPress);
+            this.CantidadNumericUpDown.TabIndex = 60;
+            this.CantidadNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CantidadNumericUpDown_KeyDown);
             // 
             // PrecioNumericUpDown
             // 
@@ -241,8 +244,8 @@
             0});
             this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
             this.PrecioNumericUpDown.Size = new System.Drawing.Size(113, 22);
-            this.PrecioNumericUpDown.TabIndex = 67;
-            this.PrecioNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioNumericUpDown_KeyPress);
+            this.PrecioNumericUpDown.TabIndex = 70;
+            this.PrecioNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PrecioNumericUpDown_KeyDown);
             // 
             // AnadirCategoriasButton
             // 
@@ -251,7 +254,7 @@
             this.AnadirCategoriasButton.Margin = new System.Windows.Forms.Padding(4);
             this.AnadirCategoriasButton.Name = "AnadirCategoriasButton";
             this.AnadirCategoriasButton.Size = new System.Drawing.Size(35, 35);
-            this.AnadirCategoriasButton.TabIndex = 68;
+            this.AnadirCategoriasButton.TabIndex = 60;
             this.AnadirCategoriasButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AnadirCategoriasButton.UseVisualStyleBackColor = true;
             this.AnadirCategoriasButton.Click += new System.EventHandler(this.AnadirCategoriasButton_Click);
@@ -264,11 +267,12 @@
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(100, 35);
-            this.EliminarButton.TabIndex = 30;
+            this.EliminarButton.TabIndex = 110;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            this.EliminarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EliminarButton_KeyDown);
             // 
             // GuardarButton
             // 
@@ -278,11 +282,12 @@
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 35);
-            this.GuardarButton.TabIndex = 31;
+            this.GuardarButton.TabIndex = 90;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            this.GuardarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuardarButton_KeyDown);
             // 
             // LimpiarButton
             // 
@@ -292,11 +297,12 @@
             this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
-            this.LimpiarButton.TabIndex = 32;
+            this.LimpiarButton.TabIndex = 100;
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
             this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            this.LimpiarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LimpiarButton_KeyDown);
             // 
             // BuscarButton
             // 
@@ -306,24 +312,25 @@
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
-            this.BuscarButton.TabIndex = 29;
+            this.BuscarButton.TabIndex = 20;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            this.BuscarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarButton_KeyDown);
             // 
-            // statusStrip1
+            // MyStatusStrip
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MyStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UsuarioToolStripStatusLabel,
             this.EstadoToolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 376);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(473, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 69;
-            this.statusStrip1.Text = "statusStrip1";
+            this.MyStatusStrip.Location = new System.Drawing.Point(0, 376);
+            this.MyStatusStrip.Name = "MyStatusStrip";
+            this.MyStatusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MyStatusStrip.Size = new System.Drawing.Size(473, 22);
+            this.MyStatusStrip.SizingGrip = false;
+            this.MyStatusStrip.TabIndex = 69;
+            this.MyStatusStrip.Text = "statusStrip1";
             // 
             // UsuarioToolStripStatusLabel
             // 
@@ -344,7 +351,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 398);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.MyStatusStrip);
             this.Controls.Add(this.AnadirCategoriasButton);
             this.Controls.Add(this.PrecioNumericUpDown);
             this.Controls.Add(this.CantidadNumericUpDown);
@@ -379,8 +386,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.MyStatusStrip.ResumeLayout(false);
+            this.MyStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,8 +415,9 @@
         private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
         private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
         private System.Windows.Forms.Button AnadirCategoriasButton;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip MyStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel UsuarioToolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel EstadoToolStripStatusLabel;
+        private System.Windows.Forms.ToolTip MyToolTip;
     }
 }

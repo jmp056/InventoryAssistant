@@ -115,7 +115,6 @@
             this.NombreTextBox.Size = new System.Drawing.Size(218, 22);
             this.NombreTextBox.TabIndex = 30;
             this.NombreTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NombreTextBox_KeyDown);
-            this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // CategoriaIdNumericUpDown
             // 
@@ -126,7 +125,6 @@
             this.CategoriaIdNumericUpDown.Size = new System.Drawing.Size(77, 22);
             this.CategoriaIdNumericUpDown.TabIndex = 10;
             this.CategoriaIdNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CategoriaIdNumericUpDown_KeyDown);
-            this.CategoriaIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CategoriaIdNumericUpDown_KeyPress);
             // 
             // NombreLabel
             // 

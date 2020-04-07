@@ -2,12 +2,6 @@
 using InventoryAssistant.Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
@@ -27,7 +21,7 @@ namespace InventoryAssistant.UI.Registros
             Limpiar();
         }
 
-        private void rProductos_Activated(object sender, EventArgs e)//Llena el ComboBox de las categorias cuando la ventana gana el foco
+        private void rProductos_Activated(object sender, EventArgs e) // Llena el ComboBox de las categorias cuando la ventana gana el foco
         {
             if(ProductoId <= 0)
             {
@@ -35,10 +29,10 @@ namespace InventoryAssistant.UI.Registros
                 CategoriaComboBox.SelectedIndex = -1;
             }
         }
-        private void rProductos_Load(object sender, EventArgs e)//Da el foco al TextBox Descripcion cuando la ventana carga
+        
+        private void rProductos_Load(object sender, EventArgs e) // Al cargar el Form
         {
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;
-            CantidadNumericUpDown.ReadOnly = (Nivel <= 0) ? false: true;
             
             LlenaComboBoxCategorias();
 
@@ -47,6 +41,8 @@ namespace InventoryAssistant.UI.Registros
                 ProductoIdNumericUpDown.Value = ProductoId;
                 Buscar();
             }
+
+            MyToolTip.SetToolTip(AnadirCategoriasButton, "Agregar una nueva categoria");
         }
 
         private void Limpiar()// Funcion encargada de limpiar todos los campos del registro
@@ -107,7 +103,6 @@ namespace InventoryAssistant.UI.Registros
             CategoriaComboBox.ValueMember = "CategoriaId";
             CategoriaComboBox.DisplayMember = "Nombre";
         }
-
 
         private bool Validar()//Funcion que valida todo el registro
         {
@@ -180,20 +175,15 @@ namespace InventoryAssistant.UI.Registros
             }
             return Paso;
         }
+
         private bool ExisteEnLaBaseDeDatos()// Funcnion encargada de verificar si un producto existe en una base de datos!
         {
             RepositorioBase<Productos> repositorio = new RepositorioBase<Productos>();
             Productos producto = repositorio.Buscar((int)ProductoIdNumericUpDown.Value);
             return (producto != null);
         }
-
-        //Botones -------------------------------------------------------------------------------------------------
-        private void Buscarbutton_Click(object sender, EventArgs e)// Clic al boton buscar
-        {
-            Buscar();  
-        }
-
-        private void Buscar()
+        
+        private void Buscar() // Funcion encargada de realizar la busqueda
         {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             Productos Producto = new Productos();
@@ -216,13 +206,19 @@ namespace InventoryAssistant.UI.Registros
                 DescripcionTextBox.Focus();
             }
         }
+        
+        //Botones -------------------------------------------------------------------------------------------------
+        private void Buscarbutton_Click(object sender, EventArgs e)// Clic al boton buscar
+        {
+            Buscar();  
+        }
 
-        private void LimpiarButton_Click(object sender, EventArgs e)//Clic al boton limpiar
+        private void LimpiarButton_Click(object sender, EventArgs e)// Clic al boton limpiar
         {
             Limpiar();
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e) //Clic al boton guardar
+        private void GuardarButton_Click(object sender, EventArgs e) // Clic al boton guardar
         {
             RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
 
@@ -282,7 +278,7 @@ namespace InventoryAssistant.UI.Registros
             DescripcionTextBox.Focus();
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e) // Clic al boton Eliminar
         {
             /*RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
             MyErrorProvider.Clear();
@@ -322,9 +318,7 @@ namespace InventoryAssistant.UI.Registros
             DescripcionTextBox.Focus();*/
         }
 
-
-
-        private void AnadirCategoriasButton_Click(object sender, EventArgs e)
+        private void AnadirCategoriasButton_Click(object sender, EventArgs e) // Clic al boton agregar categoria
         {
             rCategorias rcategorias= new rCategorias(NombreUsuario, 0);
             rcategorias.ShowDialog();
@@ -333,54 +327,162 @@ namespace InventoryAssistant.UI.Registros
         //---------------------------------------------------------------------------------------------------------
 
         //Moviendo el foco entre los campos del registro ----------------------------------------------------------
-
-        private void ProductoIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e) // Al precionar enter mueve el culsor del NumericUpDown del codigo del producto al Boton buscar
+        private void ProductoIdNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown del codigo
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Enter)
                 BuscarButton.Focus();
+        }
+
+        private void BuscarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton buscar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    ProductoIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Left:
+                    ProductoIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Right:
+                    DescripcionTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    DescripcionTextBox.Focus();
+                    break;
             }
         }
 
-        private void CategoriaComboBox_DropDownClosed(object sender, EventArgs e)//De la categoria a la cantidad
+        private void DescripcionTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de la descripcion
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    BuscarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    BuscarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    CategoriaComboBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    CategoriaComboBox.Focus();
+                    break;
+
+                case Keys.Enter:
+                    CategoriaComboBox.Focus();
+                    break;
+            }
+        }
+
+        private void CategoriaComboBox_Enter(object sender, EventArgs e) // Si el combobox de la categoria gana el foco
+        {
+            CategoriaComboBox.DroppedDown = true;
+        }
+
+        private void CategoriaComboBox_DropDownClosed(object sender, EventArgs e) // Si el combobox de la categoria se cierra
         {
             CantidadNumericUpDown.Focus();
         }
-        private void DescripcionTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del descripcion al al ComboBox de categoria        {
+
+        private void ControlAlmacenCheckBox_CheckedChanged(object sender, EventArgs e) // Si cambia el estado del CheckBox de llevar el control en el almacen
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                CategoriaComboBox.DroppedDown = true;
-                CategoriaComboBox.Focus();
-            }
+            CantidadNumericUpDown.Focus();
         }
 
-        private void CantidadNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//De la canidad al precio
+        private void CantidadNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown de la cantidad
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Enter)
                 PrecioNumericUpDown.Focus();
-            }
         }
 
-        private void PrecioNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)//Del precio a la fecha de registro
+        private void PrecioNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown del precio
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Enter)
                 FechaDeRegistroDateTimePicker.Focus();
+        }
+
+        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e) // Si se cierra el DateTimePicker de la fecha
+        {
+            GuardarButton.Focus();
+        }
+
+        private void FechaDeRegistroDateTimePicker_KeyDown(object sender, KeyEventArgs e) // Al pulsar enter en el DateTimePicker de la fecha
+        {
+            if (e.KeyCode == Keys.Enter)
+                GuardarButton.Focus();
+        }
+
+        private void GuardarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton de Guardar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    FechaDeRegistroDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    EliminarButton.Focus();
+                    break;
             }
         }
 
-        private void FechaDeRegistroDateTimePicker_ValueChanged(object sender, EventArgs e)// De la fecha de registro al boton guardar(Cuando el valor cambia)
+        private void LimpiarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton de Limpiar
         {
-            GuardarButton.Focus();
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    FechaDeRegistroDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    GuardarButton.Focus();
+                    break;
+            }
         }
 
-        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e)//De la fecha de registro al boton guardar(Cuando el seleccionador sube)
+        private void EliminarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton de Eliminar
         {
-            GuardarButton.Focus();
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    FechaDeRegistroDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    LimpiarButton.Focus();
+                    break;
+            }
         }
-
-
     }
 }

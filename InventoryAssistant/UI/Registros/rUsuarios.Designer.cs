@@ -81,7 +81,7 @@
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(100, 22);
-            this.CedulaMaskedTextBox.TabIndex = 5;
+            this.CedulaMaskedTextBox.TabIndex = 50;
             this.CedulaMaskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CedulaMaskedTextBox_KeyDown);
             // 
             // MyErrorProvider
@@ -94,7 +94,7 @@
             this.NombresTextBox.Location = new System.Drawing.Point(190, 67);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(200, 22);
-            this.NombresTextBox.TabIndex = 3;
+            this.NombresTextBox.TabIndex = 30;
             this.NombresTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NombresTextBox_KeyDown);
             // 
             // UsuarioIdNumericUpDown
@@ -103,7 +103,7 @@
             this.UsuarioIdNumericUpDown.Location = new System.Drawing.Point(190, 28);
             this.UsuarioIdNumericUpDown.Name = "UsuarioIdNumericUpDown";
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(85, 22);
-            this.UsuarioIdNumericUpDown.TabIndex = 1;
+            this.UsuarioIdNumericUpDown.TabIndex = 10;
             this.UsuarioIdNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsuarioIdNumericUpDown_KeyDown);
             // 
             // NombresLabel
@@ -143,7 +143,7 @@
             this.FechaDeRegistroLabel.Location = new System.Drawing.Point(35, 230);
             this.FechaDeRegistroLabel.Name = "FechaDeRegistroLabel";
             this.FechaDeRegistroLabel.Size = new System.Drawing.Size(134, 16);
-            this.FechaDeRegistroLabel.TabIndex = 7;
+            this.FechaDeRegistroLabel.TabIndex = 70;
             this.FechaDeRegistroLabel.Text = "Fecha de registro:";
             // 
             // FechaDeRegistroDateTimePicker
@@ -154,7 +154,7 @@
             this.FechaDeRegistroDateTimePicker.Location = new System.Drawing.Point(190, 228);
             this.FechaDeRegistroDateTimePicker.Name = "FechaDeRegistroDateTimePicker";
             this.FechaDeRegistroDateTimePicker.Size = new System.Drawing.Size(115, 22);
-            this.FechaDeRegistroDateTimePicker.TabIndex = 17;
+            this.FechaDeRegistroDateTimePicker.TabIndex = 70;
             this.FechaDeRegistroDateTimePicker.Value = new System.DateTime(2020, 3, 6, 0, 0, 0, 0);
             this.FechaDeRegistroDateTimePicker.CloseUp += new System.EventHandler(this.FechaDeRegistroDateTimePicker_CloseUp);
             this.FechaDeRegistroDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FechaDeRegistroDateTimePicker_KeyDown);
@@ -165,7 +165,7 @@
             this.UsuarioTextBox.Location = new System.Drawing.Point(15, 50);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(159, 22);
-            this.UsuarioTextBox.TabIndex = 8;
+            this.UsuarioTextBox.TabIndex = 80;
             this.UsuarioTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsuarioTextBox_KeyDown);
             // 
             // ContrasenaTextBox
@@ -174,7 +174,7 @@
             this.ContrasenaTextBox.Location = new System.Drawing.Point(15, 160);
             this.ContrasenaTextBox.Name = "ContrasenaTextBox";
             this.ContrasenaTextBox.Size = new System.Drawing.Size(159, 22);
-            this.ContrasenaTextBox.TabIndex = 10;
+            this.ContrasenaTextBox.TabIndex = 100;
             this.ContrasenaTextBox.UseSystemPasswordChar = true;
             this.ContrasenaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContrasenaTextBox_KeyDown);
             // 
@@ -184,7 +184,7 @@
             this.ConfirmarContrasenaTextBox.Location = new System.Drawing.Point(15, 215);
             this.ConfirmarContrasenaTextBox.Name = "ConfirmarContrasenaTextBox";
             this.ConfirmarContrasenaTextBox.Size = new System.Drawing.Size(156, 22);
-            this.ConfirmarContrasenaTextBox.TabIndex = 11;
+            this.ConfirmarContrasenaTextBox.TabIndex = 110;
             this.ConfirmarContrasenaTextBox.UseSystemPasswordChar = true;
             this.ConfirmarContrasenaTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConfirmarContrasenaTextBox_KeyDown);
             // 
@@ -200,8 +200,7 @@
             this.NivelDeUsuarioComboBox.Location = new System.Drawing.Point(15, 105);
             this.NivelDeUsuarioComboBox.Name = "NivelDeUsuarioComboBox";
             this.NivelDeUsuarioComboBox.Size = new System.Drawing.Size(159, 24);
-            this.NivelDeUsuarioComboBox.TabIndex = 9;
-            this.NivelDeUsuarioComboBox.SelectedIndexChanged += new System.EventHandler(this.NivelDeUsuarioComboBox_SelectedIndexChanged);
+            this.NivelDeUsuarioComboBox.TabIndex = 90;
             this.NivelDeUsuarioComboBox.DropDownClosed += new System.EventHandler(this.NivelDeUsuarioComboBox_DropDownClosed);
             this.NivelDeUsuarioComboBox.Enter += new System.EventHandler(this.NivelDeUsuarioComboBox_Enter);
             // 
@@ -211,7 +210,7 @@
             this.ApellidosTextBox.Location = new System.Drawing.Point(190, 107);
             this.ApellidosTextBox.Name = "ApellidosTextBox";
             this.ApellidosTextBox.Size = new System.Drawing.Size(200, 22);
-            this.ApellidosTextBox.TabIndex = 4;
+            this.ApellidosTextBox.TabIndex = 40;
             this.ApellidosTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ApellidosTextBox_KeyDown);
             // 
             // CedulaLabel
@@ -231,7 +230,7 @@
             this.UsuarioLabel.Location = new System.Drawing.Point(15, 30);
             this.UsuarioLabel.Name = "UsuarioLabel";
             this.UsuarioLabel.Size = new System.Drawing.Size(66, 16);
-            this.UsuarioLabel.TabIndex = 5;
+            this.UsuarioLabel.TabIndex = 150;
             this.UsuarioLabel.Text = "Usuario:";
             // 
             // NivelDeUsuarioLabel
@@ -288,7 +287,7 @@
             this.TelefonoMaskedTextBox.Mask = "999-999-9999";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(100, 22);
-            this.TelefonoMaskedTextBox.TabIndex = 6;
+            this.TelefonoMaskedTextBox.TabIndex = 60;
             this.TelefonoMaskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TelefonoMaskedTextBox_KeyDown);
             // 
             // BuscarButton
@@ -298,7 +297,7 @@
             this.BuscarButton.Location = new System.Drawing.Point(292, 20);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
-            this.BuscarButton.TabIndex = 2;
+            this.BuscarButton.TabIndex = 20;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
@@ -312,7 +311,7 @@
             this.GuardarButton.Location = new System.Drawing.Point(254, 290);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 35);
-            this.GuardarButton.TabIndex = 13;
+            this.GuardarButton.TabIndex = 120;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -326,7 +325,7 @@
             this.EliminarButton.Location = new System.Drawing.Point(481, 290);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(100, 35);
-            this.EliminarButton.TabIndex = 14;
+            this.EliminarButton.TabIndex = 140;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -340,7 +339,7 @@
             this.LimpiarButton.Location = new System.Drawing.Point(45, 290);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
-            this.LimpiarButton.TabIndex = 12;
+            this.LimpiarButton.TabIndex = 130;
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;

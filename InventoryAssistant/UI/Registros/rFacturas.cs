@@ -54,6 +54,8 @@ namespace InventoryAssistant.UI.Registros
             PrecioNumericUpDown.Value = 0;
             ImporteTextBox.Text = "0.00";
             MyErrorProvider.Clear();
+
+            VerProductosButton.Focus();
         }
         //--------------------------------------------------------------------------------------------------------
 
@@ -85,7 +87,7 @@ namespace InventoryAssistant.UI.Registros
             return Factura;
         }
 
-        private void LlenaCamposProducto(Productos Producto)
+        private void LlenaCamposProducto(Productos Producto) // Funcion encargada de llenar los campos del producto
         {
             ProductoIdNumericUpDown.Value = (int)Producto.ProductoId;
             DescripcionTextBox.Text = Producto.Descripcion;
@@ -93,7 +95,6 @@ namespace InventoryAssistant.UI.Registros
 
         }
         //--------------------------------------------------------------------------------------------------------
-
 
         //Validadores -------------------------------------------------------------------------------------------
         private bool ValidaProducto() // Funcion encargada de validar que el producto este corrextamente llenado
@@ -190,7 +191,7 @@ namespace InventoryAssistant.UI.Registros
                         }
                     }
 
-                    this.Detalle = items;//Iguala el detalle a la lista sin el producto a modificar
+                    this.Detalle = items;//Iguala el detalle a la lista si el producto se va a modificar
                     CargaGrid();
                 }
                 else
@@ -243,12 +244,7 @@ namespace InventoryAssistant.UI.Registros
             TotalTextBox.Text = Convert.ToString(Total) + ".00";
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
-        {
-            Buscar();
-        }
-
-        private void Buscar()
+        private void Buscar() // Funcion encargada de realizar la busqueda de la factura
         {
             MyErrorProvider.Clear();
             int Id;
@@ -279,7 +275,7 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-        private void LlenaCampos(Facturas Factura)
+        private void LlenaCampos(Facturas Factura) // Funcion encargada de llenar los campos de registro con los datos de la factura
         {
 
             Contexto contexto = new Contexto();
@@ -294,7 +290,77 @@ namespace InventoryAssistant.UI.Registros
             EstadoToolStripStatusLabel.Text = (Factura.Estado == false) ? "Agregado por: " : "Modificado por: ";
             UsuarioToolStripStatusLabel.Text = Factura.UsuarioR;
         }
-        private void BuscarProductoButton_Click(object sender, EventArgs e) //Boton de buscar producto
+        
+        private void BuscarButton_Click(object sender, EventArgs e)// Boton que busca el producto por el Id
+        {
+            Buscar();
+        }
+
+        private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e) // Calcula el valor del importe si la cantidad cambia
+        {
+            ImporteTextBox.Text = Convert.ToString(CantidadNumericUpDown.Value * PrecioNumericUpDown.Value); 
+        }
+
+        private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e) //Calcula el valor del importe si el precio cambia
+        {
+            ImporteTextBox.Text = Convert.ToString(CantidadNumericUpDown.Value * PrecioNumericUpDown.Value);
+        }
+
+        private Productos BuscaProducto(int Id) // Funcion encargada de buscar el producto
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            Productos Producto = Repositorio.Buscar(Id);
+
+            return Producto;
+        }   
+        private void FormatoDataGridView()//Da el formato al DataGridView del detalle
+        {
+            DetalleDataGridView.Columns[0].Visible = false;
+            DetalleDataGridView.Columns[1].Visible = false;
+            DetalleDataGridView.Columns[2].HeaderText = "Codigo";
+            DetalleDataGridView.Columns[2].Width = 58;
+            DetalleDataGridView.Columns[3].HeaderText = "Cantidad";
+            DetalleDataGridView.Columns[3].Width = 58;
+            DetalleDataGridView.Columns[4].HeaderText = "Descripción";
+            DetalleDataGridView.Columns[4].Width = 250;
+            DetalleDataGridView.Columns[5].HeaderText = "Precio";
+            DetalleDataGridView.Columns[5].Width = 69;
+            DetalleDataGridView.Columns[5].DefaultCellStyle.Format = "N2";
+            DetalleDataGridView.Columns[6].HeaderText = "Importe";
+            DetalleDataGridView.Columns[6].Width = 69;
+            DetalleDataGridView.Columns[6].DefaultCellStyle.Format = "N2";
+        } 
+
+        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en la base de datos
+        {
+            RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
+            Facturas Factura = Repositorio.Buscar((int)FacturaIdNumericUpDown.Value);
+            return Factura != null;
+        } 
+        
+         private void rFacturas_Load(object sender, EventArgs e) // Carga el Form
+        {
+            FechaDateTimePicker.Value = DateTime.Now;
+            FacturaIdNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
+            BuscarButton.Enabled = (Nivel <= 1) ? true : false;
+            FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
+            PrecioNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
+
+            if (FacturaId > 0)
+            {
+                FacturaIdNumericUpDown.Value = FacturaId;
+                Buscar();
+            }
+            else
+            {
+                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+                UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
+            }
+
+            MyToolTip.SetToolTip(VerProductosButton, "Ver listado de productos");
+        }       
+        //Botones -------------------------------------------------------------------------------------------------
+        private void BuscarProductoButton_Click(object sender, EventArgs e) // Clic al boton  buscar producto
         {
             Productos Producto = BuscaProducto(Convert.ToInt32(ProductoIdNumericUpDown.Value));
             LimpiarProductoGroupBox();
@@ -312,17 +378,7 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-        private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            ImporteTextBox.Text = Convert.ToString(CantidadNumericUpDown.Value * PrecioNumericUpDown.Value); //Calcula el valor del importe si la cantidad cambia
-        }
-
-        private void PrecioNumericUpDown_ValueChanged(object sender, EventArgs e) //Calcula el valor del importe si el precio cambia
-        {
-            ImporteTextBox.Text = Convert.ToString(CantidadNumericUpDown.Value * PrecioNumericUpDown.Value);
-        }
-
-        private void VerProductosButton_Click(object sender, EventArgs e) //Boton ver lista de productos
+        private void VerProductosButton_Click(object sender, EventArgs e) // clic al boton ver lista de productos
         {
             LimpiarProductoGroupBox();
             SeleccionProducto TraeProducto = new SeleccionProducto();
@@ -335,15 +391,7 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-        private Productos BuscaProducto(int Id) // Funcion encargada de buscar el producto
-        {
-            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
-            Productos Producto = Repositorio.Buscar(Id);
-
-            return Producto;
-        }
-
-        private void AgregarProductoButton_Click(object sender, EventArgs e) //Boton agregar producto al detalle
+        private void AgregarProductoButton_Click(object sender, EventArgs e) // clic al boton agregar producto al detalle
         {
             MyErrorProvider.Clear();
 
@@ -371,28 +419,10 @@ namespace InventoryAssistant.UI.Registros
 
             CargaGrid();
             LimpiarProductoGroupBox();
+            VerProductosButton.Focus();
         }
 
-        private void FormatoDataGridView()//Da el formato al DataGridView del detalle
-        {
-            DetalleDataGridView.Columns[0].Visible = false;
-            DetalleDataGridView.Columns[1].Visible = false;
-            DetalleDataGridView.Columns[2].HeaderText = "Codigo";
-            DetalleDataGridView.Columns[2].Width = 58;
-            DetalleDataGridView.Columns[3].HeaderText = "Cantidad";
-            DetalleDataGridView.Columns[3].Width = 58;
-            DetalleDataGridView.Columns[4].HeaderText = "Descripción";
-            DetalleDataGridView.Columns[4].Width = 250;
-            DetalleDataGridView.Columns[5].HeaderText = "Precio";
-            DetalleDataGridView.Columns[5].Width = 69;
-            DetalleDataGridView.Columns[5].DefaultCellStyle.Format = "N2";
-            DetalleDataGridView.Columns[6].HeaderText = "Importe";
-            DetalleDataGridView.Columns[6].Width = 69;
-            DetalleDataGridView.Columns[6].DefaultCellStyle.Format = "N2";
-
-        }
-
-        private void EliminarProductoButton_Click(object sender, EventArgs e) //Boton eliminar producto!
+        private void EliminarProductoButton_Click(object sender, EventArgs e) // clic Boton eliminar producto!
         {
             if(DetalleDataGridView.CurrentRow.Index >= 0)
             {
@@ -407,7 +437,7 @@ namespace InventoryAssistant.UI.Registros
 
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click(object sender, EventArgs e) // Clic al boton guardar
         {
 
             Facturas Factura = new Facturas();
@@ -446,20 +476,12 @@ namespace InventoryAssistant.UI.Registros
             }
         } 
 
-        private bool ExisteEnLaBaseDeDatos() //Funcion que valida si existe en la base de datos
-        {
-            RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
-            Facturas Factura = Repositorio.Buscar((int)FacturaIdNumericUpDown.Value);
-            return Factura != null;
-        }
-
-
-        private void LimpiarButton_Click(object sender, EventArgs e)
+        private void LimpiarButton_Click(object sender, EventArgs e) // Clic al boton limpiar
         {
             Limpiar();
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e) // Clic al boton eliminar
         {
 
             if (!ExisteEnLaBaseDeDatos())
@@ -491,40 +513,206 @@ namespace InventoryAssistant.UI.Registros
             }
        
         }
+        //---------------------------------------------------------------------------------------------------------
 
-        private void rFacturas_Load(object sender, EventArgs e)
+        //Moviendo el foco entre los campos del registro ----------------------------------------------------------
+        private void FacturaIdNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown del codigo de la factura
         {
-            FechaDateTimePicker.Value = DateTime.Now;
-            FacturaIdNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
-            BuscarButton.Enabled = (Nivel <= 1) ? true : false;
-            FechaDateTimePicker.Enabled = (Nivel <= 0) ? true : false;
-            PrecioNumericUpDown.Enabled = (Nivel <= 1) ? true : false;
+            if (e.KeyCode == Keys.Enter)
+                BuscarButton.Focus();
+        }
 
-            if (FacturaId > 0)
+        private void BuscarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton buscar factura
+        {
+            switch (e.KeyCode)
             {
-                FacturaIdNumericUpDown.Value = FacturaId;
-                Buscar();
+                case Keys.Up:
+                    FacturaIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Left:
+                    FacturaIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Right:
+                    FechaDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    FechaDateTimePicker.Focus();
+                    break;
             }
-            else
+        }
+
+        private void FechaDateTimePicker_CloseUp(object sender, EventArgs e) // Si el DateTimePicker de la fecha se cierra
+        {
+            ClienteTextBox.Focus();
+        }
+
+        private void FechaDateTimePicker_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el DateTimePicker de la fecha
+        {
+            if (e.KeyCode == Keys.Enter)
+                ClienteTextBox.Focus();
+        }
+
+        private void ClienteTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbos del cliente
+        {
+            switch (e.KeyCode)
             {
-                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-                UsuarioTextBox.Text = repositorio.ReturnUsuario().Nombres;
+                case Keys.Up:
+                    FechaDateTimePicker.Focus();
+                    break;
+
+                case Keys.Left:
+                    FechaDateTimePicker.Focus();
+                    break;
+
+                case Keys.Right:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Enter:
+                    VerProductosButton.Focus();
+                    break;
             }
         }
 
-        private void DetalleDataGridView_Click(object sender, EventArgs e)
+        private void CantidadNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown de la cantidad
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (Nivel <= 1)
+                    PrecioNumericUpDown.Focus();
+                else
+                    AgregarProductoButton.Focus();
+            }
 
         }
 
-        private void DetalleDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void PrecioNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown del precio
         {
-
+            if (e.KeyCode == Keys.Enter)
+                AgregarProductoButton.Focus();
         }
 
-        private void DetalleDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void AgregarProductoButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton agregar producto
         {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    if (Nivel <= 1)
+                        FechaDateTimePicker.Focus();
+                    else
+                        CantidadNumericUpDown.Focus();
+                    break;
 
+                case Keys.Left:
+                    if (Nivel <= 1)
+                        FechaDateTimePicker.Focus();
+                    else
+                        CantidadNumericUpDown.Focus();
+                    break;
+
+                case Keys.Right:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    VerProductosButton.Focus();
+                    break;
+            }
+        }
+
+        private void EliminarProductoButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton eliminar producto
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    VerProductosButton.Focus();
+                    break;
+            }
+        }
+
+        private void GuardarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton guardar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    EliminarButton.Focus();
+                    break;
+            }
+        }
+
+        private void LimpiarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton Limpiar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    GuardarButton.Focus();
+                    break;
+            }
+        }
+
+        private void EliminarButton_KeyDown(object sender, KeyEventArgs e)  // Al pulsar una tecla en el boton eliminar factura
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    LimpiarButton.Focus();
+                    break;
+            }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace InventoryAssistant.UI.Registros
                 Buscar();
             }
 
-            MyToolTip.SetToolTip(AnadirCategoriasButton, "Agregar una nueva categoria");
+            MyToolTip.SetToolTip(AnadirCategoriasButton, "Agregar una nueva categoría");
         }
 
         private void Limpiar()// Funcion encargada de limpiar todos los campos del registro

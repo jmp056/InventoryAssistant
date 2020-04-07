@@ -166,6 +166,8 @@ namespace InventoryAssistant.UI.Registros
                 ProductoTextBox.Text = Producto.Descripcion;
                 CantidadNumericUpDown.Focus();
             }
+
+            MyToolTip.SetToolTip(VerProductosButton, "Ver listado de productos");
         }
 
         //Botones -------------------------------------------------------------------------------------------------

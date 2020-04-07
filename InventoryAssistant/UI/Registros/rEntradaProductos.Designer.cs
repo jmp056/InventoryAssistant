@@ -60,11 +60,12 @@
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(100, 35);
-            this.EliminarButton.TabIndex = 53;
+            this.EliminarButton.TabIndex = 80;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            this.EliminarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EliminarButton_KeyDown);
             // 
             // GuardarButton
             // 
@@ -74,11 +75,12 @@
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 35);
-            this.GuardarButton.TabIndex = 54;
+            this.GuardarButton.TabIndex = 60;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            this.GuardarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuardarButton_KeyDown);
             // 
             // LimpiarButton
             // 
@@ -88,11 +90,12 @@
             this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
-            this.LimpiarButton.TabIndex = 55;
+            this.LimpiarButton.TabIndex = 70;
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
             this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            this.LimpiarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LimpiarButton_KeyDown);
             // 
             // FechaDateTimePicker
             // 
@@ -103,8 +106,10 @@
             this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(113, 22);
-            this.FechaDateTimePicker.TabIndex = 52;
+            this.FechaDateTimePicker.TabIndex = 50;
             this.FechaDateTimePicker.Value = new System.DateTime(2020, 3, 6, 0, 0, 0, 0);
+            this.FechaDateTimePicker.CloseUp += new System.EventHandler(this.FechaDateTimePicker_CloseUp);
+            this.FechaDateTimePicker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FechaDateTimePicker_KeyDown);
             // 
             // CantidadNumericUpDown
             // 
@@ -118,7 +123,8 @@
             0});
             this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
             this.CantidadNumericUpDown.Size = new System.Drawing.Size(113, 22);
-            this.CantidadNumericUpDown.TabIndex = 51;
+            this.CantidadNumericUpDown.TabIndex = 40;
+            this.CantidadNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CantidadNumericUpDown_KeyDown);
             // 
             // ProductoLabel
             // 
@@ -161,11 +167,12 @@
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
-            this.BuscarButton.TabIndex = 46;
+            this.BuscarButton.TabIndex = 20;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            this.BuscarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarButton_KeyDown);
             // 
             // EntradaIdNumericUpDown
             // 
@@ -174,7 +181,8 @@
             this.EntradaIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.EntradaIdNumericUpDown.Name = "EntradaIdNumericUpDown";
             this.EntradaIdNumericUpDown.Size = new System.Drawing.Size(113, 22);
-            this.EntradaIdNumericUpDown.TabIndex = 45;
+            this.EntradaIdNumericUpDown.TabIndex = 10;
+            this.EntradaIdNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EntradaIdNumericUpDown_KeyDown);
             // 
             // EntradaIdLabel
             // 
@@ -200,7 +208,8 @@
             this.ProductoTextBox.Name = "ProductoTextBox";
             this.ProductoTextBox.ReadOnly = true;
             this.ProductoTextBox.Size = new System.Drawing.Size(190, 22);
-            this.ProductoTextBox.TabIndex = 56;
+            this.ProductoTextBox.TabIndex = 90;
+            this.ProductoTextBox.TextChanged += new System.EventHandler(this.ProductoTextBox_TextChanged);
             // 
             // VerProductosButton
             // 
@@ -208,7 +217,7 @@
             this.VerProductosButton.Location = new System.Drawing.Point(410, 69);
             this.VerProductosButton.Name = "VerProductosButton";
             this.VerProductosButton.Size = new System.Drawing.Size(30, 30);
-            this.VerProductosButton.TabIndex = 118;
+            this.VerProductosButton.TabIndex = 30;
             this.VerProductosButton.UseVisualStyleBackColor = true;
             this.VerProductosButton.Click += new System.EventHandler(this.VerProductosButton_Click);
             // 

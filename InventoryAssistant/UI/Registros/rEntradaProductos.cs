@@ -114,7 +114,6 @@ namespace InventoryAssistant.UI.Registros
             return Paso;
         }
 
-
         private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario existe en una base de datos!
         {
             RepositorioBase<EntradaProductos> repositorio = new RepositorioBase<EntradaProductos>();
@@ -122,13 +121,7 @@ namespace InventoryAssistant.UI.Registros
             return (entradaProductos != null);
         }
 
-        //Botones -------------------------------------------------------------------------------------------------
-        private void BuscarButton_Click(object sender, EventArgs e)//Clic al boton buscar
-        {
-            Buscar();
-        }
-
-        private void Buscar()
+        private void Buscar() // Funcion encargada de realizar la busqueda
         {
             EntradaProductos entradaProductos = BuscaEntrada((int)EntradaIdNumericUpDown.Value);
 
@@ -143,12 +136,50 @@ namespace InventoryAssistant.UI.Registros
                 MyErrorProvider.SetError(EntradaIdNumericUpDown, "No existe una entrada con este codigo!");
         }
 
-        private void LimpiarButton_Click(object sender, EventArgs e)//Clic al boton limpiar
+        private Productos BuscaProducto(int Id) // Funcion encargada de buscar el producto
+        {
+            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+            Productos Producto = Repositorio.Buscar(Id);
+
+            return Producto;
+        }
+
+        private EntradaProductos BuscaEntrada(int Id) // Funcion encargada de buscar la entrada
+        {
+            RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
+            EntradaProductos entradaProductos = Repositorio.Buscar(Id);
+
+            return entradaProductos;
+        }
+
+        private void rEntradaProductos_Load(object sender, EventArgs e) // Al cargal el Form
+        {
+            FechaDateTimePicker.Value = DateTime.Now;
+            if(EntradaProductoId > 0)
+            {
+                EntradaIdNumericUpDown.Value = EntradaProductoId;
+                Buscar();
+            }
+            else if (ProductoId > 0)
+            {
+                Producto = BuscaProducto(ProductoId);
+                ProductoTextBox.Text = Producto.Descripcion;
+                CantidadNumericUpDown.Focus();
+            }
+        }
+
+        //Botones -------------------------------------------------------------------------------------------------
+        private void BuscarButton_Click(object sender, EventArgs e) // Clic al boton buscar
+        {
+            Buscar();
+        }
+
+        private void LimpiarButton_Click(object sender, EventArgs e) // Clic al boton limpiar
         {
             Limpiar();
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)//Clic al boton guardar
+        private void GuardarButton_Click(object sender, EventArgs e) // Clic al boton guardar
         {
             EntradaProductos entradaProductos = new EntradaProductos();
 
@@ -205,7 +236,7 @@ namespace InventoryAssistant.UI.Registros
             EntradaIdNumericUpDown.Focus();
         }
 
-        private void EliminarButton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e) // Clic al boton Eliminar
         {
             /*RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
             MyErrorProvider.Clear();
@@ -245,7 +276,7 @@ namespace InventoryAssistant.UI.Registros
             EntradaIdNumericUpDown.Focus();*/
         }
 
-        private void VerProductosButton_Click(object sender, EventArgs e)
+        private void VerProductosButton_Click(object sender, EventArgs e) // Clic al boton ver productos
         {
             SeleccionProducto TraeProducto = new SeleccionProducto();
             if (TraeProducto.ShowDialog() == DialogResult.OK)
@@ -256,35 +287,122 @@ namespace InventoryAssistant.UI.Registros
                 CantidadNumericUpDown.Focus();
             }
         }
-        private Productos BuscaProducto(int Id) // Funcion encargada de buscar el producto
-        {
-            RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
-            Productos Producto = Repositorio.Buscar(Id);
+        //---------------------------------------------------------------------------------------------------------
 
-            return Producto;
+        //Moviendo el foco entre los campos del registro ----------------------------------------------------------
+        private void EntradaIdNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown del codigo
+        {
+            if (e.KeyCode == Keys.Enter)
+                BuscarButton.Focus();
         }
 
-        private EntradaProductos BuscaEntrada(int Id)
+        private void BuscarButton_KeyDown(object sender, KeyEventArgs e)
         {
-            RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
-            EntradaProductos entradaProductos = Repositorio.Buscar(Id);
-
-            return entradaProductos;
-        }
-
-        private void rEntradaProductos_Load(object sender, EventArgs e)
-        {
-            FechaDateTimePicker.Value = DateTime.Now;
-            if(EntradaProductoId > 0)
+            switch (e.KeyCode)
             {
-                EntradaIdNumericUpDown.Value = EntradaProductoId;
-                Buscar();
+                case Keys.Up:
+                    EntradaIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Left:
+                    EntradaIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Right:
+                    VerProductosButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    VerProductosButton.Focus();
+                    break;
             }
-            else if (ProductoId > 0)
+        }
+
+        private void ProductoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            CantidadNumericUpDown.Focus();
+        }
+
+        private void CantidadNumericUpDown_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                FechaDateTimePicker.Focus();
+        }
+
+        private void FechaDateTimePicker_CloseUp(object sender, EventArgs e)
+        {
+            GuardarButton.Focus();
+        }
+
+        private void FechaDateTimePicker_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                GuardarButton.Focus();
+        }
+
+        private void GuardarButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
             {
-                Producto = BuscaProducto(ProductoId);
-                ProductoTextBox.Text = Producto.Descripcion;
-                CantidadNumericUpDown.Focus();
+                case Keys.Up:
+                    FechaDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    EliminarButton.Focus();
+                    break;
+            }
+        }
+
+        private void LimpiarButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    FechaDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    GuardarButton.Focus();
+                    break;
+            }
+        }
+
+        private void EliminarButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    FechaDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    LimpiarButton.Focus();
+                    break;
             }
         }
     }

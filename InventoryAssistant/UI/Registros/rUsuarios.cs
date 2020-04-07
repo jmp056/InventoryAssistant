@@ -477,97 +477,7 @@ namespace InventoryAssistant.UI.Registros
             }
             NombresTextBox.Focus();
         }
-        //---------------------------------------------------------------------------------------------------------
-
-        //Moviendo el foco entre los campos del registro ----------------------------------------------------------
-
-        private void UsuarioIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)// Al precionar enter mueve el culsor del NumericUpDown del codigo del usuario al Boton buscar
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                BuscarButton.Focus();
-            }
-        }
-
-        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del los nombre al TextBox de los apellido
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                ApellidosTextBox.Focus();
-            }
-        }
-
-        private void ApellidosTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox de los apellidos al MaskTextBox de la cedula
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                CedulaMaskedTextBox.Focus();
-            }
-        }
-
-        private void CedulaMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e) //Al precionar enter mueve del el culsor MaskTextBox de la Cedula al MaskTextBox del Telefono
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                TelefonoMaskedTextBox.Focus();
-            }
-        }
-
-        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del MaskTextBox del telefono al DateTimePicker de la fecha de registro
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                FechaDeRegistroDateTimePicker.Focus();
-            }
-        }
-        private void FechaDeRegistroDateTimePicker_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del DateTimePicker de la fecha de registro al TextBox del Usuario
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                UsuarioTextBox.Focus();
-            }
-        }
-
-        private void FechaDeRegistroDateTimePicker_ValueChanged(object sender, EventArgs e)//Al cambiar el valor mueve el culsor del DateTimePicker de la fecha de registro al TextBox del Usuario
-        {
-            UsuarioTextBox.Focus();
-        }
-
-        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e)// Al minimizarse mueve el culsor desde del DateTimePicker de la fecha de registro al TextBox del Usuario
-        {
-            UsuarioTextBox.Focus();
-        }
-
-        private void UsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del nombre de usuario al ComboBox del nivel de usuario
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                NivelDeUsuarioComboBox.Focus();
-            }
-        }
-
-        private void NivelDeUsuarioComboBox_SelectedIndexChanged(object sender, EventArgs e) //Al minimizarse mueve el culsor desde del ComboBox del nivel de usuario al TextBox de la contraseña
-        {
-            ContrasenaTextBox.Focus();
-        }
-
-        private void ContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del la contraseña al TextBox de la confirmacion de la contraseña
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                ConfirmarContrasenaTextBox.Focus();
-            }
-        }
-
-        private void ConfirmarContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox de la confirmacion de la contraseña al Boton Guardar
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
-                GuardarButton.Focus();
-            }
-        }
-
-        private void rUsuarios_Load(object sender, EventArgs e)
+        private void rUsuarios_Load(object sender, EventArgs e) // Al cargar el Form
         {
             FechaDeRegistroDateTimePicker.Value = DateTime.Now;
 
@@ -575,6 +485,254 @@ namespace InventoryAssistant.UI.Registros
             {
                 UsuarioIdNumericUpDown.Value = UsuarioId;
                 Buscar();
+            }
+        }
+        //---------------------------------------------------------------------------------------------------------
+
+        //Moviendo el foco entre los campos del registro ----------------------------------------------------------
+        private void UsuarioIdNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al Pulsar una tecla en el NumericUpDown del id
+        {
+            if (e.KeyCode == Keys.Enter)
+                BuscarButton.Focus();
+        }
+
+        private void BuscarButton_KeyDown(object sender, KeyEventArgs e)// Al pulsar una tecla en el boton buscar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    UsuarioIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Left:
+                    UsuarioIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Right:
+                    NombresTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    NombresTextBox.Focus();
+                    break;
+            }
+        }
+
+        private void NombresTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar tecla en el TextBox de los nombres
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    BuscarButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    ApellidosTextBox.Focus();
+                    break;
+
+                case Keys.Enter:
+                    ApellidosTextBox.Focus();
+                    break;
+            }
+        }
+
+        private void ApellidosTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar tecla en el TextBox de los apellidos
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    NombresTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    CedulaMaskedTextBox.Focus();
+                    break;
+
+                case Keys.Enter:
+                    CedulaMaskedTextBox.Focus();
+                    break;
+            }
+        }
+
+        private void CedulaMaskedTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el MaskedTextBox de la cedula
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    ApellidosTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    TelefonoMaskedTextBox.Focus();
+                    break;
+
+                case Keys.Enter:
+                    TelefonoMaskedTextBox.Focus();
+                    break;
+            }
+        }
+
+        private void TelefonoMaskedTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el MaskedTextBox del telefono
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    CedulaMaskedTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    FechaDeRegistroDateTimePicker.Focus();
+                    break;
+
+                case Keys.Enter:
+                    FechaDeRegistroDateTimePicker.Focus();
+                    break;
+            }
+        }
+
+        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e) // Si el DateTimePicker de la fecha se cierra
+        {
+            UsuarioTextBox.Focus();
+        }
+
+        private void FechaDeRegistroDateTimePicker_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el DateTimePicker de la fecha
+        {
+            if (e.KeyCode == Keys.Enter)
+                UsuarioTextBox.Focus();
+        }
+
+        private void UsuarioTextBox_KeyDown(object sender, KeyEventArgs e)  // Al pulsar una tecla en el TextBox del usuario
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    FechaDeRegistroDateTimePicker.Focus();
+                    break;
+
+                case Keys.Down:
+                    NivelDeUsuarioComboBox.Focus();
+                    break;
+
+                case Keys.Enter:
+                    NivelDeUsuarioComboBox.Focus();
+                    break;
+            }
+        }
+
+        private void NivelDeUsuarioComboBox_Enter(object sender, EventArgs e) // Cuando el combobox del nivel se usuario gana el foco
+        {
+            NivelDeUsuarioComboBox.DroppedDown = true;
+        }
+
+        private void NivelDeUsuarioComboBox_DropDownClosed(object sender, EventArgs e) // Cuando el combobox del nivel del usuario se cerra
+        {
+            ContrasenaTextBox.Focus();
+        }
+
+        private void NivelDeUsuarioComboBox_SelectedIndexChanged(object sender, EventArgs e) // Si cambia la seleccion en el combobox del nivel del usuario
+        {
+            ContrasenaTextBox.Focus();
+        }
+
+        private void ContrasenaTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de la contraseña
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    NivelDeUsuarioComboBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    ConfirmarContrasenaTextBox.Focus();
+                    break;
+
+                case Keys.Enter:
+                    ConfirmarContrasenaTextBox.Focus();
+                    break;
+            }
+        }
+
+        private void ConfirmarContrasenaTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de confirmar la contraseña
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    ContrasenaTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Enter:
+                    GuardarButton.Focus();
+                    break;
+            }
+        }
+
+        private void LimpiarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton Limpiar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    ConfirmarContrasenaTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    GuardarButton.Focus();
+                    break;
+            }
+        }
+
+        private void GuardarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton Guardar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    ConfirmarContrasenaTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    EliminarButton.Focus();
+                    break;
+            }
+        }
+
+        private void EliminarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton eliminar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    ConfirmarContrasenaTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Left:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    LimpiarButton.Focus();
+                    break;
             }
         }
     }

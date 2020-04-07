@@ -153,10 +153,12 @@
             0,
             0});
             this.DosMilNumericUpDown.Name = "DosMilNumericUpDown";
+            this.DosMilNumericUpDown.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DosMilNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.DosMilNumericUpDown.TabIndex = 113;
-            this.DosMilNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyDown_1);
+            this.DosMilNumericUpDown.Enter += new System.EventHandler(this.DosMilNumericUpDown_Enter);
             this.DosMilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DosMilNumericUpDown_KeyUp);
+            this.DosMilNumericUpDown.Leave += new System.EventHandler(this.DosMilNumericUpDown_Leave);
             // 
             // VeinteNumericUpDown
             // 
@@ -171,8 +173,9 @@
             this.VeinteNumericUpDown.Name = "VeinteNumericUpDown";
             this.VeinteNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.VeinteNumericUpDown.TabIndex = 114;
-            this.VeinteNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VeinteNumericUpDown_KeyDown);
+            this.VeinteNumericUpDown.Enter += new System.EventHandler(this.VeinteNumericUpDown_Enter);
             this.VeinteNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VeinteNumericUpDown_KeyUp);
+            this.VeinteNumericUpDown.Leave += new System.EventHandler(this.VeinteNumericUpDown_Leave);
             // 
             // DiezNumericUpDown
             // 
@@ -187,8 +190,9 @@
             this.DiezNumericUpDown.Name = "DiezNumericUpDown";
             this.DiezNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.DiezNumericUpDown.TabIndex = 115;
-            this.DiezNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DiezNumericUpDown_KeyDown);
+            this.DiezNumericUpDown.Enter += new System.EventHandler(this.DiezNumericUpDown_Enter);
             this.DiezNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DiezNumericUpDown_KeyUp);
+            this.DiezNumericUpDown.Leave += new System.EventHandler(this.DiezNumericUpDown_Leave);
             // 
             // VeinticincoNumericUpDown
             // 
@@ -203,8 +207,9 @@
             this.VeinticincoNumericUpDown.Name = "VeinticincoNumericUpDown";
             this.VeinticincoNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.VeinticincoNumericUpDown.TabIndex = 116;
-            this.VeinticincoNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VeinticincoNumericUpDown_KeyDown);
+            this.VeinticincoNumericUpDown.Enter += new System.EventHandler(this.VeinticincoNumericUpDown_Enter);
             this.VeinticincoNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VeinticincoNumericUpDown_KeyUp);
+            this.VeinticincoNumericUpDown.Leave += new System.EventHandler(this.VeinticincoNumericUpDown_Leave);
             // 
             // CincuentaNumericUpDown
             // 
@@ -219,8 +224,9 @@
             this.CincuentaNumericUpDown.Name = "CincuentaNumericUpDown";
             this.CincuentaNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.CincuentaNumericUpDown.TabIndex = 117;
-            this.CincuentaNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CincuentaNumericUpDown_KeyDown);
+            this.CincuentaNumericUpDown.Enter += new System.EventHandler(this.CincuentaNumericUpDown_Enter);
             this.CincuentaNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CincuentaNumericUpDown_KeyUp);
+            this.CincuentaNumericUpDown.Leave += new System.EventHandler(this.CincuentaNumericUpDown_Leave);
             // 
             // CienNumericUpDown
             // 
@@ -235,8 +241,9 @@
             this.CienNumericUpDown.Name = "CienNumericUpDown";
             this.CienNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.CienNumericUpDown.TabIndex = 118;
-            this.CienNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CienNumericUpDown_KeyDown);
+            this.CienNumericUpDown.Enter += new System.EventHandler(this.CienNumericUpDown_Enter);
             this.CienNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CienNumericUpDown_KeyUp);
+            this.CienNumericUpDown.Leave += new System.EventHandler(this.CienNumericUpDown_Leave);
             // 
             // DoscientosNumericUpDown
             // 
@@ -251,8 +258,9 @@
             this.DoscientosNumericUpDown.Name = "DoscientosNumericUpDown";
             this.DoscientosNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.DoscientosNumericUpDown.TabIndex = 119;
-            this.DoscientosNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoscientosNumericUpDown_KeyDown);
+            this.DoscientosNumericUpDown.Enter += new System.EventHandler(this.DoscientosNumericUpDown_Enter);
             this.DoscientosNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DoscientosNumericUpDown_KeyUp);
+            this.DoscientosNumericUpDown.Leave += new System.EventHandler(this.DoscientosNumericUpDown_Leave);
             // 
             // QuinientosNumericUpDown
             // 
@@ -267,8 +275,9 @@
             this.QuinientosNumericUpDown.Name = "QuinientosNumericUpDown";
             this.QuinientosNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.QuinientosNumericUpDown.TabIndex = 120;
-            this.QuinientosNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuinientosNumericUpDown_KeyDown);
+            this.QuinientosNumericUpDown.Enter += new System.EventHandler(this.QuinientosNumericUpDown_Enter);
             this.QuinientosNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.QuinientosNumericUpDown_KeyUp);
+            this.QuinientosNumericUpDown.Leave += new System.EventHandler(this.QuinientosNumericUpDown_Leave);
             // 
             // MilNumericUpDown
             // 
@@ -283,8 +292,9 @@
             this.MilNumericUpDown.Name = "MilNumericUpDown";
             this.MilNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.MilNumericUpDown.TabIndex = 121;
-            this.MilNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MilNumericUpDown_KeyDown);
+            this.MilNumericUpDown.Enter += new System.EventHandler(this.MilNumericUpDown_Enter);
             this.MilNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MilNumericUpDown_KeyUp);
+            this.MilNumericUpDown.Leave += new System.EventHandler(this.MilNumericUpDown_Leave);
             // 
             // XDosmilLabel
             // 
@@ -886,8 +896,9 @@
             this.UnoNumericUpDown.Name = "UnoNumericUpDown";
             this.UnoNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.UnoNumericUpDown.TabIndex = 127;
-            this.UnoNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnoNumericUpDown_KeyDown);
+            this.UnoNumericUpDown.Enter += new System.EventHandler(this.UnoNumericUpDown_Enter);
             this.UnoNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnoNumericUpDown_KeyUp);
+            this.UnoNumericUpDown.Leave += new System.EventHandler(this.UnoNumericUpDown_Leave);
             // 
             // CincoNumericUpDown
             // 
@@ -902,8 +913,9 @@
             this.CincoNumericUpDown.Name = "CincoNumericUpDown";
             this.CincoNumericUpDown.Size = new System.Drawing.Size(55, 22);
             this.CincoNumericUpDown.TabIndex = 126;
-            this.CincoNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CincoNumericUpDown_KeyDown);
+            this.CincoNumericUpDown.Enter += new System.EventHandler(this.CincoNumericUpDown_Enter);
             this.CincoNumericUpDown.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CincoNumericUpDown_KeyUp);
+            this.CincoNumericUpDown.Leave += new System.EventHandler(this.CincoNumericUpDown_Leave);
             // 
             // DosmilTextBox
             // 

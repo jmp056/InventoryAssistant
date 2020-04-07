@@ -83,7 +83,7 @@ namespace InventoryAssistant.UI.Registros
             CincoNumericUpDown.Controls[0].Visible = false;
             UnoNumericUpDown.Controls[0].Visible = false;
 
-            if(CuadreDeCajaId == 0)
+            if (CuadreDeCajaId == 0)
             {
                 FechaDateTimePicker.Value = DateTime.Now;
             }
@@ -316,13 +316,16 @@ namespace InventoryAssistant.UI.Registros
 
         private void FacturasDataGridView_DoubleClick(object sender, EventArgs e) // Dos clic al DataGridView de las facturas
         {
-            if (ListadoFacturas.Count > 0)
+            if (FacturasDataGridView.CurrentRow != null)
             {
-                if (FacturasDataGridView.CurrentRow.Index >= 0)
+                if (ListadoFacturas.Count > 0)
                 {
-                    int IdFacturaSeleccionada = Convert.ToInt32(FacturasDataGridView.CurrentRow.Cells["FacturaId"].Value);
-                    rFacturas rF = new rFacturas(NombreUsuario, Nivel, IdFacturaSeleccionada);
-                    rF.ShowDialog();
+                    if (FacturasDataGridView.CurrentRow.Index >= 0)
+                    {
+                        int IdFacturaSeleccionada = Convert.ToInt32(FacturasDataGridView.CurrentRow.Cells["FacturaId"].Value);
+                        rFacturas rF = new rFacturas(NombreUsuario, Nivel, IdFacturaSeleccionada);
+                        rF.ShowDialog();
+                    }
                 }
             }
         }
@@ -348,254 +351,277 @@ namespace InventoryAssistant.UI.Registros
         // NUMERIC UP DOUWN DE DOSMIL -------------------------------------------------------------------------------------------------- 
         private void DosMilNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (DosMilNumericUpDown.Text == "")
+                DosMilNumericUpDown.Value = 0;
+
             DosmilTextBox.Text = Convert.ToString(DosMilNumericUpDown.Value * 2000) + Decimas;
             CalcularTotalEnCaja();
-        }
 
-        private void DosMilNumericUpDown_KeyDown_1(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
-        {
             if (e.KeyCode == Keys.Enter)
                 MilNumericUpDown.Focus();
+        }
 
-            if (e.KeyCode == Keys.Back && Convert.ToString(DoscientosNumericUpDown.Value).Length == 0)
-                DosmilTextBox.Text = "0.00";
+        private void DosMilNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
+        {
+            if (DosMilNumericUpDown.Value == 0)
+                DosMilNumericUpDown.Text = "";
+        }
 
-            //switch (e.KeyCode)
-            //{
-            //    case Keys.Back:
-            //        CalcularTotalEnCaja();
-            //        if (Convert.ToString(DosMilNumericUpDown.Value).Length == 0)
-            //            DosmilTextBox.Text = "0.00";
-            //        break;
-
-            //    case Keys.Enter:
-            //        CalcularTotalEnCaja();
-            //        MilNumericUpDown.Focus();
-
-            //        break;
-            //}
+        private void DosMilNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (DosMilNumericUpDown.Text == "")
+                DosMilNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE MIL -------------------------------------------------------------------------------------------------- 
         private void MilNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (MilNumericUpDown.Text == "")
+                MilNumericUpDown.Value = 0;
+
             MilTextBox.Text = Convert.ToString(MilNumericUpDown.Value * 1000) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                QuinientosNumericUpDown.Focus();
         }
 
-        private void MilNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void MilNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (MilNumericUpDown.Value == 0)
+                MilNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    QuinientosNumericUpDown.Focus();
-                    break;
-            }
+        private void MilNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (MilNumericUpDown.Text == "")
+                MilNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE QUINIENTOS -------------------------------------------------------------------------------------------------- 
         private void QuinientosNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (QuinientosNumericUpDown.Text == "")
+                QuinientosNumericUpDown.Value = 0;
+
             QuinientosTextBox.Text = Convert.ToString(QuinientosNumericUpDown.Value * 500) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                DoscientosNumericUpDown.Focus();
         }
 
-        private void QuinientosNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void QuinientosNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (QuinientosNumericUpDown.Value == 0)
+                QuinientosNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    DoscientosNumericUpDown.Focus();
-                    break;
-            }
+        private void QuinientosNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (QuinientosNumericUpDown.Text == "")
+                QuinientosNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE DOSCIENTOS -------------------------------------------------------------------------------------------------- 
         private void DoscientosNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (DoscientosNumericUpDown.Text == "")
+                DoscientosNumericUpDown.Value = 0;
+
             DoscientosTextBox.Text = Convert.ToString(DoscientosNumericUpDown.Value * 200) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                CienNumericUpDown.Focus();
         }
 
-        private void DoscientosNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void DoscientosNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (DoscientosNumericUpDown.Value == 0)
+                DoscientosNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    CienNumericUpDown.Focus();
-                    break;
-            }
+        private void DoscientosNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (DoscientosNumericUpDown.Text == "")
+                DoscientosNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE CIEN -------------------------------------------------------------------------------------------------- 
         private void CienNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (CienNumericUpDown.Text == "")
+                CienNumericUpDown.Value = 0;
+
             CienTextBox.Text = Convert.ToString(CienNumericUpDown.Value * 100) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                CincuentaNumericUpDown.Focus();
         }
 
-        private void CienNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void CienNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (CienNumericUpDown.Value == 0)
+                CienNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    CincuentaNumericUpDown.Focus();
-                    break;
-            }
+        private void CienNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (CienNumericUpDown.Text == "")
+                CienNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE CINCUENTA -------------------------------------------------------------------------------------------------- 
         private void CincuentaNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (CincuentaNumericUpDown.Text == "")
+                CincuentaNumericUpDown.Value = 0;
+
             CincuentaTextBox.Text = Convert.ToString(CincuentaNumericUpDown.Value * 50) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                VeinticincoNumericUpDown.Focus();
         }
 
-        private void CincuentaNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void CincuentaNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (CincuentaNumericUpDown.Value == 0)
+                CincuentaNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    VeinteNumericUpDown.Focus();
-                    break;
-            }
+        private void CincuentaNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (CincuentaNumericUpDown.Text == "")
+                CincuentaNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE VEINTICINCO -------------------------------------------------------------------------------------------------- 
         private void VeinticincoNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (VeinticincoNumericUpDown.Text == "")
+                VeinticincoNumericUpDown.Value = 0;
+
             VeinticincoTextBox.Text = Convert.ToString(VeinticincoNumericUpDown.Value * 25) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                VeinteNumericUpDown.Focus();
         }
 
-        private void VeinticincoNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void VeinticincoNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (VeinticincoNumericUpDown.Value == 0)
+                VeinticincoNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    VeinteNumericUpDown.Focus();
-                    break;
-            }
+        private void VeinticincoNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (VeinticincoNumericUpDown.Text == "")
+                VeinticincoNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE VEINTE -------------------------------------------------------------------------------------------------- 
         private void VeinteNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (VeinteNumericUpDown.Text == "")
+                VeinteNumericUpDown.Value = 0;
+
             VeinteTextBox.Text = Convert.ToString(VeinteNumericUpDown.Value * 20) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                DiezNumericUpDown.Focus();
         }
 
-        private void VeinteNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void VeinteNumericUpDown_Enter(object sender, EventArgs e) // Al salir el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (VeinteNumericUpDown.Value == 0)
+                VeinteNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    DiezNumericUpDown.Focus();
-                    break;
-            }
+        private void VeinteNumericUpDown_Leave(object sender, EventArgs e) // Al entrar el foco
+        {
+            if (VeinteNumericUpDown.Text == "")
+                VeinteNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE DIEZ -------------------------------------------------------------------------------------------------- 
         private void DiezNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (DiezNumericUpDown.Text == "")
+                DiezNumericUpDown.Value = 0;
+
             DiezTextBox.Text = Convert.ToString(DiezNumericUpDown.Value * 10) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                CincoNumericUpDown.Focus();
         }
 
-        private void DiezNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void DiezNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (DiezNumericUpDown.Value == 0)
+                DiezNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    CincoNumericUpDown.Focus();
-                    break;
-            }
+        private void DiezNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (DiezNumericUpDown.Text == "")
+                DiezNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE CINCO -------------------------------------------------------------------------------------------------- 
         private void CincoNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (CincoNumericUpDown.Text == "")
+                CincoNumericUpDown.Value = 0;
+
             CincoTextBox.Text = Convert.ToString(CincoNumericUpDown.Value * 5) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                UnoNumericUpDown.Focus();
         }
 
-        private void CincoNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void CincoNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
+            if (CincoNumericUpDown.Value == 0)
+                CincoNumericUpDown.Text = "";
+        }
 
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    UnoNumericUpDown.Focus();
-                    break;
-            }
+        private void CincoNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (CincoNumericUpDown.Text == "")
+                CincoNumericUpDown.Text = "0";
         }
 
         // NUMERIC UP DOUWN DE UNO -------------------------------------------------------------------------------------------------- 
         private void UnoNumericUpDown_KeyUp(object sender, KeyEventArgs e) // Al precionar una tecla
         {
+            if (UnoNumericUpDown.Text == "")
+                UnoNumericUpDown.Value = 0;
+
             UnoTextBox.Text = Convert.ToString(UnoNumericUpDown.Value * 1) + Decimas;
             CalcularTotalEnCaja();
+
+            if (e.KeyCode == Keys.Enter)
+                GuardarButton.Focus();
         }
 
-        private void UnoNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Si la tecla es Enter o borrar
+        private void UnoNumericUpDown_Enter(object sender, EventArgs e) // Al entrar el foco
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Back:
-                    CalcularTotalEnCaja();
-                    break;
-
-                case Keys.Enter:
-                    CalcularTotalEnCaja();
-                    GuardarButton.Focus();
-                    break;
-            }
+            if (UnoNumericUpDown.Value == 0)
+                UnoNumericUpDown.Text = "";
         }
 
+        private void UnoNumericUpDown_Leave(object sender, EventArgs e) // Al salir el foco
+        {
+            if (UnoNumericUpDown.Text == "")
+                UnoNumericUpDown.Text = "0";
+        }
 
     }
 }

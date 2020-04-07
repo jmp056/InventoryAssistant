@@ -113,13 +113,7 @@ namespace InventoryAssistant.UI.Registros
             return (Categoria != null);
         }
 
-        //Botones -------------------------------------------------------------------------------------------------
-        private void Buscarbutton_Click(object sender, EventArgs e)// Clic al boton buscar
-        {
-            Buscar();
-        }
-        
-        private void Buscar()
+        private void Buscar() // Funcion encargada de realizar la busqueda
         {
             RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
             Categorias Categoria = new Categorias();
@@ -141,13 +135,29 @@ namespace InventoryAssistant.UI.Registros
                 MyErrorProvider.SetError(CategoriaIdNumericUpDown, "No existe una categoria con este codigo!");
                 NombreTextBox.Focus();
             }
+        }  
+        
+        private void rCategorias_Load(object sender, EventArgs e) // Al cargar el form
+        {
+            if (CategoriaId > 0)
+            {
+                CategoriaIdNumericUpDown.Value = CategoriaId;
+                Buscar();
+            }
         }
-        private void LimpiarButton_Click(object sender, EventArgs e)
+        
+        //Botones -------------------------------------------------------------------------------------------------
+        private void Buscarbutton_Click(object sender, EventArgs e) // Clic al boton buscar
+        {
+            Buscar();
+        }
+
+        private void LimpiarButton_Click(object sender, EventArgs e) // Clic al boton limpiar
         {
             Limpiar();
         }
         
-        private void GuardarButton_Click(object sender, EventArgs e) //Clic al boton guardar
+        private void GuardarButton_Click(object sender, EventArgs e) // Clic al boton guardar
         {
             RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
 
@@ -249,30 +259,112 @@ namespace InventoryAssistant.UI.Registros
         //---------------------------------------------------------------------------------------------------------
 
         //Moviendo el foco entre los campos del registro ----------------------------------------------------------
-        private void CategoriaIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e) // Al precionar enter mueve el culsor del NumericUpDown del codigo de la categoria al Boton buscar
+        private void CategoriaIdNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al presionar una tecla en el NumericUpDown del id
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Enter)
                 BuscarButton.Focus();
+        }
+
+        private void BuscarButton_KeyDown(object sender, KeyEventArgs e) // Al precionar una tecla en el boton buscar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    CategoriaIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Left:
+                    CategoriaIdNumericUpDown.Focus();
+                    break;
+
+                case Keys.Right:
+                    NombreTextBox.Focus();
+                    break;
+
+                case Keys.Down:
+                    NombreTextBox.Focus();
+                    break;
             }
         }
 
-        private void NombreTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del nombre al Boton guardar                                                                             
+        private void NombreTextBox_KeyDown(object sender, KeyEventArgs e) // Al precionar una tecla en el Textbox del nombre
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            switch (e.KeyCode)
             {
-                GuardarButton.Focus();
+                case Keys.Up:
+                    BuscarButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
             }
         }
 
-        private void rCategorias_Load(object sender, EventArgs e)
+        private void LimpiarButton_KeyDown(object sender, KeyEventArgs e) // Al presionar una tecla en el boton Limpiar
         {
-            if (CategoriaId > 0)
+            switch (e.KeyCode)
             {
-                CategoriaIdNumericUpDown.Value = CategoriaId;
-                Buscar();
+                case Keys.Up:
+                    NombreTextBox.Focus();
+                    break;
+
+                case Keys.Left:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    GuardarButton.Focus();
+                    break;
             }
         }
-        //Moviendo el foco entre los campos del registro ----------------------------------------------------------
+
+        private void GuardarButton_KeyDown(object sender, KeyEventArgs e) // Al presionar una tecla en el boton guardar
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    NombreTextBox.Focus();
+                    break;
+
+                case Keys.Left:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    EliminarButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    EliminarButton.Focus();
+                    break;
+            }
+        }
+
+        private void EliminarButton_KeyDown(object sender, KeyEventArgs e) // Al presionar una tecla en el boton guardar 
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    NombreTextBox.Focus();
+                    break;
+
+                case Keys.Left:
+                    GuardarButton.Focus();
+                    break;
+
+                case Keys.Right:
+                    LimpiarButton.Focus();
+                    break;
+
+                case Keys.Down:
+                    LimpiarButton.Focus();
+                    break;
+            }
+        }
     }
 }

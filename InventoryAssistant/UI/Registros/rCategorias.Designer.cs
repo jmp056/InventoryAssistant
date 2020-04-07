@@ -54,11 +54,12 @@
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(100, 35);
-            this.EliminarButton.TabIndex = 38;
+            this.EliminarButton.TabIndex = 60;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            this.EliminarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EliminarButton_KeyDown);
             // 
             // GuardarButton
             // 
@@ -68,11 +69,12 @@
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 35);
-            this.GuardarButton.TabIndex = 39;
+            this.GuardarButton.TabIndex = 40;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            this.GuardarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuardarButton_KeyDown);
             // 
             // LimpiarButton
             // 
@@ -82,11 +84,12 @@
             this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
             this.LimpiarButton.Name = "LimpiarButton";
             this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
-            this.LimpiarButton.TabIndex = 40;
+            this.LimpiarButton.TabIndex = 50;
             this.LimpiarButton.Text = "Limpiar";
             this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LimpiarButton.UseVisualStyleBackColor = true;
             this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            this.LimpiarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LimpiarButton_KeyDown);
             // 
             // BuscarButton
             // 
@@ -96,11 +99,12 @@
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(100, 35);
-            this.BuscarButton.TabIndex = 37;
+            this.BuscarButton.TabIndex = 20;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            this.BuscarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarButton_KeyDown);
             // 
             // NombreTextBox
             // 
@@ -109,7 +113,8 @@
             this.NombreTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(218, 22);
-            this.NombreTextBox.TabIndex = 36;
+            this.NombreTextBox.TabIndex = 30;
+            this.NombreTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NombreTextBox_KeyDown);
             this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // CategoriaIdNumericUpDown
@@ -119,7 +124,8 @@
             this.CategoriaIdNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.CategoriaIdNumericUpDown.Name = "CategoriaIdNumericUpDown";
             this.CategoriaIdNumericUpDown.Size = new System.Drawing.Size(77, 22);
-            this.CategoriaIdNumericUpDown.TabIndex = 35;
+            this.CategoriaIdNumericUpDown.TabIndex = 10;
+            this.CategoriaIdNumericUpDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CategoriaIdNumericUpDown_KeyDown);
             this.CategoriaIdNumericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CategoriaIdNumericUpDown_KeyPress);
             // 
             // NombreLabel

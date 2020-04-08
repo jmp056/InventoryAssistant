@@ -321,6 +321,45 @@
   <ItemGroup>
     <None Include="Resources\EliminarDelDetallaButtonImg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeanImg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TelefonoImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CorreoImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JmpImg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioMenuImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductosImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoriaImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EntradaImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CuadreDeCajaImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnteriorButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiguienteButtonImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

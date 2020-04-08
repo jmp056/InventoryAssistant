@@ -100,6 +100,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackgroundImage = global::InventoryAssistant.Properties.Resources.FacturaImg;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(6, 16);
             this.pictureBox2.Name = "pictureBox2";
@@ -154,6 +155,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::InventoryAssistant.Properties.Resources.EntradaImg;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(6, 16);
             this.pictureBox1.Name = "pictureBox1";
@@ -208,6 +210,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackgroundImage = global::InventoryAssistant.Properties.Resources.ProductosImg;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox3.Location = new System.Drawing.Point(6, 16);
             this.pictureBox3.Name = "pictureBox3";
@@ -262,6 +265,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackgroundImage = global::InventoryAssistant.Properties.Resources.CategoriaImg;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Location = new System.Drawing.Point(6, 16);
             this.pictureBox4.Name = "pictureBox4";
@@ -316,6 +320,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.BackgroundImage = global::InventoryAssistant.Properties.Resources.UsuarioMenuImg;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox5.Location = new System.Drawing.Point(6, 16);
             this.pictureBox5.Name = "pictureBox5";
@@ -370,6 +375,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.BackgroundImage = global::InventoryAssistant.Properties.Resources.CuadreDeCajaImg;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox6.Location = new System.Drawing.Point(6, 16);
             this.pictureBox6.Name = "pictureBox6";
@@ -443,14 +449,15 @@
             this.ClientSize = new System.Drawing.Size(977, 503);
             this.Controls.Add(this.PaginaAnteriorButton);
             this.Controls.Add(this.PaginaSiguienteButton);
-            this.Controls.Add(this.GroupBox6);
-            this.Controls.Add(this.GroupBox5);
             this.Controls.Add(this.GroupBox3);
-            this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.TituloLabel);
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox4);
+            this.Controls.Add(this.GroupBox6);
+            this.Controls.Add(this.GroupBox5);
+            this.Controls.Add(this.GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AyudaRegistros";

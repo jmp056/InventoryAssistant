@@ -30,16 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AyudaConsultas));
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.ConsultaFacturasPictureBox = new System.Windows.Forms.PictureBox();
             this.ConsultaFacturasTituloLabel = new System.Windows.Forms.Label();
             this.InformacionConsultaFacturasLabel = new System.Windows.Forms.Label();
             this.LineasConcultaFacturasLabel = new System.Windows.Forms.Label();
             this.GroupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.GroupBox4 = new System.Windows.Forms.GroupBox();
@@ -47,33 +44,36 @@
             this.TituloLabel = new System.Windows.Forms.Label();
             this.PaginaSiguienteButton = new System.Windows.Forms.Button();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.GroupBox6 = new System.Windows.Forms.GroupBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.PaginaAnteriorButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ConsultaFacturasPictureBox = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaFacturasPictureBox)).BeginInit();
             this.GroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.GroupBox4.SuspendLayout();
             this.GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.GroupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaFacturasPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox1
@@ -87,15 +87,6 @@
             this.GroupBox1.Size = new System.Drawing.Size(953, 133);
             this.GroupBox1.TabIndex = 4;
             this.GroupBox1.TabStop = false;
-            // 
-            // ConsultaFacturasPictureBox
-            // 
-            this.ConsultaFacturasPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ConsultaFacturasPictureBox.Location = new System.Drawing.Point(6, 16);
-            this.ConsultaFacturasPictureBox.Name = "ConsultaFacturasPictureBox";
-            this.ConsultaFacturasPictureBox.Size = new System.Drawing.Size(110, 111);
-            this.ConsultaFacturasPictureBox.TabIndex = 1;
-            this.ConsultaFacturasPictureBox.TabStop = false;
             // 
             // ConsultaFacturasTituloLabel
             // 
@@ -142,15 +133,6 @@
             this.GroupBox5.TabIndex = 5;
             this.GroupBox5.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 111);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -183,15 +165,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "---------------------------------------------------------------------------------" +
     "---------------------------------------";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(110, 111);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // label4
             // 
@@ -251,6 +224,7 @@
             // PaginaSiguienteButton
             // 
             this.PaginaSiguienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaginaSiguienteButton.Image = global::InventoryAssistant.Properties.Resources.SiguienteButtonImg;
             this.PaginaSiguienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PaginaSiguienteButton.Location = new System.Drawing.Point(437, 455);
             this.PaginaSiguienteButton.Name = "PaginaSiguienteButton";
@@ -272,15 +246,6 @@
             this.GroupBox3.Size = new System.Drawing.Size(953, 133);
             this.GroupBox3.TabIndex = 5;
             this.GroupBox3.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(110, 111);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
             // 
             // label7
             // 
@@ -327,15 +292,6 @@
             this.GroupBox2.TabIndex = 7;
             this.GroupBox2.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(110, 111);
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -381,15 +337,6 @@
             this.GroupBox6.TabIndex = 8;
             this.GroupBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 16);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(110, 111);
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -426,6 +373,7 @@
             // PaginaAnteriorButton
             // 
             this.PaginaAnteriorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaginaAnteriorButton.Image = global::InventoryAssistant.Properties.Resources.AnteriorButtonImg;
             this.PaginaAnteriorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PaginaAnteriorButton.Location = new System.Drawing.Point(437, 455);
             this.PaginaAnteriorButton.Name = "PaginaAnteriorButton";
@@ -436,21 +384,82 @@
             this.PaginaAnteriorButton.UseVisualStyleBackColor = true;
             this.PaginaAnteriorButton.Click += new System.EventHandler(this.PaginaAnteriorButton_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::InventoryAssistant.Properties.Resources.CategoriaImg;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(110, 111);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::InventoryAssistant.Properties.Resources.EntradaImg;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(6, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(110, 111);
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::InventoryAssistant.Properties.Resources.CuadreDeCajaImg;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 16);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(110, 111);
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::InventoryAssistant.Properties.Resources.ProductosImg;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(110, 111);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::InventoryAssistant.Properties.Resources.UsuarioMenuImg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 111);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ConsultaFacturasPictureBox
+            // 
+            this.ConsultaFacturasPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.FacturaImg;
+            this.ConsultaFacturasPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ConsultaFacturasPictureBox.Location = new System.Drawing.Point(6, 16);
+            this.ConsultaFacturasPictureBox.Name = "ConsultaFacturasPictureBox";
+            this.ConsultaFacturasPictureBox.Size = new System.Drawing.Size(110, 111);
+            this.ConsultaFacturasPictureBox.TabIndex = 1;
+            this.ConsultaFacturasPictureBox.TabStop = false;
+            // 
             // AyudaConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 503);
-            this.Controls.Add(this.PaginaAnteriorButton);
-            this.Controls.Add(this.GroupBox3);
             this.Controls.Add(this.PaginaSiguienteButton);
-            this.Controls.Add(this.GroupBox5);
             this.Controls.Add(this.TituloLabel);
-            this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GroupBox4);
             this.Controls.Add(this.GroupBox2);
             this.Controls.Add(this.GroupBox6);
+            this.Controls.Add(this.GroupBox3);
+            this.Controls.Add(this.GroupBox5);
+            this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.PaginaAnteriorButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AyudaConsultas";
@@ -459,22 +468,22 @@
             this.Load += new System.EventHandler(this.AyudaConsultas_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaFacturasPictureBox)).EndInit();
             this.GroupBox5.ResumeLayout(false);
             this.GroupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GroupBox4.ResumeLayout(false);
             this.GroupBox4.PerformLayout();
             this.GroupBox3.ResumeLayout(false);
             this.GroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.GroupBox6.ResumeLayout(false);
             this.GroupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaFacturasPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

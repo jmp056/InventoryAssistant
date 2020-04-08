@@ -1079,7 +1079,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rCuadreDeCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CuadreDeCaja";
+            this.Text = "Cuadre de Caja";
             this.Load += new System.EventHandler(this.CuadreDeCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DosMilNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VeinteNumericUpDown)).EndInit();

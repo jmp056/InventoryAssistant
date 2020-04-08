@@ -29,41 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.Informacionlabel = new System.Windows.Forms.Label();
             this.LeanGroupBox = new System.Windows.Forms.GroupBox();
-            this.LeanCircularPictureBox = new InventoryAssistant.UI.Otras.CircularPictureBox();
-            this.CorreoLeanPictureBox = new System.Windows.Forms.PictureBox();
-            this.NumeroLeanPictureBox = new System.Windows.Forms.PictureBox();
             this.CorreoLeanLabel = new System.Windows.Forms.Label();
             this.NumeroLeanLabel = new System.Windows.Forms.Label();
             this.LeanLabel = new System.Windows.Forms.Label();
             this.JmpGroupBox = new System.Windows.Forms.GroupBox();
-            this.JmpCircularPictureBox = new InventoryAssistant.UI.Otras.CircularPictureBox();
-            this.CorreoJmpPictureBox = new System.Windows.Forms.PictureBox();
-            this.NumeroJmpPictureBox = new System.Windows.Forms.PictureBox();
             this.CorreoJmpLabel = new System.Windows.Forms.Label();
             this.NumeroJmpLabel = new System.Windows.Forms.Label();
             this.JmpLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
+            this.JmpCircularPictureBox = new InventoryAssistant.UI.Otras.CircularPictureBox();
+            this.CorreoJmpPictureBox = new System.Windows.Forms.PictureBox();
+            this.NumeroJmpPictureBox = new System.Windows.Forms.PictureBox();
+            this.LeanCircularPictureBox = new InventoryAssistant.UI.Otras.CircularPictureBox();
+            this.CorreoLeanPictureBox = new System.Windows.Forms.PictureBox();
+            this.NumeroLeanPictureBox = new System.Windows.Forms.PictureBox();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LeanGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LeanCircularPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).BeginInit();
             this.JmpGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JmpCircularPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorreoJmpPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumeroJmpPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeanCircularPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LogoPictureBox.Location = new System.Drawing.Point(177, 12);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(414, 108);
-            this.LogoPictureBox.TabIndex = 0;
-            this.LogoPictureBox.TabStop = false;
             // 
             // Informacionlabel
             // 
@@ -88,33 +79,6 @@
             this.LeanGroupBox.Size = new System.Drawing.Size(382, 131);
             this.LeanGroupBox.TabIndex = 2;
             this.LeanGroupBox.TabStop = false;
-            // 
-            // LeanCircularPictureBox
-            // 
-            this.LeanCircularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LeanCircularPictureBox.Location = new System.Drawing.Point(6, 19);
-            this.LeanCircularPictureBox.Name = "LeanCircularPictureBox";
-            this.LeanCircularPictureBox.Size = new System.Drawing.Size(103, 98);
-            this.LeanCircularPictureBox.TabIndex = 5;
-            this.LeanCircularPictureBox.TabStop = false;
-            // 
-            // CorreoLeanPictureBox
-            // 
-            this.CorreoLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CorreoLeanPictureBox.Location = new System.Drawing.Point(133, 88);
-            this.CorreoLeanPictureBox.Name = "CorreoLeanPictureBox";
-            this.CorreoLeanPictureBox.Size = new System.Drawing.Size(29, 29);
-            this.CorreoLeanPictureBox.TabIndex = 4;
-            this.CorreoLeanPictureBox.TabStop = false;
-            // 
-            // NumeroLeanPictureBox
-            // 
-            this.NumeroLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NumeroLeanPictureBox.Location = new System.Drawing.Point(133, 47);
-            this.NumeroLeanPictureBox.Name = "NumeroLeanPictureBox";
-            this.NumeroLeanPictureBox.Size = new System.Drawing.Size(29, 29);
-            this.NumeroLeanPictureBox.TabIndex = 3;
-            this.NumeroLeanPictureBox.TabStop = false;
             // 
             // CorreoLeanLabel
             // 
@@ -160,33 +124,6 @@
             this.JmpGroupBox.TabIndex = 6;
             this.JmpGroupBox.TabStop = false;
             // 
-            // JmpCircularPictureBox
-            // 
-            this.JmpCircularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.JmpCircularPictureBox.Location = new System.Drawing.Point(6, 19);
-            this.JmpCircularPictureBox.Name = "JmpCircularPictureBox";
-            this.JmpCircularPictureBox.Size = new System.Drawing.Size(103, 98);
-            this.JmpCircularPictureBox.TabIndex = 5;
-            this.JmpCircularPictureBox.TabStop = false;
-            // 
-            // CorreoJmpPictureBox
-            // 
-            this.CorreoJmpPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CorreoJmpPictureBox.Location = new System.Drawing.Point(133, 88);
-            this.CorreoJmpPictureBox.Name = "CorreoJmpPictureBox";
-            this.CorreoJmpPictureBox.Size = new System.Drawing.Size(29, 29);
-            this.CorreoJmpPictureBox.TabIndex = 4;
-            this.CorreoJmpPictureBox.TabStop = false;
-            // 
-            // NumeroJmpPictureBox
-            // 
-            this.NumeroJmpPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NumeroJmpPictureBox.Location = new System.Drawing.Point(133, 47);
-            this.NumeroJmpPictureBox.Name = "NumeroJmpPictureBox";
-            this.NumeroJmpPictureBox.Size = new System.Drawing.Size(29, 29);
-            this.NumeroJmpPictureBox.TabIndex = 3;
-            this.NumeroJmpPictureBox.TabStop = false;
-            // 
             // CorreoJmpLabel
             // 
             this.CorreoJmpLabel.AutoSize = true;
@@ -217,6 +154,76 @@
             this.JmpLabel.TabIndex = 0;
             this.JmpLabel.Text = "Jonathan Maria Parra\r\n";
             // 
+            // JmpCircularPictureBox
+            // 
+            this.JmpCircularPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.JmpImg;
+            this.JmpCircularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.JmpCircularPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.JmpCircularPictureBox.Name = "JmpCircularPictureBox";
+            this.JmpCircularPictureBox.Size = new System.Drawing.Size(103, 98);
+            this.JmpCircularPictureBox.TabIndex = 5;
+            this.JmpCircularPictureBox.TabStop = false;
+            // 
+            // CorreoJmpPictureBox
+            // 
+            this.CorreoJmpPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.CorreoImg;
+            this.CorreoJmpPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CorreoJmpPictureBox.Location = new System.Drawing.Point(133, 88);
+            this.CorreoJmpPictureBox.Name = "CorreoJmpPictureBox";
+            this.CorreoJmpPictureBox.Size = new System.Drawing.Size(29, 29);
+            this.CorreoJmpPictureBox.TabIndex = 4;
+            this.CorreoJmpPictureBox.TabStop = false;
+            // 
+            // NumeroJmpPictureBox
+            // 
+            this.NumeroJmpPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.TelefonoImg;
+            this.NumeroJmpPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.NumeroJmpPictureBox.Location = new System.Drawing.Point(133, 47);
+            this.NumeroJmpPictureBox.Name = "NumeroJmpPictureBox";
+            this.NumeroJmpPictureBox.Size = new System.Drawing.Size(29, 29);
+            this.NumeroJmpPictureBox.TabIndex = 3;
+            this.NumeroJmpPictureBox.TabStop = false;
+            // 
+            // LeanCircularPictureBox
+            // 
+            this.LeanCircularPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.LeanImg;
+            this.LeanCircularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LeanCircularPictureBox.Location = new System.Drawing.Point(6, 19);
+            this.LeanCircularPictureBox.Name = "LeanCircularPictureBox";
+            this.LeanCircularPictureBox.Size = new System.Drawing.Size(103, 98);
+            this.LeanCircularPictureBox.TabIndex = 5;
+            this.LeanCircularPictureBox.TabStop = false;
+            // 
+            // CorreoLeanPictureBox
+            // 
+            this.CorreoLeanPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.CorreoImg;
+            this.CorreoLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CorreoLeanPictureBox.Location = new System.Drawing.Point(133, 88);
+            this.CorreoLeanPictureBox.Name = "CorreoLeanPictureBox";
+            this.CorreoLeanPictureBox.Size = new System.Drawing.Size(29, 29);
+            this.CorreoLeanPictureBox.TabIndex = 4;
+            this.CorreoLeanPictureBox.TabStop = false;
+            // 
+            // NumeroLeanPictureBox
+            // 
+            this.NumeroLeanPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.TelefonoImg;
+            this.NumeroLeanPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.NumeroLeanPictureBox.Location = new System.Drawing.Point(133, 47);
+            this.NumeroLeanPictureBox.Name = "NumeroLeanPictureBox";
+            this.NumeroLeanPictureBox.Size = new System.Drawing.Size(29, 29);
+            this.NumeroLeanPictureBox.TabIndex = 3;
+            this.NumeroLeanPictureBox.TabStop = false;
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.BackgroundImage = global::InventoryAssistant.Properties.Resources.FondoImg;
+            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LogoPictureBox.Location = new System.Drawing.Point(177, 12);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(414, 108);
+            this.LogoPictureBox.TabIndex = 0;
+            this.LogoPictureBox.TabStop = false;
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,22 +234,23 @@
             this.Controls.Add(this.Informacionlabel);
             this.Controls.Add(this.LogoPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Información sobre Inventory Assistant";
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.LeanGroupBox.ResumeLayout(false);
             this.LeanGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LeanCircularPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).EndInit();
             this.JmpGroupBox.ResumeLayout(false);
             this.JmpGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JmpCircularPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorreoJmpPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumeroJmpPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeanCircularPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorreoLeanPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumeroLeanPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

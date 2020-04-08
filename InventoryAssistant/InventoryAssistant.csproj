@@ -288,6 +288,39 @@
   <ItemGroup>
     <None Include="Resources\SeleccionarButtonImg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IngresarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClaveImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoLogIn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LimpiarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuardarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliminarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListaProductosButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgregarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliminarDelDetallaButtonImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

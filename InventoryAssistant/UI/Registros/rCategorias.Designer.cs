@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.EliminarButton = new System.Windows.Forms.Button();
-            this.GuardarButton = new System.Windows.Forms.Button();
-            this.LimpiarButton = new System.Windows.Forms.Button();
-            this.BuscarButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCategorias));
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.CategoriaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.NombreLabel = new System.Windows.Forms.Label();
@@ -41,70 +38,14 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.UsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.EstadoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.LimpiarButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // EliminarButton
-            // 
-            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(342, 130);
-            this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(100, 35);
-            this.EliminarButton.TabIndex = 60;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
-            this.EliminarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EliminarButton_KeyDown);
-            // 
-            // GuardarButton
-            // 
-            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(186, 130);
-            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(100, 35);
-            this.GuardarButton.TabIndex = 40;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
-            this.GuardarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuardarButton_KeyDown);
-            // 
-            // LimpiarButton
-            // 
-            this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LimpiarButton.Location = new System.Drawing.Point(38, 130);
-            this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.LimpiarButton.Name = "LimpiarButton";
-            this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
-            this.LimpiarButton.TabIndex = 50;
-            this.LimpiarButton.Text = "Limpiar";
-            this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButton.UseVisualStyleBackColor = true;
-            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
-            this.LimpiarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LimpiarButton_KeyDown);
-            // 
-            // BuscarButton
-            // 
-            this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(342, 21);
-            this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(100, 35);
-            this.BuscarButton.TabIndex = 20;
-            this.BuscarButton.Text = "Buscar";
-            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            this.BuscarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarButton_KeyDown);
             // 
             // NombreTextBox
             // 
@@ -179,6 +120,70 @@
             this.EstadoToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
             this.EstadoToolStripStatusLabel.Text = "          ";
             // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = global::InventoryAssistant.Properties.Resources.EliminarButtonImg;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(342, 130);
+            this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(100, 35);
+            this.EliminarButton.TabIndex = 60;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            this.EliminarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EliminarButton_KeyDown);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = global::InventoryAssistant.Properties.Resources.GuardarButtonImg;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(186, 130);
+            this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(100, 35);
+            this.GuardarButton.TabIndex = 40;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            this.GuardarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuardarButton_KeyDown);
+            // 
+            // LimpiarButton
+            // 
+            this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LimpiarButton.Image = global::InventoryAssistant.Properties.Resources.LimpiarButtonImg;
+            this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LimpiarButton.Location = new System.Drawing.Point(38, 130);
+            this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.LimpiarButton.Name = "LimpiarButton";
+            this.LimpiarButton.Size = new System.Drawing.Size(100, 35);
+            this.LimpiarButton.TabIndex = 50;
+            this.LimpiarButton.Text = "Limpiar";
+            this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            this.LimpiarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LimpiarButton_KeyDown);
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(342, 21);
+            this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(100, 35);
+            this.BuscarButton.TabIndex = 20;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            this.BuscarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BuscarButton_KeyDown);
+            // 
             // rCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +199,7 @@
             this.Controls.Add(this.NombreLabel);
             this.Controls.Add(this.CategoriaIdLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Categorias";

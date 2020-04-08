@@ -29,24 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
             this.ContrasenaTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ContrasenaPictureBox = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.IngresarButton = new System.Windows.Forms.Button();
-            this.CancelarButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ContrasenaPictureBox = new System.Windows.Forms.PictureBox();
+            this.IngresarButton = new System.Windows.Forms.Button();
+            this.CancelarButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrasenaPictureBox)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // UsuariotextBox
@@ -84,24 +85,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Acceso al Sistema";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(15, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ContrasenaPictureBox
-            // 
-            this.ContrasenaPictureBox.Location = new System.Drawing.Point(15, 90);
-            this.ContrasenaPictureBox.Name = "ContrasenaPictureBox";
-            this.ContrasenaPictureBox.Size = new System.Drawing.Size(30, 30);
-            this.ContrasenaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ContrasenaPictureBox.TabIndex = 2;
-            this.ContrasenaPictureBox.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -110,32 +93,6 @@
             this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Contraseña";
-            // 
-            // IngresarButton
-            // 
-            this.IngresarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IngresarButton.Location = new System.Drawing.Point(23, 139);
-            this.IngresarButton.Name = "IngresarButton";
-            this.IngresarButton.Size = new System.Drawing.Size(100, 35);
-            this.IngresarButton.TabIndex = 30;
-            this.IngresarButton.Text = "Ingresar";
-            this.IngresarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.IngresarButton.UseVisualStyleBackColor = true;
-            this.IngresarButton.Click += new System.EventHandler(this.Entrarbutton_Click_1);
-            this.IngresarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarButton_KeyDown);
-            // 
-            // CancelarButton
-            // 
-            this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CancelarButton.Location = new System.Drawing.Point(188, 139);
-            this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(100, 35);
-            this.CancelarButton.TabIndex = 40;
-            this.CancelarButton.Text = "Cancelar";
-            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CancelarButton.UseVisualStyleBackColor = true;
-            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            this.CancelarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CancelarButton_KeyDown);
             // 
             // label4
             // 
@@ -156,8 +113,13 @@
             this.panel1.Size = new System.Drawing.Size(203, 251);
             this.panel1.TabIndex = 8;
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = global::InventoryAssistant.Properties.Resources.FondoLogIn;
             this.pictureBox3.Location = new System.Drawing.Point(16, 27);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(175, 186);
@@ -165,9 +127,53 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // MyErrorProvider
+            // pictureBox1
             // 
-            this.MyErrorProvider.ContainerControl = this;
+            this.pictureBox1.Image = global::InventoryAssistant.Properties.Resources.UsuarioImg;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ContrasenaPictureBox
+            // 
+            this.ContrasenaPictureBox.Image = global::InventoryAssistant.Properties.Resources.ClaveImg;
+            this.ContrasenaPictureBox.Location = new System.Drawing.Point(15, 90);
+            this.ContrasenaPictureBox.Name = "ContrasenaPictureBox";
+            this.ContrasenaPictureBox.Size = new System.Drawing.Size(30, 30);
+            this.ContrasenaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ContrasenaPictureBox.TabIndex = 2;
+            this.ContrasenaPictureBox.TabStop = false;
+            // 
+            // IngresarButton
+            // 
+            this.IngresarButton.Image = global::InventoryAssistant.Properties.Resources.IngresarButtonImg;
+            this.IngresarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IngresarButton.Location = new System.Drawing.Point(23, 139);
+            this.IngresarButton.Name = "IngresarButton";
+            this.IngresarButton.Size = new System.Drawing.Size(100, 35);
+            this.IngresarButton.TabIndex = 30;
+            this.IngresarButton.Text = "Ingresar";
+            this.IngresarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IngresarButton.UseVisualStyleBackColor = true;
+            this.IngresarButton.Click += new System.EventHandler(this.Entrarbutton_Click_1);
+            this.IngresarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IngresarButton_KeyDown);
+            // 
+            // CancelarButton
+            // 
+            this.CancelarButton.Image = global::InventoryAssistant.Properties.Resources.CancelarButtonImg;
+            this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CancelarButton.Location = new System.Drawing.Point(188, 139);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(100, 35);
+            this.CancelarButton.TabIndex = 40;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
+            this.CancelarButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CancelarButton_KeyDown);
             // 
             // Login
             // 
@@ -177,6 +183,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
@@ -184,11 +191,11 @@
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrasenaPictureBox)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }

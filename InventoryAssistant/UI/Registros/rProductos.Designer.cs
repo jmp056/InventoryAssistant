@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rProductos));
             this.RDLabel = new System.Windows.Forms.Label();
             this.PrecioLabel = new System.Windows.Forms.Label();
             this.CategoriaLabel = new System.Windows.Forms.Label();
@@ -250,6 +251,7 @@
             // AnadirCategoriasButton
             // 
             this.AnadirCategoriasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnadirCategoriasButton.Image = global::InventoryAssistant.Properties.Resources.AgregarButtonImg;
             this.AnadirCategoriasButton.Location = new System.Drawing.Point(403, 102);
             this.AnadirCategoriasButton.Margin = new System.Windows.Forms.Padding(4);
             this.AnadirCategoriasButton.Name = "AnadirCategoriasButton";
@@ -262,6 +264,7 @@
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = global::InventoryAssistant.Properties.Resources.EliminarButtonImg;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(347, 330);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -277,6 +280,7 @@
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = global::InventoryAssistant.Properties.Resources.GuardarButtonImg;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(187, 330);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -292,6 +296,7 @@
             // LimpiarButton
             // 
             this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LimpiarButton.Image = global::InventoryAssistant.Properties.Resources.LimpiarButtonImg;
             this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LimpiarButton.Location = new System.Drawing.Point(26, 330);
             this.LimpiarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -307,6 +312,7 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(343, 21);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(4);
@@ -374,6 +380,7 @@
             this.Controls.Add(this.ProductoIdLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rUsuarios));
             this.UsuarioIdLabel = new System.Windows.Forms.Label();
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -293,6 +294,7 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(292, 20);
             this.BuscarButton.Name = "BuscarButton";
@@ -307,6 +309,7 @@
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = global::InventoryAssistant.Properties.Resources.GuardarButtonImg;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(254, 290);
             this.GuardarButton.Name = "GuardarButton";
@@ -321,6 +324,7 @@
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = global::InventoryAssistant.Properties.Resources.EliminarButtonImg;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(481, 290);
             this.EliminarButton.Name = "EliminarButton";
@@ -335,6 +339,7 @@
             // LimpiarButton
             // 
             this.LimpiarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LimpiarButton.Image = global::InventoryAssistant.Properties.Resources.LimpiarButtonImg;
             this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LimpiarButton.Location = new System.Drawing.Point(45, 290);
             this.LimpiarButton.Name = "LimpiarButton";
@@ -397,6 +402,7 @@
             this.Controls.Add(this.UsuarioIdLabel);
             this.Controls.Add(this.LimpiarButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rUsuarios";

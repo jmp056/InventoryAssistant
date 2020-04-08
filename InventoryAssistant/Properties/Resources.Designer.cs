@@ -63,9 +63,39 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AgregarButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("AgregarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BuscarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("BuscarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CancelarButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("CancelarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ClaveImg {
+            get {
+                object obj = ResourceManager.GetObject("ClaveImg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +163,89 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EliminarButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("EliminarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EliminarDelDetallaButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("EliminarDelDetallaButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoLogIn {
+            get {
+                object obj = ResourceManager.GetObject("FondoLogIn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GuardarButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("GuardarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IngresarButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("IngresarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LimpiarButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("LimpiarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ListaProductosButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("ListaProductosButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SeleccionarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("SeleccionarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UsuarioImg {
+            get {
+                object obj = ResourceManager.GetObject("UsuarioImg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

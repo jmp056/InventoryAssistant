@@ -2,7 +2,6 @@
 using InventoryAssistant.Entidades;
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace InventoryAssistant.UI.Registros
@@ -14,65 +13,93 @@ namespace InventoryAssistant.UI.Registros
 
         public rUsuarios(string nombreUsuario, int usuarioId)
         {
-            this.NombreUsuario = nombreUsuario;
-            this.UsuarioId = usuarioId;
-            InitializeComponent();
-            Limpiar();
+            try
+            {
+                this.NombreUsuario = nombreUsuario;
+                this.UsuarioId = usuarioId;
+                InitializeComponent();
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void Limpiar() // Funcion encargada de limpiar todos los campos del registro
         {
-            UsuarioIdNumericUpDown.Value = 0;
-            NombresTextBox.Text = string.Empty;
-            ApellidosTextBox.Text = string.Empty;
-            CedulaMaskedTextBox.Text = string.Empty;
-            TelefonoMaskedTextBox.Text = string.Empty;
-            FechaDeRegistroDateTimePicker.Value = DateTime.Now;
-            UsuarioTextBox.Text = string.Empty;
-            NivelDeUsuarioComboBox.SelectedIndex = -1;
-            ContrasenaTextBox.Text = string.Empty;
-            ConfirmarContrasenaTextBox.Text = string.Empty;
-            MyErrorProvider.Clear();
-            NombresTextBox.Focus();
+            try
+            {
+                UsuarioIdNumericUpDown.Value = 0;
+                NombresTextBox.Text = string.Empty;
+                ApellidosTextBox.Text = string.Empty;
+                CedulaMaskedTextBox.Text = string.Empty;
+                TelefonoMaskedTextBox.Text = string.Empty;
+                FechaDeRegistroDateTimePicker.Value = DateTime.Now;
+                UsuarioTextBox.Text = string.Empty;
+                NivelDeUsuarioComboBox.SelectedIndex = -1;
+                ContrasenaTextBox.Text = string.Empty;
+                ConfirmarContrasenaTextBox.Text = string.Empty;
+                MyErrorProvider.Clear();
+                NombresTextBox.Focus();
 
-            EstadoToolStripStatusLabel.Text = string.Empty;
-            UsuarioToolStripStatusLabel.Text = string.Empty;
+                EstadoToolStripStatusLabel.Text = string.Empty;
+                UsuarioToolStripStatusLabel.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private Usuarios LlenaClase()  // Funcion encargada de llenar el objeto
         {
             Usuarios usuario = new Usuarios();
 
-            usuario.UsuarioId = (int)UsuarioIdNumericUpDown.Value;
-            usuario.Nombres = NombresTextBox.Text.ToUpper();
-            usuario.Apellidos = ApellidosTextBox.Text.ToUpper();
-            usuario.Cedula = CedulaMaskedTextBox.Text;
-            usuario.Celular = TelefonoMaskedTextBox.Text;
-            usuario.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
-            usuario.Usuario = UsuarioTextBox.Text;
-            usuario.NivelDeUsuario = Convert.ToInt32(NivelDeUsuarioComboBox.SelectedIndex);
-            usuario.Contrasena = ContrasenaTextBox.Text;
+            try
+            {
+                usuario.UsuarioId = (int)UsuarioIdNumericUpDown.Value;
+                usuario.Nombres = NombresTextBox.Text.ToUpper();
+                usuario.Apellidos = ApellidosTextBox.Text.ToUpper();
+                usuario.Cedula = CedulaMaskedTextBox.Text;
+                usuario.Celular = TelefonoMaskedTextBox.Text;
+                usuario.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
+                usuario.Usuario = UsuarioTextBox.Text;
+                usuario.NivelDeUsuario = Convert.ToInt32(NivelDeUsuarioComboBox.SelectedIndex);
+                usuario.Contrasena = ContrasenaTextBox.Text;
 
-            usuario.Estado = (usuario.UsuarioId == 0) ? false : true;
-            usuario.UsuarioR = NombreUsuario;
+                usuario.Estado = (usuario.UsuarioId == 0) ? false : true;
+                usuario.UsuarioR = NombreUsuario;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             return usuario;
         }
 
         private void LlenaCampo(Usuarios usuario)  // Funcion encargada de llenar los campos del registro con los datos de un objeto
         {
-            UsuarioIdNumericUpDown.Value = usuario.UsuarioId;
-            NombresTextBox.Text = usuario.Nombres;
-            ApellidosTextBox.Text = usuario.Apellidos;
-            CedulaMaskedTextBox.Text = usuario.Cedula;
-            TelefonoMaskedTextBox.Text = usuario.Celular;
-            FechaDeRegistroDateTimePicker.Value = usuario.FechaDeRegistro;
-            UsuarioTextBox.Text = usuario.Usuario;
-            NivelDeUsuarioComboBox.SelectedIndex = usuario.NivelDeUsuario;
-            ContrasenaTextBox.Text = usuario.Contrasena;
+            try
+            {
+                UsuarioIdNumericUpDown.Value = usuario.UsuarioId;
+                NombresTextBox.Text = usuario.Nombres;
+                ApellidosTextBox.Text = usuario.Apellidos;
+                CedulaMaskedTextBox.Text = usuario.Cedula;
+                TelefonoMaskedTextBox.Text = usuario.Celular;
+                FechaDeRegistroDateTimePicker.Value = usuario.FechaDeRegistro;
+                UsuarioTextBox.Text = usuario.Usuario;
+                NivelDeUsuarioComboBox.SelectedIndex = usuario.NivelDeUsuario;
+                ContrasenaTextBox.Text = usuario.Contrasena;
 
-            EstadoToolStripStatusLabel.Text = (usuario.Estado == false) ? "Agregado por: " : "Modificado por: ";
-            UsuarioToolStripStatusLabel.Text = usuario.UsuarioR;
+                EstadoToolStripStatusLabel.Text = (usuario.Estado == false) ? "Agregado por: " : "Modificado por: ";
+                UsuarioToolStripStatusLabel.Text = usuario.UsuarioR;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //* Método o función para validar una cédula dominicana*
@@ -147,434 +174,760 @@ namespace InventoryAssistant.UI.Registros
         private bool Validar() //Funcion que valida todo el registro
         {
             bool paso = true;
-            MyErrorProvider.Clear();
 
-            if (NombresTextBox.Text == string.Empty) // Condicion encargada de validar que el campo nombre no este vacio
+            try
             {
-                MyErrorProvider.SetError(NombresTextBox, "El nombre no puede estar vacío!");
-                NombresTextBox.Focus();
-                paso = false;
-            }
+                MyErrorProvider.Clear();
 
-            if (ApellidosTextBox.Text == string.Empty) // Condicion encargada de validar que el campo apellido no este vacio  
-            {
-                MyErrorProvider.SetError(ApellidosTextBox, "El apellido no puede estar vacío!");
-                ApellidosTextBox.Focus();
-                paso = false;
-            }
-
-            if (CedulaMaskedTextBox.Text == "   -       -")// Condicion encargada de validar que el campo cedula no este vacio 
-            {
-                MyErrorProvider.SetError(CedulaMaskedTextBox, "La cedula no puede estar vacía!");
-                CedulaMaskedTextBox.Focus();
-                paso = false;
-            }
-            else // Validando que la cedula no este duplicada
-            {
-                if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que la cedula no exista, en caso de registrar un usuario nuevo
+                if (NombresTextBox.Text == string.Empty) // Condicion encargada de validar que el campo nombre no este vacio
                 {
-                    if (UsuariosBLL.ExisteCedula(CedulaMaskedTextBox.Text) == true)
-                    {
-                        MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este número de cedula está registrada con otro usuario, debe ingresar una diferente!");
-                        CedulaMaskedTextBox.Focus();
-                        paso = false;
-                    }
+                    MyErrorProvider.SetError(NombresTextBox, "El nombre no puede estar vacío!");
+                    NombresTextBox.Focus();
+                    paso = false;
                 }
-                else //Valida que si al modificar un usuario, el numero de cedula sea unico
+
+                if (ApellidosTextBox.Text == string.Empty) // Condicion encargada de validar que el campo apellido no este vacio  
                 {
-                    RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
-                    var Listado = new List<Usuarios>();
+                    MyErrorProvider.SetError(ApellidosTextBox, "El apellido no puede estar vacío!");
+                    ApellidosTextBox.Focus();
+                    paso = false;
+                }
 
-                    Listado = Repositorio.GetList(p => p.Cedula.Contains(CedulaMaskedTextBox.Text));
-
-                    if (Listado.Count == 1) // Confirma que solo exista un usuario con ese numero de cedula
+                if (CedulaMaskedTextBox.Text == "   -       -")// Condicion encargada de validar que el campo cedula no este vacio 
+                {
+                    MyErrorProvider.SetError(CedulaMaskedTextBox, "La cedula no puede estar vacía!");
+                    CedulaMaskedTextBox.Focus();
+                    paso = false;
+                }
+                else // Validando que la cedula no este duplicada
+                {
+                    if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que la cedula no exista, en caso de registrar un usuario nuevo
                     {
-                        Usuarios UsuarioTemporal = new Usuarios();
-                        UsuarioTemporal = Listado[0];
-                        if (UsuarioTemporal.UsuarioId != UsuarioIdNumericUpDown.Value) // Verifica si el usuario que tiene ese numero de cedula en la base de datos no es al que se esta modificando!
+                        if (UsuariosBLL.ExisteCedula(CedulaMaskedTextBox.Text) == true)
+                        {
+                            MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este número de cedula está registrada con otro usuario, debe ingresar una diferente!");
+                            CedulaMaskedTextBox.Focus();
+                            paso = false;
+                        }
+                    }
+                    else //Valida que si al modificar un usuario, el numero de cedula sea unico
+                    {
+                        RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
+                        var Listado = new List<Usuarios>();
+
+                        Listado = Repositorio.GetList(p => p.Cedula.Contains(CedulaMaskedTextBox.Text));
+
+                        if (Listado.Count == 1) // Confirma que solo exista un usuario con ese numero de cedula
+                        {
+                            Usuarios UsuarioTemporal = new Usuarios();
+                            UsuarioTemporal = Listado[0];
+                            if (UsuarioTemporal.UsuarioId != UsuarioIdNumericUpDown.Value) // Verifica si el usuario que tiene ese numero de cedula en la base de datos no es al que se esta modificando!
+                            {
+                                MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este cedula está registrada, debe ingresar una diferente!");
+                                CedulaMaskedTextBox.Focus();
+                                paso = false;
+                            }
+                        }
+                        else if (Listado.Count > 1) 
                         {
                             MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este cedula está registrada, debe ingresar una diferente!");
                             CedulaMaskedTextBox.Focus();
                             paso = false;
                         }
                     }
-                    else if (Listado.Count > 1) 
+                    if (!ValidaCedula(CedulaMaskedTextBox.Text))
                     {
-                        MyErrorProvider.SetError(CedulaMaskedTextBox, "Ya este cedula está registrada, debe ingresar una diferente!");
-                        CedulaMaskedTextBox.Focus();
+                        MyErrorProvider.SetError(CedulaMaskedTextBox, "Error, Cedula Incorrecta");
                         paso = false;
                     }
                 }
-                if (!ValidaCedula(CedulaMaskedTextBox.Text))
-                {
-                    MyErrorProvider.SetError(CedulaMaskedTextBox, "Error, Cedula Incorrecta");
-                    paso = false;
-                }
-            }
             
 
-            if (TelefonoMaskedTextBox.Text != "   -   -" && TelefonoMaskedTextBox.Text.Length < 12) //Validar que el numero de celular este vacio o completo
-            {
-                MyErrorProvider.SetError(TelefonoMaskedTextBox, "Debe ingresar un numero de teléfono valido!");
-                TelefonoMaskedTextBox.Focus();
-                paso = false;
-            }
-            else if (TelefonoMaskedTextBox.Text != "   -   -" && TelefonoMaskedTextBox.Text.Contains(" ")) // Valida que el numero de telefono no tenga espacios en blanco
-            {
-                MyErrorProvider.SetError(TelefonoMaskedTextBox, "El número de teléfono no puede contener espacios en blanco!");
-                TelefonoMaskedTextBox.Focus();
-                paso = false;
-            }
-
-
-            if (FechaDeRegistroDateTimePicker.Value > DateTime.Now)  // Valida que la fecha de ingreso no sea mayor a la actual
-            {
-                MyErrorProvider.SetError(FechaDeRegistroDateTimePicker, "La fecha de registro no puede ser mayor a la fecha actual!");
-                FechaDeRegistroDateTimePicker.Focus();
-                paso = false;
-            }
-
-            if (UsuarioTextBox.Text == string.Empty)// Valida que el campo usuario no este vacío
-            {
-                MyErrorProvider.SetError(UsuarioTextBox, "El nombre de usuario no puede estar vacío!");
-                UsuarioTextBox.Focus();
-                paso = false;
-            }
-            else if (UsuarioTextBox.Text.Contains(" "))// Valida que el campo usuario contenga no contenga espacios en blanco
-            {
-                MyErrorProvider.SetError(UsuarioTextBox, "El nombre de Usuario no debe poseer espacios en blanco!");
-                UsuarioTextBox.Focus();
-                paso = false;
-            }
-            else if (UsuarioTextBox.Text.Length < 3)// Valida que el campo usuario contenga 3 o mas caracteres
-            {
-                MyErrorProvider.SetError(UsuarioTextBox, "El nombre de Usuario debe poseer tres o más caracteres!");
-                UsuarioTextBox.Focus();
-                paso = false;
-            }
-            else // Validando que el nombre de usuario no este duplicado
-            {
-                if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que el nombre usuario no exista, en caso de registrar un usuario nuevo
+                if (TelefonoMaskedTextBox.Text != "   -   -" && TelefonoMaskedTextBox.Text.Length < 12) //Validar que el numero de celular este vacio o completo
                 {
-                    if (UsuariosBLL.ExisteUsuario(UsuarioTextBox.Text) == true)
-                    {
-                        MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
-                        CedulaMaskedTextBox.Focus();
-                        paso = false;
-                    }
+                    MyErrorProvider.SetError(TelefonoMaskedTextBox, "Debe ingresar un numero de teléfono valido!");
+                    TelefonoMaskedTextBox.Focus();
+                    paso = false;
                 }
-                else //Valida que si al modificar un usuario, el nombre de usuario sea unico
+                else if (TelefonoMaskedTextBox.Text != "   -   -" && TelefonoMaskedTextBox.Text.Contains(" ")) // Valida que el numero de telefono no tenga espacios en blanco
                 {
-                    RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
-                    var Listado = new List<Usuarios>();
+                    MyErrorProvider.SetError(TelefonoMaskedTextBox, "El número de teléfono no puede contener espacios en blanco!");
+                    TelefonoMaskedTextBox.Focus();
+                    paso = false;
+                }
 
-                    Listado = Repositorio.GetList(p => p.Usuario.Contains(UsuarioTextBox.Text));
 
-                    if (Listado.Count == 1) // Confirma que solo exista un usuario con ese numero de cedula
+                if (FechaDeRegistroDateTimePicker.Value > DateTime.Now)  // Valida que la fecha de ingreso no sea mayor a la actual
+                {
+                    MyErrorProvider.SetError(FechaDeRegistroDateTimePicker, "La fecha de registro no puede ser mayor a la fecha actual!");
+                    FechaDeRegistroDateTimePicker.Focus();
+                    paso = false;
+                }
+
+                if (UsuarioTextBox.Text == string.Empty)// Valida que el campo usuario no este vacío
+                {
+                    MyErrorProvider.SetError(UsuarioTextBox, "El nombre de usuario no puede estar vacío!");
+                    UsuarioTextBox.Focus();
+                    paso = false;
+                }
+                else if (UsuarioTextBox.Text.Contains(" "))// Valida que el campo usuario contenga no contenga espacios en blanco
+                {
+                    MyErrorProvider.SetError(UsuarioTextBox, "El nombre de Usuario no debe poseer espacios en blanco!");
+                    UsuarioTextBox.Focus();
+                    paso = false;
+                }
+                else if (UsuarioTextBox.Text.Length < 3)// Valida que el campo usuario contenga 3 o mas caracteres
+                {
+                    MyErrorProvider.SetError(UsuarioTextBox, "El nombre de Usuario debe poseer tres o más caracteres!");
+                    UsuarioTextBox.Focus();
+                    paso = false;
+                }
+                else // Validando que el nombre de usuario no este duplicado
+                {
+                    if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que el nombre usuario no exista, en caso de registrar un usuario nuevo
                     {
-                        Usuarios UsuarioTemporal = new Usuarios();
-                        UsuarioTemporal = Listado[0];
-                        if (UsuarioTemporal.UsuarioId != UsuarioIdNumericUpDown.Value) // Verifica si el usuario que tiene ese nombre de usuario en la base de datos no es al que se esta modificando!
+                        if (UsuariosBLL.ExisteUsuario(UsuarioTextBox.Text) == true)
+                        {
+                            MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
+                            CedulaMaskedTextBox.Focus();
+                            paso = false;
+                        }
+                    }
+                    else //Valida que si al modificar un usuario, el nombre de usuario sea unico
+                    {
+                        RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
+                        var Listado = new List<Usuarios>();
+
+                        Listado = Repositorio.GetList(p => p.Usuario.Contains(UsuarioTextBox.Text));
+
+                        if (Listado.Count == 1) // Confirma que solo exista un usuario con ese numero de cedula
+                        {
+                            Usuarios UsuarioTemporal = new Usuarios();
+                            UsuarioTemporal = Listado[0];
+                            if (UsuarioTemporal.UsuarioId != UsuarioIdNumericUpDown.Value) // Verifica si el usuario que tiene ese nombre de usuario en la base de datos no es al que se esta modificando!
+                            {
+                                MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
+                                UsuarioTextBox.Focus();
+                                paso = false;
+                            }
+                        }
+                        else if (Listado.Count > 1)
                         {
                             MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
                             UsuarioTextBox.Focus();
                             paso = false;
                         }
                     }
-                    else if (Listado.Count > 1)
-                    {
-                        MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
-                        UsuarioTextBox.Focus();
-                        paso = false;
-                    }
+                }
+
+                if (NivelDeUsuarioComboBox.Text != "Administrador" && NivelDeUsuarioComboBox.Text != "Supervisor" && NivelDeUsuarioComboBox.Text != "Usuario") // Valida el nivel de usuario
+                {
+                    MyErrorProvider.SetError(NivelDeUsuarioComboBox, "Debe elegir un nivel de usuario!");
+                    NivelDeUsuarioComboBox.Focus();
+                    paso = false;
+                }
+
+                if (ContrasenaTextBox.Text == string.Empty) // Valida que la clave no este vacia
+                {
+                    MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede estar vacía!");
+                    NivelDeUsuarioComboBox.Focus();
+                    paso = false;
+                }
+                else if (ContrasenaTextBox.Text.Length < 5) // Valida que la contraseña tenga mas de 4 caracteres
+                {
+                    MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña debe poseer al menos 5 caracteres!");
+                    NivelDeUsuarioComboBox.Focus();
+                    paso = false;
+                }
+                else if (ContrasenaTextBox.Text.Contains(" ")) // Valida que la contraseña no contenga espacios en blanco
+                {
+                    MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede poseer espacios en blanco!");
+                    ContrasenaTextBox.Focus();
+                    paso = false;
+                }
+                else if (Equals(UsuarioTextBox.Text, ContrasenaTextBox.Text)) // Valida que el usuario y la contaseña no sean iguales
+                {
+                    MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña y el nombre de usuario no pueden ser iguales!");
+                    ContrasenaTextBox.Focus();
+                    paso = false;
+                }
+                if (ContrasenaTextBox.Text != ConfirmarContrasenaTextBox.Text) // Confirma la contraseña del usuario
+                {
+                    MyErrorProvider.SetError(ConfirmarContrasenaTextBox, "Las contraseñas no coinciden!");
+                    ContrasenaTextBox.Focus();
+                    paso = false;
                 }
             }
-
-            if (NivelDeUsuarioComboBox.Text != "Administrador" && NivelDeUsuarioComboBox.Text != "Supervisor" && NivelDeUsuarioComboBox.Text != "Usuario") // Valida el nivel de usuario
+            catch (Exception ex)
             {
-                MyErrorProvider.SetError(NivelDeUsuarioComboBox, "Debe elegir un nivel de usuario!");
-                NivelDeUsuarioComboBox.Focus();
-                paso = false;
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (ContrasenaTextBox.Text == string.Empty) // Valida que la clave no este vacia
-            {
-                MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede estar vacía!");
-                NivelDeUsuarioComboBox.Focus();
-                paso = false;
-            }
-            else if (ContrasenaTextBox.Text.Length < 5) // Valida que la contraseña tenga mas de 4 caracteres
-            {
-                MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña debe poseer al menos 5 caracteres!");
-                NivelDeUsuarioComboBox.Focus();
-                paso = false;
-            }
-            else if (ContrasenaTextBox.Text.Contains(" ")) // Valida que la contraseña no contenga espacios en blanco
-            {
-                MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña no puede poseer espacios en blanco!");
-                ContrasenaTextBox.Focus();
-                paso = false;
-            }
-            else if (Equals(UsuarioTextBox.Text, ContrasenaTextBox.Text)) // Valida que el usuario y la contaseña no sean iguales
-            {
-                MyErrorProvider.SetError(ContrasenaTextBox, "La contraseña y el nombre de usuario no pueden ser iguales!");
-                ContrasenaTextBox.Focus();
-                paso = false;
-            }
-            if (ContrasenaTextBox.Text != ConfirmarContrasenaTextBox.Text) // Confirma la contraseña del usuario
-            {
-                MyErrorProvider.SetError(ConfirmarContrasenaTextBox, "Las contraseñas no coinciden!");
-                ContrasenaTextBox.Focus();
-                paso = false;
-            }
-
 
             return paso;
         }
 
         private bool ExisteEnLaBaseDeDatos() // Funcnion encargada de verificar si un usuario existe en una base de datos!
         {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-            Usuarios usuario = repositorio.Buscar((int)UsuarioIdNumericUpDown.Value);
+            Usuarios usuario = new Usuarios();
+
+            try
+            {
+                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+                usuario = repositorio.Buscar((int)UsuarioIdNumericUpDown.Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return (usuario != null);
         }
 
         //Botones -------------------------------------------------------------------------------------------------
         private void BuscarButton_Click_1(object sender, EventArgs e)// Clic al boton buscar
         {
-            Buscar();
-               
+            try
+            {
+                Buscar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Buscar()
         {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-            Usuarios usuario = new Usuarios();
-
-            int.TryParse(UsuarioIdNumericUpDown.Text, out int id);
-
-            usuario = repositorio.Buscar(id);
-
-            if (usuario != null)
+            try
             {
-                MyErrorProvider.Clear();
-                LlenaCampo(usuario);
-                UsuarioIdNumericUpDown.Enabled = false;
-                BuscarButton.Enabled = false;
+                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
+                Usuarios usuario = new Usuarios();
+
+                int.TryParse(UsuarioIdNumericUpDown.Text, out int id);
+
+                usuario = repositorio.Buscar(id);
+
+                if (usuario != null)
+                {
+                    MyErrorProvider.Clear();
+                    LlenaCampo(usuario);
+                    UsuarioIdNumericUpDown.Enabled = false;
+                    BuscarButton.Enabled = false;
+                }
+                else
+                {
+                    Limpiar();
+                    MyErrorProvider.SetError(UsuarioIdNumericUpDown, "No existe un usuario con este codigo!");
+                    NombresTextBox.Focus();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Limpiar();
-                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "No existe un usuario con este codigo!");
-                NombresTextBox.Focus();
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void LimpiarButton_Click_1(object sender, EventArgs e) //Clic al boton limpiar
         {
-            Limpiar();
-            NombresTextBox.Focus();
-            UsuarioIdNumericUpDown.Enabled = true;
-            BuscarButton.Enabled = true;
+            try
+            {
+                Limpiar();
+                NombresTextBox.Focus();
+                UsuarioIdNumericUpDown.Enabled = true;
+                BuscarButton.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void GuardarButton_Click_1(object sender, EventArgs e) //Clic al boton guardar
         {
-            RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
-
-            Usuarios usuario = new Usuarios();
-
-            bool paso = false;
-
-            if (!Validar())
-                return;
-
-            usuario = LlenaClase();
-
-            if (UsuarioIdNumericUpDown.Value == 0)
+            try
             {
-                paso = repositorio.Guardar(usuario);
-            }
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No se puede modificar un Usuario que no existe!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
 
-                var result = MessageBox.Show("¿Seguro que desea modificar el usuario de " + usuario.Nombres + "?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (result == DialogResult.Yes)
-                {
-                    paso = repositorio.Modificar(usuario);
-                    if (paso)
-                    {
-                        MessageBox.Show("El usuario se modificó exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo modificar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                Usuarios usuario = new Usuarios();
+
+                bool paso = false;
+
+                if (!Validar())
                     return;
+
+                usuario = LlenaClase();
+
+                if (UsuarioIdNumericUpDown.Value == 0)
+                {
+                    paso = repositorio.Guardar(usuario);
                 }
                 else
                 {
-                    return;
-                }
-            }
+                    if (!ExisteEnLaBaseDeDatos())
+                    {
+                        MessageBox.Show("No se puede modificar un Usuario que no existe!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
-            if (paso)
-            {
-                MessageBox.Show("El usuario se guardado exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
-            }
-            else
-            { 
-                MessageBox.Show("No se pudo guardar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NombresTextBox.Focus();
-            }
-               
-            NombresTextBox.Focus();
-        }
-
-        private void EliminarButton_Click(object sender, EventArgs e) //Clic al boton eliminar
-        {
-            RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
-            MyErrorProvider.Clear();
-            bool paso = false;
-            int.TryParse(UsuarioIdNumericUpDown.Text, out int Id);
-
-            if (!ExisteEnLaBaseDeDatos())
-            {
-                MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Este usuario no existe!");
-                return;
-            }
-            else
-            {
-                Usuarios Usuario = Repositorio.Buscar(Convert.ToInt32(UsuarioIdNumericUpDown.Value));
-                if(Usuario != null)
-                {
-                    var result = MessageBox.Show("¿Seguro que desea eliminar el usuario de " + Usuario.Nombres + "?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    var result = MessageBox.Show("¿Seguro que desea modificar el usuario de " + usuario.Nombres + "?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (result == DialogResult.Yes)
                     {
-                        paso = Repositorio.Eliminar(Id);
+                        paso = repositorio.Modificar(usuario);
                         if (paso)
                         {
-                            MessageBox.Show("El usuario se elimino exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            NombresTextBox.Focus();
+                            MessageBox.Show("El usuario se modificó exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo eliminar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            NombresTextBox.Focus();
+                            MessageBox.Show("No se pudo modificar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         return;
                     }
+                    else
+                    {
+                        return;
+                    }
                 }
-                 
+
+                if (paso)
+                {
+                    MessageBox.Show("El usuario se guardado exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                { 
+                    MessageBox.Show("No se pudo guardar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    NombresTextBox.Focus();
+                }
+               
+                NombresTextBox.Focus();
             }
-            NombresTextBox.Focus();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private void EliminarButton_Click(object sender, EventArgs e) //Clic al boton eliminar
+        {
+            try
+            {
+                RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
+                MyErrorProvider.Clear();
+                bool paso = false;
+                int.TryParse(UsuarioIdNumericUpDown.Text, out int Id);
+
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MyErrorProvider.SetError(UsuarioIdNumericUpDown, "Este usuario no existe!");
+                    return;
+                }
+                else
+                {
+                    Usuarios Usuario = Repositorio.Buscar(Convert.ToInt32(UsuarioIdNumericUpDown.Value));
+                    if(Usuario != null)
+                    {
+                        var result = MessageBox.Show("¿Seguro que desea eliminar el usuario de " + Usuario.Nombres + "?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                        if (result == DialogResult.Yes)
+                        {
+                            paso = Repositorio.Eliminar(Id);
+                            if (paso)
+                            {
+                                MessageBox.Show("El usuario se elimino exitosamente!", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                NombresTextBox.Focus();
+                                Limpiar();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo eliminar el usuario!", "Fallo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                NombresTextBox.Focus();
+                            }
+                            return;
+                        }
+                    }
+                 
+                }
+                NombresTextBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void rUsuarios_Load(object sender, EventArgs e) // Al cargar el Form
+        {
+            try
+            {
+                FechaDeRegistroDateTimePicker.Value = DateTime.Now;
+
+                if(UsuarioId > 0)
+                {
+                    UsuarioIdNumericUpDown.Value = UsuarioId;
+                    Buscar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         //---------------------------------------------------------------------------------------------------------
 
         //Moviendo el foco entre los campos del registro ----------------------------------------------------------
-
-        private void UsuarioIdNumericUpDown_KeyPress(object sender, KeyPressEventArgs e)// Al precionar enter mueve el culsor del NumericUpDown del codigo del usuario al Boton buscar
+        private void UsuarioIdNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al Pulsar una tecla en el NumericUpDown del id
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                BuscarButton.Focus();
+                if (e.KeyCode == Keys.Enter)
+                    BuscarButton.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void NombresTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del los nombre al TextBox de los apellido
+        private void BuscarButton_KeyDown(object sender, KeyEventArgs e)// Al pulsar una tecla en el boton buscar
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                ApellidosTextBox.Focus();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        UsuarioIdNumericUpDown.Focus();
+                        break;
+
+                    case Keys.Left:
+                        UsuarioIdNumericUpDown.Focus();
+                        break;
+
+                    case Keys.Right:
+                        NombresTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        NombresTextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void ApellidosTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox de los apellidos al MaskTextBox de la cedula
+        private void NombresTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar tecla en el TextBox de los nombres
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                CedulaMaskedTextBox.Focus();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        BuscarButton.Focus();
+                        break;
+
+                    case Keys.Down:
+                        ApellidosTextBox.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        ApellidosTextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void CedulaMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e) //Al precionar enter mueve del el culsor MaskTextBox de la Cedula al MaskTextBox del Telefono
+        private void ApellidosTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar tecla en el TextBox de los apellidos
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                TelefonoMaskedTextBox.Focus();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        NombresTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        CedulaMaskedTextBox.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        CedulaMaskedTextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void CedulaMaskedTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el MaskedTextBox de la cedula
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        ApellidosTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        TelefonoMaskedTextBox.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        TelefonoMaskedTextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void TelefonoMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del MaskTextBox del telefono al DateTimePicker de la fecha de registro
+        private void TelefonoMaskedTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el MaskedTextBox del telefono
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                FechaDeRegistroDateTimePicker.Focus();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        CedulaMaskedTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        FechaDeRegistroDateTimePicker.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        FechaDeRegistroDateTimePicker.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void FechaDeRegistroDateTimePicker_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del DateTimePicker de la fecha de registro al TextBox del Usuario
+
+        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e) // Si el DateTimePicker de la fecha se cierra
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
                 UsuarioTextBox.Focus();
             }
-        }
-
-        private void FechaDeRegistroDateTimePicker_ValueChanged(object sender, EventArgs e)//Al cambiar el valor mueve el culsor del DateTimePicker de la fecha de registro al TextBox del Usuario
-        {
-            UsuarioTextBox.Focus();
-        }
-
-        private void FechaDeRegistroDateTimePicker_CloseUp(object sender, EventArgs e)// Al minimizarse mueve el culsor desde del DateTimePicker de la fecha de registro al TextBox del Usuario
-        {
-            UsuarioTextBox.Focus();
-        }
-
-        private void UsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del nombre de usuario al ComboBox del nivel de usuario
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            catch (Exception ex)
             {
-                NivelDeUsuarioComboBox.Focus();
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void NivelDeUsuarioComboBox_SelectedIndexChanged(object sender, EventArgs e) //Al minimizarse mueve el culsor desde del ComboBox del nivel de usuario al TextBox de la contraseña
+        private void FechaDeRegistroDateTimePicker_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el DateTimePicker de la fecha
         {
-            ContrasenaTextBox.Focus();
-        }
-
-        private void ContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox del la contraseña al TextBox de la confirmacion de la contraseña
-        {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                ConfirmarContrasenaTextBox.Focus();
+                if (e.KeyCode == Keys.Enter)
+                    UsuarioTextBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void ConfirmarContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e)//Al precionar enter mueve el culsor del TextBox de la confirmacion de la contraseña al Boton Guardar
+        private void UsuarioTextBox_KeyDown(object sender, KeyEventArgs e)  // Al pulsar una tecla en el TextBox del usuario
         {
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            try
             {
-                GuardarButton.Focus();
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        FechaDeRegistroDateTimePicker.Focus();
+                        break;
+
+                    case Keys.Down:
+                        NivelDeUsuarioComboBox.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        NivelDeUsuarioComboBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void rUsuarios_Load(object sender, EventArgs e)
+        private void NivelDeUsuarioComboBox_Enter(object sender, EventArgs e) // Cuando el combobox del nivel se usuario gana el foco
         {
-            FechaDeRegistroDateTimePicker.Value = DateTime.Now;
-
-            if(UsuarioId > 0)
+            try
             {
-                UsuarioIdNumericUpDown.Value = UsuarioId;
-                Buscar();
+                NivelDeUsuarioComboBox.DroppedDown = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NivelDeUsuarioComboBox_DropDownClosed(object sender, EventArgs e) // Cuando el combobox del nivel del usuario se cerra
+        {
+            try
+            {
+                ContrasenaTextBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ContrasenaTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de la contraseña
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        NivelDeUsuarioComboBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        ConfirmarContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        ConfirmarContrasenaTextBox.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ConfirmarContrasenaTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de confirmar la contraseña
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        ContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        GuardarButton.Focus();
+                        break;
+
+                    case Keys.Enter:
+                        GuardarButton.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton Limpiar
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        ConfirmarContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        GuardarButton.Focus();
+                        break;
+
+                    case Keys.Left:
+                        EliminarButton.Focus();
+                        break;
+
+                    case Keys.Right:
+                        GuardarButton.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GuardarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton Guardar
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        ConfirmarContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        EliminarButton.Focus();
+                        break;
+
+                    case Keys.Left:
+                        LimpiarButton.Focus();
+                        break;
+
+                    case Keys.Right:
+                        EliminarButton.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void EliminarButton_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el boton eliminar
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        ConfirmarContrasenaTextBox.Focus();
+                        break;
+
+                    case Keys.Down:
+                        LimpiarButton.Focus();
+                        break;
+
+                    case Keys.Left:
+                        GuardarButton.Focus();
+                        break;
+
+                    case Keys.Right:
+                        LimpiarButton.Focus();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -419,6 +419,7 @@
             // PaginaAnteriorButton
             // 
             this.PaginaAnteriorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaginaAnteriorButton.Image = global::InventoryAssistant.Properties.Resources.AnteriorButtonImg;
             this.PaginaAnteriorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PaginaAnteriorButton.Location = new System.Drawing.Point(437, 455);
             this.PaginaAnteriorButton.Name = "PaginaAnteriorButton";
@@ -432,6 +433,7 @@
             // PaginaSiguienteButton
             // 
             this.PaginaSiguienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaginaSiguienteButton.Image = global::InventoryAssistant.Properties.Resources.SiguienteButtonImg;
             this.PaginaSiguienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PaginaSiguienteButton.Location = new System.Drawing.Point(437, 455);
             this.PaginaSiguienteButton.Name = "PaginaSiguienteButton";
@@ -447,7 +449,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 503);
-            this.Controls.Add(this.PaginaAnteriorButton);
             this.Controls.Add(this.PaginaSiguienteButton);
             this.Controls.Add(this.GroupBox3);
             this.Controls.Add(this.TituloLabel);
@@ -456,6 +457,7 @@
             this.Controls.Add(this.GroupBox6);
             this.Controls.Add(this.GroupBox5);
             this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.PaginaAnteriorButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -55,7 +55,6 @@
             this.consultasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryAssistantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.NivelDeUsuarioToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -65,7 +64,6 @@
             this.FechaPanel = new System.Windows.Forms.Panel();
             this.HoraLabel = new System.Windows.Forms.Label();
             this.FechaLabel = new System.Windows.Forms.Label();
-            this.lToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.FechaPanel.SuspendLayout();
@@ -95,8 +93,7 @@
             this.toolStripSeparator3,
             this.RegistroDeUsuariosToolStripMenuItem,
             this.toolStripSeparator2,
-            this.cuadreDeCajaToolStripMenuItem,
-            this.lToolStripMenuItem});
+            this.cuadreDeCajaToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -269,16 +266,6 @@
             this.inventoryAssistantToolStripMenuItem.Text = "Inventory Assistant";
             this.inventoryAssistantToolStripMenuItem.Click += new System.EventHandler(this.inventoryAssistantToolStripMenuItem_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Login";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -328,13 +315,13 @@
             // 
             // FechaPanel
             // 
+            this.FechaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaPanel.BackColor = System.Drawing.Color.Transparent;
             this.FechaPanel.Controls.Add(this.HoraLabel);
             this.FechaPanel.Controls.Add(this.FechaLabel);
-            this.FechaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FechaPanel.Location = new System.Drawing.Point(0, 24);
+            this.FechaPanel.Location = new System.Drawing.Point(348, 257);
             this.FechaPanel.Name = "FechaPanel";
-            this.FechaPanel.Size = new System.Drawing.Size(701, 334);
+            this.FechaPanel.Size = new System.Drawing.Size(349, 98);
             this.FechaPanel.TabIndex = 23;
             // 
             // HoraLabel
@@ -342,31 +329,24 @@
             this.HoraLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.HoraLabel.AutoSize = true;
             this.HoraLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraLabel.Location = new System.Drawing.Point(15, 3);
+            this.HoraLabel.Location = new System.Drawing.Point(13, 15);
             this.HoraLabel.Name = "HoraLabel";
-            this.HoraLabel.Size = new System.Drawing.Size(294, 55);
+            this.HoraLabel.Size = new System.Drawing.Size(306, 55);
             this.HoraLabel.TabIndex = 24;
-            this.HoraLabel.Text = "hh:mm:ss tt";
+            this.HoraLabel.Text = "hh:mm:ss t t";
             // 
             // FechaLabel
             // 
             this.FechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLabel.AutoSize = true;
             this.FechaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaLabel.Location = new System.Drawing.Point(25, 56);
+            this.FechaLabel.Location = new System.Drawing.Point(13, 68);
             this.FechaLabel.Name = "FechaLabel";
             this.FechaLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FechaLabel.Size = new System.Drawing.Size(230, 18);
+            this.FechaLabel.Size = new System.Drawing.Size(284, 23);
             this.FechaLabel.TabIndex = 25;
             this.FechaLabel.Text = "Dia       30 de Mes       del Año";
             this.FechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lToolStripMenuItem
-            // 
-            this.lToolStripMenuItem.Name = "lToolStripMenuItem";
-            this.lToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.lToolStripMenuItem.Text = "l";
-            this.lToolStripMenuItem.Click += new System.EventHandler(this.lToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -375,7 +355,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(701, 380);
             this.Controls.Add(this.FechaPanel);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -383,6 +362,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Assistant";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -403,7 +383,6 @@
         private System.Windows.Forms.ToolStripMenuItem RegistroDeCategoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RegistroDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EntradaDeProductosToolStripMenuItem;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem RegistroDeFacturasToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel UsuarioStripStatusLabel;
@@ -432,7 +411,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryAssistantToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lToolStripMenuItem;
     }
 }
 

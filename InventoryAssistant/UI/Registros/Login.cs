@@ -35,11 +35,11 @@ namespace InventoryAssistant.UI.Registros
                     }
                     MessageBox.Show("Logeado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Hide();
-                    
+                    new MainForm().Show();
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Usuario y/o Contraseña Incorrecto", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     ContrasenaTextBox.Text = string.Empty;
                 }
             }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cCuadreDeCaja));
             this.CuadresDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DatosDelCuadreGroupBox = new System.Windows.Forms.GroupBox();
@@ -94,12 +95,13 @@
             // 
             // DatosDelCuadreButton
             // 
+            this.DatosDelCuadreButton.Image = global::InventoryAssistant.Properties.Resources.DatosDelCuadreBtn;
+            this.DatosDelCuadreButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DatosDelCuadreButton.Location = new System.Drawing.Point(5, 30);
             this.DatosDelCuadreButton.Name = "DatosDelCuadreButton";
             this.DatosDelCuadreButton.Size = new System.Drawing.Size(180, 50);
             this.DatosDelCuadreButton.TabIndex = 24;
-            this.DatosDelCuadreButton.Text = "Datos del Cuadre";
-            this.DatosDelCuadreButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DatosDelCuadreButton.Text = "       Datos del Cuadre";
             this.DatosDelCuadreButton.UseVisualStyleBackColor = true;
             this.DatosDelCuadreButton.Click += new System.EventHandler(this.DatosDelCuadreButton_Click);
             // 
@@ -239,6 +241,7 @@
             // 
             // RealizarBusquedaButton
             // 
+            this.RealizarBusquedaButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(9, 254);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
@@ -302,9 +305,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelCuadreGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cCuadreDeCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "cCuadreDeCaja";
+            this.Text = "Consulta de Cuadres de Caja";
+            this.Activated += new System.EventHandler(this.cCuadreDeCaja_Activated);
             this.Load += new System.EventHandler(this.cCuadreDeCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CuadresDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);

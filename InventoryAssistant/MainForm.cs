@@ -25,8 +25,9 @@ namespace InventoryAssistant
             try
             {
                 MyTimer.Enabled = true;
-                NombreUsuarioToolStripStatusLabel.Text = RepositorioUsuario.ReturnUsuario().Nombres;
-                int nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
+                nombre = RepositorioUsuario.ReturnUsuario().Nombres;
+                NombreUsuarioToolStripStatusLabel.Text = nombre;
+                nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
                 switch (nivel)
                 {
                     case 0:
@@ -56,7 +57,7 @@ namespace InventoryAssistant
         {
             try
             {
-                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

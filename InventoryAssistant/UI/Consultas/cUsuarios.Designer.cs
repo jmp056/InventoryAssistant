@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cUsuarios));
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
             this.DatosDelUsuarioButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -61,6 +62,8 @@
             // 
             // DatosDelUsuarioButton
             // 
+            this.DatosDelUsuarioButton.Image = global::InventoryAssistant.Properties.Resources.DatosDelUsuarioBtn;
+            this.DatosDelUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DatosDelUsuarioButton.Location = new System.Drawing.Point(5, 30);
             this.DatosDelUsuarioButton.Name = "DatosDelUsuarioButton";
             this.DatosDelUsuarioButton.Size = new System.Drawing.Size(180, 50);
@@ -87,6 +90,7 @@
             // 
             // RealizarBusquedaButton
             // 
+            this.RealizarBusquedaButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(9, 157);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
@@ -173,11 +177,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Consultas de Usuarios";
+            this.Text = "Consulta de Usuarios";
+            this.Activated += new System.EventHandler(this.cUsuarios_Activated);
             this.Load += new System.EventHandler(this.ConsultasUsuarios_Load);
             this.DatosDelUsuarioGroupBox.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

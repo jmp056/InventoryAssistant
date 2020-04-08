@@ -263,6 +263,7 @@ namespace InventoryAssistant.UI.Registros
         private bool Validar() //Funcion encargada de validar el registro
         {
             bool Paso = true;
+            MyErrorProvider.Clear();
 
             try
             {
@@ -343,7 +344,7 @@ namespace InventoryAssistant.UI.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No existe una factura con este código!");
+                    MyErrorProvider.SetError(FacturaIdNumericUpDown, "No existe una factura con este código!");
                     FacturaIdNumericUpDown.Focus();
                 }
             }
@@ -668,7 +669,7 @@ namespace InventoryAssistant.UI.Registros
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MyErrorProvider.SetError(FacturaIdNumericUpDown, "Factura no existe!!!");
+                    MyErrorProvider.SetError(FacturaIdNumericUpDown, "No existe una factura con este código!");
                     return;
                 }
                 else

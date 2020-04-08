@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DatosDeLaFacturaBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatosDeLaFacturaBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatosDeLaCategoriaBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatosDeLaCategoriaBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuscarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuscarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatosDelCuadreBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatosDelCuadreBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatosDelProductoBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatosDelProductoBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatosDelUsuarioBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatosDelUsuarioBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DatosDeLaEntradaBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatosDeLaEntradaBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SeleccionarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SeleccionarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

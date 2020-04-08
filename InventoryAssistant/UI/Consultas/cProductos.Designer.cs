@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.DatosDelProductoButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cProductos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
             this.GenerarEntradaButton = new System.Windows.Forms.Button();
+            this.DatosDelProductoButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.HastaLabel = new System.Windows.Forms.Label();
             this.HastaNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -52,17 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DesdeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DatosDelProductoButton
-            // 
-            this.DatosDelProductoButton.Location = new System.Drawing.Point(5, 30);
-            this.DatosDelProductoButton.Name = "DatosDelProductoButton";
-            this.DatosDelProductoButton.Size = new System.Drawing.Size(180, 50);
-            this.DatosDelProductoButton.TabIndex = 24;
-            this.DatosDelProductoButton.Text = "Datos del Producto";
-            this.DatosDelProductoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DatosDelProductoButton.UseVisualStyleBackColor = true;
-            this.DatosDelProductoButton.Click += new System.EventHandler(this.DatosDelProductoButton_Click);
             // 
             // groupBox2
             // 
@@ -100,6 +90,8 @@
             // 
             // GenerarEntradaButton
             // 
+            this.GenerarEntradaButton.Image = global::InventoryAssistant.Properties.Resources.DatosDeLaEntradaBtn;
+            this.GenerarEntradaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GenerarEntradaButton.Location = new System.Drawing.Point(4, 86);
             this.GenerarEntradaButton.Name = "GenerarEntradaButton";
             this.GenerarEntradaButton.Size = new System.Drawing.Size(180, 50);
@@ -107,6 +99,19 @@
             this.GenerarEntradaButton.Text = "      Genenrar Entrada";
             this.GenerarEntradaButton.UseVisualStyleBackColor = true;
             this.GenerarEntradaButton.Click += new System.EventHandler(this.GenerarEntradaButton_Click);
+            // 
+            // DatosDelProductoButton
+            // 
+            this.DatosDelProductoButton.Image = global::InventoryAssistant.Properties.Resources.DatosDelProductoBtn;
+            this.DatosDelProductoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DatosDelProductoButton.Location = new System.Drawing.Point(5, 30);
+            this.DatosDelProductoButton.Name = "DatosDelProductoButton";
+            this.DatosDelProductoButton.Size = new System.Drawing.Size(180, 50);
+            this.DatosDelProductoButton.TabIndex = 24;
+            this.DatosDelProductoButton.Text = "Datos del Producto";
+            this.DatosDelProductoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DatosDelProductoButton.UseVisualStyleBackColor = true;
+            this.DatosDelProductoButton.Click += new System.EventHandler(this.DatosDelProductoButton_Click);
             // 
             // groupBox1
             // 
@@ -173,6 +178,7 @@
             // 
             // RealizarBusquedaButton
             // 
+            this.RealizarBusquedaButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(9, 157);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
@@ -238,11 +244,13 @@
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "cProductos";
+            this.Text = "Consulta de Productos";
+            this.Activated += new System.EventHandler(this.cProductos_Activated);
             this.Load += new System.EventHandler(this.cProductos_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosDataGridView)).EndInit();

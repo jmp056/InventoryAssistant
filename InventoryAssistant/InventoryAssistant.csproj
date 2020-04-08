@@ -264,6 +264,30 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatosDeLaEntradaBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarButtonImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatosDelCuadreBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatosDeLaCategoriaBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatosDeLaFacturaBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatosDelProductoBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DatosDelUsuarioBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeleccionarButtonImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

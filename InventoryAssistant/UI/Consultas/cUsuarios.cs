@@ -185,20 +185,20 @@ namespace InventoryAssistant.UI.Consultas
         {
             try
             {
-                RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
-                ListadoUsuarios = new List<Usuarios>();
-                ListadoUsuarios = Repositorio.GetList(p => true);
-                ListadoUsuariosConsulta = CargarLista(ListadoUsuarios);
+                //RepositorioBase<Usuarios> Repositorio = new RepositorioBase<Usuarios>();
+                //ListadoUsuarios = new List<Usuarios>();
+                //ListadoUsuarios = Repositorio.GetList(p => true);
+                //ListadoUsuariosConsulta = CargarLista(ListadoUsuarios);
 
-                if (ListadoUsuariosConsulta.Count > 0)
-                {
-                    UsuariosDataGridView.DataSource = null;
-                    UsuariosDataGridView.DataSource = ListadoUsuariosConsulta;
-                    Formato();
-                    UsuariosDataGridView.ClearSelection();
-                }
+                //if (ListadoUsuariosConsulta.Count > 0)
+                //{
+                //    UsuariosDataGridView.DataSource = null;
+                //    UsuariosDataGridView.DataSource = ListadoUsuariosConsulta;
+                //    Formato();
+                //    UsuariosDataGridView.ClearSelection();
+                //}
 
-                DatosDelUsuarioButton.Enabled = false;
+                //DatosDelUsuarioButton.Enabled = false;
                 FiltroComboBox.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -283,6 +283,18 @@ namespace InventoryAssistant.UI.Consultas
                 MyErrorProvider.Clear();
                 CriterioTextBox.Width = 180;
                 CriterioTextBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cUsuarios_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
             }
             catch (Exception ex)
             {

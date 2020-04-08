@@ -241,19 +241,19 @@ namespace InventoryAssistant.UI.Consultas
 
                 BuscarPorCriterio();
 
-                RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
-                ListadoFacturas = new List<Facturas>();
-                ListadoFacturas = Repositorio.GetList(p => true);
+                //RepositorioBase<Facturas> Repositorio = new RepositorioBase<Facturas>();
+                //ListadoFacturas = new List<Facturas>();
+                //ListadoFacturas = Repositorio.GetList(p => true);
 
-                if (ListadoFacturas.Count > 0)
-                {
-                    FacturaDataGridView.DataSource = null;
-                    FacturaDataGridView.DataSource = ListadoFacturas;
-                    Formato();
-                    FacturaDataGridView.ClearSelection();
-                }
+                //if (ListadoFacturas.Count > 0)
+                //{
+                //    FacturaDataGridView.DataSource = null;
+                //    FacturaDataGridView.DataSource = ListadoFacturas;
+                //    Formato();
+                //    FacturaDataGridView.ClearSelection();
+                //}
 
-                DatosDeLaFacturaButton.Enabled = false;
+                //DatosDeLaFacturaButton.Enabled = false;
                 FiltroComboBox.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -298,6 +298,18 @@ namespace InventoryAssistant.UI.Consultas
                         rF.ShowDialog();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cFacturas_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
             }
             catch (Exception ex)
             {

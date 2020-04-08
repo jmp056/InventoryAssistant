@@ -168,21 +168,21 @@ namespace InventoryAssistant.UI.Consultas
             {
                 DesdeDateTimePicker.Value = DateTime.Now;
                 HastaDateTimePicker.Value = DateTime.Now;
-                BuscarPorCriterio();
+                //BuscarPorCriterio();
 
-                RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
-                ListadoCuadres = new List<CuadresDeCaja>();
-                ListadoCuadres = Repositorio.GetList(p => true);
+                //RepositorioBase<CuadresDeCaja> Repositorio = new RepositorioBase<CuadresDeCaja>();
+                //ListadoCuadres = new List<CuadresDeCaja>();
+                //ListadoCuadres = Repositorio.GetList(p => true);
 
-                if (ListadoCuadres.Count > 0)
-                {
-                    CuadresDataGridView.DataSource = null;
-                    CuadresDataGridView.DataSource = ListadoCuadres;
-                    Formato();
-                    CuadresDataGridView.ClearSelection();
-                }
+                //if (ListadoCuadres.Count > 0)
+                //{
+                //    CuadresDataGridView.DataSource = null;
+                //    CuadresDataGridView.DataSource = ListadoCuadres;
+                //    Formato();
+                //    CuadresDataGridView.ClearSelection();
+                //}
 
-                DatosDelCuadreButton.Enabled = false;
+                //DatosDelCuadreButton.Enabled = false;
                 FiltroComboBox.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -319,5 +319,16 @@ namespace InventoryAssistant.UI.Consultas
             }
         }
 
+        private void cCuadreDeCaja_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

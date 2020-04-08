@@ -262,20 +262,20 @@ namespace InventoryAssistant.UI.Consultas
 
                 BuscarPorCriterio();
 
-                RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
-                ListadoEntradasProductos = new List<EntradaProductos>();
-                ListadoEntradasProductos = Repositorio.GetList(p => true);
-                ListadoEntradasProductosConsulta = CargarLista(ListadoEntradasProductos);
+                //RepositorioBase<EntradaProductos> Repositorio = new RepositorioBase<EntradaProductos>();
+                //ListadoEntradasProductos = new List<EntradaProductos>();
+                //ListadoEntradasProductos = Repositorio.GetList(p => true);
+                //ListadoEntradasProductosConsulta = CargarLista(ListadoEntradasProductos);
 
-                if (ListadoEntradasProductosConsulta.Count > 0)
-                {
-                    EntradasProductosDataGridView.DataSource = null;
-                    EntradasProductosDataGridView.DataSource = ListadoEntradasProductosConsulta;
-                    Formato();
-                    EntradasProductosDataGridView.ClearSelection();
-                }
+                //if (ListadoEntradasProductosConsulta.Count > 0)
+                //{
+                //    EntradasProductosDataGridView.DataSource = null;
+                //    EntradasProductosDataGridView.DataSource = ListadoEntradasProductosConsulta;
+                //    Formato();
+                //    EntradasProductosDataGridView.ClearSelection();
+                //}
 
-                DatosDeLaEntradaButton.Enabled = false;
+                //DatosDeLaEntradaButton.Enabled = false;
                 FiltroComboBox.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -320,6 +320,18 @@ namespace InventoryAssistant.UI.Consultas
                         rE.ShowDialog();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cEntradaProductos_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
             }
             catch (Exception ex)
             {

@@ -33,7 +33,7 @@ namespace InventoryAssistant.UI.Registros
                     {
                         repositorio.NombreLogin(item.Nombres, item.Apellidos, item.NivelDeUsuario);
                     }
-                    MessageBox.Show("Logeado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Logeado, Por favor verifique que la hora y fecha de su dispositivo estén correctas", "Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Hide();
                     new MainForm().Show();
                 }

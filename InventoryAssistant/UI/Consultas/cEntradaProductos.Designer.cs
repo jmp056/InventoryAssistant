@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cEntradaProductos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.EntradasProductosDataGridView = new System.Windows.Forms.DataGridView();
             this.DatosDelUsuarioGroupBox = new System.Windows.Forms.GroupBox();
@@ -94,6 +95,8 @@
             // 
             // DatosDeLaEntradaButton
             // 
+            this.DatosDeLaEntradaButton.Image = global::InventoryAssistant.Properties.Resources.DatosDeLaEntradaBtn;
+            this.DatosDeLaEntradaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DatosDeLaEntradaButton.Location = new System.Drawing.Point(5, 30);
             this.DatosDeLaEntradaButton.Name = "DatosDeLaEntradaButton";
             this.DatosDeLaEntradaButton.Size = new System.Drawing.Size(180, 50);
@@ -168,6 +171,7 @@
             // 
             // RealizarBusquedaButton
             // 
+            this.RealizarBusquedaButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(8, 261);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
@@ -301,11 +305,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DatosDelUsuarioGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cEntradaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "cEntradaProductos";
+            this.Text = "Consulta de Entradas de Productos";
+            this.Activated += new System.EventHandler(this.cEntradaProductos_Activated);
             this.Load += new System.EventHandler(this.cEntradaProductos_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EntradasProductosDataGridView)).EndInit();

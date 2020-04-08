@@ -253,21 +253,21 @@ namespace InventoryAssistant.UI.Consultas
             {
                 BuscarPorCriterio();
 
-                RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
-                ListadoProductos = new List<Productos>();
-                ListadoProductos = Repositorio.GetList(p => true);
-                ListadoProductosConsulta = CargarLista(ListadoProductos);
+                //RepositorioBase<Productos> Repositorio = new RepositorioBase<Productos>();
+                //ListadoProductos = new List<Productos>();
+                //ListadoProductos = Repositorio.GetList(p => true);
+                //ListadoProductosConsulta = CargarLista(ListadoProductos);
 
-                if (ListadoProductosConsulta.Count > 0)
-                {
-                    ProductosDataGridView.DataSource = null;
-                    ProductosDataGridView.DataSource = ListadoProductosConsulta;
-                    Formato();
-                    ProductosDataGridView.ClearSelection();
-                }
+                //if (ListadoProductosConsulta.Count > 0)
+                //{
+                //    ProductosDataGridView.DataSource = null;
+                //    ProductosDataGridView.DataSource = ListadoProductosConsulta;
+                //    Formato();
+                //    ProductosDataGridView.ClearSelection();
+                //}
 
-                DatosDelProductoButton.Enabled = false;
-                GenerarEntradaButton.Enabled = false;
+                //DatosDelProductoButton.Enabled = false;
+                //GenerarEntradaButton.Enabled = false;
                 FiltroComboBox.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -320,7 +320,7 @@ namespace InventoryAssistant.UI.Consultas
                 }
                 else
                 {
-                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -341,7 +341,7 @@ namespace InventoryAssistant.UI.Consultas
                 }
                 else
                 {
-                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -362,8 +362,20 @@ namespace InventoryAssistant.UI.Consultas
                 }
                 else
                 {
-                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cProductos_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
             }
             catch (Exception ex)
             {

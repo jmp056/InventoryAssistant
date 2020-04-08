@@ -137,7 +137,7 @@ namespace InventoryAssistant.UI.Consultas
                 }
                 else
                 {
-                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -199,7 +199,7 @@ namespace InventoryAssistant.UI.Consultas
                 }
                 else
                 {
-                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usted no tiene permiso para realizar esta tarea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -212,18 +212,18 @@ namespace InventoryAssistant.UI.Consultas
         {
             try
             {
-                DatosDeLaCategoriaButton.Enabled = false;
-                RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
-                ListadoCatgorias = new List<Categorias>();
-                ListadoCatgorias = Repositorio.GetList(p => true);
+                //DatosDeLaCategoriaButton.Enabled = false;
+                //RepositorioBase<Categorias> Repositorio = new RepositorioBase<Categorias>();
+                //ListadoCatgorias = new List<Categorias>();
+                //ListadoCatgorias = Repositorio.GetList(p => true);
 
-                if (ListadoCatgorias.Count > 0)
-                {
-                    CategoriasDataGridView.DataSource = null;
-                    CategoriasDataGridView.DataSource = ListadoCatgorias;
-                    Formato();
-                    CategoriasDataGridView.ClearSelection();
-                }
+                //if (ListadoCatgorias.Count > 0)
+                //{
+                //    CategoriasDataGridView.DataSource = null;
+                //    CategoriasDataGridView.DataSource = ListadoCatgorias;
+                //    Formato();
+                //    CategoriasDataGridView.ClearSelection();
+                //}
 
                 FiltroComboBox.SelectedIndex = 0;
             }
@@ -240,6 +240,18 @@ namespace InventoryAssistant.UI.Consultas
                 MyErrorProvider.Clear();
                 CriterioTextBox.Width = 195;
                 CriterioTextBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cCategorias_Activated(object sender, EventArgs e) // Al ganar el foco
+        {
+            try
+            {
+                Buscar();
             }
             catch (Exception ex)
             {

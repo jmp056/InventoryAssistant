@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cFacturas));
             this.FechaGroupBox = new System.Windows.Forms.GroupBox();
             this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -131,6 +132,7 @@
             // 
             // RealizarBusquedaButton
             // 
+            this.RealizarBusquedaButton.Image = global::InventoryAssistant.Properties.Resources.BuscarButtonImg;
             this.RealizarBusquedaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RealizarBusquedaButton.Location = new System.Drawing.Point(8, 261);
             this.RealizarBusquedaButton.Name = "RealizarBusquedaButton";
@@ -182,6 +184,8 @@
             // 
             // DatosDeLaFacturaButton
             // 
+            this.DatosDeLaFacturaButton.Image = global::InventoryAssistant.Properties.Resources.DatosDeLaFacturaBtn;
+            this.DatosDeLaFacturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DatosDeLaFacturaButton.Location = new System.Drawing.Point(5, 30);
             this.DatosDeLaFacturaButton.Name = "DatosDeLaFacturaButton";
             this.DatosDeLaFacturaButton.Size = new System.Drawing.Size(180, 50);
@@ -302,11 +306,13 @@
             this.Controls.Add(this.DatosDeLaFacturaGroupBox);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "cFacturas";
+            this.Text = "Consulta de Facturas";
+            this.Activated += new System.EventHandler(this.cFacturas_Activated);
             this.Load += new System.EventHandler(this.cFacturas_Load);
             this.FechaGroupBox.ResumeLayout(false);
             this.FechaGroupBox.PerformLayout();

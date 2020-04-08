@@ -50,6 +50,7 @@ namespace InventoryAssistant.UI.Registros
                 DetalleDataGridView.DataSource = null;
                 LimpiarProductoGroupBox();
                 UsuarioTextBox.Text = NombreUsuario;
+                TotalTextBox.Text = "0.00";
 
                 EstadoToolStripStatusLabel.Text = string.Empty;
                 UsuarioToolStripStatusLabel.Text = string.Empty;
@@ -610,7 +611,7 @@ namespace InventoryAssistant.UI.Registros
         {
             try
             {
-     Facturas Factura = new Facturas();
+                Facturas Factura = new Facturas();
                 bool Paso = false;
                 if (!Validar())
                     return;

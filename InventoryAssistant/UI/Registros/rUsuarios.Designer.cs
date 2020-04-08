@@ -203,7 +203,7 @@
             this.NivelDeUsuarioComboBox.Size = new System.Drawing.Size(159, 24);
             this.NivelDeUsuarioComboBox.TabIndex = 90;
             this.NivelDeUsuarioComboBox.DropDownClosed += new System.EventHandler(this.NivelDeUsuarioComboBox_DropDownClosed);
-            this.NivelDeUsuarioComboBox.Enter += new System.EventHandler(this.NivelDeUsuarioComboBox_Enter);
+            this.NivelDeUsuarioComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NivelDeUsuarioComboBox_KeyDown);
             // 
             // ApellidosTextBox
             // 

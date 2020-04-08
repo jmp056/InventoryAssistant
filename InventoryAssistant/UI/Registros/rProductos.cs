@@ -59,6 +59,7 @@ namespace InventoryAssistant.UI.Registros
                     Buscar();
                 }
 
+                CategoriaComboBox.DropDownWidth = 233;
                 MyToolTip.SetToolTip(AnadirCategoriasButton, "Agregar una nueva categoría");
             }
             catch (Exception ex)
@@ -513,19 +514,7 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-        private void CategoriaComboBox_Enter(object sender, EventArgs e) // Si el combobox de la categoria gana el foco
-        {
-            try
-            {
-                CategoriaComboBox.DroppedDown = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void CategoriaComboBox_DropDownClosed(object sender, EventArgs e) // Si el combobox de la categoria se cierra
+        private void CategoriaComboBox_DropDownClosed(object sender, EventArgs e)  // Si el combobox de la categoria se cierra
         {
             try
             {
@@ -535,6 +524,12 @@ namespace InventoryAssistant.UI.Registros
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CategoriaComboBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Combobox de la categoria
+        {
+            if (e.KeyCode == Keys.Enter)
+                CantidadNumericUpDown.Focus();
         }
 
         private void ControlAlmacenCheckBox_CheckedChanged(object sender, EventArgs e) // Si cambia el estado del CheckBox de llevar el control en el almacen
@@ -547,6 +542,15 @@ namespace InventoryAssistant.UI.Registros
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        
+        private void ControlAlmacenCheckBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el CheckBox del control de almazen
+        {
+            if (e.KeyCode == Keys.Enter)
+                if (ControlAlmacenCheckBox.Checked == true)
+                    ControlAlmacenCheckBox.Checked = false;
+                else
+                    ControlAlmacenCheckBox.Checked = true;
         }
 
         private void CantidadNumericUpDown_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el NumericUpDown de la cantidad
@@ -687,5 +691,7 @@ namespace InventoryAssistant.UI.Registros
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

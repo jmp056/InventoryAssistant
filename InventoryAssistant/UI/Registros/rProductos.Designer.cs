@@ -147,6 +147,7 @@
             this.ControlAlmacenCheckBox.TabIndex = 150;
             this.ControlAlmacenCheckBox.UseVisualStyleBackColor = true;
             this.ControlAlmacenCheckBox.CheckedChanged += new System.EventHandler(this.ControlAlmacenCheckBox_CheckedChanged);
+            this.ControlAlmacenCheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ControlAlmacenCheckBox_KeyDown);
             // 
             // InventarioLabel
             // 
@@ -180,7 +181,7 @@
             this.CategoriaComboBox.Size = new System.Drawing.Size(173, 24);
             this.CategoriaComboBox.TabIndex = 40;
             this.CategoriaComboBox.DropDownClosed += new System.EventHandler(this.CategoriaComboBox_DropDownClosed);
-            this.CategoriaComboBox.Enter += new System.EventHandler(this.CategoriaComboBox_Enter);
+            this.CategoriaComboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CategoriaComboBox_KeyDown);
             // 
             // MyErrorProvider
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +101,7 @@
             // 
             // RegistroDeFacturasToolStripMenuItem
             // 
+            this.RegistroDeFacturasToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.FacturaImg;
             this.RegistroDeFacturasToolStripMenuItem.Name = "RegistroDeFacturasToolStripMenuItem";
             this.RegistroDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.RegistroDeFacturasToolStripMenuItem.Text = "Registro de Facturas";
@@ -112,6 +114,7 @@
             // 
             // EntradaDeProductosToolStripMenuItem
             // 
+            this.EntradaDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.EntradaImg;
             this.EntradaDeProductosToolStripMenuItem.Name = "EntradaDeProductosToolStripMenuItem";
             this.EntradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.EntradaDeProductosToolStripMenuItem.Text = "Entrada de productos";
@@ -119,6 +122,7 @@
             // 
             // RegistroDeProductosToolStripMenuItem
             // 
+            this.RegistroDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.ProductosImg;
             this.RegistroDeProductosToolStripMenuItem.Name = "RegistroDeProductosToolStripMenuItem";
             this.RegistroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.RegistroDeProductosToolStripMenuItem.Text = "Registro de Productos";
@@ -126,6 +130,7 @@
             // 
             // RegistroDeCategoriaToolStripMenuItem
             // 
+            this.RegistroDeCategoriaToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CategoriaImg;
             this.RegistroDeCategoriaToolStripMenuItem.Name = "RegistroDeCategoriaToolStripMenuItem";
             this.RegistroDeCategoriaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.RegistroDeCategoriaToolStripMenuItem.Text = "Registro de Categorías";
@@ -138,6 +143,7 @@
             // 
             // RegistroDeUsuariosToolStripMenuItem
             // 
+            this.RegistroDeUsuariosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.UsuarioMenuImg;
             this.RegistroDeUsuariosToolStripMenuItem.Name = "RegistroDeUsuariosToolStripMenuItem";
             this.RegistroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.RegistroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
@@ -150,6 +156,7 @@
             // 
             // cuadreDeCajaToolStripMenuItem
             // 
+            this.cuadreDeCajaToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CuadreDeCajaImg;
             this.cuadreDeCajaToolStripMenuItem.Name = "cuadreDeCajaToolStripMenuItem";
             this.cuadreDeCajaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.cuadreDeCajaToolStripMenuItem.Text = "Cuadre de Caja";
@@ -173,6 +180,7 @@
             // 
             // ConsultaDeFacturasToolStripMenuItem
             // 
+            this.ConsultaDeFacturasToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.FacturaImg;
             this.ConsultaDeFacturasToolStripMenuItem.Name = "ConsultaDeFacturasToolStripMenuItem";
             this.ConsultaDeFacturasToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.ConsultaDeFacturasToolStripMenuItem.Text = "Consulta de Facturas";
@@ -185,6 +193,7 @@
             // 
             // ConsultaDeEntradaDeProductosToolStripMenuItem
             // 
+            this.ConsultaDeEntradaDeProductosToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.EntradaImg;
             this.ConsultaDeEntradaDeProductosToolStripMenuItem.Name = "ConsultaDeEntradaDeProductosToolStripMenuItem";
             this.ConsultaDeEntradaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.ConsultaDeEntradaDeProductosToolStripMenuItem.Text = "Consulta de Entrada de Productos";
@@ -192,6 +201,7 @@
             // 
             // consultaDeProductosToolStripMenuItem1
             // 
+            this.consultaDeProductosToolStripMenuItem1.Image = global::InventoryAssistant.Properties.Resources.ProductosImg;
             this.consultaDeProductosToolStripMenuItem1.Name = "consultaDeProductosToolStripMenuItem1";
             this.consultaDeProductosToolStripMenuItem1.Size = new System.Drawing.Size(253, 22);
             this.consultaDeProductosToolStripMenuItem1.Text = "Consulta de Productos";
@@ -199,6 +209,7 @@
             // 
             // consultaDeCategoríasToolStripMenuItem
             // 
+            this.consultaDeCategoríasToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CategoriaImg;
             this.consultaDeCategoríasToolStripMenuItem.Name = "consultaDeCategoríasToolStripMenuItem";
             this.consultaDeCategoríasToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.consultaDeCategoríasToolStripMenuItem.Text = "Consulta de Categorías";
@@ -211,6 +222,7 @@
             // 
             // ConsultaToolStripMenuItem
             // 
+            this.ConsultaToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.UsuarioMenuImg;
             this.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem";
             this.ConsultaToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.ConsultaToolStripMenuItem.Text = "Consulta de Usuarios";
@@ -223,6 +235,7 @@
             // 
             // consultaDeCuadresDeCajaToolStripMenuItem
             // 
+            this.consultaDeCuadresDeCajaToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CuadreDeCajaImg;
             this.consultaDeCuadresDeCajaToolStripMenuItem.Name = "consultaDeCuadresDeCajaToolStripMenuItem";
             this.consultaDeCuadresDeCajaToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.consultaDeCuadresDeCajaToolStripMenuItem.Text = "Consulta de Cuadres de Caja";
@@ -239,6 +252,7 @@
             // 
             // registrosToolStripMenuItem1
             // 
+            this.registrosToolStripMenuItem1.Image = global::InventoryAssistant.Properties.Resources.AyudaImg;
             this.registrosToolStripMenuItem1.Name = "registrosToolStripMenuItem1";
             this.registrosToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.registrosToolStripMenuItem1.Text = "Sobre los Registros";
@@ -246,6 +260,7 @@
             // 
             // consultasToolStripMenuItem1
             // 
+            this.consultasToolStripMenuItem1.Image = global::InventoryAssistant.Properties.Resources.AyudaImg;
             this.consultasToolStripMenuItem1.Name = "consultasToolStripMenuItem1";
             this.consultasToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.consultasToolStripMenuItem1.Text = "Sobre las Consultas";
@@ -261,8 +276,9 @@
             // 
             // inventoryAssistantToolStripMenuItem
             // 
+            this.inventoryAssistantToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.InformacionImg;
             this.inventoryAssistantToolStripMenuItem.Name = "inventoryAssistantToolStripMenuItem";
-            this.inventoryAssistantToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.inventoryAssistantToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inventoryAssistantToolStripMenuItem.Text = "Inventory Assistant";
             this.inventoryAssistantToolStripMenuItem.Click += new System.EventHandler(this.inventoryAssistantToolStripMenuItem_Click);
             // 
@@ -352,12 +368,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::InventoryAssistant.Properties.Resources.FondoImg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(701, 380);
             this.Controls.Add(this.FechaPanel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Assistant";

@@ -770,18 +770,6 @@ namespace InventoryAssistant.UI.Registros
             }
         }
 
-        private void NivelDeUsuarioComboBox_Enter(object sender, EventArgs e) // Cuando el combobox del nivel se usuario gana el foco
-        {
-            try
-            {
-                NivelDeUsuarioComboBox.DroppedDown = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void NivelDeUsuarioComboBox_DropDownClosed(object sender, EventArgs e) // Cuando el combobox del nivel del usuario se cerra
         {
             try
@@ -792,6 +780,12 @@ namespace InventoryAssistant.UI.Registros
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void NivelDeUsuarioComboBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el combobox del nivel de usuario
+        {
+            if (e.KeyCode == Keys.Enter)
+                ContrasenaTextBox.Focus();
         }
 
         private void ContrasenaTextBox_KeyDown(object sender, KeyEventArgs e) // Al pulsar una tecla en el Textbox de la contraseña
@@ -930,6 +924,8 @@ namespace InventoryAssistant.UI.Registros
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }
 

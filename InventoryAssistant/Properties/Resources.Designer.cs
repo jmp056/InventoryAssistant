@@ -83,6 +83,16 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AyudaImg {
+            get {
+                object obj = ResourceManager.GetObject("AyudaImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BuscarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("BuscarButtonImg", resourceCulture);
@@ -266,6 +276,16 @@ namespace InventoryAssistant.Properties {
         internal static System.Drawing.Bitmap GuardarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("GuardarButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InformacionImg {
+            get {
+                object obj = ResourceManager.GetObject("InformacionImg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

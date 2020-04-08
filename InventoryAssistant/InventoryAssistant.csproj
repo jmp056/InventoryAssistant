@@ -360,6 +360,12 @@
   <ItemGroup>
     <None Include="Resources\SiguienteButtonImg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AyudaImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InformacionImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

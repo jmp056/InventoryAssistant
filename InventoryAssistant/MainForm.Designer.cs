@@ -81,7 +81,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(701, 24);
             this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "MyMenuStrip";
             // 
             // registrosToolStripMenuItem
             // 
@@ -340,7 +340,7 @@
             this.HoraLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.HoraLabel.AutoSize = true;
             this.HoraLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraLabel.Location = new System.Drawing.Point(15, 3);
+            this.HoraLabel.Location = new System.Drawing.Point(2, 3);
             this.HoraLabel.Name = "HoraLabel";
             this.HoraLabel.Size = new System.Drawing.Size(294, 55);
             this.HoraLabel.TabIndex = 24;
@@ -350,13 +350,14 @@
             // 
             this.FechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLabel.AutoSize = true;
-            this.FechaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaLabel.Location = new System.Drawing.Point(25, 56);
+            this.FechaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaLabel.Location = new System.Drawing.Point(13, 56);
             this.FechaLabel.Name = "FechaLabel";
-            this.FechaLabel.Size = new System.Drawing.Size(284, 23);
+            this.FechaLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.FechaLabel.Size = new System.Drawing.Size(230, 18);
             this.FechaLabel.TabIndex = 25;
             this.FechaLabel.Text = "Dia       30 de Mes       del Año";
-            this.FechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 

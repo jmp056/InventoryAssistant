@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryAssistant.UI.Registros;
+using System;
 using System.Windows.Forms;
 
 namespace InventoryAssistant
@@ -13,7 +14,7 @@ namespace InventoryAssistant
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Login());
         }
     }
 }

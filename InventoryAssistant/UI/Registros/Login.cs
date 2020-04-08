@@ -34,7 +34,8 @@ namespace InventoryAssistant.UI.Registros
                         repositorio.NombreLogin(item.Nombres, item.Apellidos, item.NivelDeUsuario);
                     }
                     MessageBox.Show("Logeado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    this.Close();
+                    this.Hide();
+                    
                 }
                 else
                 {

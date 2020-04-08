@@ -4,13 +4,6 @@ using InventoryAssistant.UI.Consultas;
 using InventoryAssistant.UI.Otras;
 using InventoryAssistant.UI.Registros;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryAssistant
@@ -249,9 +242,5 @@ namespace InventoryAssistant
             HoraLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
             FechaLabel.Text = DateTime.Now.ToString("dddd dd \\de MMMM \\del yyyy ");
         }
-
-
-
-
     }
 }

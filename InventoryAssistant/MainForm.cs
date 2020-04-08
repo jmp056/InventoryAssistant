@@ -250,8 +250,10 @@ namespace InventoryAssistant
             FechaLabel.Text = DateTime.Now.ToString("dddd dd \\de MMMM \\del yyyy ");
         }
 
-
-
-
+        private void lToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            l.ShowDialog();
+        }
     }
 }

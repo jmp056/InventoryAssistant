@@ -282,6 +282,7 @@ namespace InventoryAssistant.UI.Registros
 
         private void CalcularTotalEnCaja()//Funcion encargada de calcular el total en caja
         {
+          
             double Total = 
                 Convert.ToDouble(DosmilTextBox.Text) +
                 Convert.ToDouble(MilTextBox.Text) +

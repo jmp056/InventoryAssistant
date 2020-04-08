@@ -65,6 +65,7 @@
             this.FechaPanel = new System.Windows.Forms.Panel();
             this.HoraLabel = new System.Windows.Forms.Label();
             this.FechaLabel = new System.Windows.Forms.Label();
+            this.lToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.FechaPanel.SuspendLayout();
@@ -94,7 +95,8 @@
             this.toolStripSeparator3,
             this.RegistroDeUsuariosToolStripMenuItem,
             this.toolStripSeparator2,
-            this.cuadreDeCajaToolStripMenuItem});
+            this.cuadreDeCajaToolStripMenuItem,
+            this.lToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -326,13 +328,13 @@
             // 
             // FechaPanel
             // 
-            this.FechaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaPanel.BackColor = System.Drawing.Color.Transparent;
             this.FechaPanel.Controls.Add(this.HoraLabel);
             this.FechaPanel.Controls.Add(this.FechaLabel);
-            this.FechaPanel.Location = new System.Drawing.Point(382, 274);
+            this.FechaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FechaPanel.Location = new System.Drawing.Point(0, 24);
             this.FechaPanel.Name = "FechaPanel";
-            this.FechaPanel.Size = new System.Drawing.Size(319, 81);
+            this.FechaPanel.Size = new System.Drawing.Size(701, 334);
             this.FechaPanel.TabIndex = 23;
             // 
             // HoraLabel
@@ -340,7 +342,7 @@
             this.HoraLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.HoraLabel.AutoSize = true;
             this.HoraLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoraLabel.Location = new System.Drawing.Point(15, 3);
+            this.HoraLabel.Location = new System.Drawing.Point(397, 256);
             this.HoraLabel.Name = "HoraLabel";
             this.HoraLabel.Size = new System.Drawing.Size(294, 55);
             this.HoraLabel.TabIndex = 24;
@@ -351,12 +353,19 @@
             this.FechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLabel.AutoSize = true;
             this.FechaLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaLabel.Location = new System.Drawing.Point(25, 56);
+            this.FechaLabel.Location = new System.Drawing.Point(407, 309);
             this.FechaLabel.Name = "FechaLabel";
             this.FechaLabel.Size = new System.Drawing.Size(284, 23);
             this.FechaLabel.TabIndex = 25;
             this.FechaLabel.Text = "Dia       30 de Mes       del Año";
             this.FechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lToolStripMenuItem
+            // 
+            this.lToolStripMenuItem.Name = "lToolStripMenuItem";
+            this.lToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.lToolStripMenuItem.Text = "l";
+            this.lToolStripMenuItem.Click += new System.EventHandler(this.lToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -422,6 +431,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryAssistantToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lToolStripMenuItem;
     }
 }
 

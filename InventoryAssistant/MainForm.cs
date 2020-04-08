@@ -242,5 +242,9 @@ namespace InventoryAssistant
             HoraLabel.Text = DateTime.Now.ToString("hh:mm:ss tt");
             FechaLabel.Text = DateTime.Now.ToString("dddd dd \\de MMMM \\del yyyy ");
         }
+
+
+
+
     }
 }

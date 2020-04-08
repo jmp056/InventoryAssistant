@@ -17,7 +17,7 @@ namespace InventoryAssistant.BLL
         public static bool Guardar(CuadresDeCaja CuadreDeCaja)
         {
             bool paso = false;
-            SqlConnection Conexion = new SqlConnection("Data Source =JMP-PC\\SQLEXPRESS; Initial Catalog = InventoryAssistantDb; Integrated Security = True");
+            SqlConnection Conexion = new SqlConnection("Data Source =.\\SQLEXPRESS; Initial Catalog = InventoryAssistantDb; Integrated Security = True");
 
             try
             {

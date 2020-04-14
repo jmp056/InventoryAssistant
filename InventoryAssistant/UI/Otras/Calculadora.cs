@@ -25,7 +25,11 @@ namespace InventoryAssistant.UI.Otras
             try
             {
                 if (MontoFactura > 0)
+                {
                     MontoFacturaNumericUpDown.Value = MontoFactura;
+                    MontoRecibidoNumericUpDown.Focus();
+                }
+
             }
             catch (Exception ex)
             {
@@ -100,6 +104,8 @@ namespace InventoryAssistant.UI.Otras
             try
             {
                 Calcular();
+                if (e.KeyCode == Keys.Enter)
+                    MontoFacturaNumericUpDown.Focus();
             }
             catch (Exception ex)
             {
@@ -112,6 +118,8 @@ namespace InventoryAssistant.UI.Otras
             try
             {
                 Calcular();
+                if (e.KeyCode == Keys.Enter)
+                    MontoRecibidoNumericUpDown.Focus();
             }
             catch (Exception ex)
             {

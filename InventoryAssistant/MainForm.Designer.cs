@@ -41,6 +41,7 @@
             this.RegistroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cuadreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultaDeFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,7 +66,9 @@
             this.FechaPanel = new System.Windows.Forms.Panel();
             this.HoraLabel = new System.Windows.Forms.Label();
             this.FechaLabel = new System.Windows.Forms.Label();
-            this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.FechaPanel.SuspendLayout();
@@ -96,6 +99,7 @@
             this.RegistroDeUsuariosToolStripMenuItem,
             this.toolStripSeparator2,
             this.cuadreDeCajaToolStripMenuItem,
+            this.toolStripSeparator7,
             this.cerrarSeccionToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
@@ -164,6 +168,14 @@
             this.cuadreDeCajaToolStripMenuItem.Text = "Cuadre de Caja";
             this.cuadreDeCajaToolStripMenuItem.Click += new System.EventHandler(this.cuadreDeCajaToolStripMenuItem_Click);
             // 
+            // cerrarSeccionToolStripMenuItem
+            // 
+            this.cerrarSeccionToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources._4115235_exit_logout_sign_out_114030;
+            this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
+            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.cerrarSeccionToolStripMenuItem.Text = " Cerrar Sesión";
+            this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -175,7 +187,9 @@
             this.toolStripSeparator6,
             this.ConsultaToolStripMenuItem,
             this.toolStripSeparator4,
-            this.consultaDeCuadresDeCajaToolStripMenuItem});
+            this.consultaDeCuadresDeCajaToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.calculadoraToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -366,13 +380,23 @@
             this.FechaLabel.Text = "Dia       30 de Mes       del Año";
             this.FechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cerrarSeccionToolStripMenuItem
+            // toolStripSeparator7
             // 
-            this.cerrarSeccionToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources._4115235_exit_logout_sign_out_114030;
-            this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
-            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.cerrarSeccionToolStripMenuItem.Text = " Cerrar Sesión";
-            this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(189, 6);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(250, 6);
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.CalcularButtonImg;
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
+            this.calculadoraToolStripMenuItem.Click += new System.EventHandler(this.calculadoraToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -440,6 +464,9 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryAssistantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSeccionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem calculadoraToolStripMenuItem;
     }
 }
 

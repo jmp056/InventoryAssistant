@@ -2,6 +2,7 @@
 using InventoryAssistant.DAL;
 using InventoryAssistant.Entidades;
 using InventoryAssistant.UI.Consultas;
+using InventoryAssistant.UI.Otras;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -503,7 +504,14 @@ namespace InventoryAssistant.UI.Registros
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }  
-        
+        private void Calculadora(Single Monto) // Funcion encargada de llamar la calculadora
+        {
+            if (MessageBox.Show("¿Desea abrir la calculadora?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                Calculadora Cal = new Calculadora(Convert.ToDecimal(Monto));
+                Cal.ShowDialog();
+            }
+        }
         //Botones -------------------------------------------------------------------------------------------------
         private void BuscarProductoButton_Click(object sender, EventArgs e) // Clic al boton  buscar producto
         {
@@ -636,6 +644,7 @@ namespace InventoryAssistant.UI.Registros
 
                     Paso = FacturasBLL.Guardar(Factura);
                     MessageBox.Show("Factura guardada de manera exitosa!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Calculadora(Factura.Total);
                     Limpiar();
                 }
                 else
@@ -651,6 +660,7 @@ namespace InventoryAssistant.UI.Registros
                     {
                         Paso = FacturasBLL.Modificar(Factura);
                         MessageBox.Show("Factura modificada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Calculadora(Factura.Total);
                         Limpiar();
                     }
                     else
@@ -659,12 +669,16 @@ namespace InventoryAssistant.UI.Registros
                     if (!Paso)
                         MessageBox.Show("La factura no pudo ser guardada!", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         } 
+
+
 
         private void LimpiarButton_Click(object sender, EventArgs e) // Clic al boton limpiar
         {

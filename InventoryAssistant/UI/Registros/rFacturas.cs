@@ -54,6 +54,8 @@ namespace InventoryAssistant.UI.Registros
 
                 EstadoToolStripStatusLabel.Text = string.Empty;
                 UsuarioToolStripStatusLabel.Text = string.Empty;
+                EliminarProductoButton.Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -336,6 +338,7 @@ namespace InventoryAssistant.UI.Registros
                         LlenaCampos(Factura);
                         FacturaIdNumericUpDown.Enabled = false;
                         BuscarButton.Enabled = false;
+                        EliminarProductoButton.Visible = true;
                     }
                     else
                     {
@@ -562,7 +565,8 @@ namespace InventoryAssistant.UI.Registros
                 RepositorioBase<DetalleFacturas> Repositorio = new RepositorioBase<DetalleFacturas>();
 
                 if (DetalleDataGridView.DataSource != null)
-                    Detalle = (List<DetalleFacturas>)DetalleDataGridView.DataSource;
+
+                Detalle = (List<DetalleFacturas>)DetalleDataGridView.DataSource;
                 this.Detalle.Add(
                     new DetalleFacturas(
                         detalleFacturaId: 0,
@@ -574,6 +578,12 @@ namespace InventoryAssistant.UI.Registros
                         importe: Convert.ToInt32(ImporteTextBox.Text)
                     )
                 );
+
+                if (Detalle.Count == 0)
+                {
+                    EliminarProductoButton.Visible = false;
+                }else
+                EliminarProductoButton.Visible = true;
 
                 CargaGrid();
                 LimpiarProductoGroupBox();
@@ -589,12 +599,16 @@ namespace InventoryAssistant.UI.Registros
         {
             try
             {
-                if (DetalleDataGridView.CurrentRow.Index >= 0)
+                if (DetalleDataGridView.CurrentRow !=null)
                 {
                     if (MessageBox.Show("Esta seguro que desea eliminar esta producto de la factura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                     {
                         Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index); //Eliminando el registro
                         CargaGrid();
+                        if (Detalle.Count == 0)
+                            EliminarProductoButton.Visible = false;
+                        else
+                            EliminarProductoButton.Visible = true;
                     }
                 }
                 else

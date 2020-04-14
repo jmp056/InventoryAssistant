@@ -140,9 +140,9 @@ namespace InventoryAssistant.UI.Consultas
                 FacturaDataGridView.Columns[1].Width = 200;
                 FacturaDataGridView.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy - hh:mm:ss tt";
                 FacturaDataGridView.Columns[2].HeaderText = "Fecha";
-                FacturaDataGridView.Columns[2].Width = 140;
+                FacturaDataGridView.Columns[2].Width = 150;
                 FacturaDataGridView.Columns[3].HeaderText = "Cliente";
-                FacturaDataGridView.Columns[3].Width = 200;
+                FacturaDataGridView.Columns[3].Width = 190;
                 FacturaDataGridView.Columns[4].HeaderText = "Monto";
                 FacturaDataGridView.Columns[4].Width = 80;
                 FacturaDataGridView.Columns[4].DefaultCellStyle.Format = "N2";

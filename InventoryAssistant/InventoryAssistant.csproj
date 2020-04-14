@@ -366,6 +366,9 @@
   <ItemGroup>
     <None Include="Resources\InformacionImg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4115235-exit-logout-sign-out_114030.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

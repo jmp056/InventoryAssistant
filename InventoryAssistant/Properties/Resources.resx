@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AyudaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AyudaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="EntradaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EntradaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,14 +166,17 @@
   <data name="EliminarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EliminarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CorreoImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CorreoImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="UsuarioImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UsuarioImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UsuarioMenuImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UsuarioMenuImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CorreoImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CorreoImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AyudaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AyudaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LimpiarButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LimpiarButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +208,9 @@
   <data name="SiguienteButtonImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SiguienteButtonImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="InformacionImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InformacionImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ProductosImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ProductosImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,7 +220,7 @@
   <data name="CategoriaImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CategoriaImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="InformacionImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InformacionImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4115235-exit-logout-sign-out_114030" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4115235-exit-logout-sign-out_114030.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

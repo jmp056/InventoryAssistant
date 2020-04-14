@@ -65,6 +65,7 @@
             this.FechaPanel = new System.Windows.Forms.Panel();
             this.HoraLabel = new System.Windows.Forms.Label();
             this.FechaLabel = new System.Windows.Forms.Label();
+            this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.FechaPanel.SuspendLayout();
@@ -94,7 +95,8 @@
             this.toolStripSeparator3,
             this.RegistroDeUsuariosToolStripMenuItem,
             this.toolStripSeparator2,
-            this.cuadreDeCajaToolStripMenuItem});
+            this.cuadreDeCajaToolStripMenuItem,
+            this.cerrarSeccionToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -278,7 +280,7 @@
             // 
             this.inventoryAssistantToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources.InformacionImg;
             this.inventoryAssistantToolStripMenuItem.Name = "inventoryAssistantToolStripMenuItem";
-            this.inventoryAssistantToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventoryAssistantToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.inventoryAssistantToolStripMenuItem.Text = "Inventory Assistant";
             this.inventoryAssistantToolStripMenuItem.Click += new System.EventHandler(this.inventoryAssistantToolStripMenuItem_Click);
             // 
@@ -364,6 +366,14 @@
             this.FechaLabel.Text = "Dia       30 de Mes       del Año";
             this.FechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cerrarSeccionToolStripMenuItem
+            // 
+            this.cerrarSeccionToolStripMenuItem.Image = global::InventoryAssistant.Properties.Resources._4115235_exit_logout_sign_out_114030;
+            this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
+            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.cerrarSeccionToolStripMenuItem.Text = " Cerrar Sesión";
+            this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,6 +439,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryAssistantToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSeccionToolStripMenuItem;
     }
 }
 

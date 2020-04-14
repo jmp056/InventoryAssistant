@@ -63,6 +63,16 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4115235_exit_logout_sign_out_114030 {
+            get {
+                object obj = ResourceManager.GetObject("4115235-exit-logout-sign-out_114030", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AgregarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("AgregarButtonImg", resourceCulture);

@@ -336,5 +336,22 @@ namespace InventoryAssistant
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(" ¿Está seguro de que desea  Cerrar Sesión ? ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Login l = new Login();
+                l.ShowDialog();
+            }
+            else
+            {
+                return;
+            }
+
+
+        }
     }
 }

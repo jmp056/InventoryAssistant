@@ -1000,5 +1000,7 @@ namespace InventoryAssistant.UI.Registros
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }

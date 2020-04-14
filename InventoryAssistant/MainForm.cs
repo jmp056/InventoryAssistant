@@ -1,5 +1,6 @@
 ﻿using InventoryAssistant.BLL;
 using InventoryAssistant.Entidades;
+using InventoryAssistant.UI;
 using InventoryAssistant.UI.Consultas;
 using InventoryAssistant.UI.Otras;
 using InventoryAssistant.UI.Registros;

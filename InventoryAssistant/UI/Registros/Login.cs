@@ -1,5 +1,6 @@
 ﻿using InventoryAssistant.BLL;
 using InventoryAssistant.Entidades;
+using InventoryAssistant.UI.Otras;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -234,6 +235,12 @@ namespace InventoryAssistant.UI.Registros
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Calculadora c = new Calculadora(0);
+            c.ShowDialog();
         }
     }
 }

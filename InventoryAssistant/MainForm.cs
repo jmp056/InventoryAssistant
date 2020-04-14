@@ -165,6 +165,28 @@ namespace InventoryAssistant
             }
         }
 
+        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e) // Cerrar sesion
+        {
+            try
+            {
+                var result = MessageBox.Show(" ¿Está seguro de que desea  Cerrar Sesión ? ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide();
+                    Login l = new Login();
+                    l.ShowDialog();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         // C O N S U L T A S ------------------------------------------------------------------------------------
         
         private void ConsultaDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)//Consulta de Facturas
@@ -270,6 +292,19 @@ namespace InventoryAssistant
             }
         }
 
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e) // Calculadora
+        {
+            try
+            {
+                Calculadora Cal = new Calculadora(0);
+                Cal.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         // A Y U D A ------------------------------------------------------------------------------------------
 
         private void registrosToolStripMenuItem1_Click(object sender, EventArgs e)//Ayuda de los registos
@@ -296,7 +331,8 @@ namespace InventoryAssistant
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }       
+
 
         // A B O U T ------------------------------------------------------------------------------------------
 
@@ -336,23 +372,6 @@ namespace InventoryAssistant
             {
                 MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show(" ¿Está seguro de que desea  Cerrar Sesión ? ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (result == DialogResult.Yes)
-            {
-                this.Hide();
-                Login l = new Login();
-                l.ShowDialog();
-            }
-            else
-            {
-                return;
-            }
-
-
         }
     }
 }

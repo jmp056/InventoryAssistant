@@ -113,6 +113,16 @@ namespace InventoryAssistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CalcularButtonImg {
+            get {
+                object obj = ResourceManager.GetObject("CalcularButtonImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CancelarButtonImg {
             get {
                 object obj = ResourceManager.GetObject("CancelarButtonImg", resourceCulture);

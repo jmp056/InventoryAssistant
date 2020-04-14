@@ -1,5 +1,6 @@
 ﻿using InventoryAssistant.BLL;
 using InventoryAssistant.Entidades;
+using InventoryAssistant.UI.Otras;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

@@ -110,8 +110,8 @@ namespace InventoryAssistant.UI.Registros
             {
                 Factura.FacturaId = (int)FacturaIdNumericUpDown.Value;
                 Factura.Fecha = FechaDateTimePicker.Value;
-                Factura.Usuario = UsuarioTextBox.Text.ToUpper();
-                Factura.Cliente = ClienteTextBox.Text.ToUpper();
+                Factura.Usuario = UsuarioTextBox.Text;
+                Factura.Cliente = ClienteTextBox.Text;
                 Factura.Detalle = this.Detalle;
                 Factura.Total = Convert.ToSingle(TotalTextBox.Text);
 

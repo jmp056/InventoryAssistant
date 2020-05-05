@@ -59,8 +59,8 @@ namespace InventoryAssistant.UI.Registros
             try
             {
                 usuario.UsuarioId = (int)UsuarioIdNumericUpDown.Value;
-                usuario.Nombres = NombresTextBox.Text.ToUpper();
-                usuario.Apellidos = ApellidosTextBox.Text.ToUpper();
+                usuario.Nombres = NombresTextBox.Text;
+                usuario.Apellidos = ApellidosTextBox.Text;
                 usuario.Cedula = CedulaMaskedTextBox.Text;
                 usuario.Celular = TelefonoMaskedTextBox.Text;
                 usuario.FechaDeRegistro = FechaDeRegistroDateTimePicker.Value;
@@ -286,7 +286,9 @@ namespace InventoryAssistant.UI.Registros
                 {
                     if (UsuarioIdNumericUpDown.Value == 0 || Convert.ToString(UsuarioIdNumericUpDown.Value) == string.Empty) // Validando que el nombre usuario no exista, en caso de registrar un usuario nuevo
                     {
-                        if (UsuariosBLL.ExisteUsuario(UsuarioTextBox.Text) == true)
+                        string Comparador = UsuarioTextBox.Text.ToUpper();
+
+                        if (UsuariosBLL.ExisteUsuario(UsuarioTextBox.Text) == true || Comparador == "ADMIN"|| Comparador == "ADMINISTRADOR")
                         {
                             MyErrorProvider.SetError(UsuarioTextBox, "Ya este nombre de usuario existe, debe elegir uno diferente!");
                             CedulaMaskedTextBox.Focus();

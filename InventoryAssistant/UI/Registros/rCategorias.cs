@@ -53,7 +53,7 @@ namespace InventoryAssistant.UI.Registros
             try
             {
                 Categoria.CategoriaId = (int)CategoriaIdNumericUpDown.Value;
-                Categoria.Nombre = NombreTextBox.Text.ToUpper();
+                Categoria.Nombre = NombreTextBox.Text;
 
                 Categoria.Estado = (Categoria.CategoriaId == 0) ? false : true;
                 Categoria.UsuarioR = NombreUsuario;

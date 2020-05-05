@@ -12,23 +12,40 @@ namespace InventoryAssistant
     {
 
         RepositorioBase<Usuarios> RepositorioUsuario = new RepositorioBase<Usuarios>();
-        string nombre = string.Empty;
-        int nivel;
+        string Nombre = string.Empty;
+        int Nivel;
 
-        public MainForm()
+        public MainForm(string nombre)
         {
-            InitializeComponent();
+            try
+            {
+                this.Nombre = nombre;
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error, contacte soporte e infórmele sobre este problema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void MainForm_Load(object sender, EventArgs e) //Funcion encargada de tomar los datos del usuario que esta logueado.
         {
             try
             {
+                if(Nombre == "Administrador")
+                    Nivel = 0;
+
+                else
+                {
+                    Nombre = RepositorioUsuario.ReturnUsuario().Nombres;
+                    Nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
+                }
+                
                 MyTimer.Enabled = true;
-                nombre = RepositorioUsuario.ReturnUsuario().Nombres;
-                NombreUsuarioToolStripStatusLabel.Text = nombre;
-                nivel = RepositorioUsuario.ReturnUsuario().NivelDeUsuario;
-                switch (nivel)
+                NombreUsuarioToolStripStatusLabel.Text = Nombre;
+
+                switch (Nivel)
                 {
                     case 0:
                         {
@@ -70,7 +87,7 @@ namespace InventoryAssistant
         {
             try
             {
-                rFacturas rF = new rFacturas(nombre, nivel, 0);
+                rFacturas rF = new rFacturas(Nombre, Nivel, 0);
                 rF.ShowDialog();
             }
             catch (Exception ex)
@@ -83,9 +100,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 1)
+                if (Nivel <= 1)
                 {
-                    rEntradaProductos rE = new rEntradaProductos(nombre, 0, 0);
+                    rEntradaProductos rE = new rEntradaProductos(Nombre, 0, 0);
                     rE.ShowDialog();
                 }
                 else
@@ -101,9 +118,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 0)
+                if (Nivel <= 0)
                 {
-                    rProductos rP = new rProductos(nombre, nivel, 0);
+                    rProductos rP = new rProductos(Nombre, Nivel, 0);
                     rP.ShowDialog();
                 }
                 else
@@ -119,9 +136,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 0)
+                if (Nivel <= 0)
                 {
-                    rCategorias rC = new rCategorias(nombre, 0);
+                    rCategorias rC = new rCategorias(Nombre, 0);
                     rC.ShowDialog();
                 }
                 else
@@ -137,9 +154,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 0)
+                if (Nivel <= 0)
                 {
-                    rUsuarios rU = new rUsuarios(nombre, 0);
+                    rUsuarios rU = new rUsuarios(Nombre, 0);
                     rU.ShowDialog();
                 }
                 else
@@ -155,7 +172,7 @@ namespace InventoryAssistant
         {
             try
             {
-                rCuadreDeCaja rCC = new rCuadreDeCaja(nombre, nivel, 0);
+                rCuadreDeCaja rCC = new rCuadreDeCaja(Nombre, Nivel, 0);
                 rCC.ShowDialog();
             }
             catch (Exception ex)
@@ -192,9 +209,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 0)
+                if (Nivel <= 0)
                 {
-                    cFacturas cF = new cFacturas(nombre, nivel);
+                    cFacturas cF = new cFacturas(Nombre, Nivel);
                     cF.ShowDialog();
                 }
                 else
@@ -210,9 +227,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 1)
+                if (Nivel <= 1)
                 {
-                    cEntradaProductos cE = new cEntradaProductos(nombre);
+                    cEntradaProductos cE = new cEntradaProductos(Nombre);
                     cE.ShowDialog();
                 }
                 else
@@ -228,7 +245,7 @@ namespace InventoryAssistant
         {
             try
             {
-                cProductos cP = new cProductos(nombre, nivel);
+                cProductos cP = new cProductos(Nombre, Nivel);
                 cP.ShowDialog();
             }
             catch (Exception ex)
@@ -241,9 +258,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 1)
+                if (Nivel <= 1)
                 {
-                    cCategorias cC = new cCategorias(nombre, nivel);
+                    cCategorias cC = new cCategorias(Nombre, Nivel);
                     cC.ShowDialog();
                 }
                 else
@@ -259,9 +276,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 0)
+                if (Nivel <= 0)
                 {
-                    cUsuarios cU = new cUsuarios(nombre);
+                    cUsuarios cU = new cUsuarios(Nombre);
                     cU.ShowDialog();
                 }
                 else
@@ -277,9 +294,9 @@ namespace InventoryAssistant
         {
             try
             {
-                if (nivel <= 0)
+                if (Nivel <= 0)
                 {
-                    cCuadreDeCaja cCC = new cCuadreDeCaja(nombre, nivel);
+                    cCuadreDeCaja cCC = new cCuadreDeCaja(Nombre, Nivel);
                     cCC.ShowDialog();
                 }
                 else

@@ -91,6 +91,7 @@
             // 
             // NombresTextBox
             // 
+            this.NombresTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.NombresTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombresTextBox.Location = new System.Drawing.Point(190, 67);
             this.NombresTextBox.Name = "NombresTextBox";
@@ -207,6 +208,7 @@
             // 
             // ApellidosTextBox
             // 
+            this.ApellidosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ApellidosTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApellidosTextBox.Location = new System.Drawing.Point(190, 107);
             this.ApellidosTextBox.Name = "ApellidosTextBox";

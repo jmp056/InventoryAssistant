@@ -99,7 +99,7 @@ namespace InventoryAssistant.UI.Registros
             try
             {
                 Producto.ProductoId = (int)ProductoIdNumericUpDown.Value;
-                Producto.Descripcion = DescripcionTextBox.Text.ToUpper();
+                Producto.Descripcion = DescripcionTextBox.Text;
                 Producto.CategoriaId = Convert.ToInt32(CategoriaComboBox.SelectedValue);
                 Producto.ControlAlmacen = ControlAlmacenCheckBox.Checked;
                 Producto.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
